@@ -1,0 +1,229 @@
+# =============================================================================
+# TRADING TEAM CONFIGURATION - Complete 9-Agent System
+# =============================================================================
+# Purpose: Orchestrate 9 specialized agents for multi-perspective trading analysis
+# Architecture: Sequential workflow with parallel processing where possible
+# Total Cost: ~$0.0007 per analysis
+# Total Time: ~10-12 minutes
+# =============================================================================
+
+team:
+  name: "Equipo de Análisis de Trading - 9 Expertos"
+  version: "2.0"
+  description: "Multi-agent trading system with risk consensus and strategy convergence"
+  
+  # Team-level configuration
+  model:
+    default_provider: "deepseek"
+    openrouter_enabled: true
+    fallback_strategy: "deepseek"
+  
+  language: "es"  # All responses in Spanish
+  
+  # Workflow configuration
+  workflow:
+    mode: "sequential_with_parallel"
+    stages:
+      - stage: 1
+        name: "Market Research"
+        agents: ["market_researcher"]
+        parallel: false
+        
+      - stage: 2
+        name: "Risk Analysis"
+        agents: ["risk_conservative", "risk_moderate", "risk_aggressive"]
+        parallel: true  # All 3 run simultaneously
+        
+      - stage: 3
+        name: "Strategy Analysis"
+        agents: ["strategy_technical", "strategy_fundamental", "strategy_momentum"]
+        parallel: true  # All 3 run simultaneously
+        
+      - stage: 4
+        name: "Decision Making"
+        agents: ["portfolio_manager"]
+        parallel: false
+        
+      - stage: 5
+        name: "Reporting"
+        agents: ["daily_reporter"]
+        parallel: false
+
+  # Agent members (references to YAML configs)
+  members:
+    - id: "market_researcher"
+      config_file: "market_researcher.yaml"
+      required: true
+      
+    - id: "risk_conservative"
+      config_file: "risk_analysts.yaml"
+      config_key: "agents.conservative"
+      required: true
+      
+    - id: "risk_moderate"
+      config_file: "risk_analysts.yaml"
+      config_key: "agents.moderate"
+      required: true
+      
+    - id: "risk_aggressive"
+      config_file: "risk_analysts.yaml"
+      config_key: "agents.aggressive"
+      required: true
+      
+    - id: "strategy_technical"
+      config_file: "trading_strategists.yaml"
+      config_key: "agents.technical"
+      required: true
+      
+    - id: "strategy_fundamental"
+      config_file: "trading_strategists.yaml"
+      config_key: "agents.fundamental"
+      required: true
+      
+    - id: "strategy_momentum"
+      config_file: "trading_strategists.yaml"
+      config_key: "agents.momentum"
+      required: true
+      
+    - id: "portfolio_manager"
+      config_file: "portfolio_manager.yaml"
+      required: true
+      
+    - id: "daily_reporter"
+      config_file: "daily_reporter.yaml"
+      required: true
+
+  # Team-level instructions
+  instructions:
+    critical_rules:
+      - "⚠️ CRÍTICO: TODO tu trabajo, coordinación y respuestas deben ser en ESPAÑOL"
+      - "⚠️ MANDATORIO: Comunícate con el usuario SOLO en ESPAÑOL"
+      - "⚠️ RECUERDA: Responde SIEMPRE en ESPAÑOL, nunca en inglés"
+    
+    workflow_description:
+      stage_1: "INVESTIGADOR DE MERCADO: Recopila datos completos (YFinance + Serper)"
+      stage_2: "ANALISTAS DE RIESGO (3 perspectivas): Conservador, Moderado, Agresivo → Consenso ponderado"
+      stage_3: "ESTRATEGAS DE TRADING (3 enfoques): Técnico, Fundamental, Momentum → Convergencia de estrategias"
+      stage_4: "PORTFOLIO MANAGER: Sintetiza las 6 opiniones expertas, decide BUY/SELL/HOLD final"
+      stage_5: "DAILY REPORTER: Genera reporte profesional en español"
+    
+    philosophy:
+      - "Múltiples perspectivas = Mejor decisión"
+      - "Conservador por defecto"
+      - "Riesgo solo con consenso sólido"
+
+# Consensus mechanisms
+consensus:
+  risk_analysis:
+    method: "weighted_voting"
+    weights:
+      conservative: 0.40
+      moderate: 0.30
+      aggressive: 0.30
+    
+    thresholds:
+      low_risk: 0.3
+      medium_risk: 0.6
+      high_risk: 0.8
+    
+    position_sizing:
+      low_risk: "15-20% portfolio"
+      medium_risk: "10-15% portfolio"
+      high_risk: "5-10% portfolio"
+      very_high_risk: "reject or <5%"
+  
+  strategy_convergence:
+    strong_signal:
+      buy: "All 3 or 2/3 with strong conviction"
+      sell: "2+ strategists recommend SELL"
+      hold: "No clear consensus or divergence"
+    
+    interpretation:
+      all_agree: "HIGH confidence"
+      two_agree: "MODERATE confidence"
+      divergence: "LOW confidence - wait for better setup"
+
+# Validation layer (applied after portfolio manager decision)
+validators:
+  enabled: true
+  config_file: "validators_config.yaml"
+  
+  critical_validators:
+    - name: "MicroCapValidator"
+      rule: "Market cap must be < $300M"
+      action_on_fail: "REJECT"
+      
+    - name: "PositionSizingValidator"
+      rules:
+        - "Single position < 20% total equity"
+        - "Sector exposure < 40% total equity"
+        - "Cash reserve > 20% total equity"
+      action_on_fail: "REJECT"
+    
+    - name: "StopLossMonitor"
+      rule: "Auto-sell if low_price <= stop_loss"
+      action_on_trigger: "AUTO_SELL"
+
+# Performance tracking
+tracking:
+  enabled: true
+  metrics:
+    - "consensus_accuracy"
+    - "risk_prediction_accuracy"
+    - "strategy_performance"
+    - "portfolio_roi"
+    - "win_rate"
+    - "average_hold_time"
+  
+  history_files:
+    - "portfolio_history.csv"
+    - "trades_history.csv"
+    - "daily_summary.csv"
+    - "agent_performance.csv"
+
+# Cost and performance metadata
+metadata:
+  total_agents: 9
+  parallel_stages: 2  # Stage 2 and 3
+  
+  estimated_costs:
+    market_researcher: "$0.0002"
+    risk_analysts_total: "$0.0003"
+    trading_strategists_total: "$0.0003"
+    portfolio_manager: "$0.0001"
+    daily_reporter: "$0.00005"
+    total_per_analysis: "$0.0007"
+  
+  estimated_times:
+    market_researcher: "2-3 min"
+    risk_analysts_parallel: "3-4 min"
+    trading_strategists_parallel: "3-4 min"
+    portfolio_manager: "1.5-2 min"
+    daily_reporter: "0.5-1 min"
+    total_sequential: "10-12 min"
+  
+  comparison_to_original:
+    cost_reduction: "85x cheaper"
+    perspectives: "9 agents vs 1 ChatGPT"
+    consensus: "Weighted vs Single opinion"
+    quality: "Same or better"
+
+# Environment configuration
+environment:
+  required_env_vars:
+    - "DEEPSEEK_API_KEY"
+    - "OPENROUTER_API_KEY"
+    - "SERPER_API_KEY"  # Optional but recommended
+  
+  optional_features:
+    serper_search: true  # Web search for market researcher
+    openrouter_models: true  # Use free OpenRouter models
+    dry_run_mode: true  # Test without executing trades
+
+# Output configuration
+output:
+  markdown: true
+  stream: true  # Stream responses in real-time
+  verbose: true  # Show intermediate agent outputs
+  save_to_file: true
+  file_path: "agente-agno/history/analysis_reports/"

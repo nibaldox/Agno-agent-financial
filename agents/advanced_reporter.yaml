@@ -1,0 +1,294 @@
+# =============================================================================
+# ADVANCED REPORTER AGENT CONFIGURATION (FASE 2)
+# =============================================================================
+# Purpose: Generate comprehensive analytics reports with charts and AI insights
+# Model: DeepSeek (cost-effective for analysis)
+# Input: Portfolio state + trade history
+# Output: Interactive HTML report with metrics, charts, and LLM insights
+# Integration: Uses FASE 2 analytics system (MetricsCalculator, Plotly charts)
+# =============================================================================
+
+name: "Advanced Analytics Reporter"
+role: "Generate comprehensive analytics reports with interactive visualizations"
+agent_type: "advanced_reporter"
+
+# Model configuration
+model:
+  provider: "openrouter"
+  model_id: "deepseek/deepseek-chat"
+  temperature: 0.3  # Low temp for consistent analysis
+  max_tokens: 2000
+
+# Tools configuration
+tools:
+  enabled: true
+  available:
+    - name: "generate_fase2_report"
+      description: "Generate comprehensive HTML report with metrics, charts, and AI insights"
+      function: "core.reporting.generate_fase2_report"
+    
+    - name: "calculate_advanced_metrics"
+      description: "Calculate Sharpe, Sortino, Beta, Alpha, Max Drawdown, Win Rate"
+      function: "core.metrics.MetricsCalculator.calculate_all_metrics"
+    
+    - name: "generate_ai_insights"
+      description: "Generate AI-powered portfolio insights using DeepSeek"
+      function: "core.llm_insights.LLMInsightsGenerator.generate_insights"
+
+# Agent instructions
+instructions:
+  language: "es"
+  critical_rules:
+    - "⚠️ CRÍTICO: Genera reportes completos con métricas avanzadas"
+    - "⚠️ MANDATORIO: Incluye gráficos interactivos (Plotly)"
+    - "⚠️ OBLIGATORIO: Usa AI insights para análisis profundo"
+  
+  role_description:
+    - "Eres el especialista en análisis avanzado de portafolio"
+    - "Generas reportes profesionales con métricas institucionales"
+    - "Integras visualizaciones interactivas y análisis con IA"
+  
+  report_components:
+    component_1:
+      name: "Executive Summary"
+      content:
+        - "Total Equity actual"
+        - "Cash Balance disponible"
+        - "ROI total (%)"
+        - "P&L absoluto ($)"
+        - "Número de posiciones activas"
+    
+    component_2:
+      name: "Performance Metrics"
+      metrics:
+        - "Sharpe Ratio (anualizado)"
+        - "Sortino Ratio (anualizado)"
+        - "Beta vs S&P 500"
+        - "Alpha (anualizado)"
+        - "Max Drawdown (%)"
+        - "Calmar Ratio"
+        - "Win Rate (%)"
+        - "Profit Factor"
+    
+    component_3:
+      name: "Trade Statistics"
+      stats:
+        - "Total trades ejecutados"
+        - "Winning vs Losing trades"
+        - "Average win ($)"
+        - "Average loss ($)"
+        - "Largest win"
+        - "Largest loss"
+        - "Average hold time"
+    
+    component_4:
+      name: "Interactive Visualizations"
+      charts:
+        - "daily_performance: Portfolio vs S&P 500 normalizado"
+        - "drawdown_analysis: Equity + Drawdown % (2 paneles)"
+        - "portfolio_composition: Donut chart de holdings"
+        - "win_loss_analysis: Bar chart por ticker"
+        - "cash_position: Stacked area (cash vs invested)"
+        - "performance_vs_benchmark: Comparación + Alpha"
+    
+    component_5:
+      name: "AI-Powered Insights"
+      sections:
+        - "📋 Resumen Ejecutivo: Overview del portafolio"
+        - "📊 Análisis de Rendimiento: Deep dive en returns"
+        - "⚠️ Evaluación de Riesgos: Drawdown, volatilidad, concentración"
+        - "📈 Patrones de Trading: Tendencias identificadas"
+        - "💡 Recomendaciones: Acciones sugeridas"
+        - "✅ Fortalezas Clave: Qué está funcionando"
+        - "🔧 Áreas de Mejora: Qué ajustar"
+    
+    component_6:
+      name: "Current Holdings Table"
+      columns:
+        - "Ticker"
+        - "Shares"
+        - "Entry Price"
+        - "Current Price"
+        - "P&L ($)"
+        - "P&L (%)"
+        - "Weight (%)"
+  
+  workflow:
+    step_1:
+      action: "Load portfolio and trade data"
+      files:
+        - "chatgpt_portfolio_update.csv"
+        - "chatgpt_trade_log.csv"
+    
+    step_2:
+      action: "Calculate equity series"
+      output: "Daily Total Equity + Cash Balance"
+    
+    step_3:
+      action: "Fetch benchmark data"
+      benchmark: "S&P 500 (^GSPC)"
+    
+    step_4:
+      action: "Calculate advanced metrics"
+      calculator: "MetricsCalculator(risk_free_rate=0.05)"
+    
+    step_5:
+      action: "Generate AI insights (optional)"
+      provider: "OpenRouter/DeepSeek"
+      cost: "~$0.0005 per report"
+    
+    step_6:
+      action: "Generate interactive charts"
+      library: "Plotly (transparent backgrounds)"
+      charts: 6
+    
+    step_7:
+      action: "Compile HTML report"
+      features:
+        - "Dark mode toggle"
+        - "Responsive design"
+        - "Interactive charts (zoom, pan, hover)"
+        - "AI insights section"
+        - "Professional styling"
+
+# Integration with FASE 2 system
+fase2_integration:
+  enabled: true
+  script: "agente-agno/fase2_example_interactive.py"
+  
+  imports:
+    - "from core import MetricsCalculator, HTMLReportGenerator"
+    - "from core.visualization_plotly import InteractiveVisualizationGenerator"
+    - "from core.llm_insights import LLMInsightsGenerator"
+  
+  execution:
+    method: "programmatic"
+    function: "generate_complete_report()"
+    parameters:
+      - "data_dir: Path to portfolio CSVs"
+      - "output_dir: Where to save report"
+      - "include_llm: bool (default True if API key present)"
+
+# Output configuration
+output:
+  format: "html"
+  filename_pattern: "report_{timestamp}.html"
+  save_location: "reports/"
+  
+  features:
+    interactive_charts: true
+    dark_mode_toggle: true
+    ai_insights: true
+    responsive_design: true
+    export_png: true
+  
+  styling:
+    theme: "professional"
+    colors: "shadcn-inspired"
+    fonts: "system-ui, -apple-system"
+    chart_backgrounds: "transparent"
+
+# Performance characteristics
+metadata:
+  version: "3.8.0"
+  priority: 6  # After daily reporter (runs on-demand or weekly)
+  estimated_time: "1-2 minutes"
+  cost_per_run: "$0.0005-$0.001"
+  dependencies:
+    - "pandas"
+    - "plotly"
+    - "yfinance"
+    - "openai (for AI insights)"
+    - "python-dotenv (for .env)"
+  
+  api_keys_required:
+    - "OPENROUTER_API_KEY (optional, for AI insights)"
+  
+  data_requirements:
+    - "chatgpt_portfolio_update.csv (required)"
+    - "chatgpt_trade_log.csv (optional, for trade stats)"
+
+# Example usage
+examples:
+  example_1:
+    description: "Generate full report with AI insights"
+    code: |
+      from agents import load_advanced_reporter
+      
+      reporter = load_advanced_reporter()
+      report_path = reporter.generate_report(
+          data_dir="Scripts and CSV Files",
+          include_ai=True
+      )
+      print(f"Report saved: {report_path}")
+  
+  example_2:
+    description: "Generate report without AI (faster/free)"
+    code: |
+      from agents import load_advanced_reporter
+      
+      reporter = load_advanced_reporter()
+      report_path = reporter.generate_report(
+          data_dir="Scripts and CSV Files",
+          include_ai=False
+      )
+  
+  example_3:
+    description: "Integrate into daily workflow"
+    code: |
+      # After trading decisions are made
+      team = load_complete_team()
+      
+      # Generate comprehensive weekly report
+      advanced_reporter = load_advanced_reporter()
+      advanced_reporter.generate_report(
+          data_dir="Scripts and CSV Files"
+      )
+
+# Monitoring and alerts
+monitoring:
+  track_metrics:
+    - "Report generation time"
+    - "Number of charts generated"
+    - "AI insights token usage"
+    - "Report file size"
+  
+  alerts:
+    - condition: "Generation time > 3 minutes"
+      action: "Log warning"
+    
+    - condition: "AI insights failed"
+      action: "Generate report without insights"
+    
+    - condition: "Chart generation failed"
+      action: "Fallback to matplotlib static charts"
+
+# Error handling
+error_handling:
+  strategy: "graceful_degradation"
+  
+  scenarios:
+    no_api_key:
+      action: "Skip AI insights, continue with charts"
+      message: "⚠️ OPENROUTER_API_KEY not set, skipping AI insights"
+    
+    plotly_not_installed:
+      action: "Fallback to matplotlib"
+      message: "⚠️ Plotly not available, using static charts"
+    
+    no_benchmark_data:
+      action: "Skip CAPM metrics (Beta, Alpha)"
+      message: "⚠️ Benchmark data unavailable, skipping CAPM"
+    
+    empty_portfolio:
+      action: "Generate report with available data"
+      message: "⚠️ Portfolio empty, limited metrics available"
+
+# Caching and optimization
+optimization:
+  cache_benchmark_data: true
+  cache_duration: "1 day"
+  parallel_chart_generation: false  # Sequential for stability
+  compress_output: false  # HTML with embedded charts
+  minify_html: false  # Keep readable for debugging
+

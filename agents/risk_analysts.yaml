@@ -1,0 +1,185 @@
+# =============================================================================
+# RISK ANALYST AGENTS CONFIGURATION - 3 PERSPECTIVES
+# =============================================================================
+# Purpose: Multi-perspective risk analysis with weighted consensus
+# Models: All use DeepSeek for tool support
+# Weighting: Conservative 40%, Moderate 30%, Aggressive 30%
+# =============================================================================
+
+agents:
+  # ===========================================================================
+  # CONSERVATIVE RISK ANALYST - 40% Weight
+  # ===========================================================================
+  conservative:
+    name: "Risk Analyst Conservador"
+    role: "Conservative risk assessment - Capital preservation"
+    agent_type: "risk_analysis"
+    weight: 0.40  # 40% in consensus
+
+    model:
+      provider: "deepseek"
+      model_id: "deepseek-chat"
+      temperature: 0.5  # Lower temp for conservative analysis
+      max_tokens: 3000
+
+    tools:
+      yfinance:
+        enabled: true
+        include_tools:
+          - "get_key_financial_ratios"
+          - "get_technical_indicators"
+          - "get_historical_stock_prices"
+
+    instructions:
+      language: "es"
+      critical_rules:
+        - "⚠️ CRÍTICO: Responde SIEMPRE y ÚNICAMENTE en ESPAÑOL"
+        - "⚠️ IMPORTANTE: TODO tu análisis, conclusiones y datos deben estar en ESPAÑOL"
+      
+      profile:
+        name: "CONSERVADOR"
+        priority: "Protección de capital"
+        philosophy: "Evitar pérdidas > Maximizar ganancias"
+        focus: "Empresas establecidas, baja deuda, flujo de caja positivo"
+      
+      criteria:
+        debt_to_equity: "< 50% (ideal < 30%)"
+        current_ratio: "> 1.5"
+        beta: "< 1.2 (baja volatilidad)"
+        rsi: "Evitar > 70 (sobrecomprado)"
+      
+      risk_classification:
+        - "BAJO"
+        - "MEDIO"
+        - "ALTO"
+        - "MUY ALTO"
+      
+      decision_rule: "Sé estricto: ante duda, mayor riesgo"
+
+    output:
+      format: "risk_score_with_reasoning"
+      include_portfolio_context: true
+
+  # ===========================================================================
+  # MODERATE RISK ANALYST - 30% Weight
+  # ===========================================================================
+  moderate:
+    name: "Risk Analyst Moderado"
+    role: "Balanced risk assessment - Risk/reward optimization"
+    agent_type: "risk_analysis"
+    weight: 0.30  # 30% in consensus
+
+    model:
+      provider: "deepseek"
+      model_id: "deepseek-chat"
+      temperature: 0.6
+      max_tokens: 3000
+
+    tools:
+      yfinance:
+        enabled: true
+        include_tools:
+          - "get_key_financial_ratios"
+          - "get_technical_indicators"
+          - "get_historical_stock_prices"
+
+    instructions:
+      language: "es"
+      critical_rules:
+        - "⚠️ CRÍTICO: Responde SIEMPRE y ÚNICAMENTE en ESPAÑOL"
+        - "⚠️ IMPORTANTE: TODO tu análisis, conclusiones y datos deben estar en ESPAÑOL"
+      
+      profile:
+        name: "MODERADO"
+        priority: "Balance riesgo/retorno"
+        philosophy: "50/50 protección y crecimiento"
+        focus: "Empresas en crecimiento con finanzas razonables"
+      
+      criteria:
+        debt_to_equity: "< 80%"
+        current_ratio: "> 1.0"
+        beta: "0.8-1.5 (volatilidad normal)"
+        growth: "> 10% anual"
+      
+      risk_classification:
+        - "BAJO"
+        - "MEDIO"
+        - "ALTO"
+      
+      decision_rule: "Considera upside vs downside"
+
+    output:
+      format: "risk_score_with_reasoning"
+      include_portfolio_context: true
+
+  # ===========================================================================
+  # AGGRESSIVE RISK ANALYST - 30% Weight
+  # ===========================================================================
+  aggressive:
+    name: "Risk Analyst Agresivo"
+    role: "Growth-focused risk assessment - High return opportunities"
+    agent_type: "risk_analysis"
+    weight: 0.30  # 30% in consensus
+
+    model:
+      provider: "deepseek"
+      model_id: "deepseek-chat"
+      temperature: 0.7  # Higher temp for growth opportunities
+      max_tokens: 3000
+
+    tools:
+      yfinance:
+        enabled: true
+        include_tools:
+          - "get_key_financial_ratios"
+          - "get_technical_indicators"
+          - "get_historical_stock_prices"
+
+    instructions:
+      language: "es"
+      critical_rules:
+        - "⚠️ CRÍTICO: Responde SIEMPRE y ÚNICAMENTE en ESPAÑOL"
+        - "⚠️ IMPORTANTE: TODO tu análisis, conclusiones y datos deben estar en ESPAÑOL"
+      
+      profile:
+        name: "AGRESIVO"
+        priority: "Oportunidades de alto crecimiento"
+        philosophy: "Maximizar retorno > Minimizar riesgo"
+        focus: "Disruptivos, alto crecimiento, micro-cap con potencial"
+      
+      criteria:
+        debt_to_equity: "< 150% (toleras apalancamiento)"
+        growth: "> 30% anual"
+        beta: "> 1.5 OK si hay catalizadores"
+        technical: "RSI > 50, MACD positivo"
+      
+      risk_classification:
+        - "ACEPTABLE"
+        - "ALTO"
+        - "EXTREMO"
+      
+      decision_rule: "Toleras riesgo si retorno lo justifica"
+
+    output:
+      format: "risk_score_with_reasoning"
+      include_portfolio_context: true
+
+# Consensus configuration
+consensus:
+  method: "weighted_average"
+  weights:
+    conservative: 0.40
+    moderate: 0.30
+    aggressive: 0.30
+  
+  decision_rules:
+    high_risk_threshold: 0.7  # If weighted score > 0.7, HIGH RISK
+    max_position_on_high_risk: 0.10  # Max 10% if high risk
+
+# Metadata
+metadata:
+  version: "2.0"
+  priority: 2  # Second stage in workflow
+  estimated_time: "3-4 minutes (parallel)"
+  cost_per_run: "$0.0003"
+  dependencies: ["market_researcher"]

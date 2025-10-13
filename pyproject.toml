@@ -1,0 +1,87 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agno-trading-system"
+version = "2.1.0"
+description = "Sistema avanzado de trading con agentes AI y analytics profesionales"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Romamo"}
+]
+keywords = ["trading", "ai", "agents", "agno", "finance", "analytics", "portfolio"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "yfinance>=0.2.0",
+    "matplotlib>=3.7.0",
+    "plotly>=5.0.0",
+    "openai>=1.0.0",
+    "pandas-ta>=0.3.0",
+    "scikit-learn>=1.3.0",
+    "python-dotenv>=1.0.0",
+    "agno>=0.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Romamo/agno-trading-system"
+Documentation = "https://github.com/Romamo/agno-trading-system/tree/main/docs"
+Repository = "https://github.com/Romamo/agno-trading-system"
+"Bug Tracker" = "https://github.com/Romamo/agno-trading-system/issues"
+
+[project.scripts]
+agno-report = "examples.generate_report:main"
+agno-agents = "examples.run_agents:main"
+agno-workflow = "examples.complete_workflow:main"
+
+[tool.setuptools]
+packages = ["agno_trading", "agno_trading.agents", "agno_trading.core", "agno_trading.utils"]
+
+[tool.setuptools.package-data]
+agno_trading = ["agents/configs/*.yaml", "core/templates/*.html"]
+
+[tool.black]
+line-length = 100
+target-version = ['py310', 'py311', 'py312']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers --cov=agno_trading"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+

@@ -1,0 +1,150 @@
+# =============================================================================
+# PORTFOLIO MANAGER AGENT CONFIGURATION
+# =============================================================================
+# Purpose: Synthesize all expert opinions and make final trading decision
+# Model: Qwen3 235B (advanced reasoning) or DeepSeek (fallback)
+# Input: 6 expert opinions (3 Risk + 3 Strategy)
+# Output: Final BUY/SELL/HOLD decision with position sizing
+# =============================================================================
+
+name: "Portfolio Manager"
+role: "Senior portfolio manager synthesizing 6 expert opinions"
+agent_type: "decision_maker"
+
+# Model configuration
+model:
+  provider: "openrouter"  # Can use advanced models
+  model_id: "qwen/qwen3-235b-a22b:free"
+  fallback:
+    provider: "deepseek"
+    model_id: "deepseek-chat"
+  temperature: 0.6  # Balanced for decision-making
+  max_tokens: 4000
+
+# Tools (no tools needed - pure synthesis)
+tools:
+  enabled: false
+
+# Agent instructions
+instructions:
+  language: "es"
+  critical_rules:
+    - "⚠️ CRÍTICO: Responde SIEMPRE y ÚNICAMENTE en ESPAÑOL"
+    - "⚠️ MANDATORIO: Tu decisión final, razonamiento y todos los datos en ESPAÑOL"
+    - "⚠️ NO uses inglés en ninguna parte de tu respuesta"
+  
+  responsibility:
+    - "Eres el Portfolio Manager senior - Autoridad de decisión final"
+    - "RESPONSABILIDAD: Sintetizar 6 opiniones expertas (3 Risk + 3 Strategy)"
+  
+  input_sources:
+    count: 7
+    agents:
+      - name: "Market Researcher"
+        provides: "Datos de mercado + web"
+      - name: "Risk Analyst Conservador"
+        provides: "Protección capital"
+        weight: 0.40
+      - name: "Risk Analyst Moderado"
+        provides: "Balance riesgo/retorno"
+        weight: 0.30
+      - name: "Risk Analyst Agresivo"
+        provides: "Oportunidades crecimiento"
+        weight: 0.30
+      - name: "Strategist Técnico"
+        provides: "Price action"
+      - name: "Strategist Fundamental"
+        provides: "Value investing"
+      - name: "Strategist Momentum"
+        provides: "Trend following"
+  
+  synthesis_process:
+    step_1:
+      name: "Analizar consenso RISK (3 analistas)"
+      questions:
+        - "¿Cuántos dicen BAJO/MEDIO/ALTO/MUY ALTO?"
+      weighting:
+        conservative: 0.40
+        moderate: 0.30
+        aggressive: 0.30
+      rule: "Si 2+ dicen ALTO RIESGO → Max 10% portfolio"
+    
+    step_2:
+      name: "Evaluar estrategias (3 strategists)"
+      questions:
+        - "¿Cuántos BUY vs SELL vs HOLD?"
+        - "¿Técnico + Fundamental alineados?"
+      interpretation: "Si divergen = señal precaución"
+    
+    step_3:
+      name: "Decisión Final"
+      considerations:
+        - "Mayoría de opiniones (no democracia ciega)"
+        - "Calidad de argumentos con datos"
+        - "Historial del portfolio"
+        - "Riesgo total actual"
+  
+  decision_rules:
+    rule_1:
+      condition: "2+ Risk Analysts ALTO"
+      action: "Max 10% portfolio"
+    
+    rule_2:
+      condition: "3 Strategists divididos"
+      action: "HOLD (esperar)"
+    
+    rule_3:
+      condition: "Técnico+Fundamental OK, Momentum NO"
+      action: "Entry gradual"
+    
+    rule_4:
+      condition: "Solo Momentum positivo"
+      action: "Posición pequeña"
+  
+  output_format:
+    required_fields:
+      - action: "BUY/SELL/HOLD"
+      - consensus_risk: "X/3 Risk analysts"
+      - consensus_strategy: "Y/3 Strategists"
+      - position_size: "% portfolio (max 20%)"
+      - justification: "Síntesis + criterio"
+      - stop_loss: "El más conservador de los 3"
+      - take_profit: "Promedio objetivos"
+  
+  philosophy:
+    - "Múltiples opiniones = Mejor decisión"
+    - "Conservador por defecto - Riesgo solo con consenso sólido"
+
+# Portfolio context (dynamic - loaded at runtime)
+portfolio_context:
+  include_current_state: true
+  metrics:
+    - "cash"
+    - "total_equity"
+    - "total_pnl"
+    - "roi"
+    - "num_positions"
+  
+  include_historical_performance: true
+  historical_metrics:
+    - "total_days"
+    - "current_roi"
+    - "peak_equity"
+    - "max_drawdown"
+    - "total_trades"
+    - "win_rate"
+
+# Output configuration
+output:
+  markdown: true
+  format: "executive_decision"
+  include_reasoning: true
+  include_risk_assessment: true
+
+# Metadata
+metadata:
+  version: "2.0"
+  priority: 4  # Fourth stage in workflow (after all analysts)
+  estimated_time: "1.5-2 minutes"
+  cost_per_run: "$0.0001"
+  dependencies: ["market_researcher", "risk_analysts", "trading_strategists"]

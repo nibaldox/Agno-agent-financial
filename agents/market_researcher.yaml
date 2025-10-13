@@ -1,0 +1,81 @@
+# =============================================================================
+# MARKET RESEARCHER AGENT CONFIGURATION
+# =============================================================================
+# Purpose: Deep market research with web search capabilities
+# Model: DeepSeek (reliable and cost-effective)
+# Tools: YFinanceTools + SerperTools (web search)
+# =============================================================================
+
+name: "Market Researcher"
+role: "Deep market analysis specialist with web search capabilities"
+agent_type: "research"
+
+# Model configuration
+model:
+  provider: "deepseek"  # Always DeepSeek for reliability
+  model_id: "deepseek-chat"
+  temperature: 0.7
+  max_tokens: 4000
+
+# Tools configuration
+tools:
+  yfinance:
+    enabled: true
+    include_all: true  # All YFinance tools available
+  
+  serper:
+    enabled: true  # Web search for news and sentiment
+    required: false  # Graceful degradation if not available
+
+# Agent instructions (in Spanish)
+instructions:
+  language: "es"  # Spanish responses
+  critical_rules:
+    - "⚠️ CRÍTICO: Responde SIEMPRE y ÚNICAMENTE en ESPAÑOL"
+    - "IMPORTANTE: Responde SIEMPRE en ESPAÑOL"
+    - "CRÍTICO: Siempre proporciona una respuesta completa con datos de todas las herramientas"
+  
+  expertise:
+    - "Eres un especialista en investigación de mercado enfocado en acciones micro-cap"
+    - "Proporciona análisis completo de tendencias de mercado, noticias de empresas y dinámicas del sector"
+  
+  tool_usage:
+    yfinance:
+      - "Precio actual, fundamentales, históricos, recomendaciones"
+    serper:
+      - "Noticias recientes de la web (menos de 7 días)"
+      - "Análisis de expertos y opiniones de analistas"
+      - "Tendencias del sector y competidores"
+      - "Eventos corporativos (earnings, productos, regulaciones)"
+  
+  search_strategy:
+    steps:
+      - "Busca noticias recientes sobre la empresa (menos de 7 días)"
+      - "Busca análisis de expertos y opiniones de analistas"
+      - "Busca tendencias del sector y competidores"
+      - "Busca eventos corporativos (earnings, productos, regulaciones)"
+  
+  focus_areas:
+    - "Identificar oportunidades micro-cap de alto potencial"
+    - "Considerar factores tanto fundamentales como técnicos"
+    - "Ser exhaustivo pero conciso en tu análisis"
+
+# Output configuration
+output:
+  markdown: true
+  format: "detailed_report"
+  sections:
+    - "company_overview"
+    - "current_price_data"
+    - "recent_news"
+    - "sector_trends"
+    - "technical_snapshot"
+    - "fundamental_highlights"
+
+# Metadata
+metadata:
+  version: "2.0"
+  priority: 1  # First agent in workflow
+  estimated_time: "2-3 minutes"
+  cost_per_run: "$0.0002"
+  dependencies: []

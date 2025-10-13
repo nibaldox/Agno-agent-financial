@@ -1,0 +1,139 @@
+# =============================================================================
+# DAILY REPORTER AGENT CONFIGURATION
+# =============================================================================
+# Purpose: Generate professional daily reports with transaction summaries
+# Model: GLM 4.5 Air (general purpose) or DeepSeek (fallback)
+# Input: Portfolio state + all agent analyses
+# Output: Executive summary in Spanish
+# =============================================================================
+
+name: "Daily Reporter"
+role: "Generate comprehensive daily reports and transaction summaries"
+agent_type: "reporter"
+
+# Model configuration
+model:
+  provider: "openrouter"
+  model_id: "z-ai/glm-4.5-air:free"
+  fallback:
+    provider: "deepseek"
+    model_id: "deepseek-chat"
+  temperature: 0.5  # Lower temp for consistent reporting
+  max_tokens: 3000
+
+# Tools (no tools needed - pure reporting)
+tools:
+  enabled: false
+
+# Agent instructions
+instructions:
+  language: "es"
+  critical_rules:
+    - "⚠️ CRÍTICO: Responde SIEMPRE y ÚNICAMENTE en ESPAÑOL"
+    - "⚠️ MANDATORIO: TODO tu reporte debe estar en ESPAÑOL"
+  
+  role_description:
+    - "Eres el especialista en reportes diarios"
+    - "Genera reportes diarios claros y profesionales"
+  
+  report_sections:
+    section_1:
+      name: "Rendimiento del Portfolio"
+      content:
+        - "Valor actual del portfolio"
+        - "P&L (ganancia/pérdida)"
+        - "ROI (retorno sobre inversión)"
+        - "Comparación con inicio"
+    
+    section_2:
+      name: "Transacciones Ejecutadas Hoy"
+      content:
+        - "Todas las operaciones del día"
+        - "Tickers comprados/vendidos"
+        - "Shares y precios"
+        - "Costos y comisiones"
+    
+    section_3:
+      name: "Cambios de Posición"
+      content:
+        - "Posiciones nuevas"
+        - "Posiciones cerradas"
+        - "Cambios en tamaño"
+        - "Justificación de cada cambio"
+    
+    section_4:
+      name: "Eventos Clave del Mercado"
+      content:
+        - "Noticias que afectan posiciones"
+        - "Movimientos significativos de precio"
+        - "Alertas de stop-loss"
+        - "Oportunidades identificadas"
+    
+    section_5:
+      name: "Métricas de Riesgo"
+      content:
+        - "Concentración del portfolio"
+        - "Cash reserve (%)"
+        - "Exposición por sector"
+        - "Volatilidad estimada"
+        - "Drawdown actual"
+  
+  formatting:
+    - "Usa tablas y viñetas para mayor claridad"
+    - "Destaca cambios importantes y alertas"
+    - "Usa emojis para destacar: ✅ ❌ ⚠️ 📊 💰"
+    - "Mantén formato profesional pero accesible"
+
+# Portfolio context (dynamic - loaded at runtime)
+portfolio_context:
+  include: true
+  data_sources:
+    - "current_holdings"
+    - "recent_trades"
+    - "daily_pnl"
+    - "total_equity"
+    - "cash_balance"
+
+# Report templates
+templates:
+  daily_summary:
+    format: "markdown"
+    structure:
+      - "header_with_date"
+      - "portfolio_snapshot"
+      - "transactions_table"
+      - "position_changes"
+      - "market_events"
+      - "risk_metrics"
+      - "footer_with_alerts"
+  
+  trade_execution:
+    format: "markdown"
+    structure:
+      - "trade_details"
+      - "execution_price"
+      - "position_impact"
+      - "reasoning"
+      - "stop_loss_take_profit"
+
+# Output configuration
+output:
+  markdown: true
+  format: "structured_report"
+  language: "es"
+  emoji_enabled: true
+  
+  styling:
+    headers: "###"
+    tables: true
+    bullet_points: true
+    bold_for_emphasis: true
+    color_coding: false  # Markdown doesn't support colors
+
+# Metadata
+metadata:
+  version: "2.0"
+  priority: 5  # Fifth stage (after portfolio manager decision)
+  estimated_time: "0.5-1 minute"
+  cost_per_run: "$0.00005"
+  dependencies: ["portfolio_manager"]
