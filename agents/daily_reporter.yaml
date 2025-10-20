@@ -37,6 +37,11 @@ instructions:
     - "Genera reportes diarios claros y profesionales"
   
   report_sections:
+  adapt_crypto:
+  aggressive_strategy:
+    - "Si el contexto lo requiere, destaca en el reporte las decisiones agresivas, el uso de métricas técnicas avanzadas y la gestión activa de la volatilidad."
+    - "En reportes de criptomonedas, destaca métricas de volatilidad, drawdown y eventos relevantes del mercado."
+    - "Si no hay transacciones clásicas, reporta cambios de posición y eventos clave del activo digital."
     section_1:
       name: "Rendimiento del Portfolio"
       content:

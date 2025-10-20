@@ -216,7 +216,8 @@ def create_portfolio_manager(use_openrouter: bool = True):
         else DeepSeek(id=MODELS["deepseek"])
     )
     
-    portfolio_tool = PortfolioAnalyzerTool()
+    # Simple portfolio context without external tool
+    portfolio_context = "Demo portfolio - analyzing individual stocks for potential investment"
     
     return Agent(
         name="Portfolio Manager",
@@ -229,7 +230,7 @@ def create_portfolio_manager(use_openrouter: bool = True):
             "Ensure diversification and risk management",
             "Make final decisions on trade execution",
             "Provide comprehensive 3-6 month strategic plans",
-            f"Current portfolio: {portfolio_tool.get_current_portfolio()}"
+            f"Current portfolio context: {portfolio_context}"
         ],
         markdown=True,
     )

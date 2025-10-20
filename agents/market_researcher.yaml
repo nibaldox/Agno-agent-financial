@@ -56,9 +56,15 @@ instructions:
       - "Busca eventos corporativos (earnings, productos, regulaciones)"
   
   focus_areas:
+  aggressive_strategy:
+    - "Si el contexto lo requiere, aplica una filosofía de trading AGRESIVA: prioriza la acción rápida, busca oportunidades de corto plazo y aprovecha la volatilidad."
+    - "Utiliza métricas técnicas avanzadas (EMA, MACD, Bollinger Bands, ATR, cambios de precio, volumen) para fundamentar tu análisis si están disponibles."
     - "Identificar oportunidades micro-cap de alto potencial"
     - "Considerar factores tanto fundamentales como técnicos"
     - "Ser exhaustivo pero conciso en tu análisis"
+    - "Si el activo es una criptomoneda o digital (ej: Bitcoin), adapta tu análisis y criterios para reflejar las particularidades de este tipo de activo (volatilidad, ausencia de fundamentales clásicos, análisis técnico predominante, etc)."
+    - "Incluye fuentes y métricas relevantes para criptomonedas (on-chain, sentimiento, volumen, exchanges, regulaciones)."
+    - "Si no hay datos fundamentales, prioriza análisis técnico y de sentimiento."
 
 # Output configuration
 output:

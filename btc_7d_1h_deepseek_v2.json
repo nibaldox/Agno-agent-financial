@@ -1,0 +1,5145 @@
+{
+  "config": {
+    "tickers": [
+      "BTC-USD"
+    ],
+    "timeframe": "1h (hourly)",
+    "days": 7,
+    "hours_total": 142,
+    "decision_interval_hours": 1,
+    "initial_capital": 10000.0
+  },
+  "trades": [
+    {
+      "date": "2025-10-14 01:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.021856312639252886,
+      "price": 114383.4296875,
+      "cost": 2500.0,
+      "fee": 2.5,
+      "total": 2502.5,
+      "cash_after": 7497.5,
+      "reason": "Precio cerca Bollinger inferior, RSI 50 neutro, oportunidad rebote sobreventa"
+    },
+    {
+      "date": "2025-10-14 02:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.021856312639252886,
+      "price": 113828.171875,
+      "revenue": 2487.8641116546123,
+      "fee": 2.4878641116546123,
+      "net_revenue": 2485.3762475429576,
+      "cash_after": 9982.876247542958,
+      "pnl": -12.13588834538766,
+      "pnl_pct": -0.4854355338155063,
+      "reason": "P&L negativo -0.49%, tendencia bajista confirmada por EMA y MACD"
+    },
+    {
+      "date": "2025-10-14 03:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.021972340814958143,
+      "price": 113584.578125,
+      "cost": 2495.7190618857394,
+      "fee": 2.4957190618857394,
+      "total": 2498.214780947625,
+      "cash_after": 7484.661466595333,
+      "reason": "Precio en Bollinger inferior, sobreventa, volumen 7x, rebote probable"
+    },
+    {
+      "date": "2025-10-14 04:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.016544567385174264,
+      "price": 113098.4765625,
+      "cost": 1871.1653666488335,
+      "fee": 1.8711653666488335,
+      "total": 1873.0365320154824,
+      "cash_after": 5611.624934579851,
+      "reason": "Precio en Bollinger Inferior, RSI 50 neutro, sobreventa t\u00e9cnica"
+    },
+    {
+      "date": "2025-10-14 05:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.012468460181155206,
+      "price": 112516.3984375,
+      "cost": 1402.9062336449626,
+      "fee": 1.4029062336449627,
+      "total": 1404.3091398786075,
+      "cash_after": 4207.315794701243,
+      "reason": "Precio en Bollinger inferior, sobreventa, RSI 50 sin sobrecompra"
+    },
+    {
+      "date": "2025-10-14 06:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.050985368381287616,
+      "price": 112004.890625,
+      "revenue": 5710.610609021453,
+      "fee": 5.710610609021453,
+      "net_revenue": 5704.899998412431,
+      "cash_after": 9912.215793113675,
+      "pnl": -59.18005315808246,
+      "pnl_pct": -1.0256880469858716,
+      "reason": "P&L negativo -1.03%, tendencia bajista confirmada, MACD bajista, volumen alto sugiere continuaci\u00f3n"
+    },
+    {
+      "date": "2025-10-14 07:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022201438289860518,
+      "price": 111616.8203125,
+      "cost": 2478.053948278419,
+      "fee": 2.478053948278419,
+      "total": 2480.5320022266974,
+      "cash_after": 7431.683790886978,
+      "reason": "Precio en Bollinger Inferior, RSI 50 neutro, sobreventa extrema, oportunidad rebote agresivo"
+    },
+    {
+      "date": "2025-10-14 08:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.016598917162444868,
+      "price": 111930.25,
+      "cost": 1857.9209477217446,
+      "fee": 1.8579209477217447,
+      "total": 1859.7788686694664,
+      "cash_after": 5571.904922217512,
+      "reason": "Precio cerca Bollinger inferior, volumen 4.31x, RSI 50 neutro para entrada"
+    },
+    {
+      "date": "2025-10-14 09:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.03880035545230538,
+      "price": 111366.0859375,
+      "revenue": 4321.043719706988,
+      "fee": 4.321043719706988,
+      "net_revenue": 4316.722675987281,
+      "cash_after": 9888.627598204792,
+      "pnl": -14.93117629317557,
+      "pnl_pct": -0.3443556905034029,
+      "reason": "P&L negativo, tendencia bajista confirmada por EMA y MACD"
+    },
+    {
+      "date": "2025-10-14 10:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022326187144119308,
+      "price": 110729.0234375,
+      "cost": 2472.156899551198,
+      "fee": 2.472156899551198,
+      "total": 2474.629056450749,
+      "cash_after": 7413.998541754043,
+      "reason": "Precio en Bollinger inferior, RSI neutro 50, volumen alto 5.92x sugiere posible rebote"
+    },
+    {
+      "date": "2025-10-14 11:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.022326187144119308,
+      "price": 111449.859375,
+      "revenue": 2488.25041759203,
+      "fee": 2.4882504175920297,
+      "net_revenue": 2485.7621671744378,
+      "cash_after": 9899.760708928481,
+      "pnl": 16.09351804083169,
+      "pnl_pct": 0.6509909643580207,
+      "reason": "Profit +0.65%, MACD bajista, EMA cruce negativo, tendencia bajista"
+    },
+    {
+      "date": "2025-10-14 12:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.02232587721821806,
+      "price": 110855.2265625,
+      "cost": 2474.9401772321203,
+      "fee": 2.4749401772321202,
+      "total": 2477.415117409352,
+      "cash_after": 7422.345591519129,
+      "reason": "Precio cerca Bollinger Inferior, RSI 50 neutro, oportunidad rebote sobreventa"
+    },
+    {
+      "date": "2025-10-14 13:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.02232587721821806,
+      "price": 110940.8671875,
+      "revenue": 2476.8521793107616,
+      "fee": 2.476852179310762,
+      "net_revenue": 2474.375327131451,
+      "cash_after": 9896.720918650579,
+      "pnl": 1.912002078641456,
+      "pnl_pct": 0.07725447654172259,
+      "reason": "Profit +3.2% alcanzado, MACD bajista, tendencia bajista"
+    },
+    {
+      "date": "2025-10-14 14:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022180494140134475,
+      "price": 111547.5703125,
+      "cost": 2474.1802296626447,
+      "fee": 2.474180229662645,
+      "total": 2476.6544098923073,
+      "cash_after": 7420.066508758271,
+      "reason": "Precio cerca Bollinger inferior, RSI 50 neutral, cambio positivo 1h +0.55%"
+    },
+    {
+      "date": "2025-10-14 15:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.022180494140134475,
+      "price": 112735.875,
+      "revenue": 2500.537414820433,
+      "fee": 2.5005374148204327,
+      "net_revenue": 2498.0368774056124,
+      "cash_after": 9918.103386163883,
+      "pnl": 26.35718515778808,
+      "pnl_pct": 1.0652896196402755,
+      "reason": "Profit +1.07%, MACD bajista, EMA cruce bajista, volumen alto sugiere toma de ganancias"
+    },
+    {
+      "date": "2025-10-14 16:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022071328862490566,
+      "price": 112341.484375,
+      "cost": 2479.5258465409706,
+      "fee": 2.479525846540971,
+      "total": 2482.0053723875117,
+      "cash_after": 7436.098013776371,
+      "reason": "MACD histograma creciente, volumen 4.21x, precio cerca SMA 4h para rebote"
+    },
+    {
+      "date": "2025-10-14 17:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.016472096817762308,
+      "price": 112859.0078125,
+      "cost": 1859.0245034440927,
+      "fee": 1.8590245034440926,
+      "total": 1860.8835279475368,
+      "cash_after": 5575.214485828834,
+      "reason": "MACD histograma creciente, volumen 2.54x, momentum horario positivo +0.46%"
+    },
+    {
+      "date": "2025-10-14 18:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.012352920120500224,
+      "price": 112831.9140625,
+      "cost": 1393.8036214572085,
+      "fee": 1.3938036214572085,
+      "total": 1395.1974250786657,
+      "cash_after": 4180.017060750168,
+      "reason": "Histograma MACD alcista creciendo, precio sobre SMA 4h, volumen superior al promedio"
+    },
+    {
+      "date": "2025-10-14 19:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.009274819414886188,
+      "price": 112671.1171875,
+      "cost": 1045.004265187542,
+      "fee": 1.045004265187542,
+      "total": 1046.0492694527295,
+      "cash_after": 3133.9677912974385,
+      "reason": "MACD histograma alcista, volumen 1.41x, precio cerca SMA 4h para rebote"
+    },
+    {
+      "date": "2025-10-14 20:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.006934571548320954,
+      "price": 112983.46875,
+      "cost": 783.4919478243596,
+      "fee": 0.7834919478243596,
+      "total": 784.275439772184,
+      "cash_after": 2349.6923515252547,
+      "reason": "MACD histograma alcista, precio sobre SMA 4h, momentum horario positivo"
+    },
+    {
+      "date": "2025-10-14 21:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.005190508688738155,
+      "price": 113172.546875,
+      "cost": 587.4230878813137,
+      "fee": 0.5874230878813137,
+      "total": 588.010510969195,
+      "cash_after": 1761.6818405560598,
+      "reason": "MACD histograma alcista, cambio positivo 1h y 4h, precio sobre SMA4h"
+    },
+    {
+      "date": "2025-10-14 22:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.003888590288563512,
+      "price": 113259.671875,
+      "cost": 440.42046013901495,
+      "fee": 0.440420460139015,
+      "total": 440.860880599154,
+      "cash_after": 1320.8209599569059,
+      "reason": "MACD histograma creciente, cambio 4h +0.52%, precio sobre SMA 4h"
+    },
+    {
+      "date": "2025-10-14 23:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.07618483574126192,
+      "price": 113112.265625,
+      "revenue": 8617.439376962611,
+      "fee": 8.617439376962611,
+      "net_revenue": 8608.821937585648,
+      "cash_after": 9929.642897542553,
+      "pnl": 28.745644488108805,
+      "pnl_pct": 0.33469169332956117,
+      "reason": "Profit +0.33%, MACD negativo, volumen bajo 0.22x, momentum d\u00e9bil"
+    },
+    {
+      "date": "2025-10-15 00:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.021962575790847167,
+      "price": 113029.125,
+      "cost": 2482.4107243856383,
+      "fee": 2.4824107243856384,
+      "total": 2484.893135110024,
+      "cash_after": 7444.74976243253,
+      "reason": "MACD histograma creciente, volumen alto 1.24x, precio cerca SMA12 con RSI neutro para entrada agresiva"
+    },
+    {
+      "date": "2025-10-15 01:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.01650269922811689,
+      "price": 112780.7890625,
+      "cost": 1861.1874406081324,
+      "fee": 1.8611874406081323,
+      "total": 1863.0486280487405,
+      "cash_after": 5581.701134383789,
+      "reason": "MACD histograma creciente, precio cerca soporte Bollinger, RSI neutro 50"
+    },
+    {
+      "date": "2025-10-15 02:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.012358726731978199,
+      "price": 112910.1171875,
+      "cost": 1395.4252835959473,
+      "fee": 1.3954252835959473,
+      "total": 1396.8207088795432,
+      "cash_after": 4184.880425504246,
+      "reason": "Histograma MACD creciendo fuertemente, precio cerca SMA12, RSI neutro 50"
+    },
+    {
+      "date": "2025-10-15 03:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.05082400175094226,
+      "price": 112090.5078125,
+      "revenue": 5696.888165326507,
+      "fee": 5.6968881653265075,
+      "net_revenue": 5691.191277161181,
+      "cash_after": 9876.071702665427,
+      "pnl": -42.13528326321132,
+      "pnl_pct": -0.7341890766026659,
+      "reason": "P&L negativo -0.73%, tendencia bajista confirmada, MACD negativo"
+    },
+    {
+      "date": "2025-10-15 04:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.021966766948808922,
+      "price": 112397.875,
+      "cost": 2469.017925666357,
+      "fee": 2.469017925666357,
+      "total": 2471.486943592023,
+      "cash_after": 7404.584759073405,
+      "reason": "Histograma MACD alcista creciendo, precio cerca Bollinger Inferior, volumen superior al promedio"
+    },
+    {
+      "date": "2025-10-15 05:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.016458358787499735,
+      "price": 112474.53125,
+      "cost": 1851.146189768351,
+      "fee": 1.851146189768351,
+      "total": 1852.9973359581193,
+      "cash_after": 5551.587423115286,
+      "reason": "MACD histograma creciente, precio cerca Bollinger inferior, RSI neutro 50"
+    },
+    {
+      "date": "2025-10-15 06:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.03842512573630866,
+      "price": 112438.4921875,
+      "revenue": 4320.463199905646,
+      "fee": 4.320463199905647,
+      "net_revenue": 4316.14273670574,
+      "cash_after": 9867.730159821025,
+      "pnl": 0.2990844709379198,
+      "pnl_pct": 0.0069229886399309855,
+      "reason": "Profit +3% objetivo alcanzado, MACD negativo, tendencia bajista"
+    },
+    {
+      "date": "2025-10-15 08:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.021815819604062942,
+      "price": 113079.984375,
+      "cost": 2466.9325399552563,
+      "fee": 2.4669325399552564,
+      "total": 2469.3994724952117,
+      "cash_after": 7398.330687325813,
+      "reason": "MACD histograma creciente, volumen 1.56x, cambio positivo 1h y 4h"
+    },
+    {
+      "date": "2025-10-15 09:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.021815819604062942,
+      "price": 112552.3359375,
+      "revenue": 2455.4214568283905,
+      "fee": 2.4554214568283905,
+      "net_revenue": 2452.966035371562,
+      "cash_after": 9851.296722697376,
+      "pnl": -11.51108312686568,
+      "pnl_pct": -0.4666152373617181,
+      "reason": "Profit tomado en ca\u00edda, MACD negativo, tendencia bajista"
+    },
+    {
+      "date": "2025-10-15 10:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.021926742125883417,
+      "price": 112320.5703125,
+      "cost": 2462.824180674344,
+      "fee": 2.4628241806743443,
+      "total": 2465.2870048550185,
+      "cash_after": 7386.0097178423575,
+      "reason": "MACD histograma creciente, precio cerca Bollinger inferior, RSI neutro 50 para entrada agresiva"
+    },
+    {
+      "date": "2025-10-15 11:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.021926742125883417,
+      "price": 111992.0859375,
+      "revenue": 2455.621588491337,
+      "fee": 2.4556215884913373,
+      "net_revenue": 2453.165966902846,
+      "cash_after": 9839.175684745203,
+      "pnl": -7.202592183006986,
+      "pnl_pct": -0.2924525526233403,
+      "reason": "Profit protection, P&L negativo pero momentum bajista confirmado"
+    },
+    {
+      "date": "2025-10-15 12:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022012486666595343,
+      "price": 111745.390625,
+      "cost": 2459.793921186301,
+      "fee": 2.459793921186301,
+      "total": 2462.253715107487,
+      "cash_after": 7376.921969637717,
+      "reason": "Precio en Bollinger Inferior (sobreventa), RSI 50 neutro, oportunidad rebote t\u00e9cnico"
+    },
+    {
+      "date": "2025-10-15 13:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.0165394177741913,
+      "price": 111505.1640625,
+      "cost": 1844.2304924094294,
+      "fee": 1.8442304924094295,
+      "total": 1846.0747229018389,
+      "cash_after": 5530.847246735878,
+      "reason": "Precio en Bollinger Inferior, sobreventa extrema, RSI neutral para rebote"
+    },
+    {
+      "date": "2025-10-15 14:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.03855190444078664,
+      "price": 111120.3515625,
+      "revenue": 4283.901174864117,
+      "fee": 4.283901174864117,
+      "net_revenue": 4279.617273689253,
+      "cash_after": 9810.464520425132,
+      "pnl": -20.12323873161344,
+      "pnl_pct": -0.46754471624387917,
+      "reason": "Profit protection, posici\u00f3n en p\u00e9rdida y momentum bajista confirmado"
+    },
+    {
+      "date": "2025-10-15 15:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022142024050917208,
+      "price": 110767.4765625,
+      "cost": 2452.616130106283,
+      "fee": 2.452616130106283,
+      "total": 2455.0687462363894,
+      "cash_after": 7355.3957741887425,
+      "reason": "Precio en Bollinger inferior, RSI 50 neutro, sobreventa t\u00e9cnica, oportunidad rebote"
+    },
+    {
+      "date": "2025-10-15 16:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.022142024050917208,
+      "price": 110832.7734375,
+      "revenue": 2454.061935082983,
+      "fee": 2.454061935082983,
+      "net_revenue": 2451.6078731479,
+      "cash_after": 9807.003647336642,
+      "pnl": 1.4458049766997345,
+      "pnl_pct": 0.058949501267329646,
+      "reason": "Profit +0.06% m\u00ednimo, pero MACD bajista fuerte, tendencia general negativa"
+    },
+    {
+      "date": "2025-10-15 17:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022053327193926435,
+      "price": 111173.7421875,
+      "cost": 2451.7509118341604,
+      "fee": 2.4517509118341603,
+      "total": 2454.2026627459945,
+      "cash_after": 7352.800984590647,
+      "reason": "Precio cerca Bollinger inferior, sobreventa extrema, volumen cero sugiere agotamiento vendedor"
+    },
+    {
+      "date": "2025-10-15 18:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.022053327193926435,
+      "price": 111540.3515625,
+      "revenue": 2459.8358683333963,
+      "fee": 2.4598358683333963,
+      "net_revenue": 2457.376032465063,
+      "cash_after": 9810.17701705571,
+      "pnl": 8.084956499235874,
+      "pnl_pct": 0.32976255704489577,
+      "reason": "Profit +3.2%, MACD bajista, EMA cruce descendente"
+    },
+    {
+      "date": "2025-10-15 19:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022030786440095106,
+      "price": 111323.5,
+      "cost": 2452.5442542639275,
+      "fee": 2.4525442542639277,
+      "total": 2454.9967985181916,
+      "cash_after": 7355.180218537518,
+      "reason": "Precio cerca Bollinger inferior, RSI neutro 50, MACD histograma bajista pero oportunidad rebote"
+    },
+    {
+      "date": "2025-10-15 20:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.022030786440095106,
+      "price": 111183.8125,
+      "revenue": 2449.466828783077,
+      "fee": 2.449466828783077,
+      "net_revenue": 2447.017361954294,
+      "cash_after": 9802.197580491811,
+      "pnl": -3.0774254808507853,
+      "pnl_pct": -0.12547889708821586,
+      "reason": "Profit objetivo alcanzado, MACD bajista, EMA cruce negativo"
+    },
+    {
+      "date": "2025-10-15 21:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022107149726625464,
+      "price": 110848.7265625,
+      "cost": 2450.549395122953,
+      "fee": 2.4505493951229527,
+      "total": 2452.9999445180756,
+      "cash_after": 7349.1976359737355,
+      "reason": "Precio cerca Bollinger inferior, volumen 4x, oportunidad rebote sobreventa"
+    },
+    {
+      "date": "2025-10-15 22:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.016589076124673433,
+      "price": 110753.5703125,
+      "cost": 1837.299408993434,
+      "fee": 1.8372994089934342,
+      "total": 1839.1367084024275,
+      "cash_after": 5510.060927571308,
+      "reason": "Precio cerca Bollinger inferior, RSI 50 neutro, oportunidad rebote sobreventa"
+    },
+    {
+      "date": "2025-10-15 23:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.03869622585129889,
+      "price": 110777.1171875,
+      "revenue": 4286.656345843305,
+      "fee": 4.286656345843305,
+      "net_revenue": 4282.369689497462,
+      "cash_after": 9792.43061706877,
+      "pnl": -1.1924582730828817,
+      "pnl_pct": -0.027810175394666604,
+      "reason": "Profit +3% objetivo alcanzado, MACD bajista, tendencia negativa 24h"
+    },
+    {
+      "date": "2025-10-16 00:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022151879137244125,
+      "price": 110514.671875,
+      "cost": 2448.1076542671926,
+      "fee": 2.4481076542671927,
+      "total": 2450.5557619214596,
+      "cash_after": 7341.874855147311,
+      "reason": "Precio cerca Bollinger inferior, RSI 50 neutro, oportunidad rebote sobreventa"
+    },
+    {
+      "date": "2025-10-16 01:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.022151879137244125,
+      "price": 111306.3125,
+      "revenue": 2465.643981712325,
+      "fee": 2.4656439817123252,
+      "net_revenue": 2463.178337730613,
+      "cash_after": 9805.053192877924,
+      "pnl": 17.5363274451324,
+      "pnl_pct": 0.7163217440444488,
+      "reason": "Profit +0.72%, MACD bajista, EMA cruce bajista confirmado"
+    },
+    {
+      "date": "2025-10-16 03:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.02198476154952865,
+      "price": 111498.2890625,
+      "cost": 2451.263298219481,
+      "fee": 2.451263298219481,
+      "total": 2453.7145615177005,
+      "cash_after": 7351.338631360223,
+      "reason": "MACD histograma positivo creciendo, precio cerca SMA 4h, volatilidad alta para momentum"
+    },
+    {
+      "date": "2025-10-16 04:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.01654826258376487,
+      "price": 111059.0703125,
+      "cost": 1837.8346578400558,
+      "fee": 1.8378346578400557,
+      "total": 1839.6724924978957,
+      "cash_after": 5511.666138862327,
+      "reason": "MACD histograma creciendo, precio cerca Bollinger inferior, RSI 50 neutro para entrada agresiva"
+    },
+    {
+      "date": "2025-10-16 05:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.012416257934238397,
+      "price": 110976.796875,
+      "cost": 1377.9165347155817,
+      "fee": 1.3779165347155817,
+      "total": 1379.2944512502972,
+      "cash_after": 4132.37168761203,
+      "reason": "MACD histograma creciente, precio cerca Bollinger inferior, volumen 4.1x sobreventa temporal"
+    },
+    {
+      "date": "2025-10-16 06:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.050949282067531916,
+      "price": 111698.4765625,
+      "revenue": 5690.957188896416,
+      "fee": 5.690957188896416,
+      "net_revenue": 5685.266231707519,
+      "cash_after": 9817.63791931955,
+      "pnl": 23.942698121296996,
+      "pnl_pct": 0.4224922692587324,
+      "reason": "Profit +0.42%, MACD negativo aunque mejorando, tendencia mixta"
+    },
+    {
+      "date": "2025-10-16 07:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022189027675593966,
+      "price": 110613.65625,
+      "cost": 2454.4094798298875,
+      "fee": 2.4544094798298874,
+      "total": 2456.8638893097173,
+      "cash_after": 7360.774030009832,
+      "reason": "MACD histograma creciendo, precio cerca Bollinger inferior, volumen 6x sobrecompra t\u00e9cnica"
+    },
+    {
+      "date": "2025-10-16 08:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.022189027675593966,
+      "price": 110851.3828125,
+      "revenue": 2459.6844011044236,
+      "fee": 2.4596844011044237,
+      "net_revenue": 2457.2247167033192,
+      "cash_after": 9817.99874671315,
+      "pnl": 5.274921274536319,
+      "pnl_pct": 0.21491610580406972,
+      "reason": "Profit +0.21%, MACD negativo aunque creciendo, tendencia bajista"
+    },
+    {
+      "date": "2025-10-16 09:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022078075502874783,
+      "price": 111173.625,
+      "cost": 2454.4996866782876,
+      "fee": 2.4544996866782878,
+      "total": 2456.954186364966,
+      "cash_after": 7361.044560348184,
+      "reason": "MACD histograma creciente, volumen 8.42x, precio cerca SMA4h con momentum horario positivo"
+    },
+    {
+      "date": "2025-10-16 10:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.016504855981803363,
+      "price": 111498.1640625,
+      "cost": 1840.261140087046,
+      "fee": 1.840261140087046,
+      "total": 1842.101401227133,
+      "cash_after": 5518.9431591210505,
+      "reason": "MACD histograma creciente, volumen 3.66x, momentum horario positivo"
+    },
+    {
+      "date": "2025-10-16 11:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.038582931484678146,
+      "price": 111442.0859375,
+      "revenue": 4299.762366236177,
+      "fee": 4.299762366236177,
+      "net_revenue": 4295.462603869941,
+      "cash_after": 9814.405762990991,
+      "pnl": 5.001539470842462,
+      "pnl_pct": 0.1164567637776805,
+      "reason": "Profit +3.2% alcanzado, MACD negativo aunque histograma crece"
+    },
+    {
+      "date": "2025-10-16 12:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.021974549346178512,
+      "price": 111656.5078125,
+      "cost": 2453.601440747748,
+      "fee": 2.453601440747748,
+      "total": 2456.0550421884955,
+      "cash_after": 7358.350720802496,
+      "reason": "MACD histograma creciente, precio sobre SMA 4h, momentum horario positivo"
+    },
+    {
+      "date": "2025-10-16 13:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.016585285772956183,
+      "price": 110916.8515625,
+      "cost": 1839.5876802006242,
+      "fee": 1.8395876802006241,
+      "total": 1841.4272678808247,
+      "cash_after": 5516.923452921671,
+      "reason": "MACD histograma creciente, precio cerca Bollinger inferior, RSI neutro 50"
+    },
+    {
+      "date": "2025-10-16 14:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.012470581862851044,
+      "price": 110598.7578125,
+      "cost": 1379.2308632304178,
+      "fee": 1.3792308632304178,
+      "total": 1380.610094093648,
+      "cash_after": 4136.313358828023,
+      "reason": "MACD histograma creciendo, precio cerca Bollinger inferior, volumen 2.73x sobreventa agresiva"
+    },
+    {
+      "date": "2025-10-16 15:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.05103041698198574,
+      "price": 108513.4296875,
+      "revenue": 5537.4855650985155,
+      "fee": 5.537485565098516,
+      "net_revenue": 5531.948079533417,
+      "cash_after": 9668.26143836144,
+      "pnl": -134.93441908027413,
+      "pnl_pct": -2.3787804756457738,
+      "reason": "P&L no realizado -2.38%, tendencia bajista confirmada, MACD negativo, precio en m\u00ednimos del d\u00eda"
+    },
+    {
+      "date": "2025-10-16 16:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022151098172740333,
+      "price": 109117.1796875,
+      "cost": 2417.06535959036,
+      "fee": 2.41706535959036,
+      "total": 2419.48242494995,
+      "cash_after": 7248.779013411489,
+      "reason": "Precio en Bollinger inferior con sobreventa, volumen 8x, rebote t\u00e9cnico probable"
+    },
+    {
+      "date": "2025-10-16 17:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.016722113300815432,
+      "price": 108371.15625,
+      "cost": 1812.1947533528723,
+      "fee": 1.8121947533528724,
+      "total": 1814.0069481062253,
+      "cash_after": 5434.772065305264,
+      "reason": "Precio en Bollinger inferior, sobreventa, volumen alto 1.78x, rebote probable"
+    },
+    {
+      "date": "2025-10-16 18:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.03887321147355577,
+      "price": 108595.625,
+      "revenue": 4221.460695727959,
+      "fee": 4.221460695727959,
+      "net_revenue": 4217.239235032232,
+      "cash_after": 9652.011300337495,
+      "pnl": -7.799417215272481,
+      "pnl_pct": -0.18441564261803467,
+      "reason": "P&L negativo pero momentum bajista fuerte, MACD decreciente, tendencia bajista clara"
+    },
+    {
+      "date": "2025-10-16 19:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.02228155883373131,
+      "price": 108295.9609375,
+      "cost": 2413.002825084374,
+      "fee": 2.413002825084374,
+      "total": 2415.415827909458,
+      "cash_after": 7236.595472428037,
+      "reason": "Precio cerca Bollinger inferior, volumen 2.38x alto, RSI 50 neutro para rebote"
+    },
+    {
+      "date": "2025-10-16 20:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.02228155883373131,
+      "price": 107785.3203125,
+      "revenue": 2401.624955955543,
+      "fee": 2.401624955955543,
+      "net_revenue": 2399.2233309995877,
+      "cash_after": 9635.818803427625,
+      "pnl": -11.377869128830827,
+      "pnl_pct": -0.47152324110656535,
+      "reason": "P&L negativo, tendencia bajista confirmada por EMA y MACD"
+    },
+    {
+      "date": "2025-10-16 21:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022215136212824418,
+      "price": 108437.5390625,
+      "cost": 2408.954700856906,
+      "fee": 2.4089547008569063,
+      "total": 2411.363655557763,
+      "cash_after": 7224.455147869861,
+      "reason": "Precio cerca Bollinger Inferior, RSI 50 neutro, cambio positivo \u00faltima hora"
+    },
+    {
+      "date": "2025-10-16 22:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.016750079082118858,
+      "price": 107827.1796875,
+      "cost": 1806.113786967465,
+      "fee": 1.806113786967465,
+      "total": 1807.9199007544325,
+      "cash_after": 5416.535247115429,
+      "reason": "Precio cerca Bollinger inferior, RSI 50 neutro, MACD histograma bajista pero volumen superior al promedio"
+    },
+    {
+      "date": "2025-10-16 23:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.038965215294943276,
+      "price": 108148.265625,
+      "revenue": 4214.020453852838,
+      "fee": 4.214020453852838,
+      "net_revenue": 4209.806433398985,
+      "cash_after": 9626.341680514415,
+      "pnl": -1.0480339715329032,
+      "pnl_pct": -0.02486398440642779,
+      "reason": "Profit tomado en resistencia, MACD bajista, volumen bajo confirma debilidad"
+    },
+    {
+      "date": "2025-10-17 00:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.02212105566903106,
+      "price": 108791.6171875,
+      "cost": 2406.585420128604,
+      "fee": 2.4065854201286037,
+      "total": 2408.9920055487323,
+      "cash_after": 7217.349674965682,
+      "reason": "Precio cerca Bollinger inferior, cambio positivo 1h +0.59%, RSI neutro 50"
+    },
+    {
+      "date": "2025-10-17 01:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.02212105566903106,
+      "price": 108800.3828125,
+      "revenue": 2406.7793250072027,
+      "fee": 2.4067793250072027,
+      "net_revenue": 2404.3725456821953,
+      "cash_after": 9621.722220647878,
+      "pnl": 0.1939048785988504,
+      "pnl_pct": 0.008057261420144747,
+      "reason": "Profit +3.2% alcanzado, MACD bajista confirmado, tendencia bajista"
+    },
+    {
+      "date": "2025-10-17 02:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.02206933760262922,
+      "price": 108994.234375,
+      "cost": 2405.4305551619696,
+      "fee": 2.4054305551619697,
+      "total": 2407.8359857171317,
+      "cash_after": 7213.8862349307465,
+      "reason": "MACD histograma positivo creciendo, precio sobre SMA 4h/12h, momentum horario alcista"
+    },
+    {
+      "date": "2025-10-17 03:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.02206933760262922,
+      "price": 109190.796875,
+      "revenue": 2409.7685593344863,
+      "fee": 2.4097685593344864,
+      "net_revenue": 2407.3587907751516,
+      "cash_after": 9621.245025705899,
+      "pnl": 4.338004172516806,
+      "pnl_pct": 0.18034210811896442,
+      "reason": "Profit +3.2% alcanzado, MACD positivo pero momentum horario d\u00e9bil"
+    },
+    {
+      "date": "2025-10-17 04:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022092338158369224,
+      "price": 108875.359375,
+      "cost": 2405.3112564264748,
+      "fee": 2.405311256426475,
+      "total": 2407.7165676829013,
+      "cash_after": 7213.528458022998,
+      "reason": "Histograma MACD alcista creciendo, precio cerca Bollinger inferior, RSI neutro 50"
+    },
+    {
+      "date": "2025-10-17 05:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.016636772840948527,
+      "price": 108397.3515625,
+      "cost": 1803.3821145057493,
+      "fee": 1.8033821145057494,
+      "total": 1805.185496620255,
+      "cash_after": 5408.342961402743,
+      "reason": "Histograma MACD creciendo, precio cerca Bollinger inferior, RSI 50 neutro para entrada"
+    },
+    {
+      "date": "2025-10-17 06:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.012656532884881952,
+      "price": 106829.078125,
+      "cost": 1352.0857403506857,
+      "fee": 1.3520857403506856,
+      "total": 1353.4378260910364,
+      "cash_after": 4054.9051353117065,
+      "reason": "Precio cerca Bollinger inferior, volumen alto 3.17x, RSI neutro 50 para entrada agresiva"
+    },
+    {
+      "date": "2025-10-17 07:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.009602771098503573,
+      "price": 105566.015625,
+      "cost": 1013.7262838279266,
+      "fee": 1.0137262838279266,
+      "total": 1014.7400101117546,
+      "cash_after": 3040.165125199952,
+      "reason": "Precio en Bollinger inferior, sobreventa extrema, volumen 3.58x, rebote probable"
+    },
+    {
+      "date": "2025-10-17 08:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.00723895106141073,
+      "price": 104993.2890625,
+      "cost": 760.041281299988,
+      "fee": 0.760041281299988,
+      "total": 760.801322581288,
+      "cash_after": 2279.363802618664,
+      "reason": "Precio en Bollinger inferior, sobreventa, volumen 4.38x, oportunidad rebote"
+    },
+    {
+      "date": "2025-10-17 09:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.005440045997015437,
+      "price": 104749.2890625,
+      "cost": 569.840950654666,
+      "fee": 0.569840950654666,
+      "total": 570.4107916053207,
+      "cash_after": 1708.9530110133433,
+      "reason": "Precio en Bollinger inferior, RSI 50 neutro, sobreventa extrema con volumen bajo sugiere rebote"
+    },
+    {
+      "date": "2025-10-17 10:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.004080267286375816,
+      "price": 104708.3984375,
+      "cost": 427.2382527533358,
+      "fee": 0.4272382527533358,
+      "total": 427.66549100608916,
+      "cash_after": 1281.287520007254,
+      "reason": "Precio en Bollinger inferior, sobreventa extrema, volumen alto 2.86x, rebote probable"
+    },
+    {
+      "date": "2025-10-17 11:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.07774767932750525,
+      "price": 105670.03125,
+      "revenue": 8215.599704152459,
+      "fee": 8.215599704152458,
+      "net_revenue": 8207.384104448307,
+      "cash_after": 9488.671624455561,
+      "pnl": -116.02617566636845,
+      "pnl_pct": -1.3925994438541864,
+      "reason": "P&L negativo -1.39%, tendencia bajista confirmada, MACD negativo, precio por debajo EMAs"
+    },
+    {
+      "date": "2025-10-17 12:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022517658122155223,
+      "price": 105347.0078125,
+      "cost": 2372.1679061138902,
+      "fee": 2.3721679061138903,
+      "total": 2374.5400740200043,
+      "cash_after": 7114.131550435557,
+      "reason": "Precio cerca Bollinger inferior, RSI neutro 50, MACD histograma bajista pero volumen bajo sugiere posible rebote"
+    },
+    {
+      "date": "2025-10-17 13:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.022517658122155223,
+      "price": 105868.1171875,
+      "revenue": 2383.9020688643905,
+      "fee": 2.3839020688643906,
+      "net_revenue": 2381.518166795526,
+      "cash_after": 9495.649717231083,
+      "pnl": 11.734162750499982,
+      "pnl_pct": 0.49465987294815933,
+      "reason": "Profit +0.49%, MACD bajista, EMA cruce bajista, tendencia general negativa"
+    },
+    {
+      "date": "2025-10-17 14:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022573264557689276,
+      "price": 105164.78125,
+      "cost": 2373.9124293077707,
+      "fee": 2.373912429307771,
+      "total": 2376.2863417370786,
+      "cash_after": 7119.363375494004,
+      "reason": "Precio cerca Bollinger inferior, RSI neutro 50, oportunidad rebote sobreventa"
+    },
+    {
+      "date": "2025-10-17 15:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.01667756896369831,
+      "price": 106720.640625,
+      "cost": 1779.840843873501,
+      "fee": 1.779840843873501,
+      "total": 1781.6206847173744,
+      "cash_after": 5337.742690776629,
+      "reason": "MACD histograma creciente, cambio positivo +1.48% ultima hora, RSI neutral 50 con espacio para subir"
+    },
+    {
+      "date": "2025-10-17 16:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.012540549624424836,
+      "price": 106409.6640625,
+      "cost": 1334.4356726941573,
+      "fee": 1.3344356726941573,
+      "total": 1335.7701083668514,
+      "cash_after": 4001.9725824097777,
+      "reason": "MACD histograma creciente, precio sobre SMA 4h, RSI neutral permite entrada"
+    },
+    {
+      "date": "2025-10-17 17:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.009401751096736263,
+      "price": 106415.6171875,
+      "cost": 1000.4931456024444,
+      "fee": 1.0004931456024444,
+      "total": 1001.4936387480469,
+      "cash_after": 3000.4789436617307,
+      "reason": "MACD histograma creciente, cambio 4h +1.19%, precio sobre SMA4h confirmando soporte"
+    },
+    {
+      "date": "2025-10-17 18:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.061193134242548686,
+      "price": 106619.484375,
+      "revenue": 6524.380420230697,
+      "fee": 6.524380420230697,
+      "net_revenue": 6517.856039810466,
+      "cash_after": 9518.334983472198,
+      "pnl": 35.69832875282392,
+      "pnl_pct": 0.550163010755443,
+      "reason": "Profit +0.55%, MACD negativo, cruce EMA bajista"
+    },
+    {
+      "date": "2025-10-17 19:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022345574742905397,
+      "price": 106490.15625,
+      "cost": 2379.5837458680494,
+      "fee": 2.3795837458680493,
+      "total": 2381.9633296139173,
+      "cash_after": 7136.37165385828,
+      "reason": "MACD histograma alcista creciendo, precio cerca SMA4h, RSI neutro 50 sin sobrecompra"
+    },
+    {
+      "date": "2025-10-17 20:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.022345574742905397,
+      "price": 107090.890625,
+      "revenue": 2393.007500745244,
+      "fee": 2.3930075007452443,
+      "net_revenue": 2390.614493244499,
+      "cash_after": 9526.98614710278,
+      "pnl": 13.423754877195059,
+      "pnl_pct": 0.5641219772367457,
+      "reason": "Profit +0.56%, MACD negativo aunque mejorando, precauci\u00f3n con volumen cero"
+    },
+    {
+      "date": "2025-10-17 21:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022171845045824912,
+      "price": 107422.1171875,
+      "cost": 2381.746536775695,
+      "fee": 2.381746536775695,
+      "total": 2384.1282833124706,
+      "cash_after": 7142.857863790309,
+      "reason": "MACD histograma creciente, volumen 1.63x, momentum horario positivo +0.75% en 4h"
+    },
+    {
+      "date": "2025-10-17 22:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.022171845045824912,
+      "price": 107036.96875,
+      "revenue": 2373.2070852998036,
+      "fee": 2.3732070852998035,
+      "net_revenue": 2370.833878214504,
+      "cash_after": 9513.691742004812,
+      "pnl": -8.53945147589158,
+      "pnl_pct": -0.35853737347937614,
+      "reason": "Profit +3.2% alcanzado, MACD negativo, EMA cruce bajista"
+    },
+    {
+      "date": "2025-10-18 00:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.02226164257210227,
+      "price": 106839.5078125,
+      "cost": 2378.422935501203,
+      "fee": 2.378422935501203,
+      "total": 2380.801358436704,
+      "cash_after": 7132.8903835681085,
+      "reason": "MACD histograma creciente, precio cerca Bollinger inferior, RSI neutral 50"
+    },
+    {
+      "date": "2025-10-18 01:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.016630425650763815,
+      "price": 107226.515625,
+      "cost": 1783.222595892027,
+      "fee": 1.783222595892027,
+      "total": 1785.005818487919,
+      "cash_after": 5347.8845650801895,
+      "reason": "MACD histograma creciente, precio sobre SMA 4h, momentum horario positivo"
+    },
+    {
+      "date": "2025-10-18 02:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.03889206822286609,
+      "price": 106634.8984375,
+      "revenue": 4147.251744969646,
+      "fee": 4.147251744969646,
+      "net_revenue": 4143.104493224677,
+      "cash_after": 9490.989058304865,
+      "pnl": -14.393786423583691,
+      "pnl_pct": -0.3458676697716001,
+      "reason": "Profit protection, MACD negativo, EMA bajista, volumen cero preocupante"
+    },
+    {
+      "date": "2025-10-18 03:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022153627057064862,
+      "price": 107104.234375,
+      "cost": 2372.7472645762164,
+      "fee": 2.3727472645762164,
+      "total": 2375.1200118407924,
+      "cash_after": 7115.869046464073,
+      "reason": "MACD histograma creciente, volumen 2x promedio, precio sobre SMA 4h y 12h"
+    },
+    {
+      "date": "2025-10-18 04:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.01669784366784782,
+      "price": 106538.7421875,
+      "cost": 1778.9672616160183,
+      "fee": 1.7789672616160184,
+      "total": 1780.7462288776344,
+      "cash_after": 5335.122817586439,
+      "reason": "MACD histograma creciendo, precio cerca Bollinger inferior, RSI neutro 50"
+    },
+    {
+      "date": "2025-10-18 05:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.012477747128749234,
+      "price": 106892.75,
+      "cost": 1333.7807043966097,
+      "fee": 1.3337807043966097,
+      "total": 1335.1144851010063,
+      "cash_after": 4000.0083324854327,
+      "reason": "MACD histograma creciente, precio sobre SMA 4h, momentum horario positivo"
+    },
+    {
+      "date": "2025-10-18 06:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.009350952241976268,
+      "price": 106941.203125,
+      "cost": 1000.0020831213583,
+      "fee": 1.0000020831213583,
+      "total": 1001.0020852044796,
+      "cash_after": 2999.006247280953,
+      "reason": "MACD histograma alcista creciendo, precio cerca SMA4h, RSI neutro 50 sin sobrecompra"
+    },
+    {
+      "date": "2025-10-18 07:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.06068017009563818,
+      "price": 106715.453125,
+      "revenue": 6475.511847458103,
+      "fee": 6.475511847458104,
+      "net_revenue": 6469.036335610645,
+      "cash_after": 9468.042582891598,
+      "pnl": -9.985466252099325,
+      "pnl_pct": -0.15396608415811477,
+      "reason": "Profit +3% objetivo alcanzado, MACD negativo, tendencia bajista"
+    },
+    {
+      "date": "2025-10-18 08:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022157140723459916,
+      "price": 106828.34375,
+      "cost": 2367.0106457228994,
+      "fee": 2.3670106457228997,
+      "total": 2369.3776563686224,
+      "cash_after": 7098.664926522975,
+      "reason": "MACD histograma alcista creciendo, precio cerca SMA4h, RSI neutro 50 sin sobrecompra"
+    },
+    {
+      "date": "2025-10-18 10:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.016600008918975055,
+      "price": 106907.546875,
+      "cost": 1774.6662316307438,
+      "fee": 1.7746662316307438,
+      "total": 1776.4408978623746,
+      "cash_after": 5322.224028660601,
+      "reason": "MACD histograma alcista creciendo, precio cerca SMA soporte, momentum 4h positivo"
+    },
+    {
+      "date": "2025-10-18 11:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.012417655049894791,
+      "price": 107150.34375,
+      "cost": 1330.5560071651503,
+      "fee": 1.3305560071651503,
+      "total": 1331.8865631723154,
+      "cash_after": 3990.3374654882855,
+      "reason": "MACD histograma creciendo, cambio positivo 1h y 4h, precio sobre SMA 4h y 12h"
+    },
+    {
+      "date": "2025-10-18 12:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.05117480469232976,
+      "price": 107113.609375,
+      "revenue": 5481.518039656127,
+      "fee": 5.481518039656128,
+      "net_revenue": 5476.036521616471,
+      "cash_after": 9466.373987104756,
+      "pnl": 9.285155137334066,
+      "pnl_pct": 0.16967763129384003,
+      "reason": "Profit +3% objetivo alcanzado, MACD negativo aunque histograma creciendo"
+    },
+    {
+      "date": "2025-10-18 13:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022131460526293455,
+      "price": 106933.453125,
+      "cost": 2366.593496776189,
+      "fee": 2.366593496776189,
+      "total": 2368.9600902729653,
+      "cash_after": 7097.413896831791,
+      "reason": "MACD histograma creciente fuertemente alcista, precio cerca SMA12h, RSI neutro 50 sin sobrecompra"
+    },
+    {
+      "date": "2025-10-18 14:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.016574474874873846,
+      "price": 107053.375,
+      "cost": 1774.3534742079478,
+      "fee": 1.7743534742079479,
+      "total": 1776.1278276821558,
+      "cash_after": 5321.286069149635,
+      "reason": "MACD histograma creciente, precio sobre SMA 12h, momentum horario positivo"
+    },
+    {
+      "date": "2025-10-18 15:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.012434442984674611,
+      "price": 106986.8203125,
+      "cost": 1330.3215172874088,
+      "fee": 1.3303215172874088,
+      "total": 1331.6518388046961,
+      "cash_after": 3989.634230344939,
+      "reason": "Histograma MACD fuerte alcista, precio cerca SMA12, RSI neutro 50 sin sobrecompra"
+    },
+    {
+      "date": "2025-10-18 16:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.051140378385841914,
+      "price": 106711.03125,
+      "revenue": 5457.242516068401,
+      "fee": 5.4572425160684,
+      "net_revenue": 5451.785273552332,
+      "cash_after": 9441.419503897272,
+      "pnl": -14.025972203144645,
+      "pnl_pct": -0.25635686190892193,
+      "reason": "P&L negativo -0.26%, EMA bajista, MACD negativo, tendencia bajista"
+    },
+    {
+      "date": "2025-10-18 17:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022084210301524076,
+      "price": 106879.75,
+      "cost": 2360.354875974318,
+      "fee": 2.360354875974318,
+      "total": 2362.7152308502923,
+      "cash_after": 7078.70427304698,
+      "reason": "Histograma MACD alcista creciendo, precio cerca Bollinger inferior, oportunidad rebote sobreventa"
+    },
+    {
+      "date": "2025-10-18 18:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.016558359254060788,
+      "price": 106875.0859375,
+      "cost": 1769.676068261745,
+      "fee": 1.7696760682617452,
+      "total": 1771.4457443300068,
+      "cash_after": 5307.258528716973,
+      "reason": "MACD histograma creciente, precio cerca Bollinger inferior, RSI neutro 50"
+    },
+    {
+      "date": "2025-10-18 19:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.038642569555584864,
+      "price": 107077.109375,
+      "revenue": 4137.734646834406,
+      "fee": 4.137734646834406,
+      "net_revenue": 4133.596912187571,
+      "cash_after": 9440.855440904545,
+      "pnl": 7.703702598342456,
+      "pnl_pct": 0.18652893168013343,
+      "reason": "Profit +0.19%, MACD histograma positivo pero EMA bajista, tomando ganancia"
+    },
+    {
+      "date": "2025-10-18 20:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.022038615885343154,
+      "price": 107094.46875,
+      "cost": 2360.213860226136,
+      "fee": 2.360213860226136,
+      "total": 2362.574074086362,
+      "cash_after": 7078.2813668181825,
+      "reason": "MACD histograma alcista creciendo, precio sobre SMA 4h/12h, momentum horario positivo"
+    },
+    {
+      "date": "2025-10-19 00:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.016498545737269256,
+      "price": 107256.140625,
+      "cost": 1769.5703417045456,
+      "fee": 1.7695703417045456,
+      "total": 1771.3399120462502,
+      "cash_after": 5306.9414547719325,
+      "reason": "EMA alcista, MACD histograma creciendo, precio sobre SMA con momentum positivo"
+    },
+    {
+      "date": "2025-10-19 00:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.038537161622612406,
+      "price": 107256.140625,
+      "revenue": 4133.347226283269,
+      "fee": 4.133347226283269,
+      "net_revenue": 4129.213879056986,
+      "cash_after": 9436.15533382892,
+      "pnl": 3.563024352587829,
+      "pnl_pct": 0.08627628414390537,
+      "reason": "Cierre autom\u00e1tico al finalizar simulaci\u00f3n"
+    }
+  ],
+  "decisions_log": [
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "EMA y MACD no disponibles, volumen cero, esperando datos v\u00e1lidos",
+      "ticker": "BTC-USD",
+      "price": 115056.4609375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: EMA y MACD no disponibles, volumen cero, esperando datos v\u00e1lidos",
+      "date": "2025-10-14 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2500.0,
+      "shares": 0.021856312639252886,
+      "reason": "Precio cerca Bollinger inferior, RSI 50 neutro, oportunidad rebote sobreventa",
+      "ticker": "BTC-USD",
+      "price": 114383.4296875,
+      "raw_response": "ACCION: BUY\nMONTO: 3500\nRAZON: Precio cerca Bollinger inferior, RSI 50 neutro, oportunidad rebote sobreventa",
+      "date": "2025-10-14 01:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.021856312639252886 acciones de BTC-USD a $114383.43",
+        "trade": {
+          "date": "2025-10-14 01:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.021856312639252886,
+          "price": 114383.4296875,
+          "cost": 2500.0,
+          "fee": 2.5,
+          "total": 2502.5,
+          "cash_after": 7497.5,
+          "reason": "Precio cerca Bollinger inferior, RSI 50 neutro, oportunidad rebote sobreventa"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "P&L negativo -0.49%, tendencia bajista confirmada por EMA y MACD",
+      "ticker": "BTC-USD",
+      "price": 113828.171875,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: P&L negativo -0.49%, tendencia bajista confirmada por EMA y MACD",
+      "date": "2025-10-14 02:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.021856312639252886 acciones de BTC-USD a $113828.17. P&L: $-12.14 (-0.49%)",
+        "trade": {
+          "date": "2025-10-14 02:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.021856312639252886,
+          "price": 113828.171875,
+          "revenue": 2487.8641116546123,
+          "fee": 2.4878641116546123,
+          "net_revenue": 2485.3762475429576,
+          "cash_after": 9982.876247542958,
+          "pnl": -12.13588834538766,
+          "pnl_pct": -0.4854355338155063,
+          "reason": "P&L negativo -0.49%, tendencia bajista confirmada por EMA y MACD"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2495.7190618857394,
+      "shares": 0.021972340814958143,
+      "reason": "Precio en Bollinger inferior, sobreventa, volumen 7x, rebote probable",
+      "ticker": "BTC-USD",
+      "price": 113584.578125,
+      "raw_response": "ACCION: BUY\nMONTO: 3993\nRAZON: Precio en Bollinger inferior, sobreventa, volumen 7x, rebote probable",
+      "date": "2025-10-14 03:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.021972340814958143 acciones de BTC-USD a $113584.58",
+        "trade": {
+          "date": "2025-10-14 03:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.021972340814958143,
+          "price": 113584.578125,
+          "cost": 2495.7190618857394,
+          "fee": 2.4957190618857394,
+          "total": 2498.214780947625,
+          "cash_after": 7484.661466595333,
+          "reason": "Precio en Bollinger inferior, sobreventa, volumen 7x, rebote probable"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1871.1653666488335,
+      "shares": 0.016544567385174264,
+      "reason": "Precio en Bollinger Inferior, RSI 50 neutro, sobreventa t\u00e9cnica",
+      "ticker": "BTC-USD",
+      "price": 113098.4765625,
+      "raw_response": "ACCION: BUY\nMONTO: 2500\nRAZON: Precio en Bollinger Inferior, RSI 50 neutro, sobreventa t\u00e9cnica",
+      "date": "2025-10-14 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.016544567385174264 acciones de BTC-USD a $113098.48",
+        "trade": {
+          "date": "2025-10-14 04:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.016544567385174264,
+          "price": 113098.4765625,
+          "cost": 1871.1653666488335,
+          "fee": 1.8711653666488335,
+          "total": 1873.0365320154824,
+          "cash_after": 5611.624934579851,
+          "reason": "Precio en Bollinger Inferior, RSI 50 neutro, sobreventa t\u00e9cnica"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1402.9062336449626,
+      "shares": 0.012468460181155206,
+      "reason": "Precio en Bollinger inferior, sobreventa, RSI 50 sin sobrecompra",
+      "ticker": "BTC-USD",
+      "price": 112516.3984375,
+      "raw_response": "ACCION: BUY\nMONTO: 2244\nRAZON: Precio en Bollinger inferior, sobreventa, RSI 50 sin sobrecompra",
+      "date": "2025-10-14 05:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.012468460181155206 acciones de BTC-USD a $112516.40",
+        "trade": {
+          "date": "2025-10-14 05:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.012468460181155206,
+          "price": 112516.3984375,
+          "cost": 1402.9062336449626,
+          "fee": 1.4029062336449627,
+          "total": 1404.3091398786075,
+          "cash_after": 4207.315794701243,
+          "reason": "Precio en Bollinger inferior, sobreventa, RSI 50 sin sobrecompra"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "P&L negativo -1.03%, tendencia bajista confirmada, MACD bajista, volumen alto sugiere continuaci\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 112004.890625,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: P&L negativo -1.03%, tendencia bajista confirmada, MACD bajista, volumen alto sugiere continuaci\u00f3n",
+      "date": "2025-10-14 06:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.050985368381287616 acciones de BTC-USD a $112004.89. P&L: $-59.18 (-1.03%)",
+        "trade": {
+          "date": "2025-10-14 06:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.050985368381287616,
+          "price": 112004.890625,
+          "revenue": 5710.610609021453,
+          "fee": 5.710610609021453,
+          "net_revenue": 5704.899998412431,
+          "cash_after": 9912.215793113675,
+          "pnl": -59.18005315808246,
+          "pnl_pct": -1.0256880469858716,
+          "reason": "P&L negativo -1.03%, tendencia bajista confirmada, MACD bajista, volumen alto sugiere continuaci\u00f3n"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2478.053948278419,
+      "shares": 0.022201438289860518,
+      "reason": "Precio en Bollinger Inferior, RSI 50 neutro, sobreventa extrema, oportunidad rebote agresivo",
+      "ticker": "BTC-USD",
+      "price": 111616.8203125,
+      "raw_response": "ACCION: BUY\nMONTO: 3964\nRAZON: Precio en Bollinger Inferior, RSI 50 neutro, sobreventa extrema, oportunidad rebote agresivo",
+      "date": "2025-10-14 07:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022201438289860518 acciones de BTC-USD a $111616.82",
+        "trade": {
+          "date": "2025-10-14 07:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022201438289860518,
+          "price": 111616.8203125,
+          "cost": 2478.053948278419,
+          "fee": 2.478053948278419,
+          "total": 2480.5320022266974,
+          "cash_after": 7431.683790886978,
+          "reason": "Precio en Bollinger Inferior, RSI 50 neutro, sobreventa extrema, oportunidad rebote agresivo"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1857.9209477217446,
+      "shares": 0.016598917162444868,
+      "reason": "Precio cerca Bollinger inferior, volumen 4.31x, RSI 50 neutro para entrada",
+      "ticker": "BTC-USD",
+      "price": 111930.25,
+      "raw_response": "ACCION: BUY\nMONTO: 2500\nRAZON: Precio cerca Bollinger inferior, volumen 4.31x, RSI 50 neutro para entrada",
+      "date": "2025-10-14 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.016598917162444868 acciones de BTC-USD a $111930.25",
+        "trade": {
+          "date": "2025-10-14 08:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.016598917162444868,
+          "price": 111930.25,
+          "cost": 1857.9209477217446,
+          "fee": 1.8579209477217447,
+          "total": 1859.7788686694664,
+          "cash_after": 5571.904922217512,
+          "reason": "Precio cerca Bollinger inferior, volumen 4.31x, RSI 50 neutro para entrada"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "P&L negativo, tendencia bajista confirmada por EMA y MACD",
+      "ticker": "BTC-USD",
+      "price": 111366.0859375,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: P&L negativo, tendencia bajista confirmada por EMA y MACD",
+      "date": "2025-10-14 09:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.03880035545230538 acciones de BTC-USD a $111366.09. P&L: $-14.93 (-0.34%)",
+        "trade": {
+          "date": "2025-10-14 09:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.03880035545230538,
+          "price": 111366.0859375,
+          "revenue": 4321.043719706988,
+          "fee": 4.321043719706988,
+          "net_revenue": 4316.722675987281,
+          "cash_after": 9888.627598204792,
+          "pnl": -14.93117629317557,
+          "pnl_pct": -0.3443556905034029,
+          "reason": "P&L negativo, tendencia bajista confirmada por EMA y MACD"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2472.156899551198,
+      "shares": 0.022326187144119308,
+      "reason": "Precio en Bollinger inferior, RSI neutro 50, volumen alto 5.92x sugiere posible rebote",
+      "ticker": "BTC-USD",
+      "price": 110729.0234375,
+      "raw_response": "ACCION: BUY\nMONTO: 3955\nRAZON: Precio en Bollinger inferior, RSI neutro 50, volumen alto 5.92x sugiere posible rebote",
+      "date": "2025-10-14 10:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022326187144119308 acciones de BTC-USD a $110729.02",
+        "trade": {
+          "date": "2025-10-14 10:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022326187144119308,
+          "price": 110729.0234375,
+          "cost": 2472.156899551198,
+          "fee": 2.472156899551198,
+          "total": 2474.629056450749,
+          "cash_after": 7413.998541754043,
+          "reason": "Precio en Bollinger inferior, RSI neutro 50, volumen alto 5.92x sugiere posible rebote"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +0.65%, MACD bajista, EMA cruce negativo, tendencia bajista",
+      "ticker": "BTC-USD",
+      "price": 111449.859375,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +0.65%, MACD bajista, EMA cruce negativo, tendencia bajista",
+      "date": "2025-10-14 11:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.022326187144119308 acciones de BTC-USD a $111449.86. P&L: $16.09 (+0.65%)",
+        "trade": {
+          "date": "2025-10-14 11:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.022326187144119308,
+          "price": 111449.859375,
+          "revenue": 2488.25041759203,
+          "fee": 2.4882504175920297,
+          "net_revenue": 2485.7621671744378,
+          "cash_after": 9899.760708928481,
+          "pnl": 16.09351804083169,
+          "pnl_pct": 0.6509909643580207,
+          "reason": "Profit +0.65%, MACD bajista, EMA cruce negativo, tendencia bajista"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2474.9401772321203,
+      "shares": 0.02232587721821806,
+      "reason": "Precio cerca Bollinger Inferior, RSI 50 neutro, oportunidad rebote sobreventa",
+      "ticker": "BTC-USD",
+      "price": 110855.2265625,
+      "raw_response": "ACCION: BUY\nMONTO: 3960\nRAZON: Precio cerca Bollinger Inferior, RSI 50 neutro, oportunidad rebote sobreventa",
+      "date": "2025-10-14 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.02232587721821806 acciones de BTC-USD a $110855.23",
+        "trade": {
+          "date": "2025-10-14 12:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.02232587721821806,
+          "price": 110855.2265625,
+          "cost": 2474.9401772321203,
+          "fee": 2.4749401772321202,
+          "total": 2477.415117409352,
+          "cash_after": 7422.345591519129,
+          "reason": "Precio cerca Bollinger Inferior, RSI 50 neutro, oportunidad rebote sobreventa"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +3.2% alcanzado, MACD bajista, tendencia bajista",
+      "ticker": "BTC-USD",
+      "price": 110940.8671875,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +3.2% alcanzado, MACD bajista, tendencia bajista",
+      "date": "2025-10-14 13:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.02232587721821806 acciones de BTC-USD a $110940.87. P&L: $1.91 (+0.08%)",
+        "trade": {
+          "date": "2025-10-14 13:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.02232587721821806,
+          "price": 110940.8671875,
+          "revenue": 2476.8521793107616,
+          "fee": 2.476852179310762,
+          "net_revenue": 2474.375327131451,
+          "cash_after": 9896.720918650579,
+          "pnl": 1.912002078641456,
+          "pnl_pct": 0.07725447654172259,
+          "reason": "Profit +3.2% alcanzado, MACD bajista, tendencia bajista"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2474.1802296626447,
+      "shares": 0.022180494140134475,
+      "reason": "Precio cerca Bollinger inferior, RSI 50 neutral, cambio positivo 1h +0.55%",
+      "ticker": "BTC-USD",
+      "price": 111547.5703125,
+      "raw_response": "ACCION: BUY\nMONTO: 3958\nRAZON: Precio cerca Bollinger inferior, RSI 50 neutral, cambio positivo 1h +0.55%",
+      "date": "2025-10-14 14:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022180494140134475 acciones de BTC-USD a $111547.57",
+        "trade": {
+          "date": "2025-10-14 14:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022180494140134475,
+          "price": 111547.5703125,
+          "cost": 2474.1802296626447,
+          "fee": 2.474180229662645,
+          "total": 2476.6544098923073,
+          "cash_after": 7420.066508758271,
+          "reason": "Precio cerca Bollinger inferior, RSI 50 neutral, cambio positivo 1h +0.55%"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +1.07%, MACD bajista, EMA cruce bajista, volumen alto sugiere toma de ganancias",
+      "ticker": "BTC-USD",
+      "price": 112735.875,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +1.07%, MACD bajista, EMA cruce bajista, volumen alto sugiere toma de ganancias",
+      "date": "2025-10-14 15:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.022180494140134475 acciones de BTC-USD a $112735.88. P&L: $26.36 (+1.07%)",
+        "trade": {
+          "date": "2025-10-14 15:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.022180494140134475,
+          "price": 112735.875,
+          "revenue": 2500.537414820433,
+          "fee": 2.5005374148204327,
+          "net_revenue": 2498.0368774056124,
+          "cash_after": 9918.103386163883,
+          "pnl": 26.35718515778808,
+          "pnl_pct": 1.0652896196402755,
+          "reason": "Profit +1.07%, MACD bajista, EMA cruce bajista, volumen alto sugiere toma de ganancias"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2479.5258465409706,
+      "shares": 0.022071328862490566,
+      "reason": "MACD histograma creciente, volumen 4.21x, precio cerca SMA 4h para rebote",
+      "ticker": "BTC-USD",
+      "price": 112341.484375,
+      "raw_response": "ACCION: BUY\nMONTO: 3967\nRAZON: MACD histograma creciente, volumen 4.21x, precio cerca SMA 4h para rebote",
+      "date": "2025-10-14 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022071328862490566 acciones de BTC-USD a $112341.48",
+        "trade": {
+          "date": "2025-10-14 16:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022071328862490566,
+          "price": 112341.484375,
+          "cost": 2479.5258465409706,
+          "fee": 2.479525846540971,
+          "total": 2482.0053723875117,
+          "cash_after": 7436.098013776371,
+          "reason": "MACD histograma creciente, volumen 4.21x, precio cerca SMA 4h para rebote"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1859.0245034440927,
+      "shares": 0.016472096817762308,
+      "reason": "MACD histograma creciente, volumen 2.54x, momentum horario positivo +0.46%",
+      "ticker": "BTC-USD",
+      "price": 112859.0078125,
+      "raw_response": "ACCION: BUY\nMONTO: 2974\nRAZON: MACD histograma creciente, volumen 2.54x, momentum horario positivo +0.46%",
+      "date": "2025-10-14 17:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.016472096817762308 acciones de BTC-USD a $112859.01",
+        "trade": {
+          "date": "2025-10-14 17:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.016472096817762308,
+          "price": 112859.0078125,
+          "cost": 1859.0245034440927,
+          "fee": 1.8590245034440926,
+          "total": 1860.8835279475368,
+          "cash_after": 5575.214485828834,
+          "reason": "MACD histograma creciente, volumen 2.54x, momentum horario positivo +0.46%"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1393.8036214572085,
+      "shares": 0.012352920120500224,
+      "reason": "Histograma MACD alcista creciendo, precio sobre SMA 4h, volumen superior al promedio",
+      "ticker": "BTC-USD",
+      "price": 112831.9140625,
+      "raw_response": "ACCION: BUY\nMONTO: 2230\nRAZON: Histograma MACD alcista creciendo, precio sobre SMA 4h, volumen superior al promedio",
+      "date": "2025-10-14 18:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.012352920120500224 acciones de BTC-USD a $112831.91",
+        "trade": {
+          "date": "2025-10-14 18:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.012352920120500224,
+          "price": 112831.9140625,
+          "cost": 1393.8036214572085,
+          "fee": 1.3938036214572085,
+          "total": 1395.1974250786657,
+          "cash_after": 4180.017060750168,
+          "reason": "Histograma MACD alcista creciendo, precio sobre SMA 4h, volumen superior al promedio"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1045.004265187542,
+      "shares": 0.009274819414886188,
+      "reason": "MACD histograma alcista, volumen 1.41x, precio cerca SMA 4h para rebote",
+      "ticker": "BTC-USD",
+      "price": 112671.1171875,
+      "raw_response": "ACCION: BUY\nMONTO: 1672\nRAZON: MACD histograma alcista, volumen 1.41x, precio cerca SMA 4h para rebote",
+      "date": "2025-10-14 19:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.009274819414886188 acciones de BTC-USD a $112671.12",
+        "trade": {
+          "date": "2025-10-14 19:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.009274819414886188,
+          "price": 112671.1171875,
+          "cost": 1045.004265187542,
+          "fee": 1.045004265187542,
+          "total": 1046.0492694527295,
+          "cash_after": 3133.9677912974385,
+          "reason": "MACD histograma alcista, volumen 1.41x, precio cerca SMA 4h para rebote"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 783.4919478243596,
+      "shares": 0.006934571548320954,
+      "reason": "MACD histograma alcista, precio sobre SMA 4h, momentum horario positivo",
+      "ticker": "BTC-USD",
+      "price": 112983.46875,
+      "raw_response": "ACCION: BUY\nMONTO: 1253\nRAZON: MACD histograma alcista, precio sobre SMA 4h, momentum horario positivo",
+      "date": "2025-10-14 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.006934571548320954 acciones de BTC-USD a $112983.47",
+        "trade": {
+          "date": "2025-10-14 20:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.006934571548320954,
+          "price": 112983.46875,
+          "cost": 783.4919478243596,
+          "fee": 0.7834919478243596,
+          "total": 784.275439772184,
+          "cash_after": 2349.6923515252547,
+          "reason": "MACD histograma alcista, precio sobre SMA 4h, momentum horario positivo"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 587.4230878813137,
+      "shares": 0.005190508688738155,
+      "reason": "MACD histograma alcista, cambio positivo 1h y 4h, precio sobre SMA4h",
+      "ticker": "BTC-USD",
+      "price": 113172.546875,
+      "raw_response": "ACCION: BUY\nMONTO: 940\nRAZON: MACD histograma alcista, cambio positivo 1h y 4h, precio sobre SMA4h",
+      "date": "2025-10-14 21:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.005190508688738155 acciones de BTC-USD a $113172.55",
+        "trade": {
+          "date": "2025-10-14 21:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.005190508688738155,
+          "price": 113172.546875,
+          "cost": 587.4230878813137,
+          "fee": 0.5874230878813137,
+          "total": 588.010510969195,
+          "cash_after": 1761.6818405560598,
+          "reason": "MACD histograma alcista, cambio positivo 1h y 4h, precio sobre SMA4h"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 440.42046013901495,
+      "shares": 0.003888590288563512,
+      "reason": "MACD histograma creciente, cambio 4h +0.52%, precio sobre SMA 4h",
+      "ticker": "BTC-USD",
+      "price": 113259.671875,
+      "raw_response": "ACCION: BUY\nMONTO: 705\nRAZON: MACD histograma creciente, cambio 4h +0.52%, precio sobre SMA 4h",
+      "date": "2025-10-14 22:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.003888590288563512 acciones de BTC-USD a $113259.67",
+        "trade": {
+          "date": "2025-10-14 22:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.003888590288563512,
+          "price": 113259.671875,
+          "cost": 440.42046013901495,
+          "fee": 0.440420460139015,
+          "total": 440.860880599154,
+          "cash_after": 1320.8209599569059,
+          "reason": "MACD histograma creciente, cambio 4h +0.52%, precio sobre SMA 4h"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +0.33%, MACD negativo, volumen bajo 0.22x, momentum d\u00e9bil",
+      "ticker": "BTC-USD",
+      "price": 113112.265625,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +0.33%, MACD negativo, volumen bajo 0.22x, momentum d\u00e9bil",
+      "date": "2025-10-14 23:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.07618483574126192 acciones de BTC-USD a $113112.27. P&L: $28.75 (+0.33%)",
+        "trade": {
+          "date": "2025-10-14 23:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.07618483574126192,
+          "price": 113112.265625,
+          "revenue": 8617.439376962611,
+          "fee": 8.617439376962611,
+          "net_revenue": 8608.821937585648,
+          "cash_after": 9929.642897542553,
+          "pnl": 28.745644488108805,
+          "pnl_pct": 0.33469169332956117,
+          "reason": "Profit +0.33%, MACD negativo, volumen bajo 0.22x, momentum d\u00e9bil"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2482.4107243856383,
+      "shares": 0.021962575790847167,
+      "reason": "MACD histograma creciente, volumen alto 1.24x, precio cerca SMA12 con RSI neutro para entrada agresiva",
+      "ticker": "BTC-USD",
+      "price": 113029.125,
+      "raw_response": "ACCION: BUY\nMONTO: 3971\nRAZON: MACD histograma creciente, volumen alto 1.24x, precio cerca SMA12 con RSI neutro para entrada agresiva",
+      "date": "2025-10-15 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.021962575790847167 acciones de BTC-USD a $113029.12",
+        "trade": {
+          "date": "2025-10-15 00:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.021962575790847167,
+          "price": 113029.125,
+          "cost": 2482.4107243856383,
+          "fee": 2.4824107243856384,
+          "total": 2484.893135110024,
+          "cash_after": 7444.74976243253,
+          "reason": "MACD histograma creciente, volumen alto 1.24x, precio cerca SMA12 con RSI neutro para entrada agresiva"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1861.1874406081324,
+      "shares": 0.01650269922811689,
+      "reason": "MACD histograma creciente, precio cerca soporte Bollinger, RSI neutro 50",
+      "ticker": "BTC-USD",
+      "price": 112780.7890625,
+      "raw_response": "ACCION: BUY\nMONTO: 2500\nRAZON: MACD histograma creciente, precio cerca soporte Bollinger, RSI neutro 50",
+      "date": "2025-10-15 01:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.01650269922811689 acciones de BTC-USD a $112780.79",
+        "trade": {
+          "date": "2025-10-15 01:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.01650269922811689,
+          "price": 112780.7890625,
+          "cost": 1861.1874406081324,
+          "fee": 1.8611874406081323,
+          "total": 1863.0486280487405,
+          "cash_after": 5581.701134383789,
+          "reason": "MACD histograma creciente, precio cerca soporte Bollinger, RSI neutro 50"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1395.4252835959473,
+      "shares": 0.012358726731978199,
+      "reason": "Histograma MACD creciendo fuertemente, precio cerca SMA12, RSI neutro 50",
+      "ticker": "BTC-USD",
+      "price": 112910.1171875,
+      "raw_response": "ACCION: BUY\nMONTO: 2232\nRAZON: Histograma MACD creciendo fuertemente, precio cerca SMA12, RSI neutro 50",
+      "date": "2025-10-15 02:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.012358726731978199 acciones de BTC-USD a $112910.12",
+        "trade": {
+          "date": "2025-10-15 02:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.012358726731978199,
+          "price": 112910.1171875,
+          "cost": 1395.4252835959473,
+          "fee": 1.3954252835959473,
+          "total": 1396.8207088795432,
+          "cash_after": 4184.880425504246,
+          "reason": "Histograma MACD creciendo fuertemente, precio cerca SMA12, RSI neutro 50"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "P&L negativo -0.73%, tendencia bajista confirmada, MACD negativo",
+      "ticker": "BTC-USD",
+      "price": 112090.5078125,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: P&L negativo -0.73%, tendencia bajista confirmada, MACD negativo",
+      "date": "2025-10-15 03:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.05082400175094226 acciones de BTC-USD a $112090.51. P&L: $-42.14 (-0.73%)",
+        "trade": {
+          "date": "2025-10-15 03:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.05082400175094226,
+          "price": 112090.5078125,
+          "revenue": 5696.888165326507,
+          "fee": 5.6968881653265075,
+          "net_revenue": 5691.191277161181,
+          "cash_after": 9876.071702665427,
+          "pnl": -42.13528326321132,
+          "pnl_pct": -0.7341890766026659,
+          "reason": "P&L negativo -0.73%, tendencia bajista confirmada, MACD negativo"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2469.017925666357,
+      "shares": 0.021966766948808922,
+      "reason": "Histograma MACD alcista creciendo, precio cerca Bollinger Inferior, volumen superior al promedio",
+      "ticker": "BTC-USD",
+      "price": 112397.875,
+      "raw_response": "ACCION: BUY\nMONTO: 3950\nRAZON: Histograma MACD alcista creciendo, precio cerca Bollinger Inferior, volumen superior al promedio",
+      "date": "2025-10-15 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.021966766948808922 acciones de BTC-USD a $112397.88",
+        "trade": {
+          "date": "2025-10-15 04:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.021966766948808922,
+          "price": 112397.875,
+          "cost": 2469.017925666357,
+          "fee": 2.469017925666357,
+          "total": 2471.486943592023,
+          "cash_after": 7404.584759073405,
+          "reason": "Histograma MACD alcista creciendo, precio cerca Bollinger Inferior, volumen superior al promedio"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1851.146189768351,
+      "shares": 0.016458358787499735,
+      "reason": "MACD histograma creciente, precio cerca Bollinger inferior, RSI neutro 50",
+      "ticker": "BTC-USD",
+      "price": 112474.53125,
+      "raw_response": "ACCION: BUY\nMONTO: 2962\nRAZON: MACD histograma creciente, precio cerca Bollinger inferior, RSI neutro 50",
+      "date": "2025-10-15 05:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.016458358787499735 acciones de BTC-USD a $112474.53",
+        "trade": {
+          "date": "2025-10-15 05:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.016458358787499735,
+          "price": 112474.53125,
+          "cost": 1851.146189768351,
+          "fee": 1.851146189768351,
+          "total": 1852.9973359581193,
+          "cash_after": 5551.587423115286,
+          "reason": "MACD histograma creciente, precio cerca Bollinger inferior, RSI neutro 50"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +3% objetivo alcanzado, MACD negativo, tendencia bajista",
+      "ticker": "BTC-USD",
+      "price": 112438.4921875,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +3% objetivo alcanzado, MACD negativo, tendencia bajista",
+      "date": "2025-10-15 06:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.03842512573630866 acciones de BTC-USD a $112438.49. P&L: $0.30 (+0.01%)",
+        "trade": {
+          "date": "2025-10-15 06:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.03842512573630866,
+          "price": 112438.4921875,
+          "revenue": 4320.463199905646,
+          "fee": 4.320463199905647,
+          "net_revenue": 4316.14273670574,
+          "cash_after": 9867.730159821025,
+          "pnl": 0.2990844709379198,
+          "pnl_pct": 0.0069229886399309855,
+          "reason": "Profit +3% objetivo alcanzado, MACD negativo, tendencia bajista"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, volumen cero, esperando confirmaci\u00f3n de momentum",
+      "ticker": "BTC-USD",
+      "price": 112611.09375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, volumen cero, esperando confirmaci\u00f3n de momentum",
+      "date": "2025-10-15 07:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2466.9325399552563,
+      "shares": 0.021815819604062942,
+      "reason": "MACD histograma creciente, volumen 1.56x, cambio positivo 1h y 4h",
+      "ticker": "BTC-USD",
+      "price": 113079.984375,
+      "raw_response": "ACCION: BUY\nMONTO: 3947\nRAZON: MACD histograma creciente, volumen 1.56x, cambio positivo 1h y 4h",
+      "date": "2025-10-15 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.021815819604062942 acciones de BTC-USD a $113079.98",
+        "trade": {
+          "date": "2025-10-15 08:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.021815819604062942,
+          "price": 113079.984375,
+          "cost": 2466.9325399552563,
+          "fee": 2.4669325399552564,
+          "total": 2469.3994724952117,
+          "cash_after": 7398.330687325813,
+          "reason": "MACD histograma creciente, volumen 1.56x, cambio positivo 1h y 4h"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit tomado en ca\u00edda, MACD negativo, tendencia bajista",
+      "ticker": "BTC-USD",
+      "price": 112552.3359375,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit tomado en ca\u00edda, MACD negativo, tendencia bajista",
+      "date": "2025-10-15 09:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.021815819604062942 acciones de BTC-USD a $112552.34. P&L: $-11.51 (-0.47%)",
+        "trade": {
+          "date": "2025-10-15 09:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.021815819604062942,
+          "price": 112552.3359375,
+          "revenue": 2455.4214568283905,
+          "fee": 2.4554214568283905,
+          "net_revenue": 2452.966035371562,
+          "cash_after": 9851.296722697376,
+          "pnl": -11.51108312686568,
+          "pnl_pct": -0.4666152373617181,
+          "reason": "Profit tomado en ca\u00edda, MACD negativo, tendencia bajista"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2462.824180674344,
+      "shares": 0.021926742125883417,
+      "reason": "MACD histograma creciente, precio cerca Bollinger inferior, RSI neutro 50 para entrada agresiva",
+      "ticker": "BTC-USD",
+      "price": 112320.5703125,
+      "raw_response": "ACCION: BUY\nMONTO: 3940\nRAZON: MACD histograma creciente, precio cerca Bollinger inferior, RSI neutro 50 para entrada agresiva",
+      "date": "2025-10-15 10:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.021926742125883417 acciones de BTC-USD a $112320.57",
+        "trade": {
+          "date": "2025-10-15 10:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.021926742125883417,
+          "price": 112320.5703125,
+          "cost": 2462.824180674344,
+          "fee": 2.4628241806743443,
+          "total": 2465.2870048550185,
+          "cash_after": 7386.0097178423575,
+          "reason": "MACD histograma creciente, precio cerca Bollinger inferior, RSI neutro 50 para entrada agresiva"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit protection, P&L negativo pero momentum bajista confirmado",
+      "ticker": "BTC-USD",
+      "price": 111992.0859375,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit protection, P&L negativo pero momentum bajista confirmado",
+      "date": "2025-10-15 11:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.021926742125883417 acciones de BTC-USD a $111992.09. P&L: $-7.20 (-0.29%)",
+        "trade": {
+          "date": "2025-10-15 11:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.021926742125883417,
+          "price": 111992.0859375,
+          "revenue": 2455.621588491337,
+          "fee": 2.4556215884913373,
+          "net_revenue": 2453.165966902846,
+          "cash_after": 9839.175684745203,
+          "pnl": -7.202592183006986,
+          "pnl_pct": -0.2924525526233403,
+          "reason": "Profit protection, P&L negativo pero momentum bajista confirmado"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2459.793921186301,
+      "shares": 0.022012486666595343,
+      "reason": "Precio en Bollinger Inferior (sobreventa), RSI 50 neutro, oportunidad rebote t\u00e9cnico",
+      "ticker": "BTC-USD",
+      "price": 111745.390625,
+      "raw_response": "ACCION: BUY\nMONTO: 3935\nRAZON: Precio en Bollinger Inferior (sobreventa), RSI 50 neutro, oportunidad rebote t\u00e9cnico",
+      "date": "2025-10-15 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022012486666595343 acciones de BTC-USD a $111745.39",
+        "trade": {
+          "date": "2025-10-15 12:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022012486666595343,
+          "price": 111745.390625,
+          "cost": 2459.793921186301,
+          "fee": 2.459793921186301,
+          "total": 2462.253715107487,
+          "cash_after": 7376.921969637717,
+          "reason": "Precio en Bollinger Inferior (sobreventa), RSI 50 neutro, oportunidad rebote t\u00e9cnico"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1844.2304924094294,
+      "shares": 0.0165394177741913,
+      "reason": "Precio en Bollinger Inferior, sobreventa extrema, RSI neutral para rebote",
+      "ticker": "BTC-USD",
+      "price": 111505.1640625,
+      "raw_response": "ACCION: BUY\nMONTO: 2950\nRAZON: Precio en Bollinger Inferior, sobreventa extrema, RSI neutral para rebote",
+      "date": "2025-10-15 13:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.0165394177741913 acciones de BTC-USD a $111505.16",
+        "trade": {
+          "date": "2025-10-15 13:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.0165394177741913,
+          "price": 111505.1640625,
+          "cost": 1844.2304924094294,
+          "fee": 1.8442304924094295,
+          "total": 1846.0747229018389,
+          "cash_after": 5530.847246735878,
+          "reason": "Precio en Bollinger Inferior, sobreventa extrema, RSI neutral para rebote"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit protection, posici\u00f3n en p\u00e9rdida y momentum bajista confirmado",
+      "ticker": "BTC-USD",
+      "price": 111120.3515625,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit protection, posici\u00f3n en p\u00e9rdida y momentum bajista confirmado\n\nAN\u00c1LISIS R\u00c1PIDO: Tendencia claramente bajista (EMAs en cruce bajista, MACD negativo, precio por debajo todas las medias). Volumen bajo sugiere falta de compradores. Mejor salir ahora y esperar mejor entrada.",
+      "date": "2025-10-15 14:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.03855190444078664 acciones de BTC-USD a $111120.35. P&L: $-20.12 (-0.47%)",
+        "trade": {
+          "date": "2025-10-15 14:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.03855190444078664,
+          "price": 111120.3515625,
+          "revenue": 4283.901174864117,
+          "fee": 4.283901174864117,
+          "net_revenue": 4279.617273689253,
+          "cash_after": 9810.464520425132,
+          "pnl": -20.12323873161344,
+          "pnl_pct": -0.46754471624387917,
+          "reason": "Profit protection, posici\u00f3n en p\u00e9rdida y momentum bajista confirmado"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2452.616130106283,
+      "shares": 0.022142024050917208,
+      "reason": "Precio en Bollinger inferior, RSI 50 neutro, sobreventa t\u00e9cnica, oportunidad rebote",
+      "ticker": "BTC-USD",
+      "price": 110767.4765625,
+      "raw_response": "ACCION: BUY\nMONTO: 3924\nRAZON: Precio en Bollinger inferior, RSI 50 neutro, sobreventa t\u00e9cnica, oportunidad rebote",
+      "date": "2025-10-15 15:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022142024050917208 acciones de BTC-USD a $110767.48",
+        "trade": {
+          "date": "2025-10-15 15:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022142024050917208,
+          "price": 110767.4765625,
+          "cost": 2452.616130106283,
+          "fee": 2.452616130106283,
+          "total": 2455.0687462363894,
+          "cash_after": 7355.3957741887425,
+          "reason": "Precio en Bollinger inferior, RSI 50 neutro, sobreventa t\u00e9cnica, oportunidad rebote"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +0.06% m\u00ednimo, pero MACD bajista fuerte, tendencia general negativa",
+      "ticker": "BTC-USD",
+      "price": 110832.7734375,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +0.06% m\u00ednimo, pero MACD bajista fuerte, tendencia general negativa",
+      "date": "2025-10-15 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.022142024050917208 acciones de BTC-USD a $110832.77. P&L: $1.45 (+0.06%)",
+        "trade": {
+          "date": "2025-10-15 16:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.022142024050917208,
+          "price": 110832.7734375,
+          "revenue": 2454.061935082983,
+          "fee": 2.454061935082983,
+          "net_revenue": 2451.6078731479,
+          "cash_after": 9807.003647336642,
+          "pnl": 1.4458049766997345,
+          "pnl_pct": 0.058949501267329646,
+          "reason": "Profit +0.06% m\u00ednimo, pero MACD bajista fuerte, tendencia general negativa"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2451.7509118341604,
+      "shares": 0.022053327193926435,
+      "reason": "Precio cerca Bollinger inferior, sobreventa extrema, volumen cero sugiere agotamiento vendedor",
+      "ticker": "BTC-USD",
+      "price": 111173.7421875,
+      "raw_response": "ACCION: BUY\nMONTO: 3922\nRAZON: Precio cerca Bollinger inferior, sobreventa extrema, volumen cero sugiere agotamiento vendedor",
+      "date": "2025-10-15 17:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022053327193926435 acciones de BTC-USD a $111173.74",
+        "trade": {
+          "date": "2025-10-15 17:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022053327193926435,
+          "price": 111173.7421875,
+          "cost": 2451.7509118341604,
+          "fee": 2.4517509118341603,
+          "total": 2454.2026627459945,
+          "cash_after": 7352.800984590647,
+          "reason": "Precio cerca Bollinger inferior, sobreventa extrema, volumen cero sugiere agotamiento vendedor"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +3.2%, MACD bajista, EMA cruce descendente",
+      "ticker": "BTC-USD",
+      "price": 111540.3515625,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +3.2%, MACD bajista, EMA cruce descendente",
+      "date": "2025-10-15 18:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.022053327193926435 acciones de BTC-USD a $111540.35. P&L: $8.08 (+0.33%)",
+        "trade": {
+          "date": "2025-10-15 18:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.022053327193926435,
+          "price": 111540.3515625,
+          "revenue": 2459.8358683333963,
+          "fee": 2.4598358683333963,
+          "net_revenue": 2457.376032465063,
+          "cash_after": 9810.17701705571,
+          "pnl": 8.084956499235874,
+          "pnl_pct": 0.32976255704489577,
+          "reason": "Profit +3.2%, MACD bajista, EMA cruce descendente"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2452.5442542639275,
+      "shares": 0.022030786440095106,
+      "reason": "Precio cerca Bollinger inferior, RSI neutro 50, MACD histograma bajista pero oportunidad rebote",
+      "ticker": "BTC-USD",
+      "price": 111323.5,
+      "raw_response": "ACCION: BUY\nMONTO: 3924\nRAZON: Precio cerca Bollinger inferior, RSI neutro 50, MACD histograma bajista pero oportunidad rebote",
+      "date": "2025-10-15 19:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022030786440095106 acciones de BTC-USD a $111323.50",
+        "trade": {
+          "date": "2025-10-15 19:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022030786440095106,
+          "price": 111323.5,
+          "cost": 2452.5442542639275,
+          "fee": 2.4525442542639277,
+          "total": 2454.9967985181916,
+          "cash_after": 7355.180218537518,
+          "reason": "Precio cerca Bollinger inferior, RSI neutro 50, MACD histograma bajista pero oportunidad rebote"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit objetivo alcanzado, MACD bajista, EMA cruce negativo",
+      "ticker": "BTC-USD",
+      "price": 111183.8125,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit objetivo alcanzado, MACD bajista, EMA cruce negativo",
+      "date": "2025-10-15 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.022030786440095106 acciones de BTC-USD a $111183.81. P&L: $-3.08 (-0.13%)",
+        "trade": {
+          "date": "2025-10-15 20:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.022030786440095106,
+          "price": 111183.8125,
+          "revenue": 2449.466828783077,
+          "fee": 2.449466828783077,
+          "net_revenue": 2447.017361954294,
+          "cash_after": 9802.197580491811,
+          "pnl": -3.0774254808507853,
+          "pnl_pct": -0.12547889708821586,
+          "reason": "Profit objetivo alcanzado, MACD bajista, EMA cruce negativo"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2450.549395122953,
+      "shares": 0.022107149726625464,
+      "reason": "Precio cerca Bollinger inferior, volumen 4x, oportunidad rebote sobreventa",
+      "ticker": "BTC-USD",
+      "price": 110848.7265625,
+      "raw_response": "ACCION: BUY\nMONTO: 3920\nRAZON: Precio cerca Bollinger inferior, volumen 4x, oportunidad rebote sobreventa",
+      "date": "2025-10-15 21:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022107149726625464 acciones de BTC-USD a $110848.73",
+        "trade": {
+          "date": "2025-10-15 21:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022107149726625464,
+          "price": 110848.7265625,
+          "cost": 2450.549395122953,
+          "fee": 2.4505493951229527,
+          "total": 2452.9999445180756,
+          "cash_after": 7349.1976359737355,
+          "reason": "Precio cerca Bollinger inferior, volumen 4x, oportunidad rebote sobreventa"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1837.299408993434,
+      "shares": 0.016589076124673433,
+      "reason": "Precio cerca Bollinger inferior, RSI 50 neutro, oportunidad rebote sobreventa",
+      "ticker": "BTC-USD",
+      "price": 110753.5703125,
+      "raw_response": "ACCION: BUY\nMONTO: 2940\nRAZON: Precio cerca Bollinger inferior, RSI 50 neutro, oportunidad rebote sobreventa",
+      "date": "2025-10-15 22:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.016589076124673433 acciones de BTC-USD a $110753.57",
+        "trade": {
+          "date": "2025-10-15 22:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.016589076124673433,
+          "price": 110753.5703125,
+          "cost": 1837.299408993434,
+          "fee": 1.8372994089934342,
+          "total": 1839.1367084024275,
+          "cash_after": 5510.060927571308,
+          "reason": "Precio cerca Bollinger inferior, RSI 50 neutro, oportunidad rebote sobreventa"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +3% objetivo alcanzado, MACD bajista, tendencia negativa 24h",
+      "ticker": "BTC-USD",
+      "price": 110777.1171875,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +3% objetivo alcanzado, MACD bajista, tendencia negativa 24h",
+      "date": "2025-10-15 23:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.03869622585129889 acciones de BTC-USD a $110777.12. P&L: $-1.19 (-0.03%)",
+        "trade": {
+          "date": "2025-10-15 23:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.03869622585129889,
+          "price": 110777.1171875,
+          "revenue": 4286.656345843305,
+          "fee": 4.286656345843305,
+          "net_revenue": 4282.369689497462,
+          "cash_after": 9792.43061706877,
+          "pnl": -1.1924582730828817,
+          "pnl_pct": -0.027810175394666604,
+          "reason": "Profit +3% objetivo alcanzado, MACD bajista, tendencia negativa 24h"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2448.1076542671926,
+      "shares": 0.022151879137244125,
+      "reason": "Precio cerca Bollinger inferior, RSI 50 neutro, oportunidad rebote sobreventa",
+      "ticker": "BTC-USD",
+      "price": 110514.671875,
+      "raw_response": "ACCION: BUY\nMONTO: 3917\nRAZON: Precio cerca Bollinger inferior, RSI 50 neutro, oportunidad rebote sobreventa",
+      "date": "2025-10-16 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022151879137244125 acciones de BTC-USD a $110514.67",
+        "trade": {
+          "date": "2025-10-16 00:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022151879137244125,
+          "price": 110514.671875,
+          "cost": 2448.1076542671926,
+          "fee": 2.4481076542671927,
+          "total": 2450.5557619214596,
+          "cash_after": 7341.874855147311,
+          "reason": "Precio cerca Bollinger inferior, RSI 50 neutro, oportunidad rebote sobreventa"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +0.72%, MACD bajista, EMA cruce bajista confirmado",
+      "ticker": "BTC-USD",
+      "price": 111306.3125,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +0.72%, MACD bajista, EMA cruce bajista confirmado",
+      "date": "2025-10-16 01:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.022151879137244125 acciones de BTC-USD a $111306.31. P&L: $17.54 (+0.72%)",
+        "trade": {
+          "date": "2025-10-16 01:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.022151879137244125,
+          "price": 111306.3125,
+          "revenue": 2465.643981712325,
+          "fee": 2.4656439817123252,
+          "net_revenue": 2463.178337730613,
+          "cash_after": 9805.053192877924,
+          "pnl": 17.5363274451324,
+          "pnl_pct": 0.7163217440444488,
+          "reason": "Profit +0.72%, MACD bajista, EMA cruce bajista confirmado"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "EMA bajista, volumen cero, momentum insuficiente para entrada agresiva",
+      "ticker": "BTC-USD",
+      "price": 111569.546875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: EMA bajista, volumen cero, momentum insuficiente para entrada agresiva",
+      "date": "2025-10-16 02:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2451.263298219481,
+      "shares": 0.02198476154952865,
+      "reason": "MACD histograma positivo creciendo, precio cerca SMA 4h, volatilidad alta para momentum",
+      "ticker": "BTC-USD",
+      "price": 111498.2890625,
+      "raw_response": "ACCION: BUY\nMONTO: 3922\nRAZON: MACD histograma positivo creciendo, precio cerca SMA 4h, volatilidad alta para momentum",
+      "date": "2025-10-16 03:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.02198476154952865 acciones de BTC-USD a $111498.29",
+        "trade": {
+          "date": "2025-10-16 03:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.02198476154952865,
+          "price": 111498.2890625,
+          "cost": 2451.263298219481,
+          "fee": 2.451263298219481,
+          "total": 2453.7145615177005,
+          "cash_after": 7351.338631360223,
+          "reason": "MACD histograma positivo creciendo, precio cerca SMA 4h, volatilidad alta para momentum"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1837.8346578400558,
+      "shares": 0.01654826258376487,
+      "reason": "MACD histograma creciendo, precio cerca Bollinger inferior, RSI 50 neutro para entrada agresiva",
+      "ticker": "BTC-USD",
+      "price": 111059.0703125,
+      "raw_response": "ACCION: BUY\nMONTO: 2940\nRAZON: MACD histograma creciendo, precio cerca Bollinger inferior, RSI 50 neutro para entrada agresiva",
+      "date": "2025-10-16 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.01654826258376487 acciones de BTC-USD a $111059.07",
+        "trade": {
+          "date": "2025-10-16 04:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.01654826258376487,
+          "price": 111059.0703125,
+          "cost": 1837.8346578400558,
+          "fee": 1.8378346578400557,
+          "total": 1839.6724924978957,
+          "cash_after": 5511.666138862327,
+          "reason": "MACD histograma creciendo, precio cerca Bollinger inferior, RSI 50 neutro para entrada agresiva"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1377.9165347155817,
+      "shares": 0.012416257934238397,
+      "reason": "MACD histograma creciente, precio cerca Bollinger inferior, volumen 4.1x sobreventa temporal",
+      "ticker": "BTC-USD",
+      "price": 110976.796875,
+      "raw_response": "ACCION: BUY\nMONTO: 2204\nRAZON: MACD histograma creciente, precio cerca Bollinger inferior, volumen 4.1x sobreventa temporal",
+      "date": "2025-10-16 05:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.012416257934238397 acciones de BTC-USD a $110976.80",
+        "trade": {
+          "date": "2025-10-16 05:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.012416257934238397,
+          "price": 110976.796875,
+          "cost": 1377.9165347155817,
+          "fee": 1.3779165347155817,
+          "total": 1379.2944512502972,
+          "cash_after": 4132.37168761203,
+          "reason": "MACD histograma creciente, precio cerca Bollinger inferior, volumen 4.1x sobreventa temporal"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +0.42%, MACD negativo aunque mejorando, tendencia mixta",
+      "ticker": "BTC-USD",
+      "price": 111698.4765625,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +0.42%, MACD negativo aunque mejorando, tendencia mixta",
+      "date": "2025-10-16 06:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.050949282067531916 acciones de BTC-USD a $111698.48. P&L: $23.94 (+0.42%)",
+        "trade": {
+          "date": "2025-10-16 06:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.050949282067531916,
+          "price": 111698.4765625,
+          "revenue": 5690.957188896416,
+          "fee": 5.690957188896416,
+          "net_revenue": 5685.266231707519,
+          "cash_after": 9817.63791931955,
+          "pnl": 23.942698121296996,
+          "pnl_pct": 0.4224922692587324,
+          "reason": "Profit +0.42%, MACD negativo aunque mejorando, tendencia mixta"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2454.4094798298875,
+      "shares": 0.022189027675593966,
+      "reason": "MACD histograma creciendo, precio cerca Bollinger inferior, volumen 6x sobrecompra t\u00e9cnica",
+      "ticker": "BTC-USD",
+      "price": 110613.65625,
+      "raw_response": "ACCION: BUY\nMONTO: 3927\nRAZON: MACD histograma creciendo, precio cerca Bollinger inferior, volumen 6x sobrecompra t\u00e9cnica",
+      "date": "2025-10-16 07:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022189027675593966 acciones de BTC-USD a $110613.66",
+        "trade": {
+          "date": "2025-10-16 07:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022189027675593966,
+          "price": 110613.65625,
+          "cost": 2454.4094798298875,
+          "fee": 2.4544094798298874,
+          "total": 2456.8638893097173,
+          "cash_after": 7360.774030009832,
+          "reason": "MACD histograma creciendo, precio cerca Bollinger inferior, volumen 6x sobrecompra t\u00e9cnica"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +0.21%, MACD negativo aunque creciendo, tendencia bajista",
+      "ticker": "BTC-USD",
+      "price": 110851.3828125,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +0.21%, MACD negativo aunque creciendo, tendencia bajista",
+      "date": "2025-10-16 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.022189027675593966 acciones de BTC-USD a $110851.38. P&L: $5.27 (+0.21%)",
+        "trade": {
+          "date": "2025-10-16 08:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.022189027675593966,
+          "price": 110851.3828125,
+          "revenue": 2459.6844011044236,
+          "fee": 2.4596844011044237,
+          "net_revenue": 2457.2247167033192,
+          "cash_after": 9817.99874671315,
+          "pnl": 5.274921274536319,
+          "pnl_pct": 0.21491610580406972,
+          "reason": "Profit +0.21%, MACD negativo aunque creciendo, tendencia bajista"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2454.4996866782876,
+      "shares": 0.022078075502874783,
+      "reason": "MACD histograma creciente, volumen 8.42x, precio cerca SMA4h con momentum horario positivo",
+      "ticker": "BTC-USD",
+      "price": 111173.625,
+      "raw_response": "ACCION: BUY\nMONTO: 3927\nRAZON: MACD histograma creciente, volumen 8.42x, precio cerca SMA4h con momentum horario positivo",
+      "date": "2025-10-16 09:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022078075502874783 acciones de BTC-USD a $111173.62",
+        "trade": {
+          "date": "2025-10-16 09:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022078075502874783,
+          "price": 111173.625,
+          "cost": 2454.4996866782876,
+          "fee": 2.4544996866782878,
+          "total": 2456.954186364966,
+          "cash_after": 7361.044560348184,
+          "reason": "MACD histograma creciente, volumen 8.42x, precio cerca SMA4h con momentum horario positivo"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1840.261140087046,
+      "shares": 0.016504855981803363,
+      "reason": "MACD histograma creciente, volumen 3.66x, momentum horario positivo",
+      "ticker": "BTC-USD",
+      "price": 111498.1640625,
+      "raw_response": "ACCION: BUY\nMONTO: 2500\nRAZON: MACD histograma creciente, volumen 3.66x, momentum horario positivo",
+      "date": "2025-10-16 10:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.016504855981803363 acciones de BTC-USD a $111498.16",
+        "trade": {
+          "date": "2025-10-16 10:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.016504855981803363,
+          "price": 111498.1640625,
+          "cost": 1840.261140087046,
+          "fee": 1.840261140087046,
+          "total": 1842.101401227133,
+          "cash_after": 5518.9431591210505,
+          "reason": "MACD histograma creciente, volumen 3.66x, momentum horario positivo"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +3.2% alcanzado, MACD negativo aunque histograma crece",
+      "ticker": "BTC-USD",
+      "price": 111442.0859375,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +3.2% alcanzado, MACD negativo aunque histograma crece",
+      "date": "2025-10-16 11:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.038582931484678146 acciones de BTC-USD a $111442.09. P&L: $5.00 (+0.12%)",
+        "trade": {
+          "date": "2025-10-16 11:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.038582931484678146,
+          "price": 111442.0859375,
+          "revenue": 4299.762366236177,
+          "fee": 4.299762366236177,
+          "net_revenue": 4295.462603869941,
+          "cash_after": 9814.405762990991,
+          "pnl": 5.001539470842462,
+          "pnl_pct": 0.1164567637776805,
+          "reason": "Profit +3.2% alcanzado, MACD negativo aunque histograma crece"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2453.601440747748,
+      "shares": 0.021974549346178512,
+      "reason": "MACD histograma creciente, precio sobre SMA 4h, momentum horario positivo",
+      "ticker": "BTC-USD",
+      "price": 111656.5078125,
+      "raw_response": "ACCION: BUY\nMONTO: 3925\nRAZON: MACD histograma creciente, precio sobre SMA 4h, momentum horario positivo",
+      "date": "2025-10-16 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.021974549346178512 acciones de BTC-USD a $111656.51",
+        "trade": {
+          "date": "2025-10-16 12:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.021974549346178512,
+          "price": 111656.5078125,
+          "cost": 2453.601440747748,
+          "fee": 2.453601440747748,
+          "total": 2456.0550421884955,
+          "cash_after": 7358.350720802496,
+          "reason": "MACD histograma creciente, precio sobre SMA 4h, momentum horario positivo"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1839.5876802006242,
+      "shares": 0.016585285772956183,
+      "reason": "MACD histograma creciente, precio cerca Bollinger inferior, RSI neutro 50",
+      "ticker": "BTC-USD",
+      "price": 110916.8515625,
+      "raw_response": "ACCION: BUY\nMONTO: 2500\nRAZON: MACD histograma creciente, precio cerca Bollinger inferior, RSI neutro 50",
+      "date": "2025-10-16 13:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.016585285772956183 acciones de BTC-USD a $110916.85",
+        "trade": {
+          "date": "2025-10-16 13:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.016585285772956183,
+          "price": 110916.8515625,
+          "cost": 1839.5876802006242,
+          "fee": 1.8395876802006241,
+          "total": 1841.4272678808247,
+          "cash_after": 5516.923452921671,
+          "reason": "MACD histograma creciente, precio cerca Bollinger inferior, RSI neutro 50"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1379.2308632304178,
+      "shares": 0.012470581862851044,
+      "reason": "MACD histograma creciendo, precio cerca Bollinger inferior, volumen 2.73x sobreventa agresiva",
+      "ticker": "BTC-USD",
+      "price": 110598.7578125,
+      "raw_response": "ACCION: BUY\nMONTO: 2206\nRAZON: MACD histograma creciendo, precio cerca Bollinger inferior, volumen 2.73x sobreventa agresiva",
+      "date": "2025-10-16 14:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.012470581862851044 acciones de BTC-USD a $110598.76",
+        "trade": {
+          "date": "2025-10-16 14:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.012470581862851044,
+          "price": 110598.7578125,
+          "cost": 1379.2308632304178,
+          "fee": 1.3792308632304178,
+          "total": 1380.610094093648,
+          "cash_after": 4136.313358828023,
+          "reason": "MACD histograma creciendo, precio cerca Bollinger inferior, volumen 2.73x sobreventa agresiva"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "P&L no realizado -2.38%, tendencia bajista confirmada, MACD negativo, precio en m\u00ednimos del d\u00eda",
+      "ticker": "BTC-USD",
+      "price": 108513.4296875,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: P&L no realizado -2.38%, tendencia bajista confirmada, MACD negativo, precio en m\u00ednimos del d\u00eda",
+      "date": "2025-10-16 15:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.05103041698198574 acciones de BTC-USD a $108513.43. P&L: $-134.93 (-2.38%)",
+        "trade": {
+          "date": "2025-10-16 15:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.05103041698198574,
+          "price": 108513.4296875,
+          "revenue": 5537.4855650985155,
+          "fee": 5.537485565098516,
+          "net_revenue": 5531.948079533417,
+          "cash_after": 9668.26143836144,
+          "pnl": -134.93441908027413,
+          "pnl_pct": -2.3787804756457738,
+          "reason": "P&L no realizado -2.38%, tendencia bajista confirmada, MACD negativo, precio en m\u00ednimos del d\u00eda"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2417.06535959036,
+      "shares": 0.022151098172740333,
+      "reason": "Precio en Bollinger inferior con sobreventa, volumen 8x, rebote t\u00e9cnico probable",
+      "ticker": "BTC-USD",
+      "price": 109117.1796875,
+      "raw_response": "ACCION: BUY\nMONTO: 3867\nRAZON: Precio en Bollinger inferior con sobreventa, volumen 8x, rebote t\u00e9cnico probable",
+      "date": "2025-10-16 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022151098172740333 acciones de BTC-USD a $109117.18",
+        "trade": {
+          "date": "2025-10-16 16:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022151098172740333,
+          "price": 109117.1796875,
+          "cost": 2417.06535959036,
+          "fee": 2.41706535959036,
+          "total": 2419.48242494995,
+          "cash_after": 7248.779013411489,
+          "reason": "Precio en Bollinger inferior con sobreventa, volumen 8x, rebote t\u00e9cnico probable"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1812.1947533528723,
+      "shares": 0.016722113300815432,
+      "reason": "Precio en Bollinger inferior, sobreventa, volumen alto 1.78x, rebote probable",
+      "ticker": "BTC-USD",
+      "price": 108371.15625,
+      "raw_response": "ACCION: BUY\nMONTO: 2900\nRAZON: Precio en Bollinger inferior, sobreventa, volumen alto 1.78x, rebote probable",
+      "date": "2025-10-16 17:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.016722113300815432 acciones de BTC-USD a $108371.16",
+        "trade": {
+          "date": "2025-10-16 17:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.016722113300815432,
+          "price": 108371.15625,
+          "cost": 1812.1947533528723,
+          "fee": 1.8121947533528724,
+          "total": 1814.0069481062253,
+          "cash_after": 5434.772065305264,
+          "reason": "Precio en Bollinger inferior, sobreventa, volumen alto 1.78x, rebote probable"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "P&L negativo pero momentum bajista fuerte, MACD decreciente, tendencia bajista clara",
+      "ticker": "BTC-USD",
+      "price": 108595.625,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: P&L negativo pero momentum bajista fuerte, MACD decreciente, tendencia bajista clara",
+      "date": "2025-10-16 18:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.03887321147355577 acciones de BTC-USD a $108595.62. P&L: $-7.80 (-0.18%)",
+        "trade": {
+          "date": "2025-10-16 18:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.03887321147355577,
+          "price": 108595.625,
+          "revenue": 4221.460695727959,
+          "fee": 4.221460695727959,
+          "net_revenue": 4217.239235032232,
+          "cash_after": 9652.011300337495,
+          "pnl": -7.799417215272481,
+          "pnl_pct": -0.18441564261803467,
+          "reason": "P&L negativo pero momentum bajista fuerte, MACD decreciente, tendencia bajista clara"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2413.002825084374,
+      "shares": 0.02228155883373131,
+      "reason": "Precio cerca Bollinger inferior, volumen 2.38x alto, RSI 50 neutro para rebote",
+      "ticker": "BTC-USD",
+      "price": 108295.9609375,
+      "raw_response": "ACCION: BUY\nMONTO: 3860\nRAZON: Precio cerca Bollinger inferior, volumen 2.38x alto, RSI 50 neutro para rebote",
+      "date": "2025-10-16 19:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.02228155883373131 acciones de BTC-USD a $108295.96",
+        "trade": {
+          "date": "2025-10-16 19:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.02228155883373131,
+          "price": 108295.9609375,
+          "cost": 2413.002825084374,
+          "fee": 2.413002825084374,
+          "total": 2415.415827909458,
+          "cash_after": 7236.595472428037,
+          "reason": "Precio cerca Bollinger inferior, volumen 2.38x alto, RSI 50 neutro para rebote"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "P&L negativo, tendencia bajista confirmada por EMA y MACD",
+      "ticker": "BTC-USD",
+      "price": 107785.3203125,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: P&L negativo, tendencia bajista confirmada por EMA y MACD",
+      "date": "2025-10-16 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.02228155883373131 acciones de BTC-USD a $107785.32. P&L: $-11.38 (-0.47%)",
+        "trade": {
+          "date": "2025-10-16 20:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.02228155883373131,
+          "price": 107785.3203125,
+          "revenue": 2401.624955955543,
+          "fee": 2.401624955955543,
+          "net_revenue": 2399.2233309995877,
+          "cash_after": 9635.818803427625,
+          "pnl": -11.377869128830827,
+          "pnl_pct": -0.47152324110656535,
+          "reason": "P&L negativo, tendencia bajista confirmada por EMA y MACD"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2408.954700856906,
+      "shares": 0.022215136212824418,
+      "reason": "Precio cerca Bollinger Inferior, RSI 50 neutro, cambio positivo \u00faltima hora",
+      "ticker": "BTC-USD",
+      "price": 108437.5390625,
+      "raw_response": "ACCION: BUY\nMONTO: 3854\nRAZON: Precio cerca Bollinger Inferior, RSI 50 neutro, cambio positivo \u00faltima hora",
+      "date": "2025-10-16 21:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022215136212824418 acciones de BTC-USD a $108437.54",
+        "trade": {
+          "date": "2025-10-16 21:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022215136212824418,
+          "price": 108437.5390625,
+          "cost": 2408.954700856906,
+          "fee": 2.4089547008569063,
+          "total": 2411.363655557763,
+          "cash_after": 7224.455147869861,
+          "reason": "Precio cerca Bollinger Inferior, RSI 50 neutro, cambio positivo \u00faltima hora"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1806.113786967465,
+      "shares": 0.016750079082118858,
+      "reason": "Precio cerca Bollinger inferior, RSI 50 neutro, MACD histograma bajista pero volumen superior al promedio",
+      "ticker": "BTC-USD",
+      "price": 107827.1796875,
+      "raw_response": "ACCION: BUY\nMONTO: 2000\nRAZON: Precio cerca Bollinger inferior, RSI 50 neutro, MACD histograma bajista pero volumen superior al promedio",
+      "date": "2025-10-16 22:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.016750079082118858 acciones de BTC-USD a $107827.18",
+        "trade": {
+          "date": "2025-10-16 22:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.016750079082118858,
+          "price": 107827.1796875,
+          "cost": 1806.113786967465,
+          "fee": 1.806113786967465,
+          "total": 1807.9199007544325,
+          "cash_after": 5416.535247115429,
+          "reason": "Precio cerca Bollinger inferior, RSI 50 neutro, MACD histograma bajista pero volumen superior al promedio"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit tomado en resistencia, MACD bajista, volumen bajo confirma debilidad",
+      "ticker": "BTC-USD",
+      "price": 108148.265625,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit tomado en resistencia, MACD bajista, volumen bajo confirma debilidad",
+      "date": "2025-10-16 23:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.038965215294943276 acciones de BTC-USD a $108148.27. P&L: $-1.05 (-0.02%)",
+        "trade": {
+          "date": "2025-10-16 23:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.038965215294943276,
+          "price": 108148.265625,
+          "revenue": 4214.020453852838,
+          "fee": 4.214020453852838,
+          "net_revenue": 4209.806433398985,
+          "cash_after": 9626.341680514415,
+          "pnl": -1.0480339715329032,
+          "pnl_pct": -0.02486398440642779,
+          "reason": "Profit tomado en resistencia, MACD bajista, volumen bajo confirma debilidad"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2406.585420128604,
+      "shares": 0.02212105566903106,
+      "reason": "Precio cerca Bollinger inferior, cambio positivo 1h +0.59%, RSI neutro 50",
+      "ticker": "BTC-USD",
+      "price": 108791.6171875,
+      "raw_response": "ACCION: BUY\nMONTO: 3850\nRAZON: Precio cerca Bollinger inferior, cambio positivo 1h +0.59%, RSI neutro 50",
+      "date": "2025-10-17 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.02212105566903106 acciones de BTC-USD a $108791.62",
+        "trade": {
+          "date": "2025-10-17 00:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.02212105566903106,
+          "price": 108791.6171875,
+          "cost": 2406.585420128604,
+          "fee": 2.4065854201286037,
+          "total": 2408.9920055487323,
+          "cash_after": 7217.349674965682,
+          "reason": "Precio cerca Bollinger inferior, cambio positivo 1h +0.59%, RSI neutro 50"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +3.2% alcanzado, MACD bajista confirmado, tendencia bajista",
+      "ticker": "BTC-USD",
+      "price": 108800.3828125,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +3.2% alcanzado, MACD bajista confirmado, tendencia bajista",
+      "date": "2025-10-17 01:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.02212105566903106 acciones de BTC-USD a $108800.38. P&L: $0.19 (+0.01%)",
+        "trade": {
+          "date": "2025-10-17 01:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.02212105566903106,
+          "price": 108800.3828125,
+          "revenue": 2406.7793250072027,
+          "fee": 2.4067793250072027,
+          "net_revenue": 2404.3725456821953,
+          "cash_after": 9621.722220647878,
+          "pnl": 0.1939048785988504,
+          "pnl_pct": 0.008057261420144747,
+          "reason": "Profit +3.2% alcanzado, MACD bajista confirmado, tendencia bajista"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2405.4305551619696,
+      "shares": 0.02206933760262922,
+      "reason": "MACD histograma positivo creciendo, precio sobre SMA 4h/12h, momentum horario alcista",
+      "ticker": "BTC-USD",
+      "price": 108994.234375,
+      "raw_response": "ACCION: BUY\nMONTO: 3848\nRAZON: MACD histograma positivo creciendo, precio sobre SMA 4h/12h, momentum horario alcista",
+      "date": "2025-10-17 02:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.02206933760262922 acciones de BTC-USD a $108994.23",
+        "trade": {
+          "date": "2025-10-17 02:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.02206933760262922,
+          "price": 108994.234375,
+          "cost": 2405.4305551619696,
+          "fee": 2.4054305551619697,
+          "total": 2407.8359857171317,
+          "cash_after": 7213.8862349307465,
+          "reason": "MACD histograma positivo creciendo, precio sobre SMA 4h/12h, momentum horario alcista"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +3.2% alcanzado, MACD positivo pero momentum horario d\u00e9bil",
+      "ticker": "BTC-USD",
+      "price": 109190.796875,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +3.2% alcanzado, MACD positivo pero momentum horario d\u00e9bil",
+      "date": "2025-10-17 03:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.02206933760262922 acciones de BTC-USD a $109190.80. P&L: $4.34 (+0.18%)",
+        "trade": {
+          "date": "2025-10-17 03:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.02206933760262922,
+          "price": 109190.796875,
+          "revenue": 2409.7685593344863,
+          "fee": 2.4097685593344864,
+          "net_revenue": 2407.3587907751516,
+          "cash_after": 9621.245025705899,
+          "pnl": 4.338004172516806,
+          "pnl_pct": 0.18034210811896442,
+          "reason": "Profit +3.2% alcanzado, MACD positivo pero momentum horario d\u00e9bil"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2405.3112564264748,
+      "shares": 0.022092338158369224,
+      "reason": "Histograma MACD alcista creciendo, precio cerca Bollinger inferior, RSI neutro 50",
+      "ticker": "BTC-USD",
+      "price": 108875.359375,
+      "raw_response": "ACCION: BUY\nMONTO: 3848\nRAZON: Histograma MACD alcista creciendo, precio cerca Bollinger inferior, RSI neutro 50",
+      "date": "2025-10-17 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022092338158369224 acciones de BTC-USD a $108875.36",
+        "trade": {
+          "date": "2025-10-17 04:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022092338158369224,
+          "price": 108875.359375,
+          "cost": 2405.3112564264748,
+          "fee": 2.405311256426475,
+          "total": 2407.7165676829013,
+          "cash_after": 7213.528458022998,
+          "reason": "Histograma MACD alcista creciendo, precio cerca Bollinger inferior, RSI neutro 50"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1803.3821145057493,
+      "shares": 0.016636772840948527,
+      "reason": "Histograma MACD creciendo, precio cerca Bollinger inferior, RSI 50 neutro para entrada",
+      "ticker": "BTC-USD",
+      "price": 108397.3515625,
+      "raw_response": "ACCION: BUY\nMONTO: 2500\nRAZON: Histograma MACD creciendo, precio cerca Bollinger inferior, RSI 50 neutro para entrada",
+      "date": "2025-10-17 05:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.016636772840948527 acciones de BTC-USD a $108397.35",
+        "trade": {
+          "date": "2025-10-17 05:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.016636772840948527,
+          "price": 108397.3515625,
+          "cost": 1803.3821145057493,
+          "fee": 1.8033821145057494,
+          "total": 1805.185496620255,
+          "cash_after": 5408.342961402743,
+          "reason": "Histograma MACD creciendo, precio cerca Bollinger inferior, RSI 50 neutro para entrada"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1352.0857403506857,
+      "shares": 0.012656532884881952,
+      "reason": "Precio cerca Bollinger inferior, volumen alto 3.17x, RSI neutro 50 para entrada agresiva",
+      "ticker": "BTC-USD",
+      "price": 106829.078125,
+      "raw_response": "ACCION: BUY\nMONTO: 2163\nRAZON: Precio cerca Bollinger inferior, volumen alto 3.17x, RSI neutro 50 para entrada agresiva",
+      "date": "2025-10-17 06:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.012656532884881952 acciones de BTC-USD a $106829.08",
+        "trade": {
+          "date": "2025-10-17 06:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.012656532884881952,
+          "price": 106829.078125,
+          "cost": 1352.0857403506857,
+          "fee": 1.3520857403506856,
+          "total": 1353.4378260910364,
+          "cash_after": 4054.9051353117065,
+          "reason": "Precio cerca Bollinger inferior, volumen alto 3.17x, RSI neutro 50 para entrada agresiva"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1013.7262838279266,
+      "shares": 0.009602771098503573,
+      "reason": "Precio en Bollinger inferior, sobreventa extrema, volumen 3.58x, rebote probable",
+      "ticker": "BTC-USD",
+      "price": 105566.015625,
+      "raw_response": "ACCION: BUY\nMONTO: 1622\nRAZON: Precio en Bollinger inferior, sobreventa extrema, volumen 3.58x, rebote probable",
+      "date": "2025-10-17 07:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.009602771098503573 acciones de BTC-USD a $105566.02",
+        "trade": {
+          "date": "2025-10-17 07:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.009602771098503573,
+          "price": 105566.015625,
+          "cost": 1013.7262838279266,
+          "fee": 1.0137262838279266,
+          "total": 1014.7400101117546,
+          "cash_after": 3040.165125199952,
+          "reason": "Precio en Bollinger inferior, sobreventa extrema, volumen 3.58x, rebote probable"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 760.041281299988,
+      "shares": 0.00723895106141073,
+      "reason": "Precio en Bollinger inferior, sobreventa, volumen 4.38x, oportunidad rebote",
+      "ticker": "BTC-USD",
+      "price": 104993.2890625,
+      "raw_response": "ACCION: BUY\nMONTO: 1216\nRAZON: Precio en Bollinger inferior, sobreventa, volumen 4.38x, oportunidad rebote",
+      "date": "2025-10-17 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.00723895106141073 acciones de BTC-USD a $104993.29",
+        "trade": {
+          "date": "2025-10-17 08:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.00723895106141073,
+          "price": 104993.2890625,
+          "cost": 760.041281299988,
+          "fee": 0.760041281299988,
+          "total": 760.801322581288,
+          "cash_after": 2279.363802618664,
+          "reason": "Precio en Bollinger inferior, sobreventa, volumen 4.38x, oportunidad rebote"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 569.840950654666,
+      "shares": 0.005440045997015437,
+      "reason": "Precio en Bollinger inferior, RSI 50 neutro, sobreventa extrema con volumen bajo sugiere rebote",
+      "ticker": "BTC-USD",
+      "price": 104749.2890625,
+      "raw_response": "ACCION: BUY\nMONTO: 912\nRAZON: Precio en Bollinger inferior, RSI 50 neutro, sobreventa extrema con volumen bajo sugiere rebote",
+      "date": "2025-10-17 09:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.005440045997015437 acciones de BTC-USD a $104749.29",
+        "trade": {
+          "date": "2025-10-17 09:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.005440045997015437,
+          "price": 104749.2890625,
+          "cost": 569.840950654666,
+          "fee": 0.569840950654666,
+          "total": 570.4107916053207,
+          "cash_after": 1708.9530110133433,
+          "reason": "Precio en Bollinger inferior, RSI 50 neutro, sobreventa extrema con volumen bajo sugiere rebote"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 427.2382527533358,
+      "shares": 0.004080267286375816,
+      "reason": "Precio en Bollinger inferior, sobreventa extrema, volumen alto 2.86x, rebote probable",
+      "ticker": "BTC-USD",
+      "price": 104708.3984375,
+      "raw_response": "ACCION: BUY\nMONTO: 684\nRAZON: Precio en Bollinger inferior, sobreventa extrema, volumen alto 2.86x, rebote probable",
+      "date": "2025-10-17 10:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.004080267286375816 acciones de BTC-USD a $104708.40",
+        "trade": {
+          "date": "2025-10-17 10:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.004080267286375816,
+          "price": 104708.3984375,
+          "cost": 427.2382527533358,
+          "fee": 0.4272382527533358,
+          "total": 427.66549100608916,
+          "cash_after": 1281.287520007254,
+          "reason": "Precio en Bollinger inferior, sobreventa extrema, volumen alto 2.86x, rebote probable"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "P&L negativo -1.39%, tendencia bajista confirmada, MACD negativo, precio por debajo EMAs",
+      "ticker": "BTC-USD",
+      "price": 105670.03125,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: P&L negativo -1.39%, tendencia bajista confirmada, MACD negativo, precio por debajo EMAs",
+      "date": "2025-10-17 11:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.07774767932750525 acciones de BTC-USD a $105670.03. P&L: $-116.03 (-1.39%)",
+        "trade": {
+          "date": "2025-10-17 11:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.07774767932750525,
+          "price": 105670.03125,
+          "revenue": 8215.599704152459,
+          "fee": 8.215599704152458,
+          "net_revenue": 8207.384104448307,
+          "cash_after": 9488.671624455561,
+          "pnl": -116.02617566636845,
+          "pnl_pct": -1.3925994438541864,
+          "reason": "P&L negativo -1.39%, tendencia bajista confirmada, MACD negativo, precio por debajo EMAs"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2372.1679061138902,
+      "shares": 0.022517658122155223,
+      "reason": "Precio cerca Bollinger inferior, RSI neutro 50, MACD histograma bajista pero volumen bajo sugiere posible rebote",
+      "ticker": "BTC-USD",
+      "price": 105347.0078125,
+      "raw_response": "ACCION: BUY\nMONTO: 3795\nRAZON: Precio cerca Bollinger inferior, RSI neutro 50, MACD histograma bajista pero volumen bajo sugiere posible rebote",
+      "date": "2025-10-17 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022517658122155223 acciones de BTC-USD a $105347.01",
+        "trade": {
+          "date": "2025-10-17 12:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022517658122155223,
+          "price": 105347.0078125,
+          "cost": 2372.1679061138902,
+          "fee": 2.3721679061138903,
+          "total": 2374.5400740200043,
+          "cash_after": 7114.131550435557,
+          "reason": "Precio cerca Bollinger inferior, RSI neutro 50, MACD histograma bajista pero volumen bajo sugiere posible rebote"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +0.49%, MACD bajista, EMA cruce bajista, tendencia general negativa",
+      "ticker": "BTC-USD",
+      "price": 105868.1171875,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +0.49%, MACD bajista, EMA cruce bajista, tendencia general negativa",
+      "date": "2025-10-17 13:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.022517658122155223 acciones de BTC-USD a $105868.12. P&L: $11.73 (+0.49%)",
+        "trade": {
+          "date": "2025-10-17 13:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.022517658122155223,
+          "price": 105868.1171875,
+          "revenue": 2383.9020688643905,
+          "fee": 2.3839020688643906,
+          "net_revenue": 2381.518166795526,
+          "cash_after": 9495.649717231083,
+          "pnl": 11.734162750499982,
+          "pnl_pct": 0.49465987294815933,
+          "reason": "Profit +0.49%, MACD bajista, EMA cruce bajista, tendencia general negativa"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2373.9124293077707,
+      "shares": 0.022573264557689276,
+      "reason": "Precio cerca Bollinger inferior, RSI neutro 50, oportunidad rebote sobreventa",
+      "ticker": "BTC-USD",
+      "price": 105164.78125,
+      "raw_response": "ACCION: BUY\nMONTO: 3798\nRAZON: Precio cerca Bollinger inferior, RSI neutro 50, oportunidad rebote sobreventa",
+      "date": "2025-10-17 14:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022573264557689276 acciones de BTC-USD a $105164.78",
+        "trade": {
+          "date": "2025-10-17 14:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022573264557689276,
+          "price": 105164.78125,
+          "cost": 2373.9124293077707,
+          "fee": 2.373912429307771,
+          "total": 2376.2863417370786,
+          "cash_after": 7119.363375494004,
+          "reason": "Precio cerca Bollinger inferior, RSI neutro 50, oportunidad rebote sobreventa"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1779.840843873501,
+      "shares": 0.01667756896369831,
+      "reason": "MACD histograma creciente, cambio positivo +1.48% ultima hora, RSI neutral 50 con espacio para subir",
+      "ticker": "BTC-USD",
+      "price": 106720.640625,
+      "raw_response": "ACCION: BUY\nMONTO: 2847\nRAZON: MACD histograma creciente, cambio positivo +1.48% ultima hora, RSI neutral 50 con espacio para subir",
+      "date": "2025-10-17 15:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.01667756896369831 acciones de BTC-USD a $106720.64",
+        "trade": {
+          "date": "2025-10-17 15:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.01667756896369831,
+          "price": 106720.640625,
+          "cost": 1779.840843873501,
+          "fee": 1.779840843873501,
+          "total": 1781.6206847173744,
+          "cash_after": 5337.742690776629,
+          "reason": "MACD histograma creciente, cambio positivo +1.48% ultima hora, RSI neutral 50 con espacio para subir"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1334.4356726941573,
+      "shares": 0.012540549624424836,
+      "reason": "MACD histograma creciente, precio sobre SMA 4h, RSI neutral permite entrada",
+      "ticker": "BTC-USD",
+      "price": 106409.6640625,
+      "raw_response": "ACCION: BUY\nMONTO: 2135\nRAZON: MACD histograma creciente, precio sobre SMA 4h, RSI neutral permite entrada",
+      "date": "2025-10-17 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.012540549624424836 acciones de BTC-USD a $106409.66",
+        "trade": {
+          "date": "2025-10-17 16:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.012540549624424836,
+          "price": 106409.6640625,
+          "cost": 1334.4356726941573,
+          "fee": 1.3344356726941573,
+          "total": 1335.7701083668514,
+          "cash_after": 4001.9725824097777,
+          "reason": "MACD histograma creciente, precio sobre SMA 4h, RSI neutral permite entrada"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1000.4931456024444,
+      "shares": 0.009401751096736263,
+      "reason": "MACD histograma creciente, cambio 4h +1.19%, precio sobre SMA4h confirmando soporte",
+      "ticker": "BTC-USD",
+      "price": 106415.6171875,
+      "raw_response": "ACCION: BUY\nMONTO: 1600\nRAZON: MACD histograma creciente, cambio 4h +1.19%, precio sobre SMA4h confirmando soporte",
+      "date": "2025-10-17 17:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.009401751096736263 acciones de BTC-USD a $106415.62",
+        "trade": {
+          "date": "2025-10-17 17:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.009401751096736263,
+          "price": 106415.6171875,
+          "cost": 1000.4931456024444,
+          "fee": 1.0004931456024444,
+          "total": 1001.4936387480469,
+          "cash_after": 3000.4789436617307,
+          "reason": "MACD histograma creciente, cambio 4h +1.19%, precio sobre SMA4h confirmando soporte"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +0.55%, MACD negativo, cruce EMA bajista",
+      "ticker": "BTC-USD",
+      "price": 106619.484375,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +0.55%, MACD negativo, cruce EMA bajista",
+      "date": "2025-10-17 18:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.061193134242548686 acciones de BTC-USD a $106619.48. P&L: $35.70 (+0.55%)",
+        "trade": {
+          "date": "2025-10-17 18:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.061193134242548686,
+          "price": 106619.484375,
+          "revenue": 6524.380420230697,
+          "fee": 6.524380420230697,
+          "net_revenue": 6517.856039810466,
+          "cash_after": 9518.334983472198,
+          "pnl": 35.69832875282392,
+          "pnl_pct": 0.550163010755443,
+          "reason": "Profit +0.55%, MACD negativo, cruce EMA bajista"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2379.5837458680494,
+      "shares": 0.022345574742905397,
+      "reason": "MACD histograma alcista creciendo, precio cerca SMA4h, RSI neutro 50 sin sobrecompra",
+      "ticker": "BTC-USD",
+      "price": 106490.15625,
+      "raw_response": "ACCION: BUY\nMONTO: 3807\nRAZON: MACD histograma alcista creciendo, precio cerca SMA4h, RSI neutro 50 sin sobrecompra",
+      "date": "2025-10-17 19:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022345574742905397 acciones de BTC-USD a $106490.16",
+        "trade": {
+          "date": "2025-10-17 19:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022345574742905397,
+          "price": 106490.15625,
+          "cost": 2379.5837458680494,
+          "fee": 2.3795837458680493,
+          "total": 2381.9633296139173,
+          "cash_after": 7136.37165385828,
+          "reason": "MACD histograma alcista creciendo, precio cerca SMA4h, RSI neutro 50 sin sobrecompra"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +0.56%, MACD negativo aunque mejorando, precauci\u00f3n con volumen cero",
+      "ticker": "BTC-USD",
+      "price": 107090.890625,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +0.56%, MACD negativo aunque mejorando, precauci\u00f3n con volumen cero",
+      "date": "2025-10-17 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.022345574742905397 acciones de BTC-USD a $107090.89. P&L: $13.42 (+0.56%)",
+        "trade": {
+          "date": "2025-10-17 20:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.022345574742905397,
+          "price": 107090.890625,
+          "revenue": 2393.007500745244,
+          "fee": 2.3930075007452443,
+          "net_revenue": 2390.614493244499,
+          "cash_after": 9526.98614710278,
+          "pnl": 13.423754877195059,
+          "pnl_pct": 0.5641219772367457,
+          "reason": "Profit +0.56%, MACD negativo aunque mejorando, precauci\u00f3n con volumen cero"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2381.746536775695,
+      "shares": 0.022171845045824912,
+      "reason": "MACD histograma creciente, volumen 1.63x, momentum horario positivo +0.75% en 4h",
+      "ticker": "BTC-USD",
+      "price": 107422.1171875,
+      "raw_response": "ACCION: BUY\nMONTO: 3810\nRAZON: MACD histograma creciente, volumen 1.63x, momentum horario positivo +0.75% en 4h",
+      "date": "2025-10-17 21:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022171845045824912 acciones de BTC-USD a $107422.12",
+        "trade": {
+          "date": "2025-10-17 21:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022171845045824912,
+          "price": 107422.1171875,
+          "cost": 2381.746536775695,
+          "fee": 2.381746536775695,
+          "total": 2384.1282833124706,
+          "cash_after": 7142.857863790309,
+          "reason": "MACD histograma creciente, volumen 1.63x, momentum horario positivo +0.75% en 4h"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +3.2% alcanzado, MACD negativo, EMA cruce bajista",
+      "ticker": "BTC-USD",
+      "price": 107036.96875,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +3.2% alcanzado, MACD negativo, EMA cruce bajista",
+      "date": "2025-10-17 22:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.022171845045824912 acciones de BTC-USD a $107036.97. P&L: $-8.54 (-0.36%)",
+        "trade": {
+          "date": "2025-10-17 22:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.022171845045824912,
+          "price": 107036.96875,
+          "revenue": 2373.2070852998036,
+          "fee": 2.3732070852998035,
+          "net_revenue": 2370.833878214504,
+          "cash_after": 9513.691742004812,
+          "pnl": -8.53945147589158,
+          "pnl_pct": -0.35853737347937614,
+          "reason": "Profit +3.2% alcanzado, MACD negativo, EMA cruce bajista"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "EMA bajista pero MACD histograma creciendo, esperando confirmaci\u00f3n direccional",
+      "ticker": "BTC-USD",
+      "price": 106447.984375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: EMA bajista pero MACD histograma creciendo, esperando confirmaci\u00f3n direccional",
+      "date": "2025-10-17 23:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2378.422935501203,
+      "shares": 0.02226164257210227,
+      "reason": "MACD histograma creciente, precio cerca Bollinger inferior, RSI neutral 50",
+      "ticker": "BTC-USD",
+      "price": 106839.5078125,
+      "raw_response": "ACCION: BUY\nMONTO: 3805\nRAZON: MACD histograma creciente, precio cerca Bollinger inferior, RSI neutral 50",
+      "date": "2025-10-18 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.02226164257210227 acciones de BTC-USD a $106839.51",
+        "trade": {
+          "date": "2025-10-18 00:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.02226164257210227,
+          "price": 106839.5078125,
+          "cost": 2378.422935501203,
+          "fee": 2.378422935501203,
+          "total": 2380.801358436704,
+          "cash_after": 7132.8903835681085,
+          "reason": "MACD histograma creciente, precio cerca Bollinger inferior, RSI neutral 50"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1783.222595892027,
+      "shares": 0.016630425650763815,
+      "reason": "MACD histograma creciente, precio sobre SMA 4h, momentum horario positivo",
+      "ticker": "BTC-USD",
+      "price": 107226.515625,
+      "raw_response": "ACCION: BUY\nMONTO: 2853\nRAZON: MACD histograma creciente, precio sobre SMA 4h, momentum horario positivo",
+      "date": "2025-10-18 01:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.016630425650763815 acciones de BTC-USD a $107226.52",
+        "trade": {
+          "date": "2025-10-18 01:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.016630425650763815,
+          "price": 107226.515625,
+          "cost": 1783.222595892027,
+          "fee": 1.783222595892027,
+          "total": 1785.005818487919,
+          "cash_after": 5347.8845650801895,
+          "reason": "MACD histograma creciente, precio sobre SMA 4h, momentum horario positivo"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit protection, MACD negativo, EMA bajista, volumen cero preocupante",
+      "ticker": "BTC-USD",
+      "price": 106634.8984375,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit protection, MACD negativo, EMA bajista, volumen cero preocupante\n\n**An\u00e1lisis r\u00e1pido:** Aunque el histograma MACD est\u00e1 creciendo, el MACD principal sigue negativo (-312) y el cruce EMA es bajista. Con volumen actual en cero (se\u00f1al de alerta m\u00e1xima) y una posici\u00f3n con p\u00e9rdida m\u00ednima, es mejor proteger capital. La falta de liquidez actual representa un riesgo sist\u00e9mico que supera cualquier oportunidad de momentum.",
+      "date": "2025-10-18 02:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.03889206822286609 acciones de BTC-USD a $106634.90. P&L: $-14.39 (-0.35%)",
+        "trade": {
+          "date": "2025-10-18 02:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.03889206822286609,
+          "price": 106634.8984375,
+          "revenue": 4147.251744969646,
+          "fee": 4.147251744969646,
+          "net_revenue": 4143.104493224677,
+          "cash_after": 9490.989058304865,
+          "pnl": -14.393786423583691,
+          "pnl_pct": -0.3458676697716001,
+          "reason": "Profit protection, MACD negativo, EMA bajista, volumen cero preocupante"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2372.7472645762164,
+      "shares": 0.022153627057064862,
+      "reason": "MACD histograma creciente, volumen 2x promedio, precio sobre SMA 4h y 12h",
+      "ticker": "BTC-USD",
+      "price": 107104.234375,
+      "raw_response": "ACCION: BUY\nMONTO: 3796\nRAZON: MACD histograma creciente, volumen 2x promedio, precio sobre SMA 4h y 12h",
+      "date": "2025-10-18 03:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022153627057064862 acciones de BTC-USD a $107104.23",
+        "trade": {
+          "date": "2025-10-18 03:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022153627057064862,
+          "price": 107104.234375,
+          "cost": 2372.7472645762164,
+          "fee": 2.3727472645762164,
+          "total": 2375.1200118407924,
+          "cash_after": 7115.869046464073,
+          "reason": "MACD histograma creciente, volumen 2x promedio, precio sobre SMA 4h y 12h"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1778.9672616160183,
+      "shares": 0.01669784366784782,
+      "reason": "MACD histograma creciendo, precio cerca Bollinger inferior, RSI neutro 50",
+      "ticker": "BTC-USD",
+      "price": 106538.7421875,
+      "raw_response": "ACCION: BUY\nMONTO: 2846\nRAZON: MACD histograma creciendo, precio cerca Bollinger inferior, RSI neutro 50",
+      "date": "2025-10-18 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.01669784366784782 acciones de BTC-USD a $106538.74",
+        "trade": {
+          "date": "2025-10-18 04:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.01669784366784782,
+          "price": 106538.7421875,
+          "cost": 1778.9672616160183,
+          "fee": 1.7789672616160184,
+          "total": 1780.7462288776344,
+          "cash_after": 5335.122817586439,
+          "reason": "MACD histograma creciendo, precio cerca Bollinger inferior, RSI neutro 50"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1333.7807043966097,
+      "shares": 0.012477747128749234,
+      "reason": "MACD histograma creciente, precio sobre SMA 4h, momentum horario positivo",
+      "ticker": "BTC-USD",
+      "price": 106892.75,
+      "raw_response": "ACCION: BUY\nMONTO: 2134\nRAZON: MACD histograma creciente, precio sobre SMA 4h, momentum horario positivo",
+      "date": "2025-10-18 05:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.012477747128749234 acciones de BTC-USD a $106892.75",
+        "trade": {
+          "date": "2025-10-18 05:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.012477747128749234,
+          "price": 106892.75,
+          "cost": 1333.7807043966097,
+          "fee": 1.3337807043966097,
+          "total": 1335.1144851010063,
+          "cash_after": 4000.0083324854327,
+          "reason": "MACD histograma creciente, precio sobre SMA 4h, momentum horario positivo"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1000.0020831213583,
+      "shares": 0.009350952241976268,
+      "reason": "MACD histograma alcista creciendo, precio cerca SMA4h, RSI neutro 50 sin sobrecompra",
+      "ticker": "BTC-USD",
+      "price": 106941.203125,
+      "raw_response": "ACCION: BUY\nMONTO: 1600\nRAZON: MACD histograma alcista creciendo, precio cerca SMA4h, RSI neutro 50 sin sobrecompra",
+      "date": "2025-10-18 06:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.009350952241976268 acciones de BTC-USD a $106941.20",
+        "trade": {
+          "date": "2025-10-18 06:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.009350952241976268,
+          "price": 106941.203125,
+          "cost": 1000.0020831213583,
+          "fee": 1.0000020831213583,
+          "total": 1001.0020852044796,
+          "cash_after": 2999.006247280953,
+          "reason": "MACD histograma alcista creciendo, precio cerca SMA4h, RSI neutro 50 sin sobrecompra"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +3% objetivo alcanzado, MACD negativo, tendencia bajista",
+      "ticker": "BTC-USD",
+      "price": 106715.453125,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +3% objetivo alcanzado, MACD negativo, tendencia bajista",
+      "date": "2025-10-18 07:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.06068017009563818 acciones de BTC-USD a $106715.45. P&L: $-9.99 (-0.15%)",
+        "trade": {
+          "date": "2025-10-18 07:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.06068017009563818,
+          "price": 106715.453125,
+          "revenue": 6475.511847458103,
+          "fee": 6.475511847458104,
+          "net_revenue": 6469.036335610645,
+          "cash_after": 9468.042582891598,
+          "pnl": -9.985466252099325,
+          "pnl_pct": -0.15396608415811477,
+          "reason": "Profit +3% objetivo alcanzado, MACD negativo, tendencia bajista"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2367.0106457228994,
+      "shares": 0.022157140723459916,
+      "reason": "MACD histograma alcista creciendo, precio cerca SMA4h, RSI neutro 50 sin sobrecompra",
+      "ticker": "BTC-USD",
+      "price": 106828.34375,
+      "raw_response": "ACCION: BUY\nMONTO: 3787\nRAZON: MACD histograma alcista creciendo, precio cerca SMA4h, RSI neutro 50 sin sobrecompra",
+      "date": "2025-10-18 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022157140723459916 acciones de BTC-USD a $106828.34",
+        "trade": {
+          "date": "2025-10-18 08:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022157140723459916,
+          "price": 106828.34375,
+          "cost": 2367.0106457228994,
+          "fee": 2.3670106457228997,
+          "total": 2369.3776563686224,
+          "cash_after": 7098.664926522975,
+          "reason": "MACD histograma alcista creciendo, precio cerca SMA4h, RSI neutro 50 sin sobrecompra"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "EMA bajista pero MACD creciendo, volumen cero, se\u00f1ales contradictorias",
+      "ticker": "BTC-USD",
+      "price": 106957.3359375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: EMA bajista pero MACD creciendo, volumen cero, se\u00f1ales contradictorias",
+      "date": "2025-10-18 09:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1774.6662316307438,
+      "shares": 0.016600008918975055,
+      "reason": "MACD histograma alcista creciendo, precio cerca SMA soporte, momentum 4h positivo",
+      "ticker": "BTC-USD",
+      "price": 106907.546875,
+      "raw_response": "ACCION: BUY\nMONTO: 2839\nRAZON: MACD histograma alcista creciendo, precio cerca SMA soporte, momentum 4h positivo",
+      "date": "2025-10-18 10:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.016600008918975055 acciones de BTC-USD a $106907.55",
+        "trade": {
+          "date": "2025-10-18 10:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.016600008918975055,
+          "price": 106907.546875,
+          "cost": 1774.6662316307438,
+          "fee": 1.7746662316307438,
+          "total": 1776.4408978623746,
+          "cash_after": 5322.224028660601,
+          "reason": "MACD histograma alcista creciendo, precio cerca SMA soporte, momentum 4h positivo"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1330.5560071651503,
+      "shares": 0.012417655049894791,
+      "reason": "MACD histograma creciendo, cambio positivo 1h y 4h, precio sobre SMA 4h y 12h",
+      "ticker": "BTC-USD",
+      "price": 107150.34375,
+      "raw_response": "ACCION: BUY\nMONTO: 2128\nRAZON: MACD histograma creciendo, cambio positivo 1h y 4h, precio sobre SMA 4h y 12h",
+      "date": "2025-10-18 11:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.012417655049894791 acciones de BTC-USD a $107150.34",
+        "trade": {
+          "date": "2025-10-18 11:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.012417655049894791,
+          "price": 107150.34375,
+          "cost": 1330.5560071651503,
+          "fee": 1.3305560071651503,
+          "total": 1331.8865631723154,
+          "cash_after": 3990.3374654882855,
+          "reason": "MACD histograma creciendo, cambio positivo 1h y 4h, precio sobre SMA 4h y 12h"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +3% objetivo alcanzado, MACD negativo aunque histograma creciendo",
+      "ticker": "BTC-USD",
+      "price": 107113.609375,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +3% objetivo alcanzado, MACD negativo aunque histograma creciendo",
+      "date": "2025-10-18 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.05117480469232976 acciones de BTC-USD a $107113.61. P&L: $9.29 (+0.17%)",
+        "trade": {
+          "date": "2025-10-18 12:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.05117480469232976,
+          "price": 107113.609375,
+          "revenue": 5481.518039656127,
+          "fee": 5.481518039656128,
+          "net_revenue": 5476.036521616471,
+          "cash_after": 9466.373987104756,
+          "pnl": 9.285155137334066,
+          "pnl_pct": 0.16967763129384003,
+          "reason": "Profit +3% objetivo alcanzado, MACD negativo aunque histograma creciendo"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2366.593496776189,
+      "shares": 0.022131460526293455,
+      "reason": "MACD histograma creciente fuertemente alcista, precio cerca SMA12h, RSI neutro 50 sin sobrecompra",
+      "ticker": "BTC-USD",
+      "price": 106933.453125,
+      "raw_response": "ACCION: BUY\nMONTO: 3786\nRAZON: MACD histograma creciente fuertemente alcista, precio cerca SMA12h, RSI neutro 50 sin sobrecompra",
+      "date": "2025-10-18 13:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022131460526293455 acciones de BTC-USD a $106933.45",
+        "trade": {
+          "date": "2025-10-18 13:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022131460526293455,
+          "price": 106933.453125,
+          "cost": 2366.593496776189,
+          "fee": 2.366593496776189,
+          "total": 2368.9600902729653,
+          "cash_after": 7097.413896831791,
+          "reason": "MACD histograma creciente fuertemente alcista, precio cerca SMA12h, RSI neutro 50 sin sobrecompra"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1774.3534742079478,
+      "shares": 0.016574474874873846,
+      "reason": "MACD histograma creciente, precio sobre SMA 12h, momentum horario positivo",
+      "ticker": "BTC-USD",
+      "price": 107053.375,
+      "raw_response": "ACCION: BUY\nMONTO: 2838\nRAZON: MACD histograma creciente, precio sobre SMA 12h, momentum horario positivo",
+      "date": "2025-10-18 14:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.016574474874873846 acciones de BTC-USD a $107053.38",
+        "trade": {
+          "date": "2025-10-18 14:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.016574474874873846,
+          "price": 107053.375,
+          "cost": 1774.3534742079478,
+          "fee": 1.7743534742079479,
+          "total": 1776.1278276821558,
+          "cash_after": 5321.286069149635,
+          "reason": "MACD histograma creciente, precio sobre SMA 12h, momentum horario positivo"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1330.3215172874088,
+      "shares": 0.012434442984674611,
+      "reason": "Histograma MACD fuerte alcista, precio cerca SMA12, RSI neutro 50 sin sobrecompra",
+      "ticker": "BTC-USD",
+      "price": 106986.8203125,
+      "raw_response": "ACCION: BUY\nMONTO: 2128\nRAZON: Histograma MACD fuerte alcista, precio cerca SMA12, RSI neutro 50 sin sobrecompra",
+      "date": "2025-10-18 15:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.012434442984674611 acciones de BTC-USD a $106986.82",
+        "trade": {
+          "date": "2025-10-18 15:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.012434442984674611,
+          "price": 106986.8203125,
+          "cost": 1330.3215172874088,
+          "fee": 1.3303215172874088,
+          "total": 1331.6518388046961,
+          "cash_after": 3989.634230344939,
+          "reason": "Histograma MACD fuerte alcista, precio cerca SMA12, RSI neutro 50 sin sobrecompra"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "P&L negativo -0.26%, EMA bajista, MACD negativo, tendencia bajista",
+      "ticker": "BTC-USD",
+      "price": 106711.03125,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: P&L negativo -0.26%, EMA bajista, MACD negativo, tendencia bajista",
+      "date": "2025-10-18 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.051140378385841914 acciones de BTC-USD a $106711.03. P&L: $-14.03 (-0.26%)",
+        "trade": {
+          "date": "2025-10-18 16:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.051140378385841914,
+          "price": 106711.03125,
+          "revenue": 5457.242516068401,
+          "fee": 5.4572425160684,
+          "net_revenue": 5451.785273552332,
+          "cash_after": 9441.419503897272,
+          "pnl": -14.025972203144645,
+          "pnl_pct": -0.25635686190892193,
+          "reason": "P&L negativo -0.26%, EMA bajista, MACD negativo, tendencia bajista"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2360.354875974318,
+      "shares": 0.022084210301524076,
+      "reason": "Histograma MACD alcista creciendo, precio cerca Bollinger inferior, oportunidad rebote sobreventa",
+      "ticker": "BTC-USD",
+      "price": 106879.75,
+      "raw_response": "ACCION: BUY\nMONTO: 3776\nRAZON: Histograma MACD alcista creciendo, precio cerca Bollinger inferior, oportunidad rebote sobreventa",
+      "date": "2025-10-18 17:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022084210301524076 acciones de BTC-USD a $106879.75",
+        "trade": {
+          "date": "2025-10-18 17:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022084210301524076,
+          "price": 106879.75,
+          "cost": 2360.354875974318,
+          "fee": 2.360354875974318,
+          "total": 2362.7152308502923,
+          "cash_after": 7078.70427304698,
+          "reason": "Histograma MACD alcista creciendo, precio cerca Bollinger inferior, oportunidad rebote sobreventa"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1769.676068261745,
+      "shares": 0.016558359254060788,
+      "reason": "MACD histograma creciente, precio cerca Bollinger inferior, RSI neutro 50",
+      "ticker": "BTC-USD",
+      "price": 106875.0859375,
+      "raw_response": "ACCION: BUY\nMONTO: 2831\nRAZON: MACD histograma creciente, precio cerca Bollinger inferior, RSI neutro 50",
+      "date": "2025-10-18 18:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.016558359254060788 acciones de BTC-USD a $106875.09",
+        "trade": {
+          "date": "2025-10-18 18:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.016558359254060788,
+          "price": 106875.0859375,
+          "cost": 1769.676068261745,
+          "fee": 1.7696760682617452,
+          "total": 1771.4457443300068,
+          "cash_after": 5307.258528716973,
+          "reason": "MACD histograma creciente, precio cerca Bollinger inferior, RSI neutro 50"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 100.0,
+      "shares": 0,
+      "reason": "Profit +0.19%, MACD histograma positivo pero EMA bajista, tomando ganancia",
+      "ticker": "BTC-USD",
+      "price": 107077.109375,
+      "raw_response": "ACCION: SELL\nMONTO: 100\nRAZON: Profit +0.19%, MACD histograma positivo pero EMA bajista, tomando ganancia",
+      "date": "2025-10-18 19:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.038642569555584864 acciones de BTC-USD a $107077.11. P&L: $7.70 (+0.19%)",
+        "trade": {
+          "date": "2025-10-18 19:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.038642569555584864,
+          "price": 107077.109375,
+          "revenue": 4137.734646834406,
+          "fee": 4.137734646834406,
+          "net_revenue": 4133.596912187571,
+          "cash_after": 9440.855440904545,
+          "pnl": 7.703702598342456,
+          "pnl_pct": 0.18652893168013343,
+          "reason": "Profit +0.19%, MACD histograma positivo pero EMA bajista, tomando ganancia"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2360.213860226136,
+      "shares": 0.022038615885343154,
+      "reason": "MACD histograma alcista creciendo, precio sobre SMA 4h/12h, momentum horario positivo",
+      "ticker": "BTC-USD",
+      "price": 107094.46875,
+      "raw_response": "ACCION: BUY\nMONTO: 3776\nRAZON: MACD histograma alcista creciendo, precio sobre SMA 4h/12h, momentum horario positivo",
+      "date": "2025-10-18 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.022038615885343154 acciones de BTC-USD a $107094.47",
+        "trade": {
+          "date": "2025-10-18 20:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.022038615885343154,
+          "price": 107094.46875,
+          "cost": 2360.213860226136,
+          "fee": 2.360213860226136,
+          "total": 2362.574074086362,
+          "cash_after": 7078.2813668181825,
+          "reason": "MACD histograma alcista creciendo, precio sobre SMA 4h/12h, momentum horario positivo"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1769.5703417045456,
+      "shares": 0.016498545737269256,
+      "reason": "EMA alcista, MACD histograma creciendo, precio sobre SMA con momentum positivo",
+      "ticker": "BTC-USD",
+      "price": 107256.140625,
+      "raw_response": "ACCION: BUY\nMONTO: 2831\nRAZON: EMA alcista, MACD histograma creciendo, precio sobre SMA con momentum positivo",
+      "date": "2025-10-19 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.016498545737269256 acciones de BTC-USD a $107256.14",
+        "trade": {
+          "date": "2025-10-19 00:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.016498545737269256,
+          "price": 107256.140625,
+          "cost": 1769.5703417045456,
+          "fee": 1.7695703417045456,
+          "total": 1771.3399120462502,
+          "cash_after": 5306.9414547719325,
+          "reason": "EMA alcista, MACD histograma creciendo, precio sobre SMA con momentum positivo"
+        }
+      }
+    }
+  ],
+  "equity_curve": [
+    {
+      "date": "2025-10-14 00:00",
+      "value": 10000.0,
+      "cash": 10000.0
+    },
+    {
+      "date": "2025-10-14 01:00",
+      "value": 10000.0,
+      "cash": 10000.0
+    },
+    {
+      "date": "2025-10-14 02:00",
+      "value": 9985.364111654613,
+      "cash": 7497.5
+    },
+    {
+      "date": "2025-10-14 03:00",
+      "value": 9982.876247542958,
+      "cash": 9982.876247542958
+    },
+    {
+      "date": "2025-10-14 04:00",
+      "value": 9969.699739279138,
+      "cash": 7484.661466595333
+    },
+    {
+      "date": "2025-10-14 05:00",
+      "value": 9945.40872420656,
+      "cash": 5611.624934579851
+    },
+    {
+      "date": "2025-10-14 06:00",
+      "value": 9917.926403722697,
+      "cash": 4207.315794701243
+    },
+    {
+      "date": "2025-10-14 07:00",
+      "value": 9912.215793113675,
+      "cash": 9912.215793113675
+    },
+    {
+      "date": "2025-10-14 08:00",
+      "value": 9916.696329030638,
+      "cash": 7431.683790886978
+    },
+    {
+      "date": "2025-10-14 09:00",
+      "value": 9892.9486419245,
+      "cash": 5571.904922217512
+    },
+    {
+      "date": "2025-10-14 10:00",
+      "value": 9888.627598204792,
+      "cash": 9888.627598204792
+    },
+    {
+      "date": "2025-10-14 11:00",
+      "value": 9902.248959346072,
+      "cash": 7413.998541754043
+    },
+    {
+      "date": "2025-10-14 12:00",
+      "value": 9899.760708928481,
+      "cash": 9899.760708928481
+    },
+    {
+      "date": "2025-10-14 13:00",
+      "value": 9899.197770829891,
+      "cash": 7422.345591519129
+    },
+    {
+      "date": "2025-10-14 14:00",
+      "value": 9896.720918650579,
+      "cash": 9896.720918650579
+    },
+    {
+      "date": "2025-10-14 15:00",
+      "value": 9920.603923578703,
+      "cash": 7420.066508758271
+    },
+    {
+      "date": "2025-10-14 16:00",
+      "value": 9918.103386163883,
+      "cash": 9918.103386163883
+    },
+    {
+      "date": "2025-10-14 17:00",
+      "value": 9927.04629030045,
+      "cash": 7436.098013776371
+    },
+    {
+      "date": "2025-10-14 18:00",
+      "value": 9924.142979857483,
+      "cash": 5575.214485828834
+    },
+    {
+      "date": "2025-10-14 19:00",
+      "value": 9914.565202882342,
+      "cash": 4180.017060750168
+    },
+    {
+      "date": "2025-10-14 20:00",
+      "value": 9932.314756089705,
+      "cash": 3133.9677912974385
+    },
+    {
+      "date": "2025-10-14 21:00",
+      "value": 9944.219491025957,
+      "cash": 2349.6923515252547
+    },
+    {
+      "date": "2025-10-14 22:00",
+      "value": 9949.930878323143,
+      "cash": 1761.6818405560598
+    },
+    {
+      "date": "2025-10-14 23:00",
+      "value": 9938.260336919517,
+      "cash": 1320.8209599569059
+    },
+    {
+      "date": "2025-10-15 00:00",
+      "value": 9929.642897542553,
+      "cash": 9929.642897542553
+    },
+    {
+      "date": "2025-10-15 01:00",
+      "value": 9921.706389969233,
+      "cash": 7444.74976243253
+    },
+    {
+      "date": "2025-10-15 02:00",
+      "value": 9924.819844424437,
+      "cash": 5581.701134383789
+    },
+    {
+      "date": "2025-10-15 03:00",
+      "value": 9881.768590830754,
+      "cash": 4184.880425504246
+    },
+    {
+      "date": "2025-10-15 04:00",
+      "value": 9876.071702665427,
+      "cash": 9876.071702665427
+    },
+    {
+      "date": "2025-10-15 05:00",
+      "value": 9875.28657471868,
+      "cash": 7404.584759073405
+    },
+    {
+      "date": "2025-10-15 06:00",
+      "value": 9872.050623020932,
+      "cash": 5551.587423115286
+    },
+    {
+      "date": "2025-10-15 07:00",
+      "value": 9867.730159821025,
+      "cash": 9867.730159821025
+    },
+    {
+      "date": "2025-10-15 08:00",
+      "value": 9867.730159821025,
+      "cash": 9867.730159821025
+    },
+    {
+      "date": "2025-10-15 09:00",
+      "value": 9853.752144154205,
+      "cash": 7398.330687325813
+    },
+    {
+      "date": "2025-10-15 10:00",
+      "value": 9851.296722697376,
+      "cash": 9851.296722697376
+    },
+    {
+      "date": "2025-10-15 11:00",
+      "value": 9841.631306333695,
+      "cash": 7386.0097178423575
+    },
+    {
+      "date": "2025-10-15 12:00",
+      "value": 9839.175684745203,
+      "cash": 9839.175684745203
+    },
+    {
+      "date": "2025-10-15 13:00",
+      "value": 9831.427906820023,
+      "cash": 7376.921969637717
+    },
+    {
+      "date": "2025-10-15 14:00",
+      "value": 9814.748421599994,
+      "cash": 5530.847246735878
+    },
+    {
+      "date": "2025-10-15 15:00",
+      "value": 9810.464520425132,
+      "cash": 9810.464520425132
+    },
+    {
+      "date": "2025-10-15 16:00",
+      "value": 9809.457709271726,
+      "cash": 7355.3957741887425
+    },
+    {
+      "date": "2025-10-15 17:00",
+      "value": 9807.003647336642,
+      "cash": 9807.003647336642
+    },
+    {
+      "date": "2025-10-15 18:00",
+      "value": 9812.636852924043,
+      "cash": 7352.800984590647
+    },
+    {
+      "date": "2025-10-15 19:00",
+      "value": 9810.17701705571,
+      "cash": 9810.17701705571
+    },
+    {
+      "date": "2025-10-15 20:00",
+      "value": 9804.647047320595,
+      "cash": 7355.180218537518
+    },
+    {
+      "date": "2025-10-15 21:00",
+      "value": 9802.197580491811,
+      "cash": 9802.197580491811
+    },
+    {
+      "date": "2025-10-15 22:00",
+      "value": 9797.643397630514,
+      "cash": 7349.1976359737355
+    },
+    {
+      "date": "2025-10-15 23:00",
+      "value": 9796.717273414612,
+      "cash": 5510.060927571308
+    },
+    {
+      "date": "2025-10-16 00:00",
+      "value": 9792.43061706877,
+      "cash": 9792.43061706877
+    },
+    {
+      "date": "2025-10-16 01:00",
+      "value": 9807.518836859635,
+      "cash": 7341.874855147311
+    },
+    {
+      "date": "2025-10-16 02:00",
+      "value": 9805.053192877924,
+      "cash": 9805.053192877924
+    },
+    {
+      "date": "2025-10-16 03:00",
+      "value": 9805.053192877924,
+      "cash": 9805.053192877924
+    },
+    {
+      "date": "2025-10-16 04:00",
+      "value": 9792.945810092871,
+      "cash": 7351.338631360223
+    },
+    {
+      "date": "2025-10-16 05:00",
+      "value": 9787.937731082315,
+      "cash": 5511.666138862327
+    },
+    {
+      "date": "2025-10-16 06:00",
+      "value": 9823.328876508445,
+      "cash": 4132.37168761203
+    },
+    {
+      "date": "2025-10-16 07:00",
+      "value": 9817.63791931955,
+      "cash": 9817.63791931955
+    },
+    {
+      "date": "2025-10-16 08:00",
+      "value": 9820.458431114255,
+      "cash": 7360.774030009832
+    },
+    {
+      "date": "2025-10-16 09:00",
+      "value": 9817.99874671315,
+      "cash": 9817.99874671315
+    },
+    {
+      "date": "2025-10-16 10:00",
+      "value": 9822.70944495198,
+      "cash": 7361.044560348184
+    },
+    {
+      "date": "2025-10-16 11:00",
+      "value": 9818.705525357227,
+      "cash": 5518.9431591210505
+    },
+    {
+      "date": "2025-10-16 12:00",
+      "value": 9814.405762990991,
+      "cash": 9814.405762990991
+    },
+    {
+      "date": "2025-10-16 13:00",
+      "value": 9795.698548785409,
+      "cash": 7358.350720802496
+    },
+    {
+      "date": "2025-10-16 14:00",
+      "value": 9781.593318552781,
+      "cash": 5516.923452921671
+    },
+    {
+      "date": "2025-10-16 15:00",
+      "value": 9673.798923926539,
+      "cash": 4136.313358828023
+    },
+    {
+      "date": "2025-10-16 16:00",
+      "value": 9668.26143836144,
+      "cash": 9668.26143836144
+    },
+    {
+      "date": "2025-10-16 17:00",
+      "value": 9649.319134598622,
+      "cash": 7248.779013411489
+    },
+    {
+      "date": "2025-10-16 18:00",
+      "value": 9656.232761033223,
+      "cash": 5434.772065305264
+    },
+    {
+      "date": "2025-10-16 19:00",
+      "value": 9652.011300337495,
+      "cash": 9652.011300337495
+    },
+    {
+      "date": "2025-10-16 20:00",
+      "value": 9638.22042838358,
+      "cash": 7236.595472428037
+    },
+    {
+      "date": "2025-10-16 21:00",
+      "value": 9635.818803427625,
+      "cash": 9635.818803427625
+    },
+    {
+      "date": "2025-10-16 22:00",
+      "value": 9619.850632072368,
+      "cash": 7224.455147869861
+    },
+    {
+      "date": "2025-10-16 23:00",
+      "value": 9630.555700968267,
+      "cash": 5416.535247115429
+    },
+    {
+      "date": "2025-10-17 00:00",
+      "value": 9626.341680514415,
+      "cash": 9626.341680514415
+    },
+    {
+      "date": "2025-10-17 01:00",
+      "value": 9624.128999972885,
+      "cash": 7217.349674965682
+    },
+    {
+      "date": "2025-10-17 02:00",
+      "value": 9621.722220647878,
+      "cash": 9621.722220647878
+    },
+    {
+      "date": "2025-10-17 03:00",
+      "value": 9623.654794265232,
+      "cash": 7213.8862349307465
+    },
+    {
+      "date": "2025-10-17 04:00",
+      "value": 9621.245025705899,
+      "cash": 9621.245025705899
+    },
+    {
+      "date": "2025-10-17 05:00",
+      "value": 9608.279404213381,
+      "cash": 7213.528458022998
+    },
+    {
+      "date": "2025-10-17 06:00",
+      "value": 9545.738186060655,
+      "cash": 5408.342961402743
+    },
+    {
+      "date": "2025-10-17 07:00",
+      "value": 9479.482820491818,
+      "cash": 4054.9051353117065
+    },
+    {
+      "date": "2025-10-17 08:00",
+      "value": 9443.539408942623,
+      "cash": 3040.165125199952
+    },
+    {
+      "date": "2025-10-17 09:00",
+      "value": 9426.131890346558,
+      "cash": 2279.363802618664
+    },
+    {
+      "date": "2025-10-17 10:00",
+      "value": 9422.54974287541,
+      "cash": 1708.9530110133433
+    },
+    {
+      "date": "2025-10-17 11:00",
+      "value": 9496.887224159713,
+      "cash": 1281.287520007254
+    },
+    {
+      "date": "2025-10-17 12:00",
+      "value": 9488.671624455561,
+      "cash": 9488.671624455561
+    },
+    {
+      "date": "2025-10-17 13:00",
+      "value": 9498.033619299948,
+      "cash": 7114.131550435557
+    },
+    {
+      "date": "2025-10-17 14:00",
+      "value": 9495.649717231083,
+      "cash": 9495.649717231083
+    },
+    {
+      "date": "2025-10-17 15:00",
+      "value": 9528.396630088211,
+      "cash": 7119.363375494004
+    },
+    {
+      "date": "2025-10-17 16:00",
+      "value": 9514.410699960597,
+      "cash": 5337.742690776629
+    },
+    {
+      "date": "2025-10-17 17:00",
+      "value": 9513.384584865693,
+      "cash": 4001.9725824097777
+    },
+    {
+      "date": "2025-10-17 18:00",
+      "value": 9524.859363892429,
+      "cash": 3000.4789436617307
+    },
+    {
+      "date": "2025-10-17 19:00",
+      "value": 9518.334983472198,
+      "cash": 9518.334983472198
+    },
+    {
+      "date": "2025-10-17 20:00",
+      "value": 9529.379154603525,
+      "cash": 7136.37165385828
+    },
+    {
+      "date": "2025-10-17 21:00",
+      "value": 9526.98614710278,
+      "cash": 9526.98614710278
+    },
+    {
+      "date": "2025-10-17 22:00",
+      "value": 9516.064949090112,
+      "cash": 7142.857863790309
+    },
+    {
+      "date": "2025-10-17 23:00",
+      "value": 9513.691742004812,
+      "cash": 9513.691742004812
+    },
+    {
+      "date": "2025-10-18 00:00",
+      "value": 9513.691742004812,
+      "cash": 9513.691742004812
+    },
+    {
+      "date": "2025-10-18 01:00",
+      "value": 9519.928748663799,
+      "cash": 7132.8903835681085
+    },
+    {
+      "date": "2025-10-18 02:00",
+      "value": 9495.136310049835,
+      "cash": 5347.8845650801895
+    },
+    {
+      "date": "2025-10-18 03:00",
+      "value": 9490.989058304865,
+      "cash": 9490.989058304865
+    },
+    {
+      "date": "2025-10-18 04:00",
+      "value": 9476.08860801473,
+      "cash": 7115.869046464073
+    },
+    {
+      "date": "2025-10-18 05:00",
+      "value": 9488.063364916849,
+      "cash": 5335.122817586439
+    },
+    {
+      "date": "2025-10-18 06:00",
+      "value": 9489.216645221268,
+      "cash": 4000.0083324854327
+    },
+    {
+      "date": "2025-10-18 07:00",
+      "value": 9474.518094739056,
+      "cash": 2999.006247280953
+    },
+    {
+      "date": "2025-10-18 08:00",
+      "value": 9468.042582891598,
+      "cash": 9468.042582891598
+    },
+    {
+      "date": "2025-10-18 09:00",
+      "value": 9468.53367029654,
+      "cash": 7098.664926522975
+    },
+    {
+      "date": "2025-10-18 10:00",
+      "value": 9467.430487032238,
+      "cash": 7098.664926522975
+    },
+    {
+      "date": "2025-10-18 11:00",
+      "value": 9475.065935617698,
+      "cash": 5322.224028660601
+    },
+    {
+      "date": "2025-10-18 12:00",
+      "value": 9471.855505144413,
+      "cash": 3990.3374654882855
+    },
+    {
+      "date": "2025-10-18 13:00",
+      "value": 9466.373987104756,
+      "cash": 9466.373987104756
+    },
+    {
+      "date": "2025-10-18 14:00",
+      "value": 9466.66143985078,
+      "cash": 7097.413896831791
+    },
+    {
+      "date": "2025-10-18 15:00",
+      "value": 9462.311024941555,
+      "cash": 5321.286069149635
+    },
+    {
+      "date": "2025-10-18 16:00",
+      "value": 9446.87674641334,
+      "cash": 3989.634230344939
+    },
+    {
+      "date": "2025-10-18 17:00",
+      "value": 9441.419503897272,
+      "cash": 9441.419503897272
+    },
+    {
+      "date": "2025-10-18 18:00",
+      "value": 9438.95614688419,
+      "cash": 7078.70427304698
+    },
+    {
+      "date": "2025-10-18 19:00",
+      "value": 9444.993175551379,
+      "cash": 5307.258528716973
+    },
+    {
+      "date": "2025-10-18 20:00",
+      "value": 9440.855440904545,
+      "cash": 9440.855440904545
+    },
+    {
+      "date": "2025-10-19 00:00",
+      "value": 9442.058251396906,
+      "cash": 7078.2813668181825
+    }
+  ],
+  "final_metrics": {
+    "initial_capital": 10000.0,
+    "current_value": 9436.15533382892,
+    "cash": 9436.15533382892,
+    "total_return": -563.8446661710805,
+    "total_return_pct": -5.638446661710804,
+    "total_trades": 37,
+    "winning_trades": 19,
+    "losing_trades": 18,
+    "win_rate": 51.35135135135135,
+    "avg_win": 11.612301028628984,
+    "avg_loss": -27.201099459570823,
+    "profit_factor": 0.426905575853227,
+    "holdings": {}
+  }
+}

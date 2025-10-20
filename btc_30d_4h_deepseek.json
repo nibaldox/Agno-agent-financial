@@ -1,0 +1,4577 @@
+{
+  "config": {
+    "tickers": [
+      "BTC-USD"
+    ],
+    "timeframe": "1h (hourly)",
+    "days": 30,
+    "hours_total": 716,
+    "decision_interval_hours": 4,
+    "initial_capital": 10000.0
+  },
+  "trades": [
+    {
+      "date": "2025-09-20 08:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.017266857460945032,
+      "price": 115828.8359375,
+      "cost": 2000.0,
+      "fee": 2.0,
+      "total": 2002.0,
+      "cash_after": 7998.0,
+      "reason": "Tendencia alcista confirmada, volumen superior al promedio, RSI en zona neutral con espacio para subir"
+    },
+    {
+      "date": "2025-09-21 08:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.01296587240568594,
+      "price": 115688.3203125,
+      "cost": 1500.0,
+      "fee": 1.5,
+      "total": 1501.5,
+      "cash_after": 6496.5,
+      "reason": "Volumen muy alto 6.28x, precio cerca m\u00ednimos diarios con RSI neutral"
+    },
+    {
+      "date": "2025-09-22 00:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.015116364933315486,
+      "price": 114612.15625,
+      "revenue": 1732.5191796691754,
+      "fee": 1.7325191796691755,
+      "net_revenue": 1730.7866604895062,
+      "cash_after": 8227.286660489506,
+      "pnl": -17.48082033082477,
+      "pnl_pct": -0.9989040189042725,
+      "reason": "Tendencia bajista confirmada, precio por debajo de SMA 4h y 12h"
+    },
+    {
+      "date": "2025-09-24 04:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.013373321421790239,
+      "price": 112163.609375,
+      "cost": 1500.0,
+      "fee": 1.5,
+      "total": 1501.5,
+      "cash_after": 6725.786660489506,
+      "reason": "RSI neutral, volumen alto, precio sobre SMA 12h"
+    },
+    {
+      "date": "2025-09-26 16:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.014244843177552861,
+      "price": 109500.84375,
+      "revenue": 1559.8223470284695,
+      "fee": 1.5598223470284696,
+      "net_revenue": 1558.262524681441,
+      "cash_after": 8284.049185170947,
+      "pnl": -65.17765297153062,
+      "pnl_pct": -4.010932490555731,
+      "reason": "Tendencia bajista, p\u00e9rdida no realizada del 4%, RSI neutral sin impulso alcista"
+    },
+    {
+      "date": "2025-09-28 08:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.013690719097176939,
+      "price": 109563.2734375,
+      "cost": 1500.0,
+      "fee": 1.5,
+      "total": 1501.5,
+      "cash_after": 6782.549185170947,
+      "reason": "Precio sobre SMA 4h, momentum positivo en 4h, RSI neutral"
+    },
+    {
+      "date": "2025-09-28 20:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.013532639033769573,
+      "price": 110843.125,
+      "cost": 1500.0,
+      "fee": 1.5,
+      "total": 1501.5,
+      "cash_after": 5281.049185170947,
+      "reason": "Momentum alcista 4h, volumen fuerte, precio sobre SMA 12h"
+    },
+    {
+      "date": "2025-09-29 00:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.011756683412889489,
+      "price": 112276.5625,
+      "cost": 1320.0,
+      "fee": 1.32,
+      "total": 1321.32,
+      "cash_after": 3959.729185170947,
+      "reason": "Momentum alcista 4h, precio sobre SMA, RSI neutro con espacio"
+    },
+    {
+      "date": "2025-09-29 08:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.008818762217561466,
+      "price": 112147.2578125,
+      "cost": 989.0,
+      "fee": 0.989,
+      "total": 989.989,
+      "cash_after": 2969.740185170947,
+      "reason": "Momentum alcista 4h, volumen fuerte, precio sobre SMA"
+    },
+    {
+      "date": "2025-09-29 20:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.031021823469475164,
+      "price": 114317.078125,
+      "revenue": 3546.324217139951,
+      "fee": 3.546324217139951,
+      "net_revenue": 3542.777892922811,
+      "cash_after": 6512.518078093758,
+      "pnl": 79.3242171399508,
+      "pnl_pct": 2.2879785734049847,
+      "reason": "Tomar ganancias cerca de m\u00e1ximo diario, volumen elevado sugiere posible correcci\u00f3n"
+    },
+    {
+      "date": "2025-09-30 00:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.013087819473162097,
+      "price": 114610.3828125,
+      "cost": 1500.0,
+      "fee": 1.5,
+      "total": 1501.5,
+      "cash_after": 5011.018078093758,
+      "reason": "Precio sobre SMA 4h, momentum alcista continuo"
+    },
+    {
+      "date": "2025-09-30 04:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.010949159357760634,
+      "price": 114164.015625,
+      "cost": 1250.0,
+      "fee": 1.25,
+      "total": 1251.25,
+      "cash_after": 3759.768078093758,
+      "reason": "Precio cerca de SMA 4h con tendencia alcista, RSI neutral permite entrada"
+    },
+    {
+      "date": "2025-09-30 08:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.02752940115019895,
+      "price": 113535.9609375,
+      "revenue": 3125.5770136217557,
+      "fee": 3.1255770136217556,
+      "net_revenue": 3122.451436608134,
+      "cash_after": 6882.219514701892,
+      "pnl": 17.07701362175526,
+      "pnl_pct": 0.549365083537245,
+      "reason": "Tendencia bajista, precio bajo SMA 12h, volumen bajo"
+    },
+    {
+      "date": "2025-10-01 08:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.014814036272453113,
+      "price": 116106.1015625,
+      "cost": 1720.0,
+      "fee": 1.72,
+      "total": 1721.72,
+      "cash_after": 5160.499514701892,
+      "reason": "Momentum alcista en 4h y 24h, volumen 6.6x promedio, precio sobre SMA"
+    },
+    {
+      "date": "2025-10-01 12:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.021171718711326032,
+      "price": 116450.671875,
+      "revenue": 2465.4608686824254,
+      "fee": 2.4654608686824253,
+      "net_revenue": 2462.995407813743,
+      "cash_after": 7623.494922515634,
+      "pnl": 51.21086868242569,
+      "pnl_pct": 2.1211916198581626,
+      "reason": "Precio cerca de resistencia diaria, RSI neutral, tomar ganancias parciales"
+    },
+    {
+      "date": "2025-10-01 16:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.012747964508604478,
+      "price": 117665.84375,
+      "cost": 1500.0,
+      "fee": 1.5,
+      "total": 1501.5,
+      "cash_after": 6121.994922515634,
+      "reason": "Momentum alcista 4h, volumen fuerte, tendencia positiva"
+    },
+    {
+      "date": "2025-10-02 12:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.016959841609965255,
+      "price": 119458.234375,
+      "revenue": 2025.9927340061067,
+      "fee": 2.0259927340061066,
+      "net_revenue": 2023.9667412721005,
+      "cash_after": 8145.961663787735,
+      "pnl": 68.86773400610677,
+      "pnl_pct": 3.518821434814167,
+      "reason": "Objetivo de ganancias alcanzado, toma de beneficios parcial"
+    },
+    {
+      "date": "2025-10-02 20:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.008479920804982628,
+      "price": 120645.6953125,
+      "revenue": 1023.0659417120638,
+      "fee": 1.0230659417120638,
+      "net_revenue": 1022.0428757703518,
+      "cash_after": 9168.004539558087,
+      "pnl": 44.50344171206381,
+      "pnl_pct": 4.547838458153037,
+      "reason": "Toma de beneficios tras rally 24h, volumen bajo actual"
+    },
+    {
+      "date": "2025-10-03 00:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.004239960402491314,
+      "price": 120217.2265625,
+      "revenue": 509.71628032232695,
+      "fee": 0.509716280322327,
+      "net_revenue": 509.20656404200463,
+      "cash_after": 9677.211103600092,
+      "pnl": 20.435030322326956,
+      "pnl_pct": 4.176540654751629,
+      "reason": "Toma de beneficios tras rally 24h, resistencia en m\u00e1ximo diario"
+    },
+    {
+      "date": "2025-10-03 16:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.01969979620834657,
+      "price": 122793.1484375,
+      "cost": 2419.0,
+      "fee": 2.419,
+      "total": 2421.419,
+      "cash_after": 7255.792103600092,
+      "reason": "Momentum alcista 4h, volumen alto 12.79x, tendencia alcista confirmada"
+    },
+    {
+      "date": "2025-10-04 12:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.011969878305418943,
+      "price": 122061.3984375,
+      "revenue": 1461.060085086129,
+      "fee": 1.461060085086129,
+      "net_revenue": 1459.599025001043,
+      "cash_after": 8715.391128601135,
+      "pnl": 6.919460086128952,
+      "pnl_pct": 0.47584531833906724,
+      "reason": "Tendencia bajista, precio por debajo de SMA 12h, RSI neutral sin impulso"
+    },
+    {
+      "date": "2025-10-05 04:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.01597138825615087,
+      "price": 125223.9296875,
+      "cost": 2000.0,
+      "fee": 2.0,
+      "total": 2002.0,
+      "cash_after": 6713.391128601135,
+      "reason": "Momentum alcista 4h, volumen fuerte, precio sobre SMA"
+    },
+    {
+      "date": "2025-10-05 12:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.013970633280784907,
+      "price": 123180.234375,
+      "revenue": 1720.9058818942601,
+      "fee": 1.7209058818942602,
+      "net_revenue": 1719.184976012366,
+      "cash_after": 8432.576104613501,
+      "pnl": -6.1644306057398595,
+      "pnl_pct": -0.35692991542519265,
+      "reason": "Tendencia bajista, precio bajo SMA 12h, volumen alto sugiere distribuci\u00f3n"
+    },
+    {
+      "date": "2025-10-06 00:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.0121580377737569,
+      "price": 123375.171875,
+      "cost": 1500.0,
+      "fee": 1.5,
+      "total": 1501.5,
+      "cash_after": 6931.076104613501,
+      "reason": "Tendencia alcista, volumen alto, RSI neutral con espacio para subir"
+    },
+    {
+      "date": "2025-10-06 08:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.012110652763553192,
+      "price": 123857.8984375,
+      "cost": 1500.0,
+      "fee": 1.5,
+      "total": 1501.5,
+      "cash_after": 5429.576104613501,
+      "reason": "Precio sobre SMA 4h, momentum alcista horario"
+    },
+    {
+      "date": "2025-10-06 12:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.010892089577303197,
+      "price": 124585.828125,
+      "cost": 1357.0,
+      "fee": 1.357,
+      "total": 1358.357,
+      "cash_after": 4071.2191046135013,
+      "reason": "Precio sobre SMA 4h y 12h, volumen fuerte 1.57x, momentum alcista"
+    },
+    {
+      "date": "2025-10-07 16:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.0245657066976991,
+      "price": 121866.6015625,
+      "revenue": 2993.7391902297336,
+      "fee": 2.9937391902297334,
+      "net_revenue": 2990.7454510395037,
+      "cash_after": 7061.964555653005,
+      "pnl": -48.2959660202661,
+      "pnl_pct": -1.5876202456450852,
+      "reason": "Tendencia bajista, precio por debajo de SMA 4h y 12h"
+    },
+    {
+      "date": "2025-10-08 08:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.012251405737141879,
+      "price": 122434.9296875,
+      "cost": 1500.0,
+      "fee": 1.5,
+      "total": 1501.5,
+      "cash_after": 5560.464555653005,
+      "reason": "Momentum alcista 4h, volumen superior al promedio, RSI neutral con espacio para subir"
+    },
+    {
+      "date": "2025-10-08 12:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.011334257851690548,
+      "price": 122637.0546875,
+      "cost": 1390.0,
+      "fee": 1.3900000000000001,
+      "total": 1391.39,
+      "cash_after": 4169.074555653005,
+      "reason": "SMA 12h soporte, tendencia alcista, RSI neutro oportunidad entrada"
+    },
+    {
+      "date": "2025-10-08 20:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.008467762620252438,
+      "price": 123054.9375,
+      "cost": 1042.0,
+      "fee": 1.042,
+      "total": 1043.042,
+      "cash_after": 3126.0325556530047,
+      "reason": "Precio cerca de SMA12, RSI neutro con tendencia alcista"
+    },
+    {
+      "date": "2025-10-09 08:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.028309566453391985,
+      "price": 121332.3125,
+      "revenue": 3434.865163662473,
+      "fee": 3.434865163662473,
+      "net_revenue": 3431.4302984988108,
+      "cash_after": 6557.462854151816,
+      "pnl": -52.15241446252704,
+      "pnl_pct": -1.49561662062426,
+      "reason": "Precio por debajo de SMA 4h y 12h, tendencia bajista clara"
+    },
+    {
+      "date": "2025-10-10 00:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.009849503308657206,
+      "price": 121833.5546875,
+      "cost": 1200.0,
+      "fee": 1.2,
+      "total": 1201.2,
+      "cash_after": 5356.262854151816,
+      "reason": "Precio sobre SMA 4h, momentum positivo corto plazo"
+    },
+    {
+      "date": "2025-10-11 04:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.008844892306180597,
+      "price": 113059.6015625,
+      "cost": 1000.0,
+      "fee": 1.0,
+      "total": 1001.0,
+      "cash_after": 4355.262854151816,
+      "reason": "Momentum alcista 4h, precio sobre SMA4h, RSI neutro con espacio para subir"
+    },
+    {
+      "date": "2025-10-11 08:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.009755194793232025,
+      "price": 111530.3203125,
+      "cost": 1088.0,
+      "fee": 1.088,
+      "total": 1089.088,
+      "cash_after": 3266.1748541518164,
+      "reason": "RSI en 50 con recuperaci\u00f3n de 1.1% en \u00faltima hora, precio cerca de SMA 4h"
+    },
+    {
+      "date": "2025-10-14 00:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.028379578430730905,
+      "price": 115056.4609375,
+      "revenue": 3265.253857138108,
+      "fee": 3.265253857138108,
+      "net_revenue": 3261.9886032809695,
+      "cash_after": 6528.163457432785,
+      "pnl": -122.25493192439205,
+      "pnl_pct": -3.6089923166878735,
+      "reason": "Tendencia bajista corto plazo, p\u00e9rdida actual en posici\u00f3n"
+    },
+    {
+      "date": "2025-10-14 08:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.010720962385056765,
+      "price": 111930.25,
+      "cost": 1200.0,
+      "fee": 1.2,
+      "total": 1201.2,
+      "cash_after": 5326.963457432786,
+      "reason": "Volumen 4.3x promedio, RSI neutro en soporte, recuperaci\u00f3n desde m\u00ednimo diario"
+    },
+    {
+      "date": "2025-10-14 16:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.019550270407893835,
+      "price": 112341.484375,
+      "revenue": 2196.30639755543,
+      "fee": 2.1963063975554302,
+      "net_revenue": 2194.1100911578746,
+      "cash_after": 7521.073548590661,
+      "pnl": -97.44799697581985,
+      "pnl_pct": -4.248405897691337,
+      "reason": "Tendencia bajista en 24h, p\u00e9rdida no realizada del 4.25%"
+    },
+    {
+      "date": "2025-10-14 20:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.013276278526366274,
+      "price": 112983.46875,
+      "cost": 1500.0,
+      "fee": 1.5,
+      "total": 1501.5,
+      "cash_after": 6019.573548590661,
+      "reason": "Precio sobre SMA 4h, momentum positivo, volumen bajo sugiere acumulaci\u00f3n"
+    },
+    {
+      "date": "2025-10-15 16:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.010827122364457433,
+      "price": 110832.7734375,
+      "cost": 1200.0,
+      "fee": 1.2,
+      "total": 1201.2,
+      "cash_after": 4818.373548590661,
+      "reason": "Precio cerca soporte 24h, RSI neutro oportunidad entrada"
+    },
+    {
+      "date": "2025-10-15 20:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.02182683564935877,
+      "price": 111183.8125,
+      "revenue": 2426.790802306621,
+      "fee": 2.426790802306621,
+      "net_revenue": 2424.3640115043145,
+      "cash_after": 7242.737560094975,
+      "pnl": -70.08639495900364,
+      "pnl_pct": -2.8069620338459784,
+      "reason": "Tendencia bajista, p\u00e9rdida actual del 2.81%, RSI neutral sin impulso"
+    },
+    {
+      "date": "2025-10-16 08:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.009021087284869092,
+      "price": 110851.3828125,
+      "cost": 1000.0,
+      "fee": 1.0,
+      "total": 1001.0,
+      "cash_after": 6241.737560094975,
+      "reason": "Precio cerca soporte, RSI neutro para entrada"
+    },
+    {
+      "date": "2025-10-16 16:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.01542396146711393,
+      "price": 109117.1796875,
+      "revenue": 1683.019174900147,
+      "fee": 1.683019174900147,
+      "net_revenue": 1681.3361557252467,
+      "cash_after": 7923.073715820222,
+      "pnl": -65.41942373266552,
+      "pnl_pct": -3.7415911421665076,
+      "reason": "Tendencia bajista confirmada, p\u00e9rdida de soportes clave"
+    },
+    {
+      "date": "2025-10-17 00:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.007711980733556965,
+      "price": 108791.6171875,
+      "revenue": 838.9988557225048,
+      "fee": 0.8389988557225048,
+      "net_revenue": 838.1598568667823,
+      "cash_after": 8761.233572687004,
+      "pnl": -35.2204435939014,
+      "pnl_pct": -4.028788156637808,
+      "reason": "Tendencia bajista, p\u00e9rdida actual del 4%, volumen bajo"
+    },
+    {
+      "date": "2025-10-17 04:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.01377722203270569,
+      "price": 108875.359375,
+      "cost": 1500.0,
+      "fee": 1.5,
+      "total": 1501.5,
+      "cash_after": 7259.733572687004,
+      "reason": "Precio cerca de SMA 12h con tendencia alcista, RSI neutral permite entrada"
+    },
+    {
+      "date": "2025-10-17 12:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.010744601383131328,
+      "price": 105347.0078125,
+      "revenue": 1131.9116058509344,
+      "fee": 1.1319116058509344,
+      "net_revenue": 1130.7796942450834,
+      "cash_after": 8390.513266932088,
+      "pnl": -55.19804380726884,
+      "pnl_pct": -4.649784779625172,
+      "reason": "Tendencia bajista clara, p\u00e9rdida del 5% en 24h"
+    },
+    {
+      "date": "2025-10-17 16:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.014096464012131183,
+      "price": 106409.6640625,
+      "cost": 1500.0,
+      "fee": 1.5,
+      "total": 1501.5,
+      "cash_after": 6889.013266932088,
+      "reason": "Precio sobre SMA 4h y 12h, tendencia alcista en marco 4h"
+    },
+    {
+      "date": "2025-10-17 20:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.014006793586697748,
+      "price": 107090.890625,
+      "cost": 1500.0,
+      "fee": 1.5,
+      "total": 1501.5,
+      "cash_after": 5387.513266932088,
+      "reason": "Momentum alcista 4h, precio sobre SMA 4h, RSI neutral con espacio para subir"
+    },
+    {
+      "date": "2025-10-18 00:00",
+      "action": "BUY",
+      "ticker": "BTC-USD",
+      "shares": 0.00935983345931328,
+      "price": 106839.5078125,
+      "cost": 1000.0000000000001,
+      "fee": 1.0000000000000002,
+      "total": 1001.0000000000001,
+      "cash_after": 4386.513266932088,
+      "reason": "Precio cerca de SMA 12h con tendencia alcista, RSI neutral permite entrada"
+    },
+    {
+      "date": "2025-10-18 16:00",
+      "action": "SELL",
+      "ticker": "BTC-USD",
+      "shares": 0.02410384622063677,
+      "price": 106711.03125,
+      "revenue": 2572.146287295565,
+      "fee": 2.572146287295565,
+      "net_revenue": 2569.574141008269,
+      "cash_after": 6956.0874079403575,
+      "pnl": -21.40853753353662,
+      "pnl_pct": -0.8254515126722761,
+      "reason": "Tendencia bajista, precio por debajo de SMAs, p\u00e9rdida actual"
+    }
+  ],
+  "decisions_log": [
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista general, volumen cero actual",
+      "ticker": "BTC-USD",
+      "price": 115772.796875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista general, volumen cero actual",
+      "date": "2025-09-20 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Volumen cero y tendencia lateral sin momentum claro",
+      "ticker": "BTC-USD",
+      "price": 115608.515625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Volumen cero y tendencia lateral sin momentum claro",
+      "date": "2025-09-20 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2000.0,
+      "shares": 0.017266857460945032,
+      "reason": "Tendencia alcista confirmada, volumen superior al promedio, RSI en zona neutral con espacio para subir",
+      "ticker": "BTC-USD",
+      "price": 115828.8359375,
+      "raw_response": "ACCION: BUY\nMONTO: 2000\nRAZON: Tendencia alcista confirmada, volumen superior al promedio, RSI en zona neutral con espacio para subir",
+      "date": "2025-09-20 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.017266857460945032 acciones de BTC-USD a $115828.84",
+        "trade": {
+          "date": "2025-09-20 08:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.017266857460945032,
+          "price": 115828.8359375,
+          "cost": 2000.0,
+          "fee": 2.0,
+          "total": 2002.0,
+          "cash_after": 7998.0,
+          "reason": "Tendencia alcista confirmada, volumen superior al promedio, RSI en zona neutral con espacio para subir"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Precio cerca de SMAs, volumen cero, esperar confirmaci\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 115938.71875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Precio cerca de SMAs, volumen cero, esperar confirmaci\u00f3n",
+      "date": "2025-09-20 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Precio cerca de SMA 4h, RSI neutral 50, volumen cero",
+      "ticker": "BTC-USD",
+      "price": 116101.015625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Precio cerca de SMA 4h, RSI neutral 50, volumen cero",
+      "date": "2025-09-20 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista con momentum lateral y volumen cero",
+      "ticker": "BTC-USD",
+      "price": 115840.140625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista con momentum lateral y volumen cero",
+      "date": "2025-09-20 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Mercado lateral sin momentum claro, RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 115723.4921875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Mercado lateral sin momentum claro, RSI neutral",
+      "date": "2025-09-21 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista con momentum lateral, RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 115593.734375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista con momentum lateral, RSI neutral",
+      "date": "2025-09-21 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1500.0,
+      "shares": 0.01296587240568594,
+      "reason": "Volumen muy alto 6.28x, precio cerca m\u00ednimos diarios con RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 115688.3203125,
+      "raw_response": "ACCION: BUY\nMONTO: 1500\nRAZON: Volumen muy alto 6.28x, precio cerca m\u00ednimos diarios con RSI neutral",
+      "date": "2025-09-21 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.01296587240568594 acciones de BTC-USD a $115688.32",
+        "trade": {
+          "date": "2025-09-21 08:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.01296587240568594,
+          "price": 115688.3203125,
+          "cost": 1500.0,
+          "fee": 1.5,
+          "total": 1501.5,
+          "cash_after": 6496.5,
+          "reason": "Volumen muy alto 6.28x, precio cerca m\u00ednimos diarios con RSI neutral"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Mercado lateral sin momentum claro, RSI neutro",
+      "ticker": "BTC-USD",
+      "price": 115763.4453125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Mercado lateral sin momentum claro, RSI neutro",
+      "date": "2025-09-21 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, RSI neutral y precio bajo SMA",
+      "ticker": "BTC-USD",
+      "price": 115329.734375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, RSI neutral y precio bajo SMA",
+      "date": "2025-09-21 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, RSI neutral y precio bajo SMA",
+      "ticker": "BTC-USD",
+      "price": 115445.9453125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, RSI neutral y precio bajo SMA",
+      "date": "2025-09-21 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Tendencia bajista confirmada, precio por debajo de SMA 4h y 12h",
+      "ticker": "BTC-USD",
+      "price": 114612.15625,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Tendencia bajista confirmada, precio por debajo de SMA 4h y 12h",
+      "date": "2025-09-22 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.015116364933315486 acciones de BTC-USD a $114612.16. P&L: $-17.48 (-1.00%)",
+        "trade": {
+          "date": "2025-09-22 00:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.015116364933315486,
+          "price": 114612.15625,
+          "revenue": 1732.5191796691754,
+          "fee": 1.7325191796691755,
+          "net_revenue": 1730.7866604895062,
+          "cash_after": 8227.286660489506,
+          "pnl": -17.48082033082477,
+          "pnl_pct": -0.9989040189042725,
+          "reason": "Tendencia bajista confirmada, precio por debajo de SMA 4h y 12h"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, RSI neutral y volumen cero",
+      "ticker": "BTC-USD",
+      "price": 114481.8828125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, RSI neutral y volumen cero",
+      "date": "2025-09-22 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, precio bajo SMA 12h, volumen alto no confirma reversal",
+      "ticker": "BTC-USD",
+      "price": 112745.09375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, precio bajo SMA 12h, volumen alto no confirma reversal",
+      "date": "2025-09-22 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista y RSI neutral sin se\u00f1ales claras",
+      "ticker": "BTC-USD",
+      "price": 112832.9921875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista y RSI neutral sin se\u00f1ales claras",
+      "date": "2025-09-22 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, RSI neutral, volumen bajo",
+      "ticker": "BTC-USD",
+      "price": 112710.953125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, RSI neutral, volumen bajo",
+      "date": "2025-09-22 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista persiste a pesar de momentum alcista reciente",
+      "ticker": "BTC-USD",
+      "price": 112929.21875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista persiste a pesar de momentum alcista reciente",
+      "date": "2025-09-22 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista en m\u00faltiples timeframes, RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 112514.1484375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista en m\u00faltiples timeframes, RSI neutral",
+      "date": "2025-09-23 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista y volumen bajo, esperar mejor se\u00f1al",
+      "ticker": "BTC-USD",
+      "price": 112501.3046875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista y volumen bajo, esperar mejor se\u00f1al",
+      "date": "2025-09-23 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia lateral con volumen cero, esperar confirmaci\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 113181.203125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia lateral con volumen cero, esperar confirmaci\u00f3n",
+      "date": "2025-09-23 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia lateral con volumen bajo y RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 112989.375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia lateral con volumen bajo y RSI neutral",
+      "date": "2025-09-23 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, RSI neutral y momentum negativo en corto plazo",
+      "ticker": "BTC-USD",
+      "price": 112882.3671875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, RSI neutral y momentum negativo en corto plazo",
+      "date": "2025-09-23 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, RSI neutral sin momentum claro",
+      "ticker": "BTC-USD",
+      "price": 111967.96875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, RSI neutral sin momentum claro",
+      "date": "2025-09-23 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, RSI neutral y volumen bajo",
+      "ticker": "BTC-USD",
+      "price": 112260.3359375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, RSI neutral y volumen bajo",
+      "date": "2025-09-24 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1500.0,
+      "shares": 0.013373321421790239,
+      "reason": "RSI neutral, volumen alto, precio sobre SMA 12h",
+      "ticker": "BTC-USD",
+      "price": 112163.609375,
+      "raw_response": "ACCION: BUY\nMONTO: 1500\nRAZON: RSI neutral, volumen alto, precio sobre SMA 12h",
+      "date": "2025-09-24 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.013373321421790239 acciones de BTC-USD a $112163.61",
+        "trade": {
+          "date": "2025-09-24 04:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.013373321421790239,
+          "price": 112163.609375,
+          "cost": 1500.0,
+          "fee": 1.5,
+          "total": 1501.5,
+          "cash_after": 6725.786660489506,
+          "reason": "RSI neutral, volumen alto, precio sobre SMA 12h"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia lateral sin momentum claro, RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 112644.3515625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia lateral sin momentum claro, RSI neutral",
+      "date": "2025-09-24 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Mercado lateral sin momentum claro, RSI neutro",
+      "ticker": "BTC-USD",
+      "price": 113071.125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Mercado lateral sin momentum claro, RSI neutro",
+      "date": "2025-09-24 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "RSI neutral y precio cerca del promedio sin clara direccionalidad",
+      "ticker": "BTC-USD",
+      "price": 113755.84375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: RSI neutral y precio cerca del promedio sin clara direccionalidad",
+      "date": "2025-09-24 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Precio por debajo de SMA 4h, volumen bajo y tendencia lateral",
+      "ticker": "BTC-USD",
+      "price": 113598.1484375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Precio por debajo de SMA 4h, volumen bajo y tendencia lateral",
+      "date": "2025-09-24 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, precio bajo SMA, momentum d\u00e9bil",
+      "ticker": "BTC-USD",
+      "price": 113096.4921875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, precio bajo SMA, momentum d\u00e9bil",
+      "date": "2025-09-25 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista clara, RSI neutral sin se\u00f1ales de reversi\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 111713.3046875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista clara, RSI neutral sin se\u00f1ales de reversi\u00f3n",
+      "date": "2025-09-25 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, volumen bajo y RSI neutral sin se\u00f1al clara",
+      "ticker": "BTC-USD",
+      "price": 111750.6953125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, volumen bajo y RSI neutral sin se\u00f1al clara",
+      "date": "2025-09-25 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, RSI neutral y precio bajo SMA",
+      "ticker": "BTC-USD",
+      "price": 111220.3046875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, RSI neutral y precio bajo SMA",
+      "date": "2025-09-25 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista y precio bajo SMA clave",
+      "ticker": "BTC-USD",
+      "price": 111011.484375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista y precio bajo SMA clave",
+      "date": "2025-09-25 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, RSI neutral y precio bajo SMA clave",
+      "ticker": "BTC-USD",
+      "price": 109130.3125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, RSI neutral y precio bajo SMA clave",
+      "date": "2025-09-25 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista y volumen bajo, esperar confirmaci\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 109520.125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista y volumen bajo, esperar confirmaci\u00f3n",
+      "date": "2025-09-26 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista en corto plazo, RSI neutral sin se\u00f1al clara",
+      "ticker": "BTC-USD",
+      "price": 109384.125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista en corto plazo, RSI neutral sin se\u00f1al clara",
+      "date": "2025-09-26 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista persiste, volumen bajo, esperar confirmaci\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 109612.8828125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista persiste, volumen bajo, esperar confirmaci\u00f3n",
+      "date": "2025-09-26 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, RSI neutral y p\u00e9rdida en posici\u00f3n actual",
+      "ticker": "BTC-USD",
+      "price": 109468.640625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, RSI neutral y p\u00e9rdida en posici\u00f3n actual",
+      "date": "2025-09-26 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, p\u00e9rdida no realizada del 4%, RSI neutral sin impulso alcista",
+      "ticker": "BTC-USD",
+      "price": 109500.84375,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Tendencia bajista, p\u00e9rdida no realizada del 4%, RSI neutral sin impulso alcista",
+      "date": "2025-09-26 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.014244843177552861 acciones de BTC-USD a $109500.84. P&L: $-65.18 (-4.01%)",
+        "trade": {
+          "date": "2025-09-26 16:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.014244843177552861,
+          "price": 109500.84375,
+          "revenue": 1559.8223470284695,
+          "fee": 1.5598223470284696,
+          "net_revenue": 1558.262524681441,
+          "cash_after": 8284.049185170947,
+          "pnl": -65.17765297153062,
+          "pnl_pct": -4.010932490555731,
+          "reason": "Tendencia bajista, p\u00e9rdida no realizada del 4%, RSI neutral sin impulso alcista"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia mixta, RSI neutral y volumen cero",
+      "ticker": "BTC-USD",
+      "price": 109359.8359375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia mixta, RSI neutral y volumen cero",
+      "date": "2025-09-26 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Mercado lateral sin momentum claro, RSI neutro",
+      "ticker": "BTC-USD",
+      "price": 109644.4765625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Mercado lateral sin momentum claro, RSI neutro",
+      "date": "2025-09-27 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista persiste, RSI neutral sin se\u00f1al clara",
+      "ticker": "BTC-USD",
+      "price": 109707.859375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista persiste, RSI neutral sin se\u00f1al clara",
+      "date": "2025-09-27 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, RSI neutral sin momentum claro",
+      "ticker": "BTC-USD",
+      "price": 109328.6875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, RSI neutral sin momentum claro",
+      "date": "2025-09-27 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, momentum d\u00e9bil y RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 109491.625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, momentum d\u00e9bil y RSI neutral",
+      "date": "2025-09-27 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, RSI neutral y volumen cero indican falta de momentum claro",
+      "ticker": "BTC-USD",
+      "price": 109427.1796875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, RSI neutral y volumen cero indican falta de momentum claro",
+      "date": "2025-09-27 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Mercado lateral sin momentum claro, RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 109437.5078125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Mercado lateral sin momentum claro, RSI neutral",
+      "date": "2025-09-27 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Mercado lateral sin momentum claro, RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 109647.3125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Mercado lateral sin momentum claro, RSI neutral",
+      "date": "2025-09-28 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, RSI neutral y volumen cero",
+      "ticker": "BTC-USD",
+      "price": 109421.5859375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, RSI neutral y volumen cero",
+      "date": "2025-09-28 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1500.0,
+      "shares": 0.013690719097176939,
+      "reason": "Precio sobre SMA 4h, momentum positivo en 4h, RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 109563.2734375,
+      "raw_response": "ACCION: BUY\nMONTO: 1500\nRAZON: Precio sobre SMA 4h, momentum positivo en 4h, RSI neutral",
+      "date": "2025-09-28 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.013690719097176939 acciones de BTC-USD a $109563.27",
+        "trade": {
+          "date": "2025-09-28 08:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.013690719097176939,
+          "price": 109563.2734375,
+          "cost": 1500.0,
+          "fee": 1.5,
+          "total": 1501.5,
+          "cash_after": 6782.549185170947,
+          "reason": "Precio sobre SMA 4h, momentum positivo en 4h, RSI neutral"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, momentum d\u00e9bil sin direcci\u00f3n clara",
+      "ticker": "BTC-USD",
+      "price": 109365.7421875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, momentum d\u00e9bil sin direcci\u00f3n clara",
+      "date": "2025-09-28 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "RSI neutral y volumen alto sin confirmaci\u00f3n direccional clara",
+      "ticker": "BTC-USD",
+      "price": 110223.2109375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: RSI neutral y volumen alto sin confirmaci\u00f3n direccional clara",
+      "date": "2025-09-28 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1500.0,
+      "shares": 0.013532639033769573,
+      "reason": "Momentum alcista 4h, volumen fuerte, precio sobre SMA 12h",
+      "ticker": "BTC-USD",
+      "price": 110843.125,
+      "raw_response": "ACCION: BUY\nMONTO: 1500\nRAZON: Momentum alcista 4h, volumen fuerte, precio sobre SMA 12h",
+      "date": "2025-09-28 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.013532639033769573 acciones de BTC-USD a $110843.12",
+        "trade": {
+          "date": "2025-09-28 20:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.013532639033769573,
+          "price": 110843.125,
+          "cost": 1500.0,
+          "fee": 1.5,
+          "total": 1501.5,
+          "cash_after": 5281.049185170947,
+          "reason": "Momentum alcista 4h, volumen fuerte, precio sobre SMA 12h"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1320.0,
+      "shares": 0.011756683412889489,
+      "reason": "Momentum alcista 4h, precio sobre SMA, RSI neutro con espacio",
+      "ticker": "BTC-USD",
+      "price": 112276.5625,
+      "raw_response": "ACCION: BUY\nMONTO: 1320\nRAZON: Momentum alcista 4h, precio sobre SMA, RSI neutro con espacio",
+      "date": "2025-09-29 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.011756683412889489 acciones de BTC-USD a $112276.56",
+        "trade": {
+          "date": "2025-09-29 00:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.011756683412889489,
+          "price": 112276.5625,
+          "cost": 1320.0,
+          "fee": 1.32,
+          "total": 1321.32,
+          "cash_after": 3959.729185170947,
+          "reason": "Momentum alcista 4h, precio sobre SMA, RSI neutro con espacio"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Precio cerca de SMA 4h sin momentum claro, volumen alto pero RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 111867.125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Precio cerca de SMA 4h sin momentum claro, volumen alto pero RSI neutral",
+      "date": "2025-09-29 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 989.0,
+      "shares": 0.008818762217561466,
+      "reason": "Momentum alcista 4h, volumen fuerte, precio sobre SMA",
+      "ticker": "BTC-USD",
+      "price": 112147.2578125,
+      "raw_response": "ACCION: BUY\nMONTO: 989\nRAZON: Momentum alcista 4h, volumen fuerte, precio sobre SMA",
+      "date": "2025-09-29 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.008818762217561466 acciones de BTC-USD a $112147.26",
+        "trade": {
+          "date": "2025-09-29 08:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.008818762217561466,
+          "price": 112147.2578125,
+          "cost": 989.0,
+          "fee": 0.989,
+          "total": 989.989,
+          "cash_after": 2969.740185170947,
+          "reason": "Momentum alcista 4h, volumen fuerte, precio sobre SMA"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Precio cerca de SMA 4h, momentum lateral, RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 112039.7421875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Precio cerca de SMA 4h, momentum lateral, RSI neutral",
+      "date": "2025-09-29 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "RSI neutral y volumen bajo, esperando confirmaci\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 113686.0625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: RSI neutral y volumen bajo, esperando confirmaci\u00f3n",
+      "date": "2025-09-29 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Tomar ganancias cerca de m\u00e1ximo diario, volumen elevado sugiere posible correcci\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 114317.078125,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Tomar ganancias cerca de m\u00e1ximo diario, volumen elevado sugiere posible correcci\u00f3n",
+      "date": "2025-09-29 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.031021823469475164 acciones de BTC-USD a $114317.08. P&L: $79.32 (+2.29%)",
+        "trade": {
+          "date": "2025-09-29 20:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.031021823469475164,
+          "price": 114317.078125,
+          "revenue": 3546.324217139951,
+          "fee": 3.546324217139951,
+          "net_revenue": 3542.777892922811,
+          "cash_after": 6512.518078093758,
+          "pnl": 79.3242171399508,
+          "pnl_pct": 2.2879785734049847,
+          "reason": "Tomar ganancias cerca de m\u00e1ximo diario, volumen elevado sugiere posible correcci\u00f3n"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1500.0,
+      "shares": 0.013087819473162097,
+      "reason": "Precio sobre SMA 4h, momentum alcista continuo",
+      "ticker": "BTC-USD",
+      "price": 114610.3828125,
+      "raw_response": "ACCION: BUY\nMONTO: 1500\nRAZON: Precio sobre SMA 4h, momentum alcista continuo",
+      "date": "2025-09-30 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.013087819473162097 acciones de BTC-USD a $114610.38",
+        "trade": {
+          "date": "2025-09-30 00:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.013087819473162097,
+          "price": 114610.3828125,
+          "cost": 1500.0,
+          "fee": 1.5,
+          "total": 1501.5,
+          "cash_after": 5011.018078093758,
+          "reason": "Precio sobre SMA 4h, momentum alcista continuo"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1250.0,
+      "shares": 0.010949159357760634,
+      "reason": "Precio cerca de SMA 4h con tendencia alcista, RSI neutral permite entrada",
+      "ticker": "BTC-USD",
+      "price": 114164.015625,
+      "raw_response": "ACCION: BUY\nMONTO: 1250\nRAZON: Precio cerca de SMA 4h con tendencia alcista, RSI neutral permite entrada",
+      "date": "2025-09-30 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.010949159357760634 acciones de BTC-USD a $114164.02",
+        "trade": {
+          "date": "2025-09-30 04:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.010949159357760634,
+          "price": 114164.015625,
+          "cost": 1250.0,
+          "fee": 1.25,
+          "total": 1251.25,
+          "cash_after": 3759.768078093758,
+          "reason": "Precio cerca de SMA 4h con tendencia alcista, RSI neutral permite entrada"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, precio bajo SMA 12h, volumen bajo",
+      "ticker": "BTC-USD",
+      "price": 113535.9609375,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Tendencia bajista, precio bajo SMA 12h, volumen bajo",
+      "date": "2025-09-30 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.02752940115019895 acciones de BTC-USD a $113535.96. P&L: $17.08 (+0.55%)",
+        "trade": {
+          "date": "2025-09-30 08:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.02752940115019895,
+          "price": 113535.9609375,
+          "revenue": 3125.5770136217557,
+          "fee": 3.1255770136217556,
+          "net_revenue": 3122.451436608134,
+          "cash_after": 6882.219514701892,
+          "pnl": 17.07701362175526,
+          "pnl_pct": 0.549365083537245,
+          "reason": "Tendencia bajista, precio bajo SMA 12h, volumen bajo"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista general, volumen bajo y RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 113091.8046875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista general, volumen bajo y RSI neutral",
+      "date": "2025-09-30 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, momentum negativo en m\u00faltiples timeframes",
+      "ticker": "BTC-USD",
+      "price": 112817.1953125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, momentum negativo en m\u00faltiples timeframes",
+      "date": "2025-09-30 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia alcista d\u00e9bil, volumen alto pero RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 114633.03125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia alcista d\u00e9bil, volumen alto pero RSI neutral",
+      "date": "2025-09-30 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "RSI neutral y volumen bajo sin impulso claro",
+      "ticker": "BTC-USD",
+      "price": 114231.078125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: RSI neutral y volumen bajo sin impulso claro",
+      "date": "2025-10-01 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Precio cerca de SMA 4h, volumen alto pero sin clara direccionalidad",
+      "ticker": "BTC-USD",
+      "price": 114316.125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Precio cerca de SMA 4h, volumen alto pero sin clara direccionalidad",
+      "date": "2025-10-01 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1720.0,
+      "shares": 0.014814036272453113,
+      "reason": "Momentum alcista en 4h y 24h, volumen 6.6x promedio, precio sobre SMA",
+      "ticker": "BTC-USD",
+      "price": 116106.1015625,
+      "raw_response": "ACCION: BUY\nMONTO: 1720\nRAZON: Momentum alcista en 4h y 24h, volumen 6.6x promedio, precio sobre SMA",
+      "date": "2025-10-01 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.014814036272453113 acciones de BTC-USD a $116106.10",
+        "trade": {
+          "date": "2025-10-01 08:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.014814036272453113,
+          "price": 116106.1015625,
+          "cost": 1720.0,
+          "fee": 1.72,
+          "total": 1721.72,
+          "cash_after": 5160.499514701892,
+          "reason": "Momentum alcista en 4h y 24h, volumen 6.6x promedio, precio sobre SMA"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Precio cerca de resistencia diaria, RSI neutral, tomar ganancias parciales",
+      "ticker": "BTC-USD",
+      "price": 116450.671875,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Precio cerca de resistencia diaria, RSI neutral, tomar ganancias parciales",
+      "date": "2025-10-01 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.021171718711326032 acciones de BTC-USD a $116450.67. P&L: $51.21 (+2.12%)",
+        "trade": {
+          "date": "2025-10-01 12:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.021171718711326032,
+          "price": 116450.671875,
+          "revenue": 2465.4608686824254,
+          "fee": 2.4654608686824253,
+          "net_revenue": 2462.995407813743,
+          "cash_after": 7623.494922515634,
+          "pnl": 51.21086868242569,
+          "pnl_pct": 2.1211916198581626,
+          "reason": "Precio cerca de resistencia diaria, RSI neutral, tomar ganancias parciales"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1500.0,
+      "shares": 0.012747964508604478,
+      "reason": "Momentum alcista 4h, volumen fuerte, tendencia positiva",
+      "ticker": "BTC-USD",
+      "price": 117665.84375,
+      "raw_response": "ACCION: BUY\nMONTO: 1500\nRAZON: Momentum alcista 4h, volumen fuerte, tendencia positiva",
+      "date": "2025-10-01 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.012747964508604478 acciones de BTC-USD a $117665.84",
+        "trade": {
+          "date": "2025-10-01 16:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.012747964508604478,
+          "price": 117665.84375,
+          "cost": 1500.0,
+          "fee": 1.5,
+          "total": 1501.5,
+          "cash_after": 6121.994922515634,
+          "reason": "Momentum alcista 4h, volumen fuerte, tendencia positiva"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia alcista pero volumen cero genera dudas sobre sostenibilidad",
+      "ticker": "BTC-USD",
+      "price": 117583.6875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia alcista pero volumen cero genera dudas sobre sostenibilidad",
+      "date": "2025-10-01 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia alcista pero RSI neutro y volumen excesivo sugiere esperar",
+      "ticker": "BTC-USD",
+      "price": 118557.25,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia alcista pero RSI neutro y volumen excesivo sugiere esperar",
+      "date": "2025-10-02 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia alcista pero momentum inmediato d\u00e9bil, volumen bajo",
+      "ticker": "BTC-USD",
+      "price": 118662.765625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia alcista pero momentum inmediato d\u00e9bil, volumen bajo",
+      "date": "2025-10-02 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia alcista d\u00e9bil, RSI neutral sin se\u00f1al clara",
+      "ticker": "BTC-USD",
+      "price": 118702.5625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia alcista d\u00e9bil, RSI neutral sin se\u00f1al clara",
+      "date": "2025-10-02 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Objetivo de ganancias alcanzado, toma de beneficios parcial",
+      "ticker": "BTC-USD",
+      "price": 119458.234375,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Objetivo de ganancias alcanzado, toma de beneficios parcial",
+      "date": "2025-10-02 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.016959841609965255 acciones de BTC-USD a $119458.23. P&L: $68.87 (+3.52%)",
+        "trade": {
+          "date": "2025-10-02 12:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.016959841609965255,
+          "price": 119458.234375,
+          "revenue": 2025.9927340061067,
+          "fee": 2.0259927340061066,
+          "net_revenue": 2023.9667412721005,
+          "cash_after": 8145.961663787735,
+          "pnl": 68.86773400610677,
+          "pnl_pct": 3.518821434814167,
+          "reason": "Objetivo de ganancias alcanzado, toma de beneficios parcial"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia alcista pero momentum d\u00e9bil en corto, volumen bajo",
+      "ticker": "BTC-USD",
+      "price": 119748.1015625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia alcista pero momentum d\u00e9bil en corto, volumen bajo",
+      "date": "2025-10-02 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Toma de beneficios tras rally 24h, volumen bajo actual",
+      "ticker": "BTC-USD",
+      "price": 120645.6953125,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Toma de beneficios tras rally 24h, volumen bajo actual",
+      "date": "2025-10-02 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.008479920804982628 acciones de BTC-USD a $120645.70. P&L: $44.50 (+4.55%)",
+        "trade": {
+          "date": "2025-10-02 20:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.008479920804982628,
+          "price": 120645.6953125,
+          "revenue": 1023.0659417120638,
+          "fee": 1.0230659417120638,
+          "net_revenue": 1022.0428757703518,
+          "cash_after": 9168.004539558087,
+          "pnl": 44.50344171206381,
+          "pnl_pct": 4.547838458153037,
+          "reason": "Toma de beneficios tras rally 24h, volumen bajo actual"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Toma de beneficios tras rally 24h, resistencia en m\u00e1ximo diario",
+      "ticker": "BTC-USD",
+      "price": 120217.2265625,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Toma de beneficios tras rally 24h, resistencia en m\u00e1ximo diario",
+      "date": "2025-10-03 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.004239960402491314 acciones de BTC-USD a $120217.23. P&L: $20.44 (+4.18%)",
+        "trade": {
+          "date": "2025-10-03 00:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.004239960402491314,
+          "price": 120217.2265625,
+          "revenue": 509.71628032232695,
+          "fee": 0.509716280322327,
+          "net_revenue": 509.20656404200463,
+          "cash_after": 9677.211103600092,
+          "pnl": 20.435030322326956,
+          "pnl_pct": 4.176540654751629,
+          "reason": "Toma de beneficios tras rally 24h, resistencia en m\u00e1ximo diario"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista general, volumen cero actual, esperando confirmaci\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 120129.5703125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista general, volumen cero actual, esperando confirmaci\u00f3n",
+      "date": "2025-10-03 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista con volumen elevado, esperar confirmaci\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 120075.640625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista con volumen elevado, esperar confirmaci\u00f3n",
+      "date": "2025-10-03 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Momentum lateral, RSI neutral sin se\u00f1al clara",
+      "ticker": "BTC-USD",
+      "price": 120455.8359375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Momentum lateral, RSI neutral sin se\u00f1al clara",
+      "date": "2025-10-03 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2419.0,
+      "shares": 0.01969979620834657,
+      "reason": "Momentum alcista 4h, volumen alto 12.79x, tendencia alcista confirmada",
+      "ticker": "BTC-USD",
+      "price": 122793.1484375,
+      "raw_response": "ACCION: BUY\nMONTO: 2419\nRAZON: Momentum alcista 4h, volumen alto 12.79x, tendencia alcista confirmada",
+      "date": "2025-10-03 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.01969979620834657 acciones de BTC-USD a $122793.15",
+        "trade": {
+          "date": "2025-10-03 16:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.01969979620834657,
+          "price": 122793.1484375,
+          "cost": 2419.0,
+          "fee": 2.419,
+          "total": 2421.419,
+          "cash_after": 7255.792103600092,
+          "reason": "Momentum alcista 4h, volumen alto 12.79x, tendencia alcista confirmada"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "RSI neutral y volumen bajo sin se\u00f1al clara",
+      "ticker": "BTC-USD",
+      "price": 122598.0078125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: RSI neutral y volumen bajo sin se\u00f1al clara",
+      "date": "2025-10-03 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia lateral sin momentum claro, RSI neutro",
+      "ticker": "BTC-USD",
+      "price": 122158.265625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia lateral sin momentum claro, RSI neutro",
+      "date": "2025-10-04 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "RSI neutral y volumen bajo sin confirmaci\u00f3n clara",
+      "ticker": "BTC-USD",
+      "price": 122574.53125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: RSI neutral y volumen bajo sin confirmaci\u00f3n clara",
+      "date": "2025-10-04 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "RSI neutral 50.0 y precio cerca de medias m\u00f3viles sin momentum claro",
+      "ticker": "BTC-USD",
+      "price": 122336.65625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: RSI neutral 50.0 y precio cerca de medias m\u00f3viles sin momentum claro",
+      "date": "2025-10-04 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, precio por debajo de SMA 12h, RSI neutral sin impulso",
+      "ticker": "BTC-USD",
+      "price": 122061.3984375,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Tendencia bajista, precio por debajo de SMA 12h, RSI neutral sin impulso",
+      "date": "2025-10-04 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.011969878305418943 acciones de BTC-USD a $122061.40. P&L: $6.92 (+0.48%)",
+        "trade": {
+          "date": "2025-10-04 12:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.011969878305418943,
+          "price": 122061.3984375,
+          "revenue": 1461.060085086129,
+          "fee": 1.461060085086129,
+          "net_revenue": 1459.599025001043,
+          "cash_after": 8715.391128601135,
+          "pnl": 6.919460086128952,
+          "pnl_pct": 0.47584531833906724,
+          "reason": "Tendencia bajista, precio por debajo de SMA 12h, RSI neutral sin impulso"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, momentum negativo en 4h y 24h",
+      "ticker": "BTC-USD",
+      "price": 121737.0546875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, momentum negativo en 4h y 24h",
+      "date": "2025-10-04 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, volumen cero y RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 121952.6484375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, volumen cero y RSI neutral",
+      "date": "2025-10-04 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia lateral sin momentum claro, RSI neutro",
+      "ticker": "BTC-USD",
+      "price": 122215.484375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia lateral sin momentum claro, RSI neutro",
+      "date": "2025-10-05 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 2000.0,
+      "shares": 0.01597138825615087,
+      "reason": "Momentum alcista 4h, volumen fuerte, precio sobre SMA",
+      "ticker": "BTC-USD",
+      "price": 125223.9296875,
+      "raw_response": "ACCION: BUY\nMONTO: 2000\nRAZON: Momentum alcista 4h, volumen fuerte, precio sobre SMA",
+      "date": "2025-10-05 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.01597138825615087 acciones de BTC-USD a $125223.93",
+        "trade": {
+          "date": "2025-10-05 04:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.01597138825615087,
+          "price": 125223.9296875,
+          "cost": 2000.0,
+          "fee": 2.0,
+          "total": 2002.0,
+          "cash_after": 6713.391128601135,
+          "reason": "Momentum alcista 4h, volumen fuerte, precio sobre SMA"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia mixta, volumen cero y RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 124599.2421875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia mixta, volumen cero y RSI neutral",
+      "date": "2025-10-05 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, precio bajo SMA 12h, volumen alto sugiere distribuci\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 123180.234375,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Tendencia bajista, precio bajo SMA 12h, volumen alto sugiere distribuci\u00f3n",
+      "date": "2025-10-05 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.013970633280784907 acciones de BTC-USD a $123180.23. P&L: $-6.16 (-0.36%)",
+        "trade": {
+          "date": "2025-10-05 12:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.013970633280784907,
+          "price": 123180.234375,
+          "revenue": 1720.9058818942601,
+          "fee": 1.7209058818942602,
+          "net_revenue": 1719.184976012366,
+          "cash_after": 8432.576104613501,
+          "pnl": -6.1644306057398595,
+          "pnl_pct": -0.35692991542519265,
+          "reason": "Tendencia bajista, precio bajo SMA 12h, volumen alto sugiere distribuci\u00f3n"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista y volumen bajo, esperar mejor se\u00f1al",
+      "ticker": "BTC-USD",
+      "price": 123270.2734375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista y volumen bajo, esperar mejor se\u00f1al",
+      "date": "2025-10-05 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista y precio bajo SMA 12h",
+      "ticker": "BTC-USD",
+      "price": 122835.984375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista y precio bajo SMA 12h",
+      "date": "2025-10-05 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1500.0,
+      "shares": 0.0121580377737569,
+      "reason": "Tendencia alcista, volumen alto, RSI neutral con espacio para subir",
+      "ticker": "BTC-USD",
+      "price": 123375.171875,
+      "raw_response": "ACCION: BUY\nMONTO: 1500\nRAZON: Tendencia alcista, volumen alto, RSI neutral con espacio para subir",
+      "date": "2025-10-06 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.0121580377737569 acciones de BTC-USD a $123375.17",
+        "trade": {
+          "date": "2025-10-06 00:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.0121580377737569,
+          "price": 123375.171875,
+          "cost": 1500.0,
+          "fee": 1.5,
+          "total": 1501.5,
+          "cash_after": 6931.076104613501,
+          "reason": "Tendencia alcista, volumen alto, RSI neutral con espacio para subir"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia mixta con volumen cero y RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 123663.5234375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia mixta con volumen cero y RSI neutral",
+      "date": "2025-10-06 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1500.0,
+      "shares": 0.012110652763553192,
+      "reason": "Precio sobre SMA 4h, momentum alcista horario",
+      "ticker": "BTC-USD",
+      "price": 123857.8984375,
+      "raw_response": "ACCION: BUY\nMONTO: 1500\nRAZON: Precio sobre SMA 4h, momentum alcista horario",
+      "date": "2025-10-06 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.012110652763553192 acciones de BTC-USD a $123857.90",
+        "trade": {
+          "date": "2025-10-06 08:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.012110652763553192,
+          "price": 123857.8984375,
+          "cost": 1500.0,
+          "fee": 1.5,
+          "total": 1501.5,
+          "cash_after": 5429.576104613501,
+          "reason": "Precio sobre SMA 4h, momentum alcista horario"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1357.0,
+      "shares": 0.010892089577303197,
+      "reason": "Precio sobre SMA 4h y 12h, volumen fuerte 1.57x, momentum alcista",
+      "ticker": "BTC-USD",
+      "price": 124585.828125,
+      "raw_response": "ACCION: BUY\nMONTO: 1357\nRAZON: Precio sobre SMA 4h y 12h, volumen fuerte 1.57x, momentum alcista",
+      "date": "2025-10-06 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.010892089577303197 acciones de BTC-USD a $124585.83",
+        "trade": {
+          "date": "2025-10-06 12:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.010892089577303197,
+          "price": 124585.828125,
+          "cost": 1357.0,
+          "fee": 1.357,
+          "total": 1358.357,
+          "cash_after": 4071.2191046135013,
+          "reason": "Precio sobre SMA 4h y 12h, volumen fuerte 1.57x, momentum alcista"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "RSI neutral en 50, volumen actual cero, esperando confirmaci\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 125369.234375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: RSI neutral en 50, volumen actual cero, esperando confirmaci\u00f3n",
+      "date": "2025-10-06 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia alcista pero momentum bajista en corto plazo",
+      "ticker": "BTC-USD",
+      "price": 125251.1875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia alcista pero momentum bajista en corto plazo",
+      "date": "2025-10-06 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "RSI neutral y tendencia bajista a pesar de precio sobre SMA 4h",
+      "ticker": "BTC-USD",
+      "price": 124923.9296875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: RSI neutral y tendencia bajista a pesar de precio sobre SMA 4h",
+      "date": "2025-10-07 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista con momentum mixto, RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 124580.90625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista con momentum mixto, RSI neutral",
+      "date": "2025-10-07 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, volumen bajo y momentum mixto",
+      "ticker": "BTC-USD",
+      "price": 123954.1953125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, volumen bajo y momentum mixto",
+      "date": "2025-10-07 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia alcista d\u00e9bil, volumen cero genera dudas",
+      "ticker": "BTC-USD",
+      "price": 125001.6171875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia alcista d\u00e9bil, volumen cero genera dudas",
+      "date": "2025-10-07 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, precio por debajo de SMA 4h y 12h",
+      "ticker": "BTC-USD",
+      "price": 121866.6015625,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Tendencia bajista, precio por debajo de SMA 4h y 12h",
+      "date": "2025-10-07 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.0245657066976991 acciones de BTC-USD a $121866.60. P&L: $-48.30 (-1.59%)",
+        "trade": {
+          "date": "2025-10-07 16:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.0245657066976991,
+          "price": 121866.6015625,
+          "revenue": 2993.7391902297336,
+          "fee": 2.9937391902297334,
+          "net_revenue": 2990.7454510395037,
+          "cash_after": 7061.964555653005,
+          "pnl": -48.2959660202661,
+          "pnl_pct": -1.5876202456450852,
+          "reason": "Tendencia bajista, precio por debajo de SMA 4h y 12h"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista y precio por debajo de SMA 12h",
+      "ticker": "BTC-USD",
+      "price": 122153.09375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista y precio por debajo de SMA 12h",
+      "date": "2025-10-07 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista y volumen alto sin direcci\u00f3n clara",
+      "ticker": "BTC-USD",
+      "price": 121988.1328125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista y volumen alto sin direcci\u00f3n clara",
+      "date": "2025-10-08 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia mixta sin momentum claro, RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 121929.6171875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia mixta sin momentum claro, RSI neutral",
+      "date": "2025-10-08 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1500.0,
+      "shares": 0.012251405737141879,
+      "reason": "Momentum alcista 4h, volumen superior al promedio, RSI neutral con espacio para subir",
+      "ticker": "BTC-USD",
+      "price": 122434.9296875,
+      "raw_response": "ACCION: BUY\nMONTO: 1500\nRAZON: Momentum alcista 4h, volumen superior al promedio, RSI neutral con espacio para subir",
+      "date": "2025-10-08 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.012251405737141879 acciones de BTC-USD a $122434.93",
+        "trade": {
+          "date": "2025-10-08 08:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.012251405737141879,
+          "price": 122434.9296875,
+          "cost": 1500.0,
+          "fee": 1.5,
+          "total": 1501.5,
+          "cash_after": 5560.464555653005,
+          "reason": "Momentum alcista 4h, volumen superior al promedio, RSI neutral con espacio para subir"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1390.0,
+      "shares": 0.011334257851690548,
+      "reason": "SMA 12h soporte, tendencia alcista, RSI neutro oportunidad entrada",
+      "ticker": "BTC-USD",
+      "price": 122637.0546875,
+      "raw_response": "ACCION: BUY\nMONTO: 1390\nRAZON: SMA 12h soporte, tendencia alcista, RSI neutro oportunidad entrada",
+      "date": "2025-10-08 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.011334257851690548 acciones de BTC-USD a $122637.05",
+        "trade": {
+          "date": "2025-10-08 12:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.011334257851690548,
+          "price": 122637.0546875,
+          "cost": 1390.0,
+          "fee": 1.3900000000000001,
+          "total": 1391.39,
+          "cash_after": 4169.074555653005,
+          "reason": "SMA 12h soporte, tendencia alcista, RSI neutro oportunidad entrada"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "RSI neutral y volumen cero indican falta de momentum claro",
+      "ticker": "BTC-USD",
+      "price": 123098.7890625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: RSI neutral y volumen cero indican falta de momentum claro",
+      "date": "2025-10-08 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1042.0,
+      "shares": 0.008467762620252438,
+      "reason": "Precio cerca de SMA12, RSI neutro con tendencia alcista",
+      "ticker": "BTC-USD",
+      "price": 123054.9375,
+      "raw_response": "ACCION: BUY\nMONTO: 1042\nRAZON: Precio cerca de SMA12, RSI neutro con tendencia alcista",
+      "date": "2025-10-08 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.008467762620252438 acciones de BTC-USD a $123054.94",
+        "trade": {
+          "date": "2025-10-08 20:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.008467762620252438,
+          "price": 123054.9375,
+          "cost": 1042.0,
+          "fee": 1.042,
+          "total": 1043.042,
+          "cash_after": 3126.0325556530047,
+          "reason": "Precio cerca de SMA12, RSI neutro con tendencia alcista"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia mixta con momentum bajista reciente y RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 123006.21875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia mixta con momentum bajista reciente y RSI neutral",
+      "date": "2025-10-09 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, RSI neutral y volumen cero",
+      "ticker": "BTC-USD",
+      "price": 122141.9609375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, RSI neutral y volumen cero",
+      "date": "2025-10-09 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Precio por debajo de SMA 4h y 12h, tendencia bajista clara",
+      "ticker": "BTC-USD",
+      "price": 121332.3125,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Precio por debajo de SMA 4h y 12h, tendencia bajista clara",
+      "date": "2025-10-09 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.028309566453391985 acciones de BTC-USD a $121332.31. P&L: $-52.15 (-1.50%)",
+        "trade": {
+          "date": "2025-10-09 08:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.028309566453391985,
+          "price": 121332.3125,
+          "revenue": 3434.865163662473,
+          "fee": 3.434865163662473,
+          "net_revenue": 3431.4302984988108,
+          "cash_after": 6557.462854151816,
+          "pnl": -52.15241446252704,
+          "pnl_pct": -1.49561662062426,
+          "reason": "Precio por debajo de SMA 4h y 12h, tendencia bajista clara"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "RSI neutral y ganancias recientes ya realizadas",
+      "ticker": "BTC-USD",
+      "price": 123620.7265625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: RSI neutral y ganancias recientes ya realizadas",
+      "date": "2025-10-09 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista clara, esperar mejor momento de entrada",
+      "ticker": "BTC-USD",
+      "price": 119976.6484375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista clara, esperar mejor momento de entrada",
+      "date": "2025-10-09 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, volumen cero y RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 121165.140625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, volumen cero y RSI neutral",
+      "date": "2025-10-09 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1200.0,
+      "shares": 0.009849503308657206,
+      "reason": "Precio sobre SMA 4h, momentum positivo corto plazo",
+      "ticker": "BTC-USD",
+      "price": 121833.5546875,
+      "raw_response": "ACCION: BUY\nMONTO: 1200\nRAZON: Precio sobre SMA 4h, momentum positivo corto plazo",
+      "date": "2025-10-10 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.009849503308657206 acciones de BTC-USD a $121833.55",
+        "trade": {
+          "date": "2025-10-10 00:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.009849503308657206,
+          "price": 121833.5546875,
+          "cost": 1200.0,
+          "fee": 1.2,
+          "total": 1201.2,
+          "cash_after": 5356.262854151816,
+          "reason": "Precio sobre SMA 4h, momentum positivo corto plazo"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia lateral con volumen bajo, esperando confirmaci\u00f3n direccional",
+      "ticker": "BTC-USD",
+      "price": 121284.40625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia lateral con volumen bajo, esperando confirmaci\u00f3n direccional",
+      "date": "2025-10-10 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista general, momentum mixto sin direcci\u00f3n clara",
+      "ticker": "BTC-USD",
+      "price": 121636.5,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista general, momentum mixto sin direcci\u00f3n clara",
+      "date": "2025-10-10 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia lateral con volumen cero, esperar confirmaci\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 121638.5703125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia lateral con volumen cero, esperar confirmaci\u00f3n",
+      "date": "2025-10-10 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista clara, volumen bajo y precio bajo SMA",
+      "ticker": "BTC-USD",
+      "price": 118343.828125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista clara, volumen bajo y precio bajo SMA",
+      "date": "2025-10-10 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista clara, esperando mejor nivel de entrada",
+      "ticker": "BTC-USD",
+      "price": 114527.5703125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista clara, esperando mejor nivel de entrada",
+      "date": "2025-10-10 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista clara, RSI neutral sin se\u00f1ales de reversi\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 112762.6796875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista clara, RSI neutral sin se\u00f1ales de reversi\u00f3n",
+      "date": "2025-10-11 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1000.0,
+      "shares": 0.008844892306180597,
+      "reason": "Momentum alcista 4h, precio sobre SMA4h, RSI neutro con espacio para subir",
+      "ticker": "BTC-USD",
+      "price": 113059.6015625,
+      "raw_response": "ACCION: BUY\nMONTO: 1000\nRAZON: Momentum alcista 4h, precio sobre SMA4h, RSI neutro con espacio para subir",
+      "date": "2025-10-11 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.008844892306180597 acciones de BTC-USD a $113059.60",
+        "trade": {
+          "date": "2025-10-11 04:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.008844892306180597,
+          "price": 113059.6015625,
+          "cost": 1000.0,
+          "fee": 1.0,
+          "total": 1001.0,
+          "cash_after": 4355.262854151816,
+          "reason": "Momentum alcista 4h, precio sobre SMA4h, RSI neutro con espacio para subir"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1088.0,
+      "shares": 0.009755194793232025,
+      "reason": "RSI en 50 con recuperaci\u00f3n de 1.1% en \u00faltima hora, precio cerca de SMA 4h",
+      "ticker": "BTC-USD",
+      "price": 111530.3203125,
+      "raw_response": "ACCION: BUY\nMONTO: 1088\nRAZON: RSI en 50 con recuperaci\u00f3n de 1.1% en \u00faltima hora, precio cerca de SMA 4h",
+      "date": "2025-10-11 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.009755194793232025 acciones de BTC-USD a $111530.32",
+        "trade": {
+          "date": "2025-10-11 08:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.009755194793232025,
+          "price": 111530.3203125,
+          "cost": 1088.0,
+          "fee": 1.088,
+          "total": 1089.088,
+          "cash_after": 3266.1748541518164,
+          "reason": "RSI en 50 con recuperaci\u00f3n de 1.1% en \u00faltima hora, precio cerca de SMA 4h"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista en 24h y volumen d\u00e9bil",
+      "ticker": "BTC-USD",
+      "price": 112450.359375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista en 24h y volumen d\u00e9bil",
+      "date": "2025-10-11 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista en 24h y RSI neutral sin momentum claro",
+      "ticker": "BTC-USD",
+      "price": 111941.453125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista en 24h y RSI neutral sin momentum claro",
+      "date": "2025-10-11 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista clara, RSI neutral sin se\u00f1ales de entrada",
+      "ticker": "BTC-USD",
+      "price": 110234.7578125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista clara, RSI neutral sin se\u00f1ales de entrada",
+      "date": "2025-10-11 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista clara, RSI neutral sin se\u00f1ales de reversi\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 109741.984375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista clara, RSI neutral sin se\u00f1ales de reversi\u00f3n",
+      "date": "2025-10-12 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista y posici\u00f3n actual en p\u00e9rdidas",
+      "ticker": "BTC-USD",
+      "price": 111563.5078125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista y posici\u00f3n actual en p\u00e9rdidas",
+      "date": "2025-10-12 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia alcista pero momentum bajista reciente, esperar confirmaci\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 111426.6640625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia alcista pero momentum bajista reciente, esperar confirmaci\u00f3n",
+      "date": "2025-10-12 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia mixta, RSI neutral y p\u00e9rdida actual en posici\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 111801.3203125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia mixta, RSI neutral y p\u00e9rdida actual en posici\u00f3n",
+      "date": "2025-10-12 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia alcista pero posici\u00f3n actual en p\u00e9rdidas y RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 114139.5234375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia alcista pero posici\u00f3n actual en p\u00e9rdidas y RSI neutral",
+      "date": "2025-10-12 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "RSI neutral en 50, posici\u00f3n actual en p\u00e9rdidas",
+      "ticker": "BTC-USD",
+      "price": 115134.28125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: RSI neutral en 50, posici\u00f3n actual en p\u00e9rdidas",
+      "date": "2025-10-12 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia alcista pero posici\u00f3n actual en p\u00e9rdidas y volumen bajo",
+      "ticker": "BTC-USD",
+      "price": 115382.1796875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia alcista pero posici\u00f3n actual en p\u00e9rdidas y volumen bajo",
+      "date": "2025-10-13 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista corto plazo, RSI neutral sin se\u00f1al clara",
+      "ticker": "BTC-USD",
+      "price": 114756.28125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista corto plazo, RSI neutral sin se\u00f1al clara",
+      "date": "2025-10-13 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista persiste, volumen bajo, esperar confirmaci\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 115484.5390625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista persiste, volumen bajo, esperar confirmaci\u00f3n",
+      "date": "2025-10-13 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, precio bajo SMA, volumen bajo",
+      "ticker": "BTC-USD",
+      "price": 114475.484375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, precio bajo SMA, volumen bajo",
+      "date": "2025-10-13 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, RSI neutral y p\u00e9rdida en posici\u00f3n actual",
+      "ticker": "BTC-USD",
+      "price": 114806.5703125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, RSI neutral y p\u00e9rdida en posici\u00f3n actual",
+      "date": "2025-10-13 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "RSI neutro y p\u00e9rdida en posici\u00f3n actual",
+      "ticker": "BTC-USD",
+      "price": 115713.96875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: RSI neutro y p\u00e9rdida en posici\u00f3n actual",
+      "date": "2025-10-13 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Tendencia bajista corto plazo, p\u00e9rdida actual en posici\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 115056.4609375,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Tendencia bajista corto plazo, p\u00e9rdida actual en posici\u00f3n",
+      "date": "2025-10-14 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.028379578430730905 acciones de BTC-USD a $115056.46. P&L: $-122.25 (-3.61%)",
+        "trade": {
+          "date": "2025-10-14 00:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.028379578430730905,
+          "price": 115056.4609375,
+          "revenue": 3265.253857138108,
+          "fee": 3.265253857138108,
+          "net_revenue": 3261.9886032809695,
+          "cash_after": 6528.163457432785,
+          "pnl": -122.25493192439205,
+          "pnl_pct": -3.6089923166878735,
+          "reason": "Tendencia bajista corto plazo, p\u00e9rdida actual en posici\u00f3n"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista clara, RSI neutral sin se\u00f1ales de reversi\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 113098.4765625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista clara, RSI neutral sin se\u00f1ales de reversi\u00f3n",
+      "date": "2025-10-14 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1200.0,
+      "shares": 0.010720962385056765,
+      "reason": "Volumen 4.3x promedio, RSI neutro en soporte, recuperaci\u00f3n desde m\u00ednimo diario",
+      "ticker": "BTC-USD",
+      "price": 111930.25,
+      "raw_response": "ACCION: BUY\nMONTO: 1200\nRAZON: Volumen 4.3x promedio, RSI neutro en soporte, recuperaci\u00f3n desde m\u00ednimo diario",
+      "date": "2025-10-14 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.010720962385056765 acciones de BTC-USD a $111930.25",
+        "trade": {
+          "date": "2025-10-14 08:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.010720962385056765,
+          "price": 111930.25,
+          "cost": 1200.0,
+          "fee": 1.2,
+          "total": 1201.2,
+          "cash_after": 5326.963457432786,
+          "reason": "Volumen 4.3x promedio, RSI neutro en soporte, recuperaci\u00f3n desde m\u00ednimo diario"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista clara, RSI neutral sin se\u00f1ales de entrada",
+      "ticker": "BTC-USD",
+      "price": 110855.2265625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista clara, RSI neutral sin se\u00f1ales de entrada",
+      "date": "2025-10-14 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Tendencia bajista en 24h, p\u00e9rdida no realizada del 4.25%",
+      "ticker": "BTC-USD",
+      "price": 112341.484375,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Tendencia bajista en 24h, p\u00e9rdida no realizada del 4.25%",
+      "date": "2025-10-14 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.019550270407893835 acciones de BTC-USD a $112341.48. P&L: $-97.45 (-4.25%)",
+        "trade": {
+          "date": "2025-10-14 16:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.019550270407893835,
+          "price": 112341.484375,
+          "revenue": 2196.30639755543,
+          "fee": 2.1963063975554302,
+          "net_revenue": 2194.1100911578746,
+          "cash_after": 7521.073548590661,
+          "pnl": -97.44799697581985,
+          "pnl_pct": -4.248405897691337,
+          "reason": "Tendencia bajista en 24h, p\u00e9rdida no realizada del 4.25%"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1500.0,
+      "shares": 0.013276278526366274,
+      "reason": "Precio sobre SMA 4h, momentum positivo, volumen bajo sugiere acumulaci\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 112983.46875,
+      "raw_response": "ACCION: BUY\nMONTO: 1500\nRAZON: Precio sobre SMA 4h, momentum positivo, volumen bajo sugiere acumulaci\u00f3n",
+      "date": "2025-10-14 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.013276278526366274 acciones de BTC-USD a $112983.47",
+        "trade": {
+          "date": "2025-10-14 20:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.013276278526366274,
+          "price": 112983.46875,
+          "cost": 1500.0,
+          "fee": 1.5,
+          "total": 1501.5,
+          "cash_after": 6019.573548590661,
+          "reason": "Precio sobre SMA 4h, momentum positivo, volumen bajo sugiere acumulaci\u00f3n"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia lateral con momentum negativo reciente",
+      "ticker": "BTC-USD",
+      "price": 113029.125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia lateral con momentum negativo reciente",
+      "date": "2025-10-15 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, precio bajo SMA 12h, esperar confirmaci\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 112397.875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, precio bajo SMA 12h, esperar confirmaci\u00f3n",
+      "date": "2025-10-15 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista persiste, RSI neutral sin se\u00f1al clara",
+      "ticker": "BTC-USD",
+      "price": 113079.984375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista persiste, RSI neutral sin se\u00f1al clara",
+      "date": "2025-10-15 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, precio por debajo de SMA, momentum negativo",
+      "ticker": "BTC-USD",
+      "price": 111745.390625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, precio por debajo de SMA, momentum negativo",
+      "date": "2025-10-15 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1200.0,
+      "shares": 0.010827122364457433,
+      "reason": "Precio cerca soporte 24h, RSI neutro oportunidad entrada",
+      "ticker": "BTC-USD",
+      "price": 110832.7734375,
+      "raw_response": "ACCION: BUY\nMONTO: 1200\nRAZON: Precio cerca soporte 24h, RSI neutro oportunidad entrada",
+      "date": "2025-10-15 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.010827122364457433 acciones de BTC-USD a $110832.77",
+        "trade": {
+          "date": "2025-10-15 16:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.010827122364457433,
+          "price": 110832.7734375,
+          "cost": 1200.0,
+          "fee": 1.2,
+          "total": 1201.2,
+          "cash_after": 4818.373548590661,
+          "reason": "Precio cerca soporte 24h, RSI neutro oportunidad entrada"
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, p\u00e9rdida actual del 2.81%, RSI neutral sin impulso",
+      "ticker": "BTC-USD",
+      "price": 111183.8125,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Tendencia bajista, p\u00e9rdida actual del 2.81%, RSI neutral sin impulso",
+      "date": "2025-10-15 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.02182683564935877 acciones de BTC-USD a $111183.81. P&L: $-70.09 (-2.81%)",
+        "trade": {
+          "date": "2025-10-15 20:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.02182683564935877,
+          "price": 111183.8125,
+          "revenue": 2426.790802306621,
+          "fee": 2.426790802306621,
+          "net_revenue": 2424.3640115043145,
+          "cash_after": 7242.737560094975,
+          "pnl": -70.08639495900364,
+          "pnl_pct": -2.8069620338459784,
+          "reason": "Tendencia bajista, p\u00e9rdida actual del 2.81%, RSI neutral sin impulso"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, precio bajo SMA 12h, RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 110514.671875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, precio bajo SMA 12h, RSI neutral",
+      "date": "2025-10-16 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista corto plazo, RSI neutral sin se\u00f1ales claras",
+      "ticker": "BTC-USD",
+      "price": 111059.0703125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista corto plazo, RSI neutral sin se\u00f1ales claras",
+      "date": "2025-10-16 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1000.0,
+      "shares": 0.009021087284869092,
+      "reason": "Precio cerca soporte, RSI neutro para entrada",
+      "ticker": "BTC-USD",
+      "price": 110851.3828125,
+      "raw_response": "ACCION: BUY\nMONTO: 1000\nRAZON: Precio cerca soporte, RSI neutro para entrada",
+      "date": "2025-10-16 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.009021087284869092 acciones de BTC-USD a $110851.38",
+        "trade": {
+          "date": "2025-10-16 08:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.009021087284869092,
+          "price": 110851.3828125,
+          "cost": 1000.0,
+          "fee": 1.0,
+          "total": 1001.0,
+          "cash_after": 6241.737560094975,
+          "reason": "Precio cerca soporte, RSI neutro para entrada"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia lateral con volumen cero y p\u00e9rdida en posici\u00f3n actual",
+      "ticker": "BTC-USD",
+      "price": 111656.5078125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia lateral con volumen cero y p\u00e9rdida en posici\u00f3n actual",
+      "date": "2025-10-16 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Tendencia bajista confirmada, p\u00e9rdida de soportes clave",
+      "ticker": "BTC-USD",
+      "price": 109117.1796875,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Tendencia bajista confirmada, p\u00e9rdida de soportes clave",
+      "date": "2025-10-16 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.01542396146711393 acciones de BTC-USD a $109117.18. P&L: $-65.42 (-3.74%)",
+        "trade": {
+          "date": "2025-10-16 16:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.01542396146711393,
+          "price": 109117.1796875,
+          "revenue": 1683.019174900147,
+          "fee": 1.683019174900147,
+          "net_revenue": 1681.3361557252467,
+          "cash_after": 7923.073715820222,
+          "pnl": -65.41942373266552,
+          "pnl_pct": -3.7415911421665076,
+          "reason": "Tendencia bajista confirmada, p\u00e9rdida de soportes clave"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, volumen bajo y RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 107785.3203125,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, volumen bajo y RSI neutral",
+      "date": "2025-10-16 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, p\u00e9rdida actual del 4%, volumen bajo",
+      "ticker": "BTC-USD",
+      "price": 108791.6171875,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Tendencia bajista, p\u00e9rdida actual del 4%, volumen bajo",
+      "date": "2025-10-17 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.007711980733556965 acciones de BTC-USD a $108791.62. P&L: $-35.22 (-4.03%)",
+        "trade": {
+          "date": "2025-10-17 00:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.007711980733556965,
+          "price": 108791.6171875,
+          "revenue": 838.9988557225048,
+          "fee": 0.8389988557225048,
+          "net_revenue": 838.1598568667823,
+          "cash_after": 8761.233572687004,
+          "pnl": -35.2204435939014,
+          "pnl_pct": -4.028788156637808,
+          "reason": "Tendencia bajista, p\u00e9rdida actual del 4%, volumen bajo"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1500.0,
+      "shares": 0.01377722203270569,
+      "reason": "Precio cerca de SMA 12h con tendencia alcista, RSI neutral permite entrada",
+      "ticker": "BTC-USD",
+      "price": 108875.359375,
+      "raw_response": "ACCION: BUY\nMONTO: 1500\nRAZON: Precio cerca de SMA 12h con tendencia alcista, RSI neutral permite entrada",
+      "date": "2025-10-17 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.01377722203270569 acciones de BTC-USD a $108875.36",
+        "trade": {
+          "date": "2025-10-17 04:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.01377722203270569,
+          "price": 108875.359375,
+          "cost": 1500.0,
+          "fee": 1.5,
+          "total": 1501.5,
+          "cash_after": 7259.733572687004,
+          "reason": "Precio cerca de SMA 12h con tendencia alcista, RSI neutral permite entrada"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista clara, RSI neutral sin se\u00f1ales de reversi\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 104993.2890625,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista clara, RSI neutral sin se\u00f1ales de reversi\u00f3n",
+      "date": "2025-10-17 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Tendencia bajista clara, p\u00e9rdida del 5% en 24h",
+      "ticker": "BTC-USD",
+      "price": 105347.0078125,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Tendencia bajista clara, p\u00e9rdida del 5% en 24h",
+      "date": "2025-10-17 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.010744601383131328 acciones de BTC-USD a $105347.01. P&L: $-55.20 (-4.65%)",
+        "trade": {
+          "date": "2025-10-17 12:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.010744601383131328,
+          "price": 105347.0078125,
+          "revenue": 1131.9116058509344,
+          "fee": 1.1319116058509344,
+          "net_revenue": 1130.7796942450834,
+          "cash_after": 8390.513266932088,
+          "pnl": -55.19804380726884,
+          "pnl_pct": -4.649784779625172,
+          "reason": "Tendencia bajista clara, p\u00e9rdida del 5% en 24h"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1500.0,
+      "shares": 0.014096464012131183,
+      "reason": "Precio sobre SMA 4h y 12h, tendencia alcista en marco 4h",
+      "ticker": "BTC-USD",
+      "price": 106409.6640625,
+      "raw_response": "ACCION: BUY\nMONTO: 1500\nRAZON: Precio sobre SMA 4h y 12h, tendencia alcista en marco 4h",
+      "date": "2025-10-17 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.014096464012131183 acciones de BTC-USD a $106409.66",
+        "trade": {
+          "date": "2025-10-17 16:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.014096464012131183,
+          "price": 106409.6640625,
+          "cost": 1500.0,
+          "fee": 1.5,
+          "total": 1501.5,
+          "cash_after": 6889.013266932088,
+          "reason": "Precio sobre SMA 4h y 12h, tendencia alcista en marco 4h"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1500.0,
+      "shares": 0.014006793586697748,
+      "reason": "Momentum alcista 4h, precio sobre SMA 4h, RSI neutral con espacio para subir",
+      "ticker": "BTC-USD",
+      "price": 107090.890625,
+      "raw_response": "ACCION: BUY\nMONTO: 1500\nRAZON: Momentum alcista 4h, precio sobre SMA 4h, RSI neutral con espacio para subir",
+      "date": "2025-10-17 20:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.014006793586697748 acciones de BTC-USD a $107090.89",
+        "trade": {
+          "date": "2025-10-17 20:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.014006793586697748,
+          "price": 107090.890625,
+          "cost": 1500.0,
+          "fee": 1.5,
+          "total": 1501.5,
+          "cash_after": 5387.513266932088,
+          "reason": "Momentum alcista 4h, precio sobre SMA 4h, RSI neutral con espacio para subir"
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1000.0000000000001,
+      "shares": 0.00935983345931328,
+      "reason": "Precio cerca de SMA 12h con tendencia alcista, RSI neutral permite entrada",
+      "ticker": "BTC-USD",
+      "price": 106839.5078125,
+      "raw_response": "ACCION: BUY\nMONTO: 1000\nRAZON: Precio cerca de SMA 12h con tendencia alcista, RSI neutral permite entrada",
+      "date": "2025-10-18 00:00",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 0.00935983345931328 acciones de BTC-USD a $106839.51",
+        "trade": {
+          "date": "2025-10-18 00:00",
+          "action": "BUY",
+          "ticker": "BTC-USD",
+          "shares": 0.00935983345931328,
+          "price": 106839.5078125,
+          "cost": 1000.0000000000001,
+          "fee": 1.0000000000000002,
+          "total": 1001.0000000000001,
+          "cash_after": 4386.513266932088,
+          "reason": "Precio cerca de SMA 12h con tendencia alcista, RSI neutral permite entrada"
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia alcista pero momentum bajista reciente, esperando confirmaci\u00f3n",
+      "ticker": "BTC-USD",
+      "price": 106538.7421875,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia alcista pero momentum bajista reciente, esperando confirmaci\u00f3n",
+      "date": "2025-10-18 04:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, RSI neutral y precio bajo SMA clave",
+      "ticker": "BTC-USD",
+      "price": 106828.34375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia bajista, RSI neutral y precio bajo SMA clave",
+      "date": "2025-10-18 08:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia lateral con volumen cero y RSI neutral",
+      "ticker": "BTC-USD",
+      "price": 107113.609375,
+      "raw_response": "ACCION: HOLD\nMONTO: 0\nRAZON: Tendencia lateral con volumen cero y RSI neutral",
+      "date": "2025-10-18 12:00",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Tendencia bajista, precio por debajo de SMAs, p\u00e9rdida actual",
+      "ticker": "BTC-USD",
+      "price": 106711.03125,
+      "raw_response": "ACCION: SELL\nMONTO: 50\nRAZON: Tendencia bajista, precio por debajo de SMAs, p\u00e9rdida actual",
+      "date": "2025-10-18 16:00",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 0.02410384622063677 acciones de BTC-USD a $106711.03. P&L: $-21.41 (-0.83%)",
+        "trade": {
+          "date": "2025-10-18 16:00",
+          "action": "SELL",
+          "ticker": "BTC-USD",
+          "shares": 0.02410384622063677,
+          "price": 106711.03125,
+          "revenue": 2572.146287295565,
+          "fee": 2.572146287295565,
+          "net_revenue": 2569.574141008269,
+          "cash_after": 6956.0874079403575,
+          "pnl": -21.40853753353662,
+          "pnl_pct": -0.8254515126722761,
+          "reason": "Tendencia bajista, precio por debajo de SMAs, p\u00e9rdida actual"
+        }
+      }
+    }
+  ],
+  "equity_curve": [
+    {
+      "date": "2025-09-20 00:00",
+      "value": 10000.0,
+      "cash": 10000.0
+    },
+    {
+      "date": "2025-09-20 04:00",
+      "value": 10000.0,
+      "cash": 10000.0
+    },
+    {
+      "date": "2025-09-20 08:00",
+      "value": 10000.0,
+      "cash": 10000.0
+    },
+    {
+      "date": "2025-09-20 12:00",
+      "value": 9999.897330860846,
+      "cash": 7998.0
+    },
+    {
+      "date": "2025-09-20 16:00",
+      "value": 10002.699687867827,
+      "cash": 7998.0
+    },
+    {
+      "date": "2025-09-20 20:00",
+      "value": 9998.195196427703,
+      "cash": 7998.0
+    },
+    {
+      "date": "2025-09-21 00:00",
+      "value": 9996.181044484349,
+      "cash": 7998.0
+    },
+    {
+      "date": "2025-09-21 04:00",
+      "value": 9993.940534831467,
+      "cash": 7998.0
+    },
+    {
+      "date": "2025-09-21 08:00",
+      "value": 9995.573736732089,
+      "cash": 7998.0
+    },
+    {
+      "date": "2025-09-21 12:00",
+      "value": 9996.34497056332,
+      "cash": 6496.5
+    },
+    {
+      "date": "2025-09-21 16:00",
+      "value": 9983.232704949678,
+      "cash": 6496.5
+    },
+    {
+      "date": "2025-09-21 20:00",
+      "value": 9986.746078830663,
+      "cash": 6496.5
+    },
+    {
+      "date": "2025-09-22 00:00",
+      "value": 9961.53835933835,
+      "cash": 6496.5
+    },
+    {
+      "date": "2025-09-22 04:00",
+      "value": 9957.836579336314,
+      "cash": 8227.286660489506
+    },
+    {
+      "date": "2025-09-22 08:00",
+      "value": 9931.582642055373,
+      "cash": 8227.286660489506
+    },
+    {
+      "date": "2025-09-22 12:00",
+      "value": 9932.911346913692,
+      "cash": 8227.286660489506
+    },
+    {
+      "date": "2025-09-22 16:00",
+      "value": 9931.06655990882,
+      "cash": 8227.286660489506
+    },
+    {
+      "date": "2025-09-22 20:00",
+      "value": 9934.36594274872,
+      "cash": 8227.286660489506
+    },
+    {
+      "date": "2025-09-23 00:00",
+      "value": 9928.091588431984,
+      "cash": 8227.286660489506
+    },
+    {
+      "date": "2025-09-23 04:00",
+      "value": 9927.897437619873,
+      "cash": 8227.286660489506
+    },
+    {
+      "date": "2025-09-23 08:00",
+      "value": 9938.175030518712,
+      "cash": 8227.286660489506
+    },
+    {
+      "date": "2025-09-23 12:00",
+      "value": 9935.27528657674,
+      "cash": 8227.286660489506
+    },
+    {
+      "date": "2025-09-23 16:00",
+      "value": 9933.657717432274,
+      "cash": 8227.286660489506
+    },
+    {
+      "date": "2025-09-23 20:00",
+      "value": 9919.83533695657,
+      "cash": 8227.286660489506
+    },
+    {
+      "date": "2025-09-24 00:00",
+      "value": 9924.254866057348,
+      "cash": 8227.286660489506
+    },
+    {
+      "date": "2025-09-24 04:00",
+      "value": 9922.792712039853,
+      "cash": 8227.286660489506
+    },
+    {
+      "date": "2025-09-24 08:00",
+      "value": 9934.988906179395,
+      "cash": 6725.786660489506
+    },
+    {
+      "date": "2025-09-24 12:00",
+      "value": 9947.14754755846,
+      "cash": 6725.786660489506
+    },
+    {
+      "date": "2025-09-24 16:00",
+      "value": 9966.65496998742,
+      "cash": 6725.786660489506
+    },
+    {
+      "date": "2025-09-24 20:00",
+      "value": 9962.162279994624,
+      "cash": 6725.786660489506
+    },
+    {
+      "date": "2025-09-25 00:00",
+      "value": 9947.870250774045,
+      "cash": 6725.786660489506
+    },
+    {
+      "date": "2025-09-25 04:00",
+      "value": 9908.463672728743,
+      "cash": 6725.786660489506
+    },
+    {
+      "date": "2025-09-25 08:00",
+      "value": 9909.528919907614,
+      "cash": 6725.786660489506
+    },
+    {
+      "date": "2025-09-25 12:00",
+      "value": 9894.418257355675,
+      "cash": 6725.786660489506
+    },
+    {
+      "date": "2025-09-25 16:00",
+      "value": 9888.469032147976,
+      "cash": 6725.786660489506
+    },
+    {
+      "date": "2025-09-25 20:00",
+      "value": 9834.875035449179,
+      "cash": 6725.786660489506
+    },
+    {
+      "date": "2025-09-26 00:00",
+      "value": 9845.98067131148,
+      "cash": 6725.786660489506
+    },
+    {
+      "date": "2025-09-26 04:00",
+      "value": 9842.106073967185,
+      "cash": 6725.786660489506
+    },
+    {
+      "date": "2025-09-26 08:00",
+      "value": 9848.62331229659,
+      "cash": 6725.786660489506
+    },
+    {
+      "date": "2025-09-26 12:00",
+      "value": 9844.513897615541,
+      "cash": 6725.786660489506
+    },
+    {
+      "date": "2025-09-26 16:00",
+      "value": 9845.431354546445,
+      "cash": 6725.786660489506
+    },
+    {
+      "date": "2025-09-26 20:00",
+      "value": 9841.862898023544,
+      "cash": 8284.049185170947
+    },
+    {
+      "date": "2025-09-27 00:00",
+      "value": 9845.91755908863,
+      "cash": 8284.049185170947
+    },
+    {
+      "date": "2025-09-27 04:00",
+      "value": 9846.820437312845,
+      "cash": 8284.049185170947
+    },
+    {
+      "date": "2025-09-27 08:00",
+      "value": 9841.41919341613,
+      "cash": 8284.049185170947
+    },
+    {
+      "date": "2025-09-27 12:00",
+      "value": 9843.740212551373,
+      "cash": 8284.049185170947
+    },
+    {
+      "date": "2025-09-27 16:00",
+      "value": 9842.822199181282,
+      "cash": 8284.049185170947
+    },
+    {
+      "date": "2025-09-27 20:00",
+      "value": 9842.969321702225,
+      "cash": 8284.049185170947
+    },
+    {
+      "date": "2025-09-28 00:00",
+      "value": 9845.957956573578,
+      "cash": 8284.049185170947
+    },
+    {
+      "date": "2025-09-28 04:00",
+      "value": 9842.742517089759,
+      "cash": 8284.049185170947
+    },
+    {
+      "date": "2025-09-28 08:00",
+      "value": 9844.760833307477,
+      "cash": 8284.049185170947
+    },
+    {
+      "date": "2025-09-28 12:00",
+      "value": 9837.742686771897,
+      "cash": 6782.549185170947
+    },
+    {
+      "date": "2025-09-28 16:00",
+      "value": 9861.696558436157,
+      "cash": 6782.549185170947
+    },
+    {
+      "date": "2025-09-28 20:00",
+      "value": 9879.014206334106,
+      "cash": 6782.549185170947
+    },
+    {
+      "date": "2025-09-29 00:00",
+      "value": 9936.956281147259,
+      "cash": 5281.049185170947
+    },
+    {
+      "date": "2025-09-29 04:00",
+      "value": 9913.844017409145,
+      "cash": 3959.729185170947
+    },
+    {
+      "date": "2025-09-29 08:00",
+      "value": 9928.754054061137,
+      "cash": 3959.729185170947
+    },
+    {
+      "date": "2025-09-29 12:00",
+      "value": 9921.094392583214,
+      "cash": 2969.740185170947
+    },
+    {
+      "date": "2025-09-29 16:00",
+      "value": 10023.238108800388,
+      "cash": 2969.740185170947
+    },
+    {
+      "date": "2025-09-29 20:00",
+      "value": 10062.388619450849,
+      "cash": 2969.740185170947
+    },
+    {
+      "date": "2025-09-30 00:00",
+      "value": 10067.941141472103,
+      "cash": 6512.518078093758
+    },
+    {
+      "date": "2025-09-30 04:00",
+      "value": 10046.75204421017,
+      "cash": 5011.018078093758
+    },
+    {
+      "date": "2025-09-30 08:00",
+      "value": 10010.92210533727,
+      "cash": 3759.768078093758
+    },
+    {
+      "date": "2025-09-30 12:00",
+      "value": 9995.56917274403,
+      "cash": 6882.219514701892
+    },
+    {
+      "date": "2025-09-30 16:00",
+      "value": 9988.009341100049,
+      "cash": 6882.219514701892
+    },
+    {
+      "date": "2025-09-30 20:00",
+      "value": 10037.998217046434,
+      "cash": 6882.219514701892
+    },
+    {
+      "date": "2025-10-01 00:00",
+      "value": 10026.932688224733,
+      "cash": 6882.219514701892
+    },
+    {
+      "date": "2025-10-01 04:00",
+      "value": 10029.27397776318,
+      "cash": 6882.219514701892
+    },
+    {
+      "date": "2025-10-01 08:00",
+      "value": 10078.550960601695,
+      "cash": 6882.219514701892
+    },
+    {
+      "date": "2025-10-01 12:00",
+      "value": 10091.421252066742,
+      "cash": 5160.499514701892
+    },
+    {
+      "date": "2025-10-01 16:00",
+      "value": 10114.683068321474,
+      "cash": 7623.494922515634
+    },
+    {
+      "date": "2025-10-01 20:00",
+      "value": 10110.396354346936,
+      "cash": 6121.994922515634
+    },
+    {
+      "date": "2025-10-02 00:00",
+      "value": 10143.419285941742,
+      "cash": 6121.994922515634
+    },
+    {
+      "date": "2025-10-02 04:00",
+      "value": 10146.998342516494,
+      "cash": 6121.994922515634
+    },
+    {
+      "date": "2025-10-02 08:00",
+      "value": 10148.348239909637,
+      "cash": 6121.994922515634
+    },
+    {
+      "date": "2025-10-02 12:00",
+      "value": 10173.980390527848,
+      "cash": 6121.994922515634
+    },
+    {
+      "date": "2025-10-02 16:00",
+      "value": 10176.870499381768,
+      "cash": 8145.961663787735
+    },
+    {
+      "date": "2025-10-02 20:00",
+      "value": 10192.093547211864,
+      "cash": 8145.961663787735
+    },
+    {
+      "date": "2025-10-03 00:00",
+      "value": 10187.437100202742,
+      "cash": 9168.004539558087
+    },
+    {
+      "date": "2025-10-03 04:00",
+      "value": 10186.555724893387,
+      "cash": 9677.211103600092
+    },
+    {
+      "date": "2025-10-03 08:00",
+      "value": 10186.32706515387,
+      "cash": 9677.211103600092
+    },
+    {
+      "date": "2025-10-03 12:00",
+      "value": 10187.939078224083,
+      "cash": 9677.211103600092
+    },
+    {
+      "date": "2025-10-03 16:00",
+      "value": 10197.84919067233,
+      "cash": 9677.211103600092
+    },
+    {
+      "date": "2025-10-03 20:00",
+      "value": 10190.758571604943,
+      "cash": 7255.792103600092
+    },
+    {
+      "date": "2025-10-04 00:00",
+      "value": 10180.231250664676,
+      "cash": 7255.792103600092
+    },
+    {
+      "date": "2025-10-04 04:00",
+      "value": 10190.196548412634,
+      "cash": 7255.792103600092
+    },
+    {
+      "date": "2025-10-04 08:00",
+      "value": 10184.501878808831,
+      "cash": 7255.792103600092
+    },
+    {
+      "date": "2025-10-04 12:00",
+      "value": 10177.91227377235,
+      "cash": 7255.792103600092
+    },
+    {
+      "date": "2025-10-04 16:00",
+      "value": 10172.56885847064,
+      "cash": 8715.391128601135
+    },
+    {
+      "date": "2025-10-04 20:00",
+      "value": 10175.14948942155,
+      "cash": 8715.391128601135
+    },
+    {
+      "date": "2025-10-05 00:00",
+      "value": 10178.295603607716,
+      "cash": 8715.391128601135
+    },
+    {
+      "date": "2025-10-05 04:00",
+      "value": 10214.306327886849,
+      "cash": 8715.391128601135
+    },
+    {
+      "date": "2025-10-05 08:00",
+      "value": 10194.851767931668,
+      "cash": 6713.391128601135
+    },
+    {
+      "date": "2025-10-05 12:00",
+      "value": 10155.202892389656,
+      "cash": 6713.391128601135
+    },
+    {
+      "date": "2025-10-05 16:00",
+      "value": 10154.739889230894,
+      "cash": 8432.576104613501
+    },
+    {
+      "date": "2025-10-05 20:00",
+      "value": 10148.672596000852,
+      "cash": 8432.576104613501
+    },
+    {
+      "date": "2025-10-06 00:00",
+      "value": 10156.205386832935,
+      "cash": 8432.576104613501
+    },
+    {
+      "date": "2025-10-06 04:00",
+      "value": 10162.23962995756,
+      "cash": 6931.076104613501
+    },
+    {
+      "date": "2025-10-06 08:00",
+      "value": 10167.318390393786,
+      "cash": 6931.076104613501
+    },
+    {
+      "date": "2025-10-06 12:00",
+      "value": 10193.653929430904,
+      "cash": 5429.576104613501
+    },
+    {
+      "date": "2025-10-06 16:00",
+      "value": 10230.786785756192,
+      "cash": 4071.2191046135013
+    },
+    {
+      "date": "2025-10-06 20:00",
+      "value": 10224.986975940534,
+      "cash": 4071.2191046135013
+    },
+    {
+      "date": "2025-10-07 00:00",
+      "value": 10208.908337067722,
+      "cash": 4071.2191046135013
+    },
+    {
+      "date": "2025-10-07 04:00",
+      "value": 10192.055110755598,
+      "cash": 4071.2191046135013
+    },
+    {
+      "date": "2025-10-07 08:00",
+      "value": 10161.263916605869,
+      "cash": 4071.2191046135013
+    },
+    {
+      "date": "2025-10-07 12:00",
+      "value": 10212.725233745878,
+      "cash": 4071.2191046135013
+    },
+    {
+      "date": "2025-10-07 16:00",
+      "value": 10058.697485072968,
+      "cash": 4071.2191046135013
+    },
+    {
+      "date": "2025-10-07 20:00",
+      "value": 10062.741628932046,
+      "cash": 7061.964555653005
+    },
+    {
+      "date": "2025-10-08 00:00",
+      "value": 10058.689246924843,
+      "cash": 7061.964555653005
+    },
+    {
+      "date": "2025-10-08 04:00",
+      "value": 10057.251769243861,
+      "cash": 7061.964555653005
+    },
+    {
+      "date": "2025-10-08 08:00",
+      "value": 10069.665127909542,
+      "cash": 7061.964555653005
+    },
+    {
+      "date": "2025-10-08 12:00",
+      "value": 10075.606786760434,
+      "cash": 5560.464555653005
+    },
+    {
+      "date": "2025-10-08 16:00",
+      "value": 10096.44992962508,
+      "cash": 4169.074555653005
+    },
+    {
+      "date": "2025-10-08 20:00",
+      "value": 10094.3384168015,
+      "cash": 4169.074555653005
+    },
+    {
+      "date": "2025-10-09 00:00",
+      "value": 10090.538003420197,
+      "cash": 3126.0325556530047
+    },
+    {
+      "date": "2025-10-09 04:00",
+      "value": 10041.604475468534,
+      "cash": 3126.0325556530047
+    },
+    {
+      "date": "2025-10-09 08:00",
+      "value": 9995.762882977951,
+      "cash": 3126.0325556530047
+    },
+    {
+      "date": "2025-10-09 12:00",
+      "value": 10057.11202778951,
+      "cash": 6557.462854151816
+    },
+    {
+      "date": "2025-10-09 16:00",
+      "value": 9953.94975594847,
+      "cash": 6557.462854151816
+    },
+    {
+      "date": "2025-10-09 20:00",
+      "value": 9987.59545450984,
+      "cash": 6557.462854151816
+    },
+    {
+      "date": "2025-10-10 00:00",
+      "value": 10006.517966830565,
+      "cash": 6557.462854151816
+    },
+    {
+      "date": "2025-10-10 04:00",
+      "value": 9984.36297329428,
+      "cash": 5356.262854151816
+    },
+    {
+      "date": "2025-10-10 08:00",
+      "value": 9997.798543263312,
+      "cash": 5356.262854151816
+    },
+    {
+      "date": "2025-10-10 12:00",
+      "value": 9997.87754446243,
+      "cash": 5356.262854151816
+    },
+    {
+      "date": "2025-10-10 16:00",
+      "value": 9872.15324748165,
+      "cash": 5356.262854151816
+    },
+    {
+      "date": "2025-10-10 20:00",
+      "value": 9726.528399384497,
+      "cash": 5356.262854151816
+    },
+    {
+      "date": "2025-10-11 00:00",
+      "value": 9659.181814902735,
+      "cash": 5356.262854151816
+    },
+    {
+      "date": "2025-10-11 04:00",
+      "value": 9670.512077444739,
+      "cash": 5356.262854151816
+    },
+    {
+      "date": "2025-10-11 08:00",
+      "value": 9597.629799578084,
+      "cash": 4355.262854151816
+    },
+    {
+      "date": "2025-10-11 12:00",
+      "value": 9648.762441045194,
+      "cash": 3266.1748541518164
+    },
+    {
+      "date": "2025-10-11 16:00",
+      "value": 9619.877351373667,
+      "cash": 3266.1748541518164
+    },
+    {
+      "date": "2025-10-11 20:00",
+      "value": 9523.006764416758,
+      "cash": 3266.1748541518164
+    },
+    {
+      "date": "2025-10-12 00:00",
+      "value": 9495.037359580532,
+      "cash": 3266.1748541518164
+    },
+    {
+      "date": "2025-10-12 04:00",
+      "value": 9598.425494096424,
+      "cash": 3266.1748541518164
+    },
+    {
+      "date": "2025-10-12 08:00",
+      "value": 9590.658358224664,
+      "cash": 3266.1748541518164
+    },
+    {
+      "date": "2025-10-12 12:00",
+      "value": 9611.923531087541,
+      "cash": 3266.1748541518164
+    },
+    {
+      "date": "2025-10-12 16:00",
+      "value": 9744.637969033374,
+      "cash": 3266.1748541518164
+    },
+    {
+      "date": "2025-10-12 20:00",
+      "value": 9801.099583752228,
+      "cash": 3266.1748541518164
+    },
+    {
+      "date": "2025-10-13 00:00",
+      "value": 9815.170090052,
+      "cash": 3266.1748541518164
+    },
+    {
+      "date": "2025-10-13 04:00",
+      "value": 9779.644622458596,
+      "cash": 3266.1748541518164
+    },
+    {
+      "date": "2025-10-13 08:00",
+      "value": 9820.979921873868,
+      "cash": 3266.1748541518164
+    },
+    {
+      "date": "2025-10-13 12:00",
+      "value": 9763.706828584262,
+      "cash": 3266.1748541518164
+    },
+    {
+      "date": "2025-10-13 16:00",
+      "value": 9782.498987245448,
+      "cash": 3266.1748541518164
+    },
+    {
+      "date": "2025-10-13 20:00",
+      "value": 9834.002157495357,
+      "cash": 3266.1748541518164
+    },
+    {
+      "date": "2025-10-14 00:00",
+      "value": 9796.682568428032,
+      "cash": 3266.1748541518164
+    },
+    {
+      "date": "2025-10-14 04:00",
+      "value": 9737.850543434435,
+      "cash": 6528.163457432785
+    },
+    {
+      "date": "2025-10-14 08:00",
+      "value": 9704.696766079103,
+      "cash": 6528.163457432785
+    },
+    {
+      "date": "2025-10-14 12:00",
+      "value": 9661.462768283207,
+      "cash": 5326.963457432786
+    },
+    {
+      "date": "2025-10-14 16:00",
+      "value": 9719.576252543646,
+      "cash": 5326.963457432786
+    },
+    {
+      "date": "2025-10-14 20:00",
+      "value": 9729.930914274984,
+      "cash": 7521.073548590661
+    },
+    {
+      "date": "2025-10-15 00:00",
+      "value": 9729.929651399763,
+      "cash": 6019.573548590661
+    },
+    {
+      "date": "2025-10-15 04:00",
+      "value": 9709.207892385011,
+      "cash": 6019.573548590661
+    },
+    {
+      "date": "2025-10-15 08:00",
+      "value": 9731.599189161967,
+      "cash": 6019.573548590661
+    },
+    {
+      "date": "2025-10-15 12:00",
+      "value": 9687.789082120235,
+      "cash": 6019.573548590661
+    },
+    {
+      "date": "2025-10-15 16:00",
+      "value": 9657.83100935652,
+      "cash": 6019.573548590661
+    },
+    {
+      "date": "2025-10-15 20:00",
+      "value": 9671.955153203904,
+      "cash": 4818.373548590661
+    },
+    {
+      "date": "2025-10-16 00:00",
+      "value": 9654.923139953413,
+      "cash": 7242.737560094975
+    },
+    {
+      "date": "2025-10-16 04:00",
+      "value": 9666.805635176494,
+      "cash": 7242.737560094975
+    },
+    {
+      "date": "2025-10-16 08:00",
+      "value": 9662.272474247566,
+      "cash": 7242.737560094975
+    },
+    {
+      "date": "2025-10-16 12:00",
+      "value": 9686.108908199987,
+      "cash": 6241.737560094975
+    },
+    {
+      "date": "2025-10-16 16:00",
+      "value": 9607.77590989527,
+      "cash": 6241.737560094975
+    },
+    {
+      "date": "2025-10-16 20:00",
+      "value": 9585.550343040755,
+      "cash": 7923.073715820222
+    },
+    {
+      "date": "2025-10-17 00:00",
+      "value": 9601.071427265231,
+      "cash": 7923.073715820222
+    },
+    {
+      "date": "2025-10-17 04:00",
+      "value": 9600.878246546095,
+      "cash": 8761.233572687004
+    },
+    {
+      "date": "2025-10-17 08:00",
+      "value": 9515.955650447893,
+      "cash": 7259.733572687004
+    },
+    {
+      "date": "2025-10-17 12:00",
+      "value": 9523.556784388873,
+      "cash": 7259.733572687004
+    },
+    {
+      "date": "2025-10-17 16:00",
+      "value": 9533.842690596566,
+      "cash": 8390.513266932088
+    },
+    {
+      "date": "2025-10-17 20:00",
+      "value": 9549.265084184619,
+      "cash": 6889.013266932088
+    },
+    {
+      "date": "2025-10-18 00:00",
+      "value": 9537.99940013413,
+      "cash": 5387.513266932088
+    },
+    {
+      "date": "2025-10-18 04:00",
+      "value": 9522.500183387223,
+      "cash": 4386.513266932088
+    },
+    {
+      "date": "2025-10-18 08:00",
+      "value": 9536.461206442735,
+      "cash": 4386.513266932088
+    },
+    {
+      "date": "2025-10-18 12:00",
+      "value": 9550.213203956802,
+      "cash": 4386.513266932088
+    },
+    {
+      "date": "2025-10-18 16:00",
+      "value": 9530.805841523219,
+      "cash": 4386.513266932088
+    }
+  ],
+  "final_metrics": {
+    "initial_capital": 10000.0,
+    "current_value": 9534.589013252331,
+    "cash": 6956.0874079403575,
+    "total_return": -465.4109867476691,
+    "total_return_pct": -4.654109867476691,
+    "total_trades": 19,
+    "winning_trades": 7,
+    "losing_trades": 12,
+    "win_rate": 36.84210526315789,
+    "avg_win": 41.19110936725117,
+    "avg_loss": -54.69225474312302,
+    "profit_factor": 0.753143375798207,
+    "holdings": {
+      "BTC-USD": {
+        "shares": 0.02410384622063677,
+        "avg_price": 107599.21056120086
+      }
+    }
+  }
+}

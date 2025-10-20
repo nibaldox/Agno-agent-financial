@@ -1,0 +1,202 @@
+[
+  {
+    "timestamp": "2025-10-12 23:00:00+00:00",
+    "ema48": null,
+    "ema48_proj_1": null,
+    "ema48_proj_2": null,
+    "team_decisions": [
+      {
+        "action": "BUY",
+        "amount": 100,
+        "reason": "Precio sobre EMA48 - tendencia alcista",
+        "strategy": "trend_following",
+        "confidence": 0.7,
+        "agent": "Conservative_Agent"
+      },
+      {
+        "action": "HOLD",
+        "amount": 0,
+        "reason": "Volumen bajo",
+        "strategy": "low_volume",
+        "confidence": 0.4,
+        "agent": "Momentum_Agent"
+      },
+      {
+        "action": "HOLD",
+        "amount": 0,
+        "reason": "Gestión de riesgo - esperar confirmación",
+        "strategy": "risk_management",
+        "confidence": 0.6,
+        "agent": "Risk_Agent"
+      }
+    ],
+    "consensus": {
+      "action": "HOLD",
+      "amount": 0.0,
+      "reason": "Consenso: HOLD por mayoría. Razones: Volumen bajo, Gestión de riesgo - esperar confirmación",
+      "strategy": "low_volume, risk_management",
+      "confidence": 0.5,
+      "agent": "TEAM_CONSENSUS"
+    }
+  },
+  {
+    "timestamp": "2025-10-13 00:00:00+00:00",
+    "ema48": null,
+    "ema48_proj_1": null,
+    "ema48_proj_2": null,
+    "team_decisions": [
+      {
+        "action": "BUY",
+        "amount": 100,
+        "reason": "Precio sobre EMA48 - tendencia alcista",
+        "strategy": "trend_following",
+        "confidence": 0.7,
+        "agent": "Conservative_Agent"
+      },
+      {
+        "action": "BUY",
+        "amount": 200,
+        "reason": "Alto volumen indica momentum",
+        "strategy": "momentum",
+        "confidence": 0.8,
+        "agent": "Momentum_Agent"
+      },
+      {
+        "action": "HOLD",
+        "amount": 0,
+        "reason": "Gestión de riesgo - esperar confirmación",
+        "strategy": "risk_management",
+        "confidence": 0.6,
+        "agent": "Risk_Agent"
+      }
+    ],
+    "consensus": {
+      "action": "BUY",
+      "amount": 150.0,
+      "reason": "Consenso: BUY por mayoría. Razones: Precio sobre EMA48 - tendencia alcista, Alto volumen indica momentum",
+      "strategy": "trend_following, momentum",
+      "confidence": 0.75,
+      "agent": "TEAM_CONSENSUS"
+    }
+  },
+  {
+    "timestamp": "2025-10-13 01:00:00+00:00",
+    "ema48": null,
+    "ema48_proj_1": null,
+    "ema48_proj_2": null,
+    "team_decisions": [
+      {
+        "action": "BUY",
+        "amount": 100,
+        "reason": "Precio sobre EMA48 - tendencia alcista",
+        "strategy": "trend_following",
+        "confidence": 0.7,
+        "agent": "Conservative_Agent"
+      },
+      {
+        "action": "HOLD",
+        "amount": 0,
+        "reason": "Volumen bajo",
+        "strategy": "low_volume",
+        "confidence": 0.4,
+        "agent": "Momentum_Agent"
+      },
+      {
+        "action": "HOLD",
+        "amount": 0,
+        "reason": "Gestión de riesgo - esperar confirmación",
+        "strategy": "risk_management",
+        "confidence": 0.6,
+        "agent": "Risk_Agent"
+      }
+    ],
+    "consensus": {
+      "action": "HOLD",
+      "amount": 0.0,
+      "reason": "Consenso: HOLD por mayoría. Razones: Volumen bajo, Gestión de riesgo - esperar confirmación",
+      "strategy": "low_volume, risk_management",
+      "confidence": 0.5,
+      "agent": "TEAM_CONSENSUS"
+    }
+  },
+  {
+    "timestamp": "2025-10-13 02:00:00+00:00",
+    "ema48": null,
+    "ema48_proj_1": null,
+    "ema48_proj_2": null,
+    "team_decisions": [
+      {
+        "action": "BUY",
+        "amount": 100,
+        "reason": "Precio sobre EMA48 - tendencia alcista",
+        "strategy": "trend_following",
+        "confidence": 0.7,
+        "agent": "Conservative_Agent"
+      },
+      {
+        "action": "HOLD",
+        "amount": 0,
+        "reason": "Volumen bajo",
+        "strategy": "low_volume",
+        "confidence": 0.4,
+        "agent": "Momentum_Agent"
+      },
+      {
+        "action": "HOLD",
+        "amount": 0,
+        "reason": "Gestión de riesgo - esperar confirmación",
+        "strategy": "risk_management",
+        "confidence": 0.6,
+        "agent": "Risk_Agent"
+      }
+    ],
+    "consensus": {
+      "action": "HOLD",
+      "amount": 0.0,
+      "reason": "Consenso: HOLD por mayoría. Razones: Volumen bajo, Gestión de riesgo - esperar confirmación",
+      "strategy": "low_volume, risk_management",
+      "confidence": 0.5,
+      "agent": "TEAM_CONSENSUS"
+    }
+  },
+  {
+    "timestamp": "2025-10-13 03:00:00+00:00",
+    "ema48": null,
+    "ema48_proj_1": null,
+    "ema48_proj_2": null,
+    "team_decisions": [
+      {
+        "action": "BUY",
+        "amount": 100,
+        "reason": "Precio sobre EMA48 - tendencia alcista",
+        "strategy": "trend_following",
+        "confidence": 0.7,
+        "agent": "Conservative_Agent"
+      },
+      {
+        "action": "HOLD",
+        "amount": 0,
+        "reason": "Volumen bajo",
+        "strategy": "low_volume",
+        "confidence": 0.4,
+        "agent": "Momentum_Agent"
+      },
+      {
+        "action": "HOLD",
+        "amount": 0,
+        "reason": "Gestión de riesgo - esperar confirmación",
+        "strategy": "risk_management",
+        "confidence": 0.6,
+        "agent": "Risk_Agent"
+      }
+    ],
+    "consensus": {
+      "action": "HOLD",
+      "amount": 0.0,
+      "reason": "Consenso: HOLD por mayoría. Razones: Volumen bajo, Gestión de riesgo - esperar confirmación",
+      "strategy": "low_volume, risk_management",
+      "confidence": 0.5,
+      "agent": "TEAM_CONSENSUS"
+    }
+  }
+]

@@ -1,0 +1,402 @@
+{
+  "config": {
+    "tickers": [
+      "AAPL"
+    ],
+    "start_date": "2024-07-01",
+    "end_date": "2024-10-01",
+    "initial_capital": 10000.0,
+    "decision_interval": 7
+  },
+  "trades": [
+    {
+      "date": "2024-08-18",
+      "action": "BUY",
+      "ticker": "AAPL",
+      "shares": 8,
+      "price": 225.00283813476562,
+      "cost": 1800.022705078125,
+      "fee": 1.800022705078125,
+      "total": 1801.8227277832032,
+      "cash_after": 8198.177272216797,
+      "reason": "Tendencia alcista respaldada por SMA5 > SMA20, pero volumen actual bajo sugiere cautela. Inversi\u00f3n moderada (20%) para aprovechar momentum sin exponerse en resistencia cercana ($226.46)."
+    },
+    {
+      "date": "2024-09-01",
+      "action": "BUY",
+      "ticker": "AAPL",
+      "shares": 8,
+      "price": 227.93917846679688,
+      "cost": 1823.513427734375,
+      "fee": 1.823513427734375,
+      "total": 1825.3369411621093,
+      "cash_after": 6372.840331054687,
+      "reason": "Tendencia alcista reforzada por SMA5 sobre SMA20 y volumen superior al promedio. Aporte conservador (24% del efectivo) para capitalizar impulso sin sobreexponerse cerca de resistencia en $231.84."
+    },
+    {
+      "date": "2024-09-08",
+      "action": "SELL",
+      "ticker": "AAPL",
+      "shares": 8,
+      "price": 219.7970733642578,
+      "revenue": 1758.3765869140625,
+      "fee": 1.7583765869140626,
+      "net_revenue": 1756.6182103271485,
+      "cash_after": 8129.458541381836,
+      "pnl": -53.3914794921875,
+      "pnl_pct": -2.9469268435717977,
+      "reason": "Tendencia bajista confirmada (precio por debajo de SMA5 y SMA20), volumen alto refuerza presi\u00f3n vendedora. Reducir exposici\u00f3n para proteger capital ante posible continuidad del descenso."
+    },
+    {
+      "date": "2024-09-15",
+      "action": "SELL",
+      "ticker": "AAPL",
+      "shares": 4,
+      "price": 221.4692840576172,
+      "revenue": 885.8771362304688,
+      "fee": 0.8858771362304688,
+      "net_revenue": 884.9912590942383,
+      "cash_after": 9014.449800476074,
+      "pnl": -20.00689697265625,
+      "pnl_pct": -2.208549465422594,
+      "reason": "Tendencia bajista reforzada por SMA20 superior al precio, volumen decreciente y posici\u00f3n actual en p\u00e9rdidas. Reducir exposici\u00f3n para gestionar riesgo ante posible continuaci\u00f3n del movimiento descendente."
+    },
+    {
+      "date": "2024-09-22",
+      "action": "SELL",
+      "ticker": "AAPL",
+      "shares": 1,
+      "price": 227.14285278320312,
+      "revenue": 227.14285278320312,
+      "fee": 0.22714285278320312,
+      "net_revenue": 226.91570993041992,
+      "cash_after": 9241.365510406493,
+      "pnl": 0.671844482421875,
+      "pnl_pct": 0.2966580523762155,
+      "reason": "Alta volatilidad reflejada en volumen excepcionalmente alto (5x promedio) en tendencia bajista dominante. Vendo parcialmente para asegurar ganancias moderadas y reducir exposici\u00f3n ante posible reversi\u00f3n."
+    },
+    {
+      "date": "2024-09-29",
+      "action": "BUY",
+      "ticker": "AAPL",
+      "shares": 8,
+      "price": 226.73475646972656,
+      "cost": 1813.8780517578125,
+      "fee": 1.8138780517578126,
+      "total": 1815.6919298095704,
+      "cash_after": 7425.673580596922,
+      "reason": "Tendencia alcista reforzada por SMA 5 > SMA 20. Volumen bajo sugiere cautela, pero se aprovecha el impulso t\u00e9cnico dentro del rango. Inversi\u00f3n conservadora (20% del efectivo)."
+    }
+  ],
+  "decisions_log": [
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Datos insuficientes para evaluar AAPL. Sin informaci\u00f3n sobre precios, tendencias o indicadores t\u00e9cnicos/fundamentales, es imposible tomar una decisi\u00f3n informada. Mantener efectivo preserva el capital hasta contar con an\u00e1lisis confiable.",
+      "ticker": "AAPL",
+      "price": 223.01275634765625,
+      "raw_response": "\nACCION: HOLD\nMONTO: $0\nRAZON: Datos insuficientes para evaluar AAPL. Sin informaci\u00f3n sobre precios, tendencias o indicadores t\u00e9cnicos/fundamentales, es imposible tomar una decisi\u00f3n informada. Mantener efectivo preserva el capital hasta contar con an\u00e1lisis confiable.",
+      "date": "2024-07-21",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0,
+      "shares": 0,
+      "reason": "Datos insuficientes para evaluar oportunidad o riesgo en AAPL. Priorizo preservar capital ante incertidumbre.",
+      "ticker": "AAPL",
+      "price": 216.69947814941406,
+      "raw_response": "\n\nACCION: HOLD\nMONTO: N/A\nRAZON: Datos insuficientes para evaluar oportunidad o riesgo en AAPL. Priorizo preservar capital ante incertidumbre.",
+      "date": "2024-07-28",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0,
+      "shares": 0,
+      "reason": "Tendencia bajista confirmada (SMA 5 < SMA 20) y volumen alto actual sugiere presi\u00f3n de venta continuada. Es prudente esperar estabilizaci\u00f3n o reversi\u00f3n t\u00e9cnica antes de entrar.",
+      "ticker": "AAPL",
+      "price": 218.58848571777344,
+      "raw_response": "\n\nACCION: HOLD\nMONTO: N/A\nRAZON: Tendencia bajista confirmada (SMA 5 < SMA 20) y volumen alto actual sugiere presi\u00f3n de venta continuada. Es prudente esperar estabilizaci\u00f3n o reversi\u00f3n t\u00e9cnica antes de entrar.",
+      "date": "2024-08-04",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0.0,
+      "shares": 0,
+      "reason": "Tendencia bajista clara con precio por debajo de SMA 20d y volumen d\u00e9bil. Esperamos confirmaci\u00f3n de reversi\u00f3n antes de entrar. Mantenerse conservador ante persistencia de la presi\u00f3n vendedora.",
+      "ticker": "AAPL",
+      "price": 214.98944091796875,
+      "raw_response": "\n\nACCION: HOLD  \nMONTO: 0  \nRAZON: Tendencia bajista clara con precio por debajo de SMA 20d y volumen d\u00e9bil. Esperamos confirmaci\u00f3n de reversi\u00f3n antes de entrar. Mantenerse conservador ante persistencia de la presi\u00f3n vendedora.",
+      "date": "2024-08-11",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1800.022705078125,
+      "shares": 8,
+      "reason": "Tendencia alcista respaldada por SMA5 > SMA20, pero volumen actual bajo sugiere cautela. Inversi\u00f3n moderada (20%) para aprovechar momentum sin exponerse en resistencia cercana ($226.46).",
+      "ticker": "AAPL",
+      "price": 225.00283813476562,
+      "raw_response": "\n\nACCION: BUY  \nMONTO: $2000  \nRAZON: Tendencia alcista respaldada por SMA5 > SMA20, pero volumen actual bajo sugiere cautela. Inversi\u00f3n moderada (20%) para aprovechar momentum sin exponerse en resistencia cercana ($226.46).",
+      "date": "2024-08-18",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 8 acciones de AAPL a $225.00",
+        "trade": {
+          "date": "2024-08-18",
+          "action": "BUY",
+          "ticker": "AAPL",
+          "shares": 8,
+          "price": 225.00283813476562,
+          "cost": 1800.022705078125,
+          "fee": 1.800022705078125,
+          "total": 1801.8227277832032,
+          "cash_after": 8198.177272216797,
+          "reason": "Tendencia alcista respaldada por SMA5 > SMA20, pero volumen actual bajo sugiere cautela. Inversi\u00f3n moderada (20%) para aprovechar momentum sin exponerse en resistencia cercana ($226.46)."
+        }
+      }
+    },
+    {
+      "action": "HOLD",
+      "amount": 0,
+      "shares": 0,
+      "reason": "Precio cerca del m\u00e1ximo del rango 20d con volumen inferior al promedio, pero tendencia alcista y SMAs favorables mantienen sesgo positivo. Conservar posici\u00f3n actual para evitar exposici\u00f3n adicional en niveles resistentes.",
+      "ticker": "AAPL",
+      "price": 225.78916931152344,
+      "raw_response": "\nACCION: HOLD\nMONTO: N/A\nRAZON: Precio cerca del m\u00e1ximo del rango 20d con volumen inferior al promedio, pero tendencia alcista y SMAs favorables mantienen sesgo positivo. Conservar posici\u00f3n actual para evitar exposici\u00f3n adicional en niveles resistentes.",
+      "date": "2024-08-25",
+      "execution_result": {
+        "success": true,
+        "message": "HOLD - Sin operaci\u00f3n"
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1823.513427734375,
+      "shares": 8,
+      "reason": "Tendencia alcista reforzada por SMA5 sobre SMA20 y volumen superior al promedio. Aporte conservador (24% del efectivo) para capitalizar impulso sin sobreexponerse cerca de resistencia en $231.84.",
+      "ticker": "AAPL",
+      "price": 227.93917846679688,
+      "raw_response": "\n\nACCION: BUY  \nMONTO: $2000  \nRAZON: Tendencia alcista reforzada por SMA5 sobre SMA20 y volumen superior al promedio. Aporte conservador (24% del efectivo) para capitalizar impulso sin sobreexponerse cerca de resistencia en $231.84.",
+      "date": "2024-09-01",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 8 acciones de AAPL a $227.94",
+        "trade": {
+          "date": "2024-09-01",
+          "action": "BUY",
+          "ticker": "AAPL",
+          "shares": 8,
+          "price": 227.93917846679688,
+          "cost": 1823.513427734375,
+          "fee": 1.823513427734375,
+          "total": 1825.3369411621093,
+          "cash_after": 6372.840331054687,
+          "reason": "Tendencia alcista reforzada por SMA5 sobre SMA20 y volumen superior al promedio. Aporte conservador (24% del efectivo) para capitalizar impulso sin sobreexponerse cerca de resistencia en $231.84."
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Tendencia bajista confirmada (precio por debajo de SMA5 y SMA20), volumen alto refuerza presi\u00f3n vendedora. Reducir exposici\u00f3n para proteger capital ante posible continuidad del descenso.",
+      "ticker": "AAPL",
+      "price": 219.7970733642578,
+      "raw_response": "\n\nACCION: SELL  \nMONTO: 50%  \nRAZON: Tendencia bajista confirmada (precio por debajo de SMA5 y SMA20), volumen alto refuerza presi\u00f3n vendedora. Reducir exposici\u00f3n para proteger capital ante posible continuidad del descenso.",
+      "date": "2024-09-08",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 8 acciones de AAPL a $219.80. P&L: $-53.39 (-2.95%)",
+        "trade": {
+          "date": "2024-09-08",
+          "action": "SELL",
+          "ticker": "AAPL",
+          "shares": 8,
+          "price": 219.7970733642578,
+          "revenue": 1758.3765869140625,
+          "fee": 1.7583765869140626,
+          "net_revenue": 1756.6182103271485,
+          "cash_after": 8129.458541381836,
+          "pnl": -53.3914794921875,
+          "pnl_pct": -2.9469268435717977,
+          "reason": "Tendencia bajista confirmada (precio por debajo de SMA5 y SMA20), volumen alto refuerza presi\u00f3n vendedora. Reducir exposici\u00f3n para proteger capital ante posible continuidad del descenso."
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 50.0,
+      "shares": 0,
+      "reason": "Tendencia bajista reforzada por SMA20 superior al precio, volumen decreciente y posici\u00f3n actual en p\u00e9rdidas. Reducir exposici\u00f3n para gestionar riesgo ante posible continuaci\u00f3n del movimiento descendente.",
+      "ticker": "AAPL",
+      "price": 221.4692840576172,
+      "raw_response": "\n\nACCION: SELL\nMONTO: 50%\nRAZON: Tendencia bajista reforzada por SMA20 superior al precio, volumen decreciente y posici\u00f3n actual en p\u00e9rdidas. Reducir exposici\u00f3n para gestionar riesgo ante posible continuaci\u00f3n del movimiento descendente.",
+      "date": "2024-09-15",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 4 acciones de AAPL a $221.47. P&L: $-20.01 (-2.21%)",
+        "trade": {
+          "date": "2024-09-15",
+          "action": "SELL",
+          "ticker": "AAPL",
+          "shares": 4,
+          "price": 221.4692840576172,
+          "revenue": 885.8771362304688,
+          "fee": 0.8858771362304688,
+          "net_revenue": 884.9912590942383,
+          "cash_after": 9014.449800476074,
+          "pnl": -20.00689697265625,
+          "pnl_pct": -2.208549465422594,
+          "reason": "Tendencia bajista reforzada por SMA20 superior al precio, volumen decreciente y posici\u00f3n actual en p\u00e9rdidas. Reducir exposici\u00f3n para gestionar riesgo ante posible continuaci\u00f3n del movimiento descendente."
+        }
+      }
+    },
+    {
+      "action": "SELL",
+      "amount": 25.0,
+      "shares": 0,
+      "reason": "Alta volatilidad reflejada en volumen excepcionalmente alto (5x promedio) en tendencia bajista dominante. Vendo parcialmente para asegurar ganancias moderadas y reducir exposici\u00f3n ante posible reversi\u00f3n.",
+      "ticker": "AAPL",
+      "price": 227.14285278320312,
+      "raw_response": "\nACCION: SELL\nMONTO: 25%\nRAZON: Alta volatilidad reflejada en volumen excepcionalmente alto (5x promedio) en tendencia bajista dominante. Vendo parcialmente para asegurar ganancias moderadas y reducir exposici\u00f3n ante posible reversi\u00f3n.",
+      "date": "2024-09-22",
+      "execution_result": {
+        "success": true,
+        "message": "Vendido 1 acciones de AAPL a $227.14. P&L: $0.67 (+0.30%)",
+        "trade": {
+          "date": "2024-09-22",
+          "action": "SELL",
+          "ticker": "AAPL",
+          "shares": 1,
+          "price": 227.14285278320312,
+          "revenue": 227.14285278320312,
+          "fee": 0.22714285278320312,
+          "net_revenue": 226.91570993041992,
+          "cash_after": 9241.365510406493,
+          "pnl": 0.671844482421875,
+          "pnl_pct": 0.2966580523762155,
+          "reason": "Alta volatilidad reflejada en volumen excepcionalmente alto (5x promedio) en tendencia bajista dominante. Vendo parcialmente para asegurar ganancias moderadas y reducir exposici\u00f3n ante posible reversi\u00f3n."
+        }
+      }
+    },
+    {
+      "action": "BUY",
+      "amount": 1813.8780517578125,
+      "shares": 8,
+      "reason": "Tendencia alcista reforzada por SMA 5 > SMA 20. Volumen bajo sugiere cautela, pero se aprovecha el impulso t\u00e9cnico dentro del rango. Inversi\u00f3n conservadora (20% del efectivo).",
+      "ticker": "AAPL",
+      "price": 226.73475646972656,
+      "raw_response": "\n\nACCION: BUY  \nMONTO: $1848.27  \nRAZON: Tendencia alcista reforzada por SMA 5 > SMA 20. Volumen bajo sugiere cautela, pero se aprovecha el impulso t\u00e9cnico dentro del rango. Inversi\u00f3n conservadora (20% del efectivo).",
+      "date": "2024-09-29",
+      "execution_result": {
+        "success": true,
+        "message": "Comprado 8 acciones de AAPL a $226.73",
+        "trade": {
+          "date": "2024-09-29",
+          "action": "BUY",
+          "ticker": "AAPL",
+          "shares": 8,
+          "price": 226.73475646972656,
+          "cost": 1813.8780517578125,
+          "fee": 1.8138780517578126,
+          "total": 1815.6919298095704,
+          "cash_after": 7425.673580596922,
+          "reason": "Tendencia alcista reforzada por SMA 5 > SMA 20. Volumen bajo sugiere cautela, pero se aprovecha el impulso t\u00e9cnico dentro del rango. Inversi\u00f3n conservadora (20% del efectivo)."
+        }
+      }
+    }
+  ],
+  "equity_curve": [
+    {
+      "date": "2024-07-21",
+      "value": 10000.0,
+      "cash": 10000.0
+    },
+    {
+      "date": "2024-07-28",
+      "value": 10000.0,
+      "cash": 10000.0
+    },
+    {
+      "date": "2024-08-04",
+      "value": 10000.0,
+      "cash": 10000.0
+    },
+    {
+      "date": "2024-08-11",
+      "value": 10000.0,
+      "cash": 10000.0
+    },
+    {
+      "date": "2024-08-18",
+      "value": 10000.0,
+      "cash": 10000.0
+    },
+    {
+      "date": "2024-08-25",
+      "value": 10004.490626708985,
+      "cash": 8198.177272216797
+    },
+    {
+      "date": "2024-09-01",
+      "value": 10021.690699951172,
+      "cash": 8198.177272216797
+    },
+    {
+      "date": "2024-09-08",
+      "value": 9889.593504882812,
+      "cash": 6372.840331054687
+    },
+    {
+      "date": "2024-09-15",
+      "value": 9901.212813842772,
+      "cash": 8129.458541381836
+    },
+    {
+      "date": "2024-09-22",
+      "value": 9923.021211608886,
+      "cash": 9014.449800476074
+    },
+    {
+      "date": "2024-09-29",
+      "value": 9921.569779815673,
+      "cash": 9241.365510406493
+    }
+  ],
+  "final_metrics": {
+    "initial_capital": 10000.0,
+    "current_value": 9976.800777862547,
+    "cash": 7425.673580596922,
+    "total_return": -23.199222137453035,
+    "total_return_pct": -0.23199222137453035,
+    "total_trades": 3,
+    "winning_trades": 1,
+    "losing_trades": 2,
+    "win_rate": 33.33333333333333,
+    "avg_win": 0.671844482421875,
+    "avg_loss": -36.699188232421875,
+    "profit_factor": 0.018306794094925905,
+    "holdings": {
+      "AAPL": {
+        "shares": 11,
+        "avg_price": 226.66282515092328
+      }
+    }
+  }
+}
