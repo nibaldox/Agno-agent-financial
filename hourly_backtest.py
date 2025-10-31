@@ -4,18 +4,18 @@ Sistema de Backtesting con Datos HORARIOS (1h)
 Simulación acelerada para evaluar agentes con mayor frecuencia
 """
 
-import os
 import json
+import os
+import time
+from datetime import datetime, timedelta
+from typing import Dict, List, Tuple
+
 import pandas as pd
 import yfinance as yf
-from datetime import datetime, timedelta
-from dotenv import load_dotenv
-from typing import Dict, List, Tuple
-import time
-
-from agno.models.openrouter import OpenRouter
-from agno.models.deepseek import DeepSeek
 from agno.agent import Agent
+from agno.models.deepseek import DeepSeek
+from agno.models.openrouter import OpenRouter
+from dotenv import load_dotenv
 
 load_dotenv()
 
@@ -29,50 +29,53 @@ MODELS = {
     "deepseek": "deepseek-chat",  # DeepSeek V3 (no razonador)
 }
 
+
 class TradingSimulator:
     """Simulador de trading con datos históricos"""
-    
+
     def __init__(self, initial_capital: float = 10000.0, transaction_cost: float = 0.001):
         self.initial_capital = initial_capital
         self.cash = initial_capital
         self.transaction_cost = transaction_cost
-        
+
         self.portfolio = {}
         self.history = []
         self.equity_curve = []
         self.decisions_log = []
-        
+
     def get_portfolio_value(self, current_prices: Dict[str, float]) -> float:
         """Calcular valor total del portfolio"""
         holdings_value = sum(
-            self.portfolio[ticker]['shares'] * current_prices.get(ticker, 0)
+            self.portfolio[ticker]["shares"] * current_prices.get(ticker, 0)
             for ticker in self.portfolio
         )
         return self.cash + holdings_value
-    
-    def execute_buy(self, ticker: str, shares: float, price: float, date: str, reason: str = "") -> Dict:
+
+    def execute_buy(
+        self, ticker: str, shares: float, price: float, date: str, reason: str = ""
+    ) -> Dict:
         """Ejecutar compra (soporta fracciones)"""
         cost = shares * price
         transaction_fee = cost * self.transaction_cost
         total_cost = cost + transaction_fee
-        
+
         if total_cost > self.cash:
             return {
                 "success": False,
-                "message": f"Fondos insuficientes. Necesitas ${total_cost:.2f}, tienes ${self.cash:.2f}"
+                "message": f"Fondos insuficientes. Necesitas ${total_cost:.2f}, tienes ${self.cash:.2f}",
             }
-        
+
         self.cash -= total_cost
-        
+
         if ticker in self.portfolio:
-            old_shares = self.portfolio[ticker]['shares']
-            old_avg = self.portfolio[ticker]['avg_price']
+            old_shares = self.portfolio[ticker]["shares"]
+            old_avg = self.portfolio[ticker]["avg_price"]
             new_shares = old_shares + shares
             new_avg = ((old_shares * old_avg) + (shares * price)) / new_shares
-            self.portfolio[ticker] = {'shares': new_shares, 'avg_price': new_avg}
+            self.portfolio[ticker] = {"shares": new_shares, "avg_price": new_avg}
         else:
-            self.portfolio[ticker] = {'shares': shares, 'avg_price': price}
-        
+            self.portfolio[ticker] = {"shares": shares, "avg_price": price}
+
         trade = {
             "date": date,
             "action": "BUY",
@@ -83,38 +86,44 @@ class TradingSimulator:
             "fee": transaction_fee,
             "total": total_cost,
             "cash_after": self.cash,
-            "reason": reason
+            "reason": reason,
         }
         self.history.append(trade)
-        
-        return {"success": True, "message": f"Comprado {shares} acciones de {ticker} a ${price:.2f}", "trade": trade}
-    
-    def execute_sell(self, ticker: str, shares: float, price: float, date: str, reason: str = "") -> Dict:
+
+        return {
+            "success": True,
+            "message": f"Comprado {shares} acciones de {ticker} a ${price:.2f}",
+            "trade": trade,
+        }
+
+    def execute_sell(
+        self, ticker: str, shares: float, price: float, date: str, reason: str = ""
+    ) -> Dict:
         """Ejecutar venta (soporta fracciones)"""
         if ticker not in self.portfolio:
             return {"success": False, "message": f"No tienes acciones de {ticker}"}
-        
-        available_shares = self.portfolio[ticker]['shares']
+
+        available_shares = self.portfolio[ticker]["shares"]
         if shares > available_shares:
             return {
                 "success": False,
-                "message": f"No tienes suficientes acciones. Tienes {available_shares}, intentas vender {shares}"
+                "message": f"No tienes suficientes acciones. Tienes {available_shares}, intentas vender {shares}",
             }
-        
+
         revenue = shares * price
         transaction_fee = revenue * self.transaction_cost
         net_revenue = revenue - transaction_fee
-        
+
         self.cash += net_revenue
-        
-        avg_cost = self.portfolio[ticker]['avg_price']
+
+        avg_cost = self.portfolio[ticker]["avg_price"]
         pnl = (price - avg_cost) * shares
         pnl_pct = ((price - avg_cost) / avg_cost) * 100
-        
-        self.portfolio[ticker]['shares'] -= shares
-        if self.portfolio[ticker]['shares'] < 0.00000001:  # Casi cero
+
+        self.portfolio[ticker]["shares"] -= shares
+        if self.portfolio[ticker]["shares"] < 0.00000001:  # Casi cero
             del self.portfolio[ticker]
-        
+
         trade = {
             "date": date,
             "action": "SELL",
@@ -127,31 +136,33 @@ class TradingSimulator:
             "cash_after": self.cash,
             "pnl": pnl,
             "pnl_pct": pnl_pct,
-            "reason": reason
+            "reason": reason,
         }
         self.history.append(trade)
-        
+
         return {
             "success": True,
             "message": f"Vendido {shares} acciones de {ticker} a ${price:.2f}. P&L: ${pnl:.2f} ({pnl_pct:+.2f}%)",
-            "trade": trade
+            "trade": trade,
         }
-    
+
     def get_performance_metrics(self, current_prices: Dict[str, float]) -> Dict:
         """Calcular métricas de desempeño"""
         current_value = self.get_portfolio_value(current_prices)
         total_return = current_value - self.initial_capital
         total_return_pct = (total_return / self.initial_capital) * 100
-        
-        winning_trades = [t for t in self.history if t['action'] == 'SELL' and t.get('pnl', 0) > 0]
-        losing_trades = [t for t in self.history if t['action'] == 'SELL' and t.get('pnl', 0) < 0]
-        
+
+        winning_trades = [t for t in self.history if t["action"] == "SELL" and t.get("pnl", 0) > 0]
+        losing_trades = [t for t in self.history if t["action"] == "SELL" and t.get("pnl", 0) < 0]
+
         total_trades = len(winning_trades) + len(losing_trades)
         win_rate = (len(winning_trades) / total_trades * 100) if total_trades > 0 else 0
-        
-        avg_win = sum(t['pnl'] for t in winning_trades) / len(winning_trades) if winning_trades else 0
-        avg_loss = sum(t['pnl'] for t in losing_trades) / len(losing_trades) if losing_trades else 0
-        
+
+        avg_win = (
+            sum(t["pnl"] for t in winning_trades) / len(winning_trades) if winning_trades else 0
+        )
+        avg_loss = sum(t["pnl"] for t in losing_trades) / len(losing_trades) if losing_trades else 0
+
         return {
             "initial_capital": self.initial_capital,
             "current_value": current_value,
@@ -165,15 +176,20 @@ class TradingSimulator:
             "avg_win": avg_win,
             "avg_loss": avg_loss,
             "profit_factor": abs(avg_win / avg_loss) if avg_loss != 0 else 0,
-            "holdings": self.portfolio.copy()
+            "holdings": self.portfolio.copy(),
         }
 
 
 class HourlyBacktestEngine:
     """Motor de backtesting con datos HORARIOS (1h)"""
-    
-    def __init__(self, tickers: List[str], days: int = 7, 
-                 decision_interval_hours: int = 4, initial_capital: float = 10000.0):
+
+    def __init__(
+        self,
+        tickers: List[str],
+        days: int = 7,
+        decision_interval_hours: int = 4,
+        initial_capital: float = 10000.0,
+    ):
         """
         Args:
             tickers: Lista de tickers a analizar
@@ -184,22 +200,22 @@ class HourlyBacktestEngine:
         self.tickers = tickers
         self.days = min(days, 60)  # yfinance limita datos horarios
         self.decision_interval_hours = decision_interval_hours
-        
+
         self.simulator = TradingSimulator(initial_capital)
         self.historical_data = {}
         self.current_timestamp = None
         self.decision_justifications = []  # Almacenar justificaciones completas
-        
+
         print("📥 Descargando datos horarios...")
         self._download_hourly_data()
-    
+
     def _download_hourly_data(self):
         """Descargar datos horarios"""
         for ticker in self.tickers:
             try:
                 # Datos horarios de yfinance
                 data = yf.download(ticker, period=f"{self.days}d", interval="1h", progress=False)
-                
+
                 if not data.empty:
                     self.historical_data[ticker] = data
                     hours = len(data)
@@ -208,85 +224,97 @@ class HourlyBacktestEngine:
                     print(f"  ❌ {ticker}: Sin datos")
             except Exception as e:
                 print(f"  ❌ {ticker}: Error - {str(e)}")
-    
+
     def get_data_until_timestamp(self, ticker: str, timestamp: pd.Timestamp) -> pd.DataFrame:
         """Obtener datos hasta un timestamp específico"""
         if ticker not in self.historical_data:
             return pd.DataFrame()
-        
+
         data = self.historical_data[ticker]
         return data[data.index <= timestamp].copy()
-    
+
     def get_current_prices(self, timestamp: pd.Timestamp) -> Dict[str, float]:
         """Obtener precios actuales en un timestamp"""
         prices = {}
         for ticker in self.tickers:
             data = self.get_data_until_timestamp(ticker, timestamp)
             if not data.empty:
-                prices[ticker] = float(data['Close'].iloc[-1])
+                prices[ticker] = float(data["Close"].iloc[-1])
         return prices
-    
+
     def prepare_market_context(self, ticker: str, timestamp: pd.Timestamp) -> str:
         """Preparar contexto de mercado para análisis horario"""
         data = self.get_data_until_timestamp(ticker, timestamp)
-        
+
         if len(data) < 24:
             return f"Datos insuficientes para {ticker}"
-        
+
         # Últimas 24 horas
         last_24h = data.tail(24)
         # Precios actuales y comparaciones temporales
-        current_price = last_24h['Close'].iloc[-1].item() if hasattr(last_24h['Close'].iloc[-1], 'item') else float(last_24h['Close'].iloc[-1])
-        price_24h_ago = last_24h['Close'].iloc[0].item() if hasattr(last_24h['Close'].iloc[0], 'item') else float(last_24h['Close'].iloc[0])
+        current_price = (
+            last_24h["Close"].iloc[-1].item()
+            if hasattr(last_24h["Close"].iloc[-1], "item")
+            else float(last_24h["Close"].iloc[-1])
+        )
+        price_24h_ago = (
+            last_24h["Close"].iloc[0].item()
+            if hasattr(last_24h["Close"].iloc[0], "item")
+            else float(last_24h["Close"].iloc[0])
+        )
         change_24h = ((current_price - price_24h_ago) / price_24h_ago) * 100
-        
+
         # Últimas 4 horas
         last_4h = data.tail(4)
         if len(last_4h) > 0:
-            val = last_4h['Close'].iloc[0]
-            price_4h_ago = val.item() if hasattr(val, 'item') else float(val)
+            val = last_4h["Close"].iloc[0]
+            price_4h_ago = val.item() if hasattr(val, "item") else float(val)
         else:
             price_4h_ago = current_price
         change_4h = ((current_price - price_4h_ago) / price_4h_ago) * 100
-        
+
         # Última hora
         if len(data) >= 2:
-            val = data['Close'].iloc[-2]
-            price_1h_ago = val.item() if hasattr(val, 'item') else float(val)
+            val = data["Close"].iloc[-2]
+            price_1h_ago = val.item() if hasattr(val, "item") else float(val)
         else:
             price_1h_ago = current_price
         change_1h = ((current_price - price_1h_ago) / price_1h_ago) * 100
-        
+
         # Métricas
         # Volatilidad y volumen
-        high_24h_val = last_24h['High'].max()
+        high_24h_val = last_24h["High"].max()
         high_24h = high_24h_val if isinstance(high_24h_val, (int, float)) else high_24h_val.item()
-        low_24h_val = last_24h['Low'].min()
+        low_24h_val = last_24h["Low"].min()
         low_24h = low_24h_val if isinstance(low_24h_val, (int, float)) else low_24h_val.item()
-        avg_volume_24h_val = last_24h['Volume'].mean()
-        avg_volume_24h = avg_volume_24h_val if isinstance(avg_volume_24h_val, (int, float)) else avg_volume_24h_val.item()
-        val_vol = last_24h['Volume'].iloc[-1]
-        current_volume = val_vol.item() if hasattr(val_vol, 'item') else float(val_vol)
-        
+        avg_volume_24h_val = last_24h["Volume"].mean()
+        avg_volume_24h = (
+            avg_volume_24h_val
+            if isinstance(avg_volume_24h_val, (int, float))
+            else avg_volume_24h_val.item()
+        )
+        val_vol = last_24h["Volume"].iloc[-1]
+        current_volume = val_vol.item() if hasattr(val_vol, "item") else float(val_vol)
+
         # Momentum
-        prices = last_24h['Close']
+        prices = last_24h["Close"]
         sma_4h_val = prices.tail(4).mean()
         sma_4h = sma_4h_val if isinstance(sma_4h_val, (int, float)) else sma_4h_val.item()
         sma_12h_val = prices.tail(12).mean()
         sma_12h = sma_12h_val if isinstance(sma_12h_val, (int, float)) else sma_12h_val.item()
         trend = "ALCISTA" if sma_4h > sma_12h else "BAJISTA"
-        
+
         # RSI aproximado (últimas 14 horas)
         try:
             if len(data) >= 14:
-                deltas = data['Close'].diff().tail(14).dropna()
+                deltas = data["Close"].diff().tail(14).dropna()
                 gains = deltas[deltas > 0].mean()
                 losses = -deltas[deltas < 0].mean()
-                
+
                 # Convertir a float y manejar NaN
                 gains = float(gains) if pd.notna(gains) else 0.0
                 losses = float(losses) if pd.notna(losses) else 0.0
-                
+
                 if losses != 0:
                     rs = gains / losses
                     rsi = 100 - (100 / (1 + rs))
@@ -296,7 +324,7 @@ class HourlyBacktestEngine:
                 rsi = 50.0
         except:
             rsi = 50.0
-        
+
         context = f"""
 DATOS DE MERCADO HORARIOS PARA {ticker}
 Timestamp: {timestamp.strftime('%Y-%m-%d %H:%M')}
@@ -333,21 +361,21 @@ Timestamp: {timestamp.strftime('%Y-%m-%d %H:%M')}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 """
         return context
-    
+
     def get_llm_decision(self, ticker: str, timestamp: pd.Timestamp, model_id: str = None) -> Dict:
         """Obtener decisión del LLM con datos horarios"""
         if model_id is None:
             model_id = MODELS["fast_calc"]  # Usar modelo rápido por defecto
-        
+
         market_context = self.prepare_market_context(ticker, timestamp)
         current_prices = self.get_current_prices(timestamp)
         portfolio_value = self.simulator.get_portfolio_value(current_prices)
-        
+
         position_info = ""
         if ticker in self.simulator.portfolio:
             pos = self.simulator.portfolio[ticker]
             current_price = current_prices.get(ticker, 0)
-            pnl_pct = ((current_price - pos['avg_price']) / pos['avg_price']) * 100
+            pnl_pct = ((current_price - pos["avg_price"]) / pos["avg_price"]) * 100
             position_info = f"""
 POSICIÓN ACTUAL EN {ticker}:
 - Acciones: {pos['shares']}
@@ -355,9 +383,9 @@ POSICIÓN ACTUAL EN {ticker}:
 - Precio actual: ${current_price:.2f}
 - P&L no realizado: {pnl_pct:+.2f}%
 """
-        
+
         max_investment = self.simulator.cash * 0.25
-        
+
         prompt = f"""
 Eres un trader profesional de CORTO PLAZO con datos horarios.
 
@@ -394,42 +422,44 @@ REGLAS:
 - RAZON debe ser 1 línea corta
 - NO uses símbolos $ ni % en MONTO, solo el número
 """
-        
+
         try:
             # Seleccionar provider según modelo
             if model_id == "deepseek-chat":
                 model = DeepSeek(id=model_id)
             else:
                 model = OpenRouter(id=model_id)
-            
+
             agent = Agent(name="Intraday Trader", model=model, markdown=False)
-            
+
             response = agent.run(prompt)
-            response_text = response.content if hasattr(response, 'content') else str(response)
-            
-            decision = self._parse_llm_response(response_text, ticker, current_prices.get(ticker, 0))
-            decision['raw_response'] = response_text
-            decision['date'] = timestamp.strftime('%Y-%m-%d %H:%M')
-            
+            response_text = response.content if hasattr(response, "content") else str(response)
+
+            decision = self._parse_llm_response(
+                response_text, ticker, current_prices.get(ticker, 0)
+            )
+            decision["raw_response"] = response_text
+            decision["date"] = timestamp.strftime("%Y-%m-%d %H:%M")
+
             return decision
-            
+
         except Exception as e:
             print(f"❌ Error obteniendo decisión LLM: {str(e)}")
             return {
                 "action": "HOLD",
                 "amount": 0,
                 "reason": f"Error: {str(e)}",
-                "date": timestamp.strftime('%Y-%m-%d %H:%M')
+                "date": timestamp.strftime("%Y-%m-%d %H:%M"),
             }
-    
+
     def _parse_llm_response(self, response: str, ticker: str, current_price: float) -> Dict:
         """Parsear respuesta del LLM"""
-        lines = response.strip().split('\n')
-        
+        lines = response.strip().split("\n")
+
         action = "HOLD"
         amount = 0
         reason = "Sin razón especificada"
-        
+
         for line in lines:
             line = line.strip()
             if line.startswith("ACCION:"):
@@ -439,226 +469,235 @@ REGLAS:
             elif line.startswith("MONTO:"):
                 monto_str = line.split(":", 1)[1].strip()
                 import re
-                numbers = re.findall(r'[\d.]+', monto_str)
+
+                numbers = re.findall(r"[\d.]+", monto_str)
                 if numbers:
                     amount = float(numbers[0])
             elif line.startswith("RAZON:"):
                 reason = line.split(":", 1)[1].strip()
-        
+
         shares = 0
         if action == "BUY" and current_price > 0:
             # Si no especificó monto, usar un valor aleatorio entre 10% y 25% del efectivo
             if amount == 0 or amount < 100:  # Si no especificó o es muy bajo
                 import random
+
                 pct = random.uniform(0.10, 0.25)  # Entre 10% y 25%
                 amount = self.simulator.cash * pct
                 print(f"[DEBUG] Monto auto-asignado: ${amount:.2f} ({pct*100:.1f}% del efectivo)")
-            
+
             max_investment = self.simulator.cash * 0.25  # Máximo 25%
             min_investment = self.simulator.cash * 0.10  # Mínimo 10%
             amount = min(max(amount, min_investment), max_investment)
             shares = amount / current_price  # Fracciones permitidas
             amount = shares * current_price
             print(f"[DEBUG] BUY: {shares:.8f} shares @ ${current_price:.2f} = ${amount:.2f}")
-        
+
         return {
             "action": action,
             "amount": amount,
             "shares": shares,
             "reason": reason,
             "ticker": ticker,
-            "price": current_price
+            "price": current_price,
         }
-    
+
     def execute_decision(self, decision: Dict) -> Dict:
         """Ejecutar decisión del LLM"""
-        action = decision['action']
-        ticker = decision['ticker']
-        
+        action = decision["action"]
+        ticker = decision["ticker"]
+
         if action == "HOLD":
             return {"success": True, "message": "HOLD - Sin operación"}
-        
+
         elif action == "BUY":
-            shares = decision['shares']
+            shares = decision["shares"]
             if shares < 0.00000001:  # Verificar shares mínimas válidas
                 return {"success": False, "message": "Shares calculados muy pequeños"}
-            
+
             return self.simulator.execute_buy(
                 ticker=ticker,
                 shares=shares,
-                price=decision['price'],
-                date=decision['date'],
-                reason=decision['reason']
+                price=decision["price"],
+                date=decision["date"],
+                reason=decision["reason"],
             )
-        
+
         elif action == "SELL":
             if ticker not in self.simulator.portfolio:
                 return {"success": False, "message": f"No tienes posición en {ticker}"}
-            
-            total_shares = self.simulator.portfolio[ticker]['shares']
-            pct = decision['amount']
-            
+
+            total_shares = self.simulator.portfolio[ticker]["shares"]
+            pct = decision["amount"]
+
             if pct > 100:
                 pct = 100
-            
+
             shares_to_sell = float(total_shares * (pct / 100))
             if shares_to_sell == 0:
                 shares_to_sell = total_shares
-            
+
             return self.simulator.execute_sell(
                 ticker=ticker,
                 shares=shares_to_sell,
-                price=decision['price'],
-                date=decision['date'],
-                reason=decision['reason']
+                price=decision["price"],
+                date=decision["date"],
+                reason=decision["reason"],
             )
-        
+
         return {"success": False, "message": "Acción desconocida"}
-    
+
     def run_simulation(self, model_id: str = None, verbose: bool = True):
         """Ejecutar simulación completa con datos horarios"""
         if model_id is None:
             model_id = MODELS["fast_calc"]  # Modelo rápido por defecto
-        
-        print("\n" + "="*70)
+
+        print("\n" + "=" * 70)
         print("🚀 SIMULACIÓN DE BACKTESTING HORARIO (1h)")
-        print("="*70)
+        print("=" * 70)
         print(f"⏰ Marco temporal: DATOS POR HORA")
         print(f"📅 Período: Últimos {self.days} días")
         print(f"💰 Capital inicial: ${self.simulator.initial_capital:,.2f}")
         print(f"📊 Tickers: {', '.join(self.tickers)}")
         print(f"⏱️  Decisiones cada {self.decision_interval_hours} horas")
         print(f"🤖 Modelo: {model_id}")
-        print("="*70)
-        
+        print("=" * 70)
+
         # Obtener todos los timestamps disponibles
         if not self.historical_data:
             print("❌ No hay datos históricos")
             return None
-        
+
         first_ticker = self.tickers[0]
         all_timestamps = self.historical_data[first_ticker].index
-        
+
         # Filtrar timestamps según intervalo de decisión
         decision_timestamps = []
         for i, ts in enumerate(all_timestamps):
             if i == 0 or i % self.decision_interval_hours == 0:
                 if i >= 24:  # Esperar 24 horas para tener datos
                     decision_timestamps.append(ts)
-        
-        print(f"\n📌 Se tomarán {len(decision_timestamps)} decisiones (~{len(decision_timestamps) * self.decision_interval_hours} horas)\n")
-        
+
+        print(
+            f"\n📌 Se tomarán {len(decision_timestamps)} decisiones (~{len(decision_timestamps) * self.decision_interval_hours} horas)\n"
+        )
+
         # Iterar por cada timestamp de decisión
         for i, timestamp in enumerate(decision_timestamps, 1):
             self.current_timestamp = timestamp
             current_prices = self.get_current_prices(timestamp)
             portfolio_value = self.simulator.get_portfolio_value(current_prices)
-            
+
             print(f"\n{'─'*70}")
             print(f"📅 DECISIÓN #{i} - {timestamp.strftime('%Y-%m-%d %H:%M')}")
             print(f"💰 Valor: ${portfolio_value:,.2f} | Efectivo: ${self.simulator.cash:,.2f}")
             print(f"{'─'*70}")
-            
+
             # Registrar equity curve
-            self.simulator.equity_curve.append({
-                "date": timestamp.strftime('%Y-%m-%d %H:%M'),
-                "value": portfolio_value,
-                "cash": self.simulator.cash
-            })
-            
+            self.simulator.equity_curve.append(
+                {
+                    "date": timestamp.strftime("%Y-%m-%d %H:%M"),
+                    "value": portfolio_value,
+                    "cash": self.simulator.cash,
+                }
+            )
+
             # Tomar decisiones para cada ticker
             for ticker in self.tickers:
                 if ticker not in current_prices:
                     continue
-                
+
                 print(f"\n🔍 {ticker} (${current_prices[ticker]:.2f})...")
-                
+
                 # Obtener decisión del LLM
                 decision = self.get_llm_decision(ticker, timestamp, model_id)
-                
+
                 # Guardar justificación completa
-                self.decision_justifications.append({
-                    'decision_num': i,
-                    'timestamp': timestamp.strftime('%Y-%m-%d %H:%M'),
-                    'ticker': ticker,
-                    'action': decision['action'],
-                    'price': decision['price'],
-                    'shares': decision.get('shares', 0),
-                    'full_reason': decision['reason'],
-                    'portfolio_value': portfolio_value,
-                    'cash': self.simulator.cash
-                })
-                
+                self.decision_justifications.append(
+                    {
+                        "decision_num": i,
+                        "timestamp": timestamp.strftime("%Y-%m-%d %H:%M"),
+                        "ticker": ticker,
+                        "action": decision["action"],
+                        "price": decision["price"],
+                        "shares": decision.get("shares", 0),
+                        "full_reason": decision["reason"],
+                        "portfolio_value": portfolio_value,
+                        "cash": self.simulator.cash,
+                    }
+                )
+
                 print(f"   Decisión: {decision['action']}")
                 print(f"   Razón: {decision['reason'][:60]}...")
-                
+
                 # Ejecutar decisión
                 result = self.execute_decision(decision)
-                
-                if result['success']:
+
+                if result["success"]:
                     print(f"   ✅ {result['message']}")
                 else:
                     print(f"   ❌ {result['message']}")
-                
+
                 # Guardar log
-                self.simulator.decisions_log.append({
-                    **decision,
-                    "execution_result": result
-                })
-                
+                self.simulator.decisions_log.append({**decision, "execution_result": result})
+
                 # Pausa corta
                 time.sleep(1)
-        
+
         # Vender todas las posiciones al final
-        print("\n" + "="*70)
+        print("\n" + "=" * 70)
         print("💰 CERRANDO TODAS LAS POSICIONES AL FINAL")
-        print("="*70)
-        
+        print("=" * 70)
+
         final_timestamp = decision_timestamps[-1]
         final_prices = self.get_current_prices(final_timestamp)
-        
+
         # Vender todas las posiciones abiertas
         for ticker in list(self.simulator.portfolio.keys()):
             if ticker in final_prices:
-                shares = self.simulator.portfolio[ticker]['shares']
+                shares = self.simulator.portfolio[ticker]["shares"]
                 price = final_prices[ticker]
                 result = self.simulator.execute_sell(
                     ticker=ticker,
                     shares=shares,
                     price=price,
-                    date=final_timestamp.strftime('%Y-%m-%d %H:%M'),
-                    reason="Cierre automático al finalizar simulación"
+                    date=final_timestamp.strftime("%Y-%m-%d %H:%M"),
+                    reason="Cierre automático al finalizar simulación",
                 )
-                if result['success']:
+                if result["success"]:
                     print(f"✅ Vendido {shares:.8f} {ticker} @ ${price:,.2f}")
-                    print(f"   Ganancia/Pérdida: ${result['trade']['pnl']:,.2f} ({result['trade']['pnl_pct']:+.2f}%)")
-        
+                    print(
+                        f"   Ganancia/Pérdida: ${result['trade']['pnl']:,.2f} ({result['trade']['pnl_pct']:+.2f}%)"
+                    )
+
         print(f"\n💵 Efectivo final: ${self.simulator.cash:,.2f}")
-        
+
         # Resumen final
-        print("\n" + "="*70)
+        print("\n" + "=" * 70)
         print("🏁 SIMULACIÓN HORARIA COMPLETADA")
-        print("="*70)
-        
+        print("=" * 70)
+
         metrics = self.simulator.get_performance_metrics(final_prices)
-        
+
         self._print_final_report(metrics)
-        
+
         # Mostrar resumen de justificaciones
         self._print_decision_summary()
-        
+
         # Mostrar resumen en lenguaje natural
         self._print_natural_language_summary(metrics)
-        
+
         return metrics
-    
+
     def _print_final_report(self, metrics: Dict):
         """Imprimir reporte final"""
         print(f"\n📊 REPORTE FINAL (Trading Horario):")
-        print("="*70)
+        print("=" * 70)
         print(f"💰 Capital Inicial:    ${metrics['initial_capital']:,.2f}")
         print(f"💰 Capital Final:      ${metrics['current_value']:,.2f}")
-        print(f"📈 Retorno Total:      ${metrics['total_return']:,.2f} ({metrics['total_return_pct']:+.2f}%)")
+        print(
+            f"📈 Retorno Total:      ${metrics['total_return']:,.2f} ({metrics['total_return_pct']:+.2f}%)"
+        )
         print(f"💵 Efectivo:           ${metrics['cash']:,.2f}")
         print()
         print(f"📊 Total Operaciones:  {metrics['total_trades']}")
@@ -668,36 +707,36 @@ REGLAS:
         print(f"💔 Pérdida Promedio:   ${metrics['avg_loss']:.2f}")
         print(f"⚖️  Profit Factor:     {metrics['profit_factor']:.2f}")
         print()
-        
-        if metrics['holdings']:
+
+        if metrics["holdings"]:
             print("📦 POSICIONES ABIERTAS:")
-            for ticker, info in metrics['holdings'].items():
+            for ticker, info in metrics["holdings"].items():
                 print(f"   {ticker}: {info['shares']} acciones @ ${info['avg_price']:.2f}")
         else:
             print("📦 Sin posiciones abiertas")
-        
-        print("="*70)
-    
+
+        print("=" * 70)
+
     def _print_decision_summary(self):
         """Imprimir resumen completo de todas las decisiones con justificaciones"""
         if not self.decision_justifications:
             return
-        
-        print("\n" + "="*70)
+
+        print("\n" + "=" * 70)
         print("📋 RESUMEN COMPLETO DE DECISIONES Y JUSTIFICACIONES")
-        print("="*70)
-        
+        print("=" * 70)
+
         # Agrupar por acción
-        buy_decisions = [d for d in self.decision_justifications if d['action'] == 'BUY']
-        sell_decisions = [d for d in self.decision_justifications if d['action'] == 'SELL']
-        hold_decisions = [d for d in self.decision_justifications if d['action'] == 'HOLD']
-        
+        buy_decisions = [d for d in self.decision_justifications if d["action"] == "BUY"]
+        sell_decisions = [d for d in self.decision_justifications if d["action"] == "SELL"]
+        hold_decisions = [d for d in self.decision_justifications if d["action"] == "HOLD"]
+
         print(f"\n📊 Estadísticas:")
         print(f"   • Total decisiones: {len(self.decision_justifications)}")
         print(f"   • BUY: {len(buy_decisions)}")
         print(f"   • SELL: {len(sell_decisions)}")
         print(f"   • HOLD: {len(hold_decisions)}")
-        
+
         # Mostrar decisiones BUY con justificación completa
         if buy_decisions:
             print(f"\n🟢 DECISIONES DE COMPRA ({len(buy_decisions)}):")
@@ -709,7 +748,7 @@ REGLAS:
                 print(f"\n📝 JUSTIFICACIÓN COMPLETA:")
                 print(f"{d['full_reason']}")
                 print("─" * 70)
-        
+
         # Mostrar decisiones SELL con justificación completa
         if sell_decisions:
             print(f"\n🔴 DECISIONES DE VENTA ({len(sell_decisions)}):")
@@ -721,50 +760,62 @@ REGLAS:
                 print(f"\n📝 JUSTIFICACIÓN COMPLETA:")
                 print(f"{d['full_reason']}")
                 print("─" * 70)
-        
+
         # Mostrar algunas decisiones HOLD representativas (primeras y últimas 3)
         if hold_decisions:
-            print(f"\n⚪ DECISIONES HOLD (mostrando primeras y últimas 3 de {len(hold_decisions)}):")
+            print(
+                f"\n⚪ DECISIONES HOLD (mostrando primeras y últimas 3 de {len(hold_decisions)}):"
+            )
             print("─" * 70)
-            sample_holds = hold_decisions[:3] + hold_decisions[-3:] if len(hold_decisions) > 6 else hold_decisions
+            sample_holds = (
+                hold_decisions[:3] + hold_decisions[-3:]
+                if len(hold_decisions) > 6
+                else hold_decisions
+            )
             for d in sample_holds:
                 print(f"\n#{d['decision_num']} - {d['timestamp']} - {d['ticker']}")
                 print(f"Precio: ${d['price']:,.2f}")
                 print(f"Portfolio: ${d['portfolio_value']:,.2f} | Efectivo: ${d['cash']:,.2f}")
                 print(f"📝 Razón: {d['full_reason']}")
                 print("─" * 70)
-        
-        print("\n" + "="*70)
-    
+
+        print("\n" + "=" * 70)
+
     def _print_natural_language_summary(self, metrics: Dict):
         """Generar resumen en lenguaje natural del backtesting"""
-        print("\n" + "="*70)
+        print("\n" + "=" * 70)
         print("📝 RESUMEN EJECUTIVO EN LENGUAJE NATURAL")
-        print("="*70)
-        
+        print("=" * 70)
+
         # Análisis de decisiones
         total_decisions = len(self.decision_justifications)
-        buy_count = len([d for d in self.decision_justifications if d['action'] == 'BUY'])
-        sell_count = len([d for d in self.decision_justifications if d['action'] == 'SELL'])
-        hold_count = len([d for d in self.decision_justifications if d['action'] == 'HOLD'])
-        
+        buy_count = len([d for d in self.decision_justifications if d["action"] == "BUY"])
+        sell_count = len([d for d in self.decision_justifications if d["action"] == "SELL"])
+        hold_count = len([d for d in self.decision_justifications if d["action"] == "HOLD"])
+
         # Calcular rendimiento
-        initial = metrics['initial_capital']
-        final = metrics['cash']  # Todo en efectivo después de vender
+        initial = metrics["initial_capital"]
+        final = metrics["cash"]  # Todo en efectivo después de vender
         pnl = final - initial
         pnl_pct = (pnl / initial) * 100
-        
+
         # Análisis de trades
-        total_trades = metrics['total_trades']
-        win_rate = metrics['win_rate']
-        
+        total_trades = metrics["total_trades"]
+        win_rate = metrics["win_rate"]
+
         print("\n🎯 RESUMEN GENERAL:")
         print(f"Durante el período de backtesting de {self.days} días con decisiones cada ")
-        print(f"{self.decision_interval_hours} hora(s), el sistema tomó {total_decisions} decisiones de trading.")
-        print(f"De estas, {buy_count} fueron órdenes de compra ({buy_count/total_decisions*100:.1f}%), ")
-        print(f"{sell_count} fueron ventas ({sell_count/total_decisions*100:.1f}%), y {hold_count} ")
+        print(
+            f"{self.decision_interval_hours} hora(s), el sistema tomó {total_decisions} decisiones de trading."
+        )
+        print(
+            f"De estas, {buy_count} fueron órdenes de compra ({buy_count/total_decisions*100:.1f}%), "
+        )
+        print(
+            f"{sell_count} fueron ventas ({sell_count/total_decisions*100:.1f}%), y {hold_count} "
+        )
         print(f"fueron decisiones de mantener sin operar ({hold_count/total_decisions*100:.1f}%).")
-        
+
         print("\n💰 RENDIMIENTO FINANCIERO:")
         if pnl > 0:
             print(f"La estrategia generó una ganancia de ${pnl:,.2f} ({pnl_pct:+.2f}%), ")
@@ -774,19 +825,23 @@ REGLAS:
             print(f"reduciendo el capital inicial de ${initial:,.2f} a ${final:,.2f}.")
         else:
             print(f"La estrategia mantuvo el capital inicial sin cambios en ${initial:,.2f}.")
-        
+
         print("\n📊 ANÁLISIS DE OPERACIONES:")
         if total_trades > 0:
             print(f"Se ejecutaron {total_trades} operaciones completas (compra y venta).")
             print(f"La tasa de éxito fue del {win_rate:.1f}%, con {metrics['winning_trades']} ")
             print(f"operaciones ganadoras y {metrics['losing_trades']} perdedoras.")
-            
-            if metrics['avg_win'] > 0:
-                print(f"\nLas operaciones ganadoras generaron en promedio ${metrics['avg_win']:.2f}, ")
-                print(f"mientras que las perdedoras costaron en promedio ${abs(metrics['avg_loss']):.2f}.")
-            
-            if metrics['profit_factor'] > 0:
-                pf = metrics['profit_factor']
+
+            if metrics["avg_win"] > 0:
+                print(
+                    f"\nLas operaciones ganadoras generaron en promedio ${metrics['avg_win']:.2f}, "
+                )
+                print(
+                    f"mientras que las perdedoras costaron en promedio ${abs(metrics['avg_loss']):.2f}."
+                )
+
+            if metrics["profit_factor"] > 0:
+                pf = metrics["profit_factor"]
                 if pf > 2:
                     print(f"\nEl profit factor de {pf:.2f} indica una estrategia muy rentable.")
                 elif pf > 1:
@@ -798,7 +853,7 @@ REGLAS:
         else:
             print("No se completaron operaciones durante el período de backtesting.")
             print("El sistema se mantuvo principalmente en HOLD, esperando mejores oportunidades.")
-        
+
         print("\n🤖 COMPORTAMIENTO DEL AGENTE:")
         hold_pct = (hold_count / total_decisions) * 100
         if hold_pct > 70:
@@ -806,21 +861,29 @@ REGLAS:
             print(f"el {hold_pct:.1f}% del tiempo. Esto sugiere que las condiciones de mercado")
             print(f"no cumplieron consistentemente con los criterios de entrada del sistema.")
         elif hold_pct > 50:
-            print(f"El agente mostró un comportamiento moderadamente conservador, con {hold_pct:.1f}%")
-            print(f"de decisiones HOLD. Operó selectivamente cuando las condiciones eran favorables.")
+            print(
+                f"El agente mostró un comportamiento moderadamente conservador, con {hold_pct:.1f}%"
+            )
+            print(
+                f"de decisiones HOLD. Operó selectivamente cuando las condiciones eran favorables."
+            )
         elif hold_pct > 30:
             print(f"El agente mostró un comportamiento activo, operando frecuentemente con solo")
             print(f"{hold_pct:.1f}% de decisiones HOLD.")
         else:
             print(f"El agente mostró un comportamiento muy activo, operando constantemente con")
             print(f"solo {hold_pct:.1f}% de decisiones HOLD.")
-        
+
         if buy_count > 0:
-            print(f"\nLas {buy_count} decisiones de compra se tomaron en momentos donde el análisis")
-            print(f"técnico indicaba tendencias alcistas, momentum positivo, o condiciones favorables")
+            print(
+                f"\nLas {buy_count} decisiones de compra se tomaron en momentos donde el análisis"
+            )
+            print(
+                f"técnico indicaba tendencias alcistas, momentum positivo, o condiciones favorables"
+            )
             print(f"basadas en indicadores como SMA, RSI y volumen.")
-        
-        print("\n" + "="*70)
+
+        print("\n" + "=" * 70)
         print("\n💡 CONCLUSIÓN:")
         if pnl_pct > 5:
             print(f"La estrategia fue exitosa, superando el {pnl_pct:.1f}% de retorno.")
@@ -829,22 +892,24 @@ REGLAS:
             print(f"La estrategia fue ligeramente rentable con {pnl_pct:.1f}% de retorno.")
             print("Hay espacio para optimización de los criterios de entrada/salida.")
         elif pnl_pct > -5:
-            print(f"La estrategia tuvo un rendimiento cercano al punto de equilibrio ({pnl_pct:.1f}%).")
+            print(
+                f"La estrategia tuvo un rendimiento cercano al punto de equilibrio ({pnl_pct:.1f}%)."
+            )
             print("Se requiere ajuste de parámetros o cambio de condiciones de mercado.")
         else:
             print(f"La estrategia no fue rentable con {pnl_pct:.1f}% de pérdida.")
             print("Se recomienda revisar los criterios de trading y gestión de riesgo.")
-        
-        print("="*70)
-    
+
+        print("=" * 70)
+
     def save_results(self, filename: str = "hourly_backtest_results.json"):
         """Guardar resultados"""
         if not self.historical_data:
             return
-        
+
         first_ticker = self.tickers[0]
         timestamps = self.historical_data[first_ticker].index
-        
+
         results = {
             "config": {
                 "tickers": self.tickers,
@@ -852,83 +917,80 @@ REGLAS:
                 "days": self.days,
                 "hours_total": len(timestamps),
                 "decision_interval_hours": self.decision_interval_hours,
-                "initial_capital": self.simulator.initial_capital
+                "initial_capital": self.simulator.initial_capital,
             },
             "trades": self.simulator.history,
             "decisions_log": self.simulator.decisions_log,
             "equity_curve": self.simulator.equity_curve,
             "final_metrics": self.simulator.get_performance_metrics(
                 self.get_current_prices(timestamps[-1])
-            )
+            ),
         }
-        
-        with open(filename, 'w') as f:
+
+        with open(filename, "w") as f:
             json.dump(results, f, indent=2, default=str)
-        
+
         print(f"\n💾 Resultados guardados en: {filename}")
 
 
 def main():
     """Función principal"""
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("⚡ BACKTESTING HORARIO (1h) - SIMULACIÓN ACELERADA")
-    print("="*70)
-    
+    print("=" * 70)
+
     print("\n📝 Configuración:")
-    
+
     tickers_input = input("Tickers (ej: AAPL,BTC-USD): ").upper().strip()
     tickers = [t.strip() for t in tickers_input.split(",") if t.strip()]
-    
+
     if not tickers:
         print("❌ Debes ingresar al menos un ticker")
         return
-    
+
     days_input = input("Días de datos (1-60, default: 7): ").strip()
     days = int(days_input) if days_input else 7
     days = min(max(days, 1), 60)
-    
+
     interval_input = input("Horas entre decisiones (1, 2, 4, 6, default: 4): ").strip()
     interval = int(interval_input) if interval_input else 4
-    
+
     capital_input = input("Capital inicial (default: 10000): ").strip()
     capital = float(capital_input) if capital_input else 10000.0
-    
+
     print("\n🤖 Modelos (recomendado: rápido para datos horarios):")
     print("  1. Nemotron Nano (Rápido - Recomendado)")
     print("  2. DeepSeek V3 (Rápido, preciso)")
     print("  3. DeepSeek Chimera (Razonamiento)")
     print("  4. GLM 4.5 Air (General)")
-    
+
     model_choice = input("Selecciona (default: 1): ").strip()
     model_map = {
         "1": MODELS["fast_calc"],
         "2": MODELS["deepseek"],
         "3": MODELS["reasoning"],
-        "4": MODELS["general"]
+        "4": MODELS["general"],
     }
     model_id = model_map.get(model_choice, MODELS["fast_calc"])
-    
+
     # Crear engine
     engine = HourlyBacktestEngine(
-        tickers=tickers,
-        days=days,
-        decision_interval_hours=interval,
-        initial_capital=capital
+        tickers=tickers, days=days, decision_interval_hours=interval, initial_capital=capital
     )
-    
+
     input("\n⏸️  Presiona ENTER para iniciar...")
-    
+
     # Ejecutar
     metrics = engine.run_simulation(model_id=model_id)
-    
+
     # Guardar
     save = input("\n💾 ¿Guardar resultados? (s/n): ").lower().strip()
-    if save == 's':
+    if save == "s":
         filename = input("Nombre (default: hourly_backtest_results.json): ").strip()
         if not filename:
             filename = "hourly_backtest_results.json"
         engine.save_results(filename)
-    
+
     print("\n✅ Simulación horaria completada!")
 
 
@@ -940,4 +1002,5 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"\n❌ Error: {str(e)}")
         import traceback
+
         traceback.print_exc()

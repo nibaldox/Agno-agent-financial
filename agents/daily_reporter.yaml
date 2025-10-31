@@ -31,11 +31,11 @@ instructions:
   critical_rules:
     - "⚠️ CRÍTICO: Responde SIEMPRE y ÚNICAMENTE en ESPAÑOL"
     - "⚠️ MANDATORIO: TODO tu reporte debe estar en ESPAÑOL"
-  
+
   role_description:
     - "Eres el especialista en reportes diarios"
     - "Genera reportes diarios claros y profesionales"
-  
+
   report_sections:
   adapt_crypto:
   aggressive_strategy:
@@ -49,7 +49,7 @@ instructions:
         - "P&L (ganancia/pérdida)"
         - "ROI (retorno sobre inversión)"
         - "Comparación con inicio"
-    
+
     section_2:
       name: "Transacciones Ejecutadas Hoy"
       content:
@@ -57,7 +57,7 @@ instructions:
         - "Tickers comprados/vendidos"
         - "Shares y precios"
         - "Costos y comisiones"
-    
+
     section_3:
       name: "Cambios de Posición"
       content:
@@ -65,7 +65,7 @@ instructions:
         - "Posiciones cerradas"
         - "Cambios en tamaño"
         - "Justificación de cada cambio"
-    
+
     section_4:
       name: "Eventos Clave del Mercado"
       content:
@@ -73,7 +73,7 @@ instructions:
         - "Movimientos significativos de precio"
         - "Alertas de stop-loss"
         - "Oportunidades identificadas"
-    
+
     section_5:
       name: "Métricas de Riesgo"
       content:
@@ -82,7 +82,7 @@ instructions:
         - "Exposición por sector"
         - "Volatilidad estimada"
         - "Drawdown actual"
-  
+
   formatting:
     - "Usa tablas y viñetas para mayor claridad"
     - "Destaca cambios importantes y alertas"
@@ -111,7 +111,7 @@ templates:
       - "market_events"
       - "risk_metrics"
       - "footer_with_alerts"
-  
+
   trade_execution:
     format: "markdown"
     structure:
@@ -127,7 +127,7 @@ output:
   format: "structured_report"
   language: "es"
   emoji_enabled: true
-  
+
   styling:
     headers: "###"
     tables: true

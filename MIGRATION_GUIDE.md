@@ -352,6 +352,6 @@ Si tienes problemas durante la separación:
 
 ---
 
-**Versión de esta guía**: 1.0  
-**Fecha**: Octubre 2025  
+**Versión de esta guía**: 1.0
+**Fecha**: Octubre 2025
 **Autor**: Asistente AI

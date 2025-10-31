@@ -107,7 +107,7 @@ from agents import load_advanced_reporter
 reporter = load_advanced_reporter(use_openrouter=True)
 
 # El agente está listo para generar reportes
-# (actualmente es una configuración YAML, 
+# (actualmente es una configuración YAML,
 #  la ejecución usa fase2_example_interactive.py)
 ```
 
@@ -238,20 +238,20 @@ subprocess.run([
 ```
 09:00 - Market Open
   └─ Cargar equipo de agentes
-  
+
 10:00 - Mid-morning Analysis
   ├─ Market Researcher: buscar noticias
   ├─ Risk Analysts: evaluar riesgos actuales
   └─ Trading Strategists: identificar oportunidades
-  
+
 14:00 - Pre-close Decision
   ├─ Portfolio Manager: tomar decisión
   └─ Ejecutar trades si es necesario
-  
+
 16:00 - Market Close
   ├─ Daily Reporter: resumen del día
   └─ Advanced Reporter: generar reporte FASE 2
-  
+
 17:00 - Review
   └─ Revisar reporte HTML con métricas y AI insights
 ```
@@ -427,6 +427,6 @@ pip install plotly
 
 ---
 
-**Versión**: 2.1.0  
-**Última actualización**: Octubre 2025  
+**Versión**: 2.1.0
+**Última actualización**: Octubre 2025
 **Mantenedor**: Agente Agno Team

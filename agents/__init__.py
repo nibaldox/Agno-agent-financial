@@ -21,24 +21,24 @@ Advanced:
 
 from .loader import (
     AgentLoader,
+    load_advanced_reporter,
+    load_complete_team,
+    load_daily_reporter,
     load_market_researcher,
+    load_portfolio_manager,
     load_risk_analysts,
     load_trading_strategists,
-    load_portfolio_manager,
-    load_daily_reporter,
-    load_advanced_reporter,
-    load_complete_team
 )
 
 __all__ = [
-    'AgentLoader',
-    'load_market_researcher',
-    'load_risk_analysts',
-    'load_trading_strategists',
-    'load_portfolio_manager',
-    'load_daily_reporter',
-    'load_advanced_reporter',
-    'load_complete_team'
+    "AgentLoader",
+    "load_market_researcher",
+    "load_risk_analysts",
+    "load_trading_strategists",
+    "load_portfolio_manager",
+    "load_daily_reporter",
+    "load_advanced_reporter",
+    "load_complete_team",
 ]
 
-__version__ = '2.1.0'
+__version__ = "2.1.0"

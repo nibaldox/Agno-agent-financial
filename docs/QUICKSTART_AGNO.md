@@ -65,7 +65,7 @@ python agno_trading_system.py --provider deepseek --dry-run
 
 ### 4 Agentes Especializados:
 
-1. **Data Analyst** 
+1. **Data Analyst**
    - Analiza portfolio actual
    - Calcula ROI y métricas
    - Custom tools: PortfolioAnalyzerTool

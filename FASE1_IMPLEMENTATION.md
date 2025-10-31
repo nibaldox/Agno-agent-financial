@@ -271,7 +271,7 @@ market_data, source = portfolio.fetch_market_data("AAPL", days=1)
 # 3. Execute buy with stop-loss
 if not market_data.empty:
     current_price = float(market_data['Close'].iloc[-1])
-    
+
     success, msg = executor.execute_buy_limit(
         ticker="AAPL",
         shares=10.0,

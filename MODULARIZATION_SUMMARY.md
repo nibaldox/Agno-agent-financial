@@ -466,7 +466,7 @@ El sistema de trading ha sido **completamente modularizado** con:
 
 ---
 
-**Versión:** 3.0.0 (Ultra Modular)  
-**Fecha:** Octubre 2025  
-**Autor:** Romamo  
+**Versión:** 3.0.0 (Ultra Modular)
+**Fecha:** Octubre 2025
+**Autor:** Romamo
 **Estado:** ✅ Completado

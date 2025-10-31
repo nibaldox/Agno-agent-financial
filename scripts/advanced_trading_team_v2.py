@@ -1,30 +1,31 @@
 """
 Advanced Multi-Agent Trading System with In-Memory Portfolio
 Uses DataFrames instead of CSV for efficiency
-Includes 5 specialized agents: Market Researcher, Risk Analyst, Trading Strategist, 
+Includes 5 specialized agents: Market Researcher, Risk Analyst, Trading Strategist,
 Portfolio Manager, and Daily Reporter
 """
 
+import argparse
+import json
 import os
 import sys
-import json
-import argparse
 from datetime import datetime
 from pathlib import Path
-from dotenv import load_dotenv
-import pandas as pd
 
+import pandas as pd
 from agno.agent import Agent
-from agno.team import Team
-from agno.models.openrouter import OpenRouter
 from agno.models.deepseek import DeepSeek
-from agno.tools.yfinance import YFinanceTools
+from agno.models.openrouter import OpenRouter
+from agno.team import Team
 from agno.tools.serper import SerperTools  # Herramienta de búsqueda web
+from agno.tools.yfinance import YFinanceTools
+from dotenv import load_dotenv
 
 # CRITICAL: Importar validadores del sistema original
 try:
-    from validators import TradeValidator
     from stop_loss_monitor import AutoStopLossExecutor
+    from validators import TradeValidator
+
     VALIDATORS_AVAILABLE = True
     print("✅ Critical validators loaded (micro-cap, position sizing, stop-loss)")
 except ImportError as e:
@@ -49,17 +50,17 @@ MODELS = {
     "fast_calc": "nvidia/nemotron-nano-9b-v2:free",  # Quick calculations
     "general": "z-ai/glm-4.5-air:free",  # General analysis
     "advanced": "qwen/qwen3-235b-a22b:free",  # Strategy planning
-    "deepseek": "deepseek-chat"  # Fallback/primary
+    "deepseek": "deepseek-chat",  # Fallback/primary
 }
 
 
 class PortfolioMemoryManager:
     """In-memory portfolio manager con persistencia CSV para historial"""
-    
+
     def __init__(self, initial_cash: float = 100.0, history_file: str | None = None):
         self.cash = initial_cash
         self.initial_cash = initial_cash
-        
+
         # Archivos de historial
         if history_file is None:
             self.history_file = HISTORY_DIR / "portfolio_history.csv"
@@ -69,24 +70,31 @@ class PortfolioMemoryManager:
             self.history_file = Path(history_file)
             self.trades_file = self.history_file.parent / "trades_history.csv"
             self.daily_summary_file = self.history_file.parent / "daily_summary.csv"
-        
+
         # Portfolio holdings (in-memory)
-        self.holdings = pd.DataFrame(columns=[
-            'ticker', 'shares', 'buy_price', 'buy_date', 
-            'current_price', 'current_value', 'pnl', 'pnl_pct'
-        ])
-        
+        self.holdings = pd.DataFrame(
+            columns=[
+                "ticker",
+                "shares",
+                "buy_price",
+                "buy_date",
+                "current_price",
+                "current_value",
+                "pnl",
+                "pnl_pct",
+            ]
+        )
+
         # Trade history (in-memory)
-        self.trades = pd.DataFrame(columns=[
-            'date', 'ticker', 'action', 'shares', 'price', 
-            'cost', 'cash_after', 'reason'
-        ])
-        
+        self.trades = pd.DataFrame(
+            columns=["date", "ticker", "action", "shares", "price", "cost", "cash_after", "reason"]
+        )
+
         self.last_update = datetime.now()
-        
+
         # Cargar historial si existe
         self._load_history()
-    
+
     def _load_history(self):
         """Carga el historial desde archivos CSV"""
         try:
@@ -94,172 +102,198 @@ class PortfolioMemoryManager:
                 history_df = pd.read_csv(self.history_file)
                 if not history_df.empty:
                     last_row = history_df.iloc[-1]
-                    self.cash = last_row['cash']
-                    self.initial_cash = last_row['initial_cash']
-                    print(f"[INFO] Historial cargado: Cash ${self.cash:.2f}, ROI {last_row['roi']:.2f}%")
-            
+                    self.cash = last_row["cash"]
+                    self.initial_cash = last_row["initial_cash"]
+                    print(
+                        f"[INFO] Historial cargado: Cash ${self.cash:.2f}, ROI {last_row['roi']:.2f}%"
+                    )
+
             if self.trades_file.exists():
-                self.trades = pd.read_csv(self.trades_file, parse_dates=['date'])
+                self.trades = pd.read_csv(self.trades_file, parse_dates=["date"])
                 print(f"[INFO] {len(self.trades)} operaciones históricas cargadas")
         except Exception as e:
             print(f"[WARNING] Error cargando historial: {e}")
-    
+
     def save_daily_snapshot(self):
         """Guarda snapshot diario del portafolio"""
         summary = self.get_portfolio_summary()
-        
+
         snapshot = {
-            'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-            'cash': self.cash,
-            'invested': summary['invested'],
-            'total_equity': summary['total_equity'],
-            'total_pnl': summary['total_pnl'],
-            'roi': summary['roi'],
-            'num_positions': summary['num_positions'],
-            'initial_cash': self.initial_cash
+            "date": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "cash": self.cash,
+            "invested": summary["invested"],
+            "total_equity": summary["total_equity"],
+            "total_pnl": summary["total_pnl"],
+            "roi": summary["roi"],
+            "num_positions": summary["num_positions"],
+            "initial_cash": self.initial_cash,
         }
-        
+
         # Guardar en CSV
         df = pd.DataFrame([snapshot])
         if self.daily_summary_file.exists():
-            df.to_csv(self.daily_summary_file, mode='a', header=False, index=False)
+            df.to_csv(self.daily_summary_file, mode="a", header=False, index=False)
         else:
             df.to_csv(self.daily_summary_file, index=False)
-        
-        print(f"[INFO] Snapshot guardado: Equity ${summary['total_equity']:.2f}, ROI {summary['roi']:.2f}%")
-    
+
+        print(
+            f"[INFO] Snapshot guardado: Equity ${summary['total_equity']:.2f}, ROI {summary['roi']:.2f}%"
+        )
+
     def get_historical_performance(self) -> dict:
         """Obtiene métricas de rendimiento histórico"""
         if not self.daily_summary_file.exists():
             return {
-                'total_days': 0,
-                'best_day': None,
-                'worst_day': None,
-                'total_trades': 0,
-                'win_rate': 0,
-                'avg_return': 0,
-                'current_roi': 0,
-                'peak_equity': self.initial_cash,
-                'max_drawdown': 0
+                "total_days": 0,
+                "best_day": None,
+                "worst_day": None,
+                "total_trades": 0,
+                "win_rate": 0,
+                "avg_return": 0,
+                "current_roi": 0,
+                "peak_equity": self.initial_cash,
+                "max_drawdown": 0,
             }
-        
+
         df = pd.read_csv(self.daily_summary_file)
-        
+
         # Calcular retornos diarios
         if len(df) > 1:
-            df['daily_return'] = df['roi'].pct_change() * 100
-        
+            df["daily_return"] = df["roi"].pct_change() * 100
+
         # Estadísticas de trades
-        win_trades = len(self.trades[self.trades['action'] == 'SELL']) if not self.trades.empty else 0
+        win_trades = (
+            len(self.trades[self.trades["action"] == "SELL"]) if not self.trades.empty else 0
+        )
         total_trades = len(self.trades)
         win_rate = (win_trades / total_trades * 100) if total_trades > 0 else 0
-        avg_return = df['roi'].mean() if not df.empty else 0
-        
+        avg_return = df["roi"].mean() if not df.empty else 0
+
         return {
-            'total_days': len(df),
-            'best_day': df.loc[df['roi'].idxmax()].to_dict() if not df.empty else None,
-            'worst_day': df.loc[df['roi'].idxmin()].to_dict() if not df.empty else None,
-            'total_trades': total_trades,
-            'win_rate': win_rate,
-            'avg_return': avg_return,
-            'current_roi': df['roi'].iloc[-1] if not df.empty else 0,
-            'peak_equity': df['total_equity'].max() if not df.empty else 0,
-            'max_drawdown': (df['total_equity'].min() - df['total_equity'].max()) / df['total_equity'].max() * 100 if not df.empty else 0
+            "total_days": len(df),
+            "best_day": df.loc[df["roi"].idxmax()].to_dict() if not df.empty else None,
+            "worst_day": df.loc[df["roi"].idxmin()].to_dict() if not df.empty else None,
+            "total_trades": total_trades,
+            "win_rate": win_rate,
+            "avg_return": avg_return,
+            "current_roi": df["roi"].iloc[-1] if not df.empty else 0,
+            "peak_equity": df["total_equity"].max() if not df.empty else 0,
+            "max_drawdown": (
+                (df["total_equity"].min() - df["total_equity"].max())
+                / df["total_equity"].max()
+                * 100
+                if not df.empty
+                else 0
+            ),
         }
-    
+
     def get_portfolio_summary(self) -> dict:
         """Get current portfolio state as dict"""
-        total_invested = self.holdings['current_value'].sum() if not self.holdings.empty else 0
+        total_invested = self.holdings["current_value"].sum() if not self.holdings.empty else 0
         total_equity = self.cash + total_invested
-        total_pnl = self.holdings['pnl'].sum() if not self.holdings.empty else 0
-        roi = ((total_equity - self.initial_cash) / self.initial_cash * 100)
-        
+        total_pnl = self.holdings["pnl"].sum() if not self.holdings.empty else 0
+        roi = (total_equity - self.initial_cash) / self.initial_cash * 100
+
         return {
-            'cash': self.cash,
-            'invested': total_invested,
-            'total_equity': total_equity,
-            'total_pnl': total_pnl,
-            'roi': roi,
-            'num_positions': len(self.holdings),
-            'holdings': self.holdings.to_dict('records') if not self.holdings.empty else [],
-            'recent_trades': self.trades.tail(10).to_dict('records') if not self.trades.empty else [],
-            'last_update': self.last_update.isoformat()
+            "cash": self.cash,
+            "invested": total_invested,
+            "total_equity": total_equity,
+            "total_pnl": total_pnl,
+            "roi": roi,
+            "num_positions": len(self.holdings),
+            "holdings": self.holdings.to_dict("records") if not self.holdings.empty else [],
+            "recent_trades": (
+                self.trades.tail(10).to_dict("records") if not self.trades.empty else []
+            ),
+            "last_update": self.last_update.isoformat(),
         }
-    
+
     def add_position(self, ticker: str, shares: float, price: float, reason: str = ""):
         """Add new position to portfolio"""
         cost = shares * price
-        
+
         if cost > self.cash:
-            return {"success": False, "message": f"Insufficient cash. Need ${cost:.2f}, have ${self.cash:.2f}"}
-        
+            return {
+                "success": False,
+                "message": f"Insufficient cash. Need ${cost:.2f}, have ${self.cash:.2f}",
+            }
+
         # Update cash
         self.cash -= cost
-        
+
         # Add to holdings
         new_holding = {
-            'ticker': ticker,
-            'shares': shares,
-            'buy_price': price,
-            'buy_date': datetime.now(),
-            'current_price': price,
-            'current_value': cost,
-            'pnl': 0,
-            'pnl_pct': 0
+            "ticker": ticker,
+            "shares": shares,
+            "buy_price": price,
+            "buy_date": datetime.now(),
+            "current_price": price,
+            "current_value": cost,
+            "pnl": 0,
+            "pnl_pct": 0,
         }
-        
+
         self.holdings = pd.concat([self.holdings, pd.DataFrame([new_holding])], ignore_index=True)
-        
+
         # Log trade
         new_trade = {
-            'date': datetime.now(),
-            'ticker': ticker,
-            'action': 'BUY',
-            'shares': shares,
-            'price': price,
-            'cost': cost,
-            'cash_after': self.cash,
-            'reason': reason
+            "date": datetime.now(),
+            "ticker": ticker,
+            "action": "BUY",
+            "shares": shares,
+            "price": price,
+            "cost": cost,
+            "cash_after": self.cash,
+            "reason": reason,
         }
-        
+
         self.trades = pd.concat([self.trades, pd.DataFrame([new_trade])], ignore_index=True)
-        
+
         # Guardar trade en CSV
         trade_df = pd.DataFrame([new_trade])
         if self.trades_file.exists():
-            trade_df.to_csv(self.trades_file, mode='a', header=False, index=False)
+            trade_df.to_csv(self.trades_file, mode="a", header=False, index=False)
         else:
             trade_df.to_csv(self.trades_file, index=False)
-        
+
         return {"success": True, "message": f"Bought {shares} shares of {ticker} at ${price:.2f}"}
-    
+
     def update_prices_from_yfinance(self, tickers: list | None = None):
         """Update current prices from YFinance"""
         import yfinance as yf
-        
+
         if tickers is None:
             if self.holdings.empty:
                 return
-            tickers = self.holdings['ticker'].unique().tolist()
-        
+            tickers = self.holdings["ticker"].unique().tolist()
+
         # Type guard para el checker
         assert tickers is not None, "tickers cannot be None at this point"
-        
+
         for ticker in tickers:
             try:
                 stock = yf.Ticker(ticker)
-                current_price = stock.info.get('currentPrice') or stock.info.get('regularMarketPrice')
-                
+                current_price = stock.info.get("currentPrice") or stock.info.get(
+                    "regularMarketPrice"
+                )
+
                 if current_price:
                     # Update holdings for this ticker
-                    mask = self.holdings['ticker'] == ticker
-                    self.holdings.loc[mask, 'current_price'] = current_price
-                    self.holdings.loc[mask, 'current_value'] = self.holdings.loc[mask, 'shares'] * current_price
-                    self.holdings.loc[mask, 'pnl'] = (current_price - self.holdings.loc[mask, 'buy_price']) * self.holdings.loc[mask, 'shares']
-                    self.holdings.loc[mask, 'pnl_pct'] = ((current_price - self.holdings.loc[mask, 'buy_price']) / self.holdings.loc[mask, 'buy_price']) * 100
+                    mask = self.holdings["ticker"] == ticker
+                    self.holdings.loc[mask, "current_price"] = current_price
+                    self.holdings.loc[mask, "current_value"] = (
+                        self.holdings.loc[mask, "shares"] * current_price
+                    )
+                    self.holdings.loc[mask, "pnl"] = (
+                        current_price - self.holdings.loc[mask, "buy_price"]
+                    ) * self.holdings.loc[mask, "shares"]
+                    self.holdings.loc[mask, "pnl_pct"] = (
+                        (current_price - self.holdings.loc[mask, "buy_price"])
+                        / self.holdings.loc[mask, "buy_price"]
+                    ) * 100
             except Exception as e:
                 print(f"Warning: Could not update price for {ticker}: {e}")
-        
+
         self.last_update = datetime.now()
 
 
@@ -270,7 +304,7 @@ PORTFOLIO = PortfolioMemoryManager(initial_cash=100.0, history_file=HISTORY_FILE
 
 def create_market_researcher(use_openrouter: bool = True, use_fallback: bool = True):
     """Agent specialized in deep market research using Tongyi DeepResearch"""
-    
+
     # Try OpenRouter first, fallback to DeepSeek if issues
     if use_openrouter and use_fallback:
         try:
@@ -284,13 +318,11 @@ def create_market_researcher(use_openrouter: bool = True, use_fallback: bool = T
         model = OpenRouter(id=MODELS["deep_research"])
     else:
         model = DeepSeek(id=MODELS["deepseek"])
-    
+
     # Configurar herramientas
     # Lista de herramientas con tipado flexible
-    tools: list = [
-        YFinanceTools()  # Usa todas las herramientas disponibles
-    ]
-    
+    tools: list = [YFinanceTools()]  # Usa todas las herramientas disponibles
+
     # Agregar Serper si la API key está disponible y la librería instalada
     if SERPER_AVAILABLE and os.getenv("SERPER_API_KEY"):
         tools.append(SerperTools())
@@ -299,7 +331,7 @@ def create_market_researcher(use_openrouter: bool = True, use_fallback: bool = T
         print("[WARNING] Serper no disponible. Instala con: pip install agno[serper]")
     else:
         print("[WARNING] SERPER_API_KEY no encontrada en .env")
-    
+
     return Agent(
         name="Market Researcher",
         role="Deep market analysis specialist with web search capabilities",
@@ -320,7 +352,7 @@ def create_market_researcher(use_openrouter: bool = True, use_fallback: bool = T
             "Considera factores tanto fundamentales como técnicos",
             "Sé exhaustivo pero conciso en tu análisis",
             "IMPORTANTE: Responde SIEMPRE en ESPAÑOL",
-            "CRÍTICO: Siempre proporciona una respuesta completa con datos de todas las herramientas"
+            "CRÍTICO: Siempre proporciona una respuesta completa con datos de todas las herramientas",
         ],
         markdown=True,
     )
@@ -328,23 +360,26 @@ def create_market_researcher(use_openrouter: bool = True, use_fallback: bool = T
 
 def create_risk_analyst(use_openrouter: bool = True):
     """Agent specialized in risk analysis using Nemotron Nano for fast calculations"""
-    
+
     model = (
-        OpenRouter(id=MODELS["fast_calc"]) if use_openrouter
-        else DeepSeek(id=MODELS["deepseek"])
+        OpenRouter(id=MODELS["fast_calc"]) if use_openrouter else DeepSeek(id=MODELS["deepseek"])
     )
-    
+
     portfolio_summary = PORTFOLIO.get_portfolio_summary()
-    
+
     return Agent(
         name="Risk Analyst",
         role="Risk assessment and portfolio calculations",
         model=model,
-        tools=[YFinanceTools(include_tools=[
-            "get_key_financial_ratios",
-            "get_technical_indicators",
-            "get_historical_stock_prices"
-        ])],
+        tools=[
+            YFinanceTools(
+                include_tools=[
+                    "get_key_financial_ratios",
+                    "get_technical_indicators",
+                    "get_historical_stock_prices",
+                ]
+            )
+        ],
         instructions=[
             "IMPORTANTE: Responde SIEMPRE en ESPAÑOL",
             "Eres un especialista en gestión de riesgos",
@@ -358,7 +393,7 @@ def create_risk_analyst(use_openrouter: bool = True):
             "Enfócate en la preservación de capital",
             "Proporciona análisis numérico rápido y preciso con datos reales",
             f"Portafolio actual: Efectivo ${portfolio_summary['cash']:.2f}, Equity ${portfolio_summary['total_equity']:.2f}, ROI {portfolio_summary['roi']:.2f}%",
-            "IMPORTANTE: Responde SIEMPRE en ESPAÑOL"
+            "IMPORTANTE: Responde SIEMPRE en ESPAÑOL",
         ],
         markdown=True,
     )
@@ -366,12 +401,11 @@ def create_risk_analyst(use_openrouter: bool = True):
 
 def create_trading_strategist(use_openrouter: bool = True):
     """Agent for complex reasoning and trade decisions using DeepSeek R1T2 Chimera"""
-    
+
     model = (
-        OpenRouter(id=MODELS["reasoning"]) if use_openrouter
-        else DeepSeek(id=MODELS["deepseek"])
+        OpenRouter(id=MODELS["reasoning"]) if use_openrouter else DeepSeek(id=MODELS["deepseek"])
     )
-    
+
     return Agent(
         name="Trading Strategist",
         role="Strategic decision maker with advanced reasoning",
@@ -389,7 +423,7 @@ def create_trading_strategist(use_openrouter: bool = True):
             "Proporciona recomendaciones claras de COMPRAR/VENDER/MANTENER con razonamiento detallado",
             "Piensa paso a paso en escenarios complejos de trading",
             "Explica siempre tu proceso de toma de decisiones con datos reales",
-            "IMPORTANTE: Responde SIEMPRE en ESPAÑOL"
+            "IMPORTANTE: Responde SIEMPRE en ESPAÑOL",
         ],
         markdown=True,
     )
@@ -397,15 +431,12 @@ def create_trading_strategist(use_openrouter: bool = True):
 
 def create_portfolio_manager(use_openrouter: bool = True):
     """Agent for overall strategy using Qwen3 235B for advanced planning"""
-    
-    model = (
-        OpenRouter(id=MODELS["advanced"]) if use_openrouter
-        else DeepSeek(id=MODELS["deepseek"])
-    )
-    
+
+    model = OpenRouter(id=MODELS["advanced"]) if use_openrouter else DeepSeek(id=MODELS["deepseek"])
+
     portfolio_summary = PORTFOLIO.get_portfolio_summary()
     historical_perf = PORTFOLIO.get_historical_performance()
-    
+
     return Agent(
         name="Portfolio Manager",
         role="Senior portfolio manager synthesizing 6 expert opinions",
@@ -477,7 +508,7 @@ def create_portfolio_manager(use_openrouter: bool = True):
             "",
             "⚠️ CRÍTICO: Responde SIEMPRE y ÚNICAMENTE en ESPAÑOL",
             "⚠️ MANDATORIO: Tu decisión final, razonamiento y todos los datos en ESPAÑOL",
-            "⚠️ NO uses inglés en ninguna parte de tu respuesta"
+            "⚠️ NO uses inglés en ninguna parte de tu respuesta",
         ],
         markdown=True,
     )
@@ -485,14 +516,11 @@ def create_portfolio_manager(use_openrouter: bool = True):
 
 def create_daily_reporter(use_openrouter: bool = True):
     """NEW: Agent specialized in generating daily reports with transaction summaries"""
-    
-    model = (
-        OpenRouter(id=MODELS["general"]) if use_openrouter
-        else DeepSeek(id=MODELS["deepseek"])
-    )
-    
+
+    model = OpenRouter(id=MODELS["general"]) if use_openrouter else DeepSeek(id=MODELS["deepseek"])
+
     portfolio_summary = PORTFOLIO.get_portfolio_summary()
-    
+
     return Agent(
         name="Daily Reporter",
         role="Generate comprehensive daily reports and transaction summaries",
@@ -512,7 +540,7 @@ def create_daily_reporter(use_openrouter: bool = True):
             f"Operaciones Recientes: {len(portfolio_summary['recent_trades'])} operaciones",
             "",
             "⚠️ CRÍTICO: Responde SIEMPRE y ÚNICAMENTE en ESPAÑOL",
-            "⚠️ MANDATORIO: TODO tu reporte debe estar en ESPAÑOL"
+            "⚠️ MANDATORIO: TODO tu reporte debe estar en ESPAÑOL",
         ],
         markdown=True,
     )
@@ -522,20 +550,25 @@ def create_daily_reporter(use_openrouter: bool = True):
 # MÚLTIPLES RISK ANALYSTS - 3 Perspectivas Diferentes
 # =============================================================================
 
+
 def create_risk_analyst_conservative(use_openrouter: bool = True):
     """Risk Analyst #1: Perfil CONSERVADOR - Protección de capital"""
     model = DeepSeek(id=MODELS["deepseek"])  # Siempre DeepSeek (tiene tools)
     portfolio_summary = PORTFOLIO.get_portfolio_summary()
-    
+
     return Agent(
         name="Risk Analyst Conservador",
         role="Conservative risk assessment - Capital preservation",
         model=model,
-        tools=[YFinanceTools(include_tools=[
-            "get_key_financial_ratios",
-            "get_technical_indicators",
-            "get_historical_stock_prices"
-        ])],
+        tools=[
+            YFinanceTools(
+                include_tools=[
+                    "get_key_financial_ratios",
+                    "get_technical_indicators",
+                    "get_historical_stock_prices",
+                ]
+            )
+        ],
         instructions=[
             "Eres un analista de riesgo CONSERVADOR - Prioridad: proteger capital",
             "PERFIL: Evitar pérdidas > Maximizar ganancias",
@@ -552,25 +585,30 @@ def create_risk_analyst_conservative(use_openrouter: bool = True):
             f"Portfolio: ${portfolio_summary['total_equity']:.2f}, ROI {portfolio_summary['roi']:.2f}%",
             "",
             "⚠️ CRÍTICO: Responde SIEMPRE y ÚNICAMENTE en ESPAÑOL",
-            "⚠️ IMPORTANTE: TODO tu análisis, conclusiones y datos deben estar en ESPAÑOL"
+            "⚠️ IMPORTANTE: TODO tu análisis, conclusiones y datos deben estar en ESPAÑOL",
         ],
         markdown=True,
     )
+
 
 def create_risk_analyst_moderate(use_openrouter: bool = True):
     """Risk Analyst #2: Perfil MODERADO - Balance riesgo/retorno"""
     model = DeepSeek(id=MODELS["deepseek"])  # Siempre DeepSeek (tiene tools)
     portfolio_summary = PORTFOLIO.get_portfolio_summary()
-    
+
     return Agent(
         name="Risk Analyst Moderado",
         role="Balanced risk assessment - Risk/reward optimization",
         model=model,
-        tools=[YFinanceTools(include_tools=[
-            "get_key_financial_ratios",
-            "get_technical_indicators",
-            "get_historical_stock_prices"
-        ])],
+        tools=[
+            YFinanceTools(
+                include_tools=[
+                    "get_key_financial_ratios",
+                    "get_technical_indicators",
+                    "get_historical_stock_prices",
+                ]
+            )
+        ],
         instructions=[
             "Eres un analista de riesgo MODERADO - Balance riesgo/retorno",
             "PERFIL: 50/50 protección y crecimiento",
@@ -587,25 +625,30 @@ def create_risk_analyst_moderate(use_openrouter: bool = True):
             f"Portfolio: ${portfolio_summary['total_equity']:.2f}, ROI {portfolio_summary['roi']:.2f}%",
             "",
             "⚠️ CRÍTICO: Responde SIEMPRE y ÚNICAMENTE en ESPAÑOL",
-            "⚠️ IMPORTANTE: TODO tu análisis, conclusiones y datos deben estar en ESPAÑOL"
+            "⚠️ IMPORTANTE: TODO tu análisis, conclusiones y datos deben estar en ESPAÑOL",
         ],
         markdown=True,
     )
+
 
 def create_risk_analyst_aggressive(use_openrouter: bool = True):
     """Risk Analyst #3: Perfil AGRESIVO - Alto crecimiento"""
     model = DeepSeek(id=MODELS["deepseek"])  # Siempre DeepSeek (tiene tools)
     portfolio_summary = PORTFOLIO.get_portfolio_summary()
-    
+
     return Agent(
         name="Risk Analyst Agresivo",
         role="Growth-focused risk assessment - High return opportunities",
         model=model,
-        tools=[YFinanceTools(include_tools=[
-            "get_key_financial_ratios",
-            "get_technical_indicators",
-            "get_historical_stock_prices"
-        ])],
+        tools=[
+            YFinanceTools(
+                include_tools=[
+                    "get_key_financial_ratios",
+                    "get_technical_indicators",
+                    "get_historical_stock_prices",
+                ]
+            )
+        ],
         instructions=[
             "Eres un analista de riesgo AGRESIVO - Oportunidades de alto crecimiento",
             "PERFIL: Maximizar retorno > Minimizar riesgo",
@@ -622,7 +665,7 @@ def create_risk_analyst_aggressive(use_openrouter: bool = True):
             f"Portfolio: ${portfolio_summary['total_equity']:.2f}, ROI {portfolio_summary['roi']:.2f}%",
             "",
             "⚠️ CRÍTICO: Responde SIEMPRE y ÚNICAMENTE en ESPAÑOL",
-            "⚠️ IMPORTANTE: TODO tu análisis, conclusiones y datos deben estar en ESPAÑOL"
+            "⚠️ IMPORTANTE: TODO tu análisis, conclusiones y datos deben estar en ESPAÑOL",
         ],
         markdown=True,
     )
@@ -632,10 +675,11 @@ def create_risk_analyst_aggressive(use_openrouter: bool = True):
 # MÚLTIPLES TRADING STRATEGISTS - 3 Enfoques Diferentes
 # =============================================================================
 
+
 def create_strategist_technical(use_openrouter: bool = True):
     """Trading Strategist #1: Enfoque TÉCNICO - Price action"""
     model = DeepSeek(id=MODELS["deepseek"])  # Siempre DeepSeek (tiene tools)
-    
+
     return Agent(
         name="Strategist Técnico",
         role="Pure technical analysis - Charts and indicators",
@@ -660,15 +704,16 @@ def create_strategist_technical(use_openrouter: bool = True):
             "  - Take profit",
             "",
             "⚠️ CRÍTICO: Responde SIEMPRE y ÚNICAMENTE en ESPAÑOL",
-            "⚠️ IMPORTANTE: TODO tu análisis y conclusiones deben estar en ESPAÑOL"
+            "⚠️ IMPORTANTE: TODO tu análisis y conclusiones deben estar en ESPAÑOL",
         ],
         markdown=True,
     )
 
+
 def create_strategist_fundamental(use_openrouter: bool = True):
     """Trading Strategist #2: Enfoque FUNDAMENTAL - Value investing"""
     model = DeepSeek(id=MODELS["deepseek"])  # Siempre DeepSeek (tiene tools)
-    
+
     return Agent(
         name="Strategist Fundamental",
         role="Value investor - Fundamental analysis",
@@ -693,15 +738,16 @@ def create_strategist_fundamental(use_openrouter: bool = True):
             "  - Catalizadores de valor",
             "",
             "⚠️ CRÍTICO: Responde SIEMPRE y ÚNICAMENTE en ESPAÑOL",
-            "⚠️ IMPORTANTE: TODO tu análisis y conclusiones deben estar en ESPAÑOL"
+            "⚠️ IMPORTANTE: TODO tu análisis y conclusiones deben estar en ESPAÑOL",
         ],
         markdown=True,
     )
 
+
 def create_strategist_momentum(use_openrouter: bool = True):
     """Trading Strategist #3: Enfoque MOMENTUM - Trend following"""
     model = DeepSeek(id=MODELS["deepseek"])  # Siempre DeepSeek (tiene tools)
-    
+
     return Agent(
         name="Strategist Momentum",
         role="Momentum and trend following specialist",
@@ -728,7 +774,7 @@ def create_strategist_momentum(use_openrouter: bool = True):
             "REGLA: Solo compras tendencias fuertes confirmadas",
             "",
             "⚠️ CRÍTICO: Responde SIEMPRE y ÚNICAMENTE en ESPAÑOL",
-            "⚠️ IMPORTANTE: TODO tu análisis y conclusiones deben estar en ESPAÑOL"
+            "⚠️ IMPORTANTE: TODO tu análisis y conclusiones deben estar en ESPAÑOL",
         ],
         markdown=True,
     )
@@ -736,7 +782,7 @@ def create_strategist_momentum(use_openrouter: bool = True):
 
 def create_trading_team(use_openrouter: bool = True):
     """Create coordinated team of 9 specialized agents with multiple perspectives
-    
+
     STRUCTURE:
     1. Market Researcher (1) - Recopila datos
     2. Risk Analysts (3) - Múltiples perspectivas de riesgo
@@ -744,60 +790,60 @@ def create_trading_team(use_openrouter: bool = True):
     4. Portfolio Manager (1) - Sintetiza todo
     5. Daily Reporter (1) - Reporte final
     """
-    
-    print("\n" + "="*70)
+
+    print("\n" + "=" * 70)
     print("CREANDO EQUIPO DE 9 AGENTES ESPECIALIZADOS")
-    print("="*70)
-    
+    print("=" * 70)
+
     # 1. Market Researcher (con herramientas)
     print("\n[1/9] Market Researcher...")
     researcher = create_market_researcher(use_openrouter=False)  # DeepSeek
-    
+
     # 2-4. Risk Analysts (3 perspectivas)
     print("[2/9] Risk Analyst Conservador...")
     risk_conservative = create_risk_analyst_conservative(use_openrouter)
-    
+
     print("[3/9] Risk Analyst Moderado...")
     risk_moderate = create_risk_analyst_moderate(use_openrouter)
-    
+
     print("[4/9] Risk Analyst Agresivo...")
     risk_aggressive = create_risk_analyst_aggressive(use_openrouter)
-    
+
     # 5-7. Trading Strategists (3 enfoques)
     print("[5/9] Strategist Técnico...")
     strat_technical = create_strategist_technical(use_openrouter)
-    
+
     print("[6/9] Strategist Fundamental...")
     strat_fundamental = create_strategist_fundamental(use_openrouter)
-    
+
     print("[7/9] Strategist Momentum...")
     strat_momentum = create_strategist_momentum(use_openrouter)
-    
+
     # 8. Portfolio Manager (sintetiza todo)
     print("[8/9] Portfolio Manager...")
     portfolio_mgr = create_portfolio_manager(use_openrouter)
-    
+
     # 9. Daily Reporter
     print("[9/9] Daily Reporter...")
     reporter = create_daily_reporter(use_openrouter)
-    
-    print("="*70)
+
+    print("=" * 70)
     print("EQUIPO COMPLETO - 9 AGENTES LISTOS")
-    print("="*70 + "\n")
-    
+    print("=" * 70 + "\n")
+
     # Create team with sequential workflow
     team = Team(
         name="Equipo de Análisis de Trading - 9 Expertos",
         members=[
-            researcher,          # 1. Datos
-            risk_conservative,   # 2. Riesgo conservador
-            risk_moderate,       # 3. Riesgo moderado
-            risk_aggressive,     # 4. Riesgo agresivo
-            strat_technical,     # 5. Estrategia técnica
-            strat_fundamental,   # 6. Estrategia fundamental
-            strat_momentum,      # 7. Estrategia momentum
-            portfolio_mgr,       # 8. Decisión final
-            reporter             # 9. Reporte
+            researcher,  # 1. Datos
+            risk_conservative,  # 2. Riesgo conservador
+            risk_moderate,  # 3. Riesgo moderado
+            risk_aggressive,  # 4. Riesgo agresivo
+            strat_technical,  # 5. Estrategia técnica
+            strat_fundamental,  # 6. Estrategia fundamental
+            strat_momentum,  # 7. Estrategia momentum
+            portfolio_mgr,  # 8. Decisión final
+            reporter,  # 9. Reporte
         ],
         instructions=[
             "⚠️ CRÍTICO: TODO tu trabajo, coordinación y respuestas deben ser en ESPAÑOL",
@@ -830,30 +876,30 @@ def create_trading_team(use_openrouter: bool = True):
             "",
             "VENTAJA: Múltiples perspectivas = Mejor decisión",
             "",
-            "⚠️ RECUERDA: Responde SIEMPRE en ESPAÑOL, nunca en inglés"
+            "⚠️ RECUERDA: Responde SIEMPRE en ESPAÑOL, nunca en inglés",
         ],
         markdown=True,
     )
-    
+
     return team
 
 
 def analyze_stock(ticker: str, use_openrouter: bool = True, dry_run: bool = True):
     """Analyze a specific stock using the multi-agent team"""
-    
+
     print(f"\n{'='*70}")
     print(f"ANALYZING STOCK: {ticker}")
     print(f"Provider: {'OpenRouter' if use_openrouter else 'DeepSeek'}")
     print(f"Mode: {'DRY RUN' if dry_run else 'LIVE'}")
     print(f"{'='*70}\n")
-    
+
     # Update prices from YFinance
     print("[INFO] Actualizando precios desde YFinance...")
     PORTFOLIO.update_prices_from_yfinance()
-    
+
     # Get current portfolio state
     portfolio_summary = PORTFOLIO.get_portfolio_summary()
-    
+
     # Create team
     print("[INFO] Creando equipo de 5 agentes especializados...")
     print("  - Market Researcher: DeepSeek (confiable)")
@@ -862,7 +908,7 @@ def analyze_stock(ticker: str, use_openrouter: bool = True, dry_run: bool = True
     print(f"  - Portfolio Manager: {'OpenRouter' if use_openrouter else 'DeepSeek'}")
     print(f"  - Daily Reporter: {'OpenRouter' if use_openrouter else 'DeepSeek'}")
     team = create_trading_team(use_openrouter)
-    
+
     # Analysis query
     query = f"""
 Analyze {ticker} as a potential micro-cap investment opportunity.
@@ -885,13 +931,13 @@ Constraints:
 - Minimum cash reserve: $20 (20% of initial capital)
 - Risk tolerance: Moderate (willing to accept volatility for growth)
 """
-    
+
     # Run team analysis
     team.print_response(query, stream=True)
-    
+
     # Guardar snapshot diario
     PORTFOLIO.save_daily_snapshot()
-    
+
     print(f"\n{'='*70}")
     print(f"ANALYSIS COMPLETE: {ticker}")
     print(f"{'='*70}\n")
@@ -899,19 +945,19 @@ Constraints:
 
 def run_daily_analysis(use_openrouter: bool = True, dry_run: bool = True):
     """Run daily portfolio analysis with full report"""
-    
+
     print(f"\n{'='*70}")
     print(f"DAILY PORTFOLIO ANALYSIS - {datetime.now().strftime('%Y-%m-%d')}")
     print(f"Provider: {'OpenRouter (5 specialized models)' if use_openrouter else 'DeepSeek'}")
     print(f"{'='*70}\n")
-    
+
     # Update all prices
     print("[INFO] Actualizando todos los precios desde YFinance...")
     PORTFOLIO.update_prices_from_yfinance()
-    
+
     # Get current portfolio state
     portfolio_summary = PORTFOLIO.get_portfolio_summary()
-    
+
     print(f"\n[RESUMEN DE PORTAFOLIO]")
     print(f"  Efectivo: ${portfolio_summary['cash']:.2f}")
     print(f"  Invertido: ${portfolio_summary['invested']:.2f}")
@@ -919,11 +965,11 @@ def run_daily_analysis(use_openrouter: bool = True, dry_run: bool = True):
     print(f"  P&L Total: ${portfolio_summary['total_pnl']:.2f}")
     print(f"  ROI: {portfolio_summary['roi']:.2f}%")
     print(f"  Posiciones: {portfolio_summary['num_positions']}\n")
-    
+
     # Create team
     print("[INFO] Creando equipo de análisis (5 agentes)...")
     team = create_trading_team(use_openrouter)
-    
+
     # Daily analysis query
     query = f"""
 Conduct a comprehensive daily portfolio review and generate a detailed daily report.
@@ -972,13 +1018,13 @@ Please provide:
 
 Format the final output as a professional daily trading report with clear sections.
 """
-    
+
     # Run team analysis
     team.print_response(query, stream=True)
-    
+
     # Guardar snapshot diario
     PORTFOLIO.save_daily_snapshot()
-    
+
     print(f"\n{'='*70}")
     print(f"DAILY ANALYSIS COMPLETE")
     print(f"{'='*70}\n")
@@ -992,10 +1038,10 @@ def main():
 Examples:
   # Analyze specific stock with OpenRouter models
   python advanced_trading_team.py --ticker AAPL --provider openrouter
-  
+
   # Daily analysis with DeepSeek (stable fallback)
   python advanced_trading_team.py --daily --provider deepseek
-  
+
   # Initialize portfolio with some positions
   python advanced_trading_team.py --init-demo
 
@@ -1006,64 +1052,51 @@ Models Used (OpenRouter):
   - General: GLM 4.5 Air (general analysis)
   - Advanced: Qwen3 235B (strategy planning)
   - Reporter: GLM 4.5 Air (daily reports)
-        """
+        """,
     )
-    
+
+    parser.add_argument("--ticker", type=str, help="Stock ticker to analyze (e.g., AAPL, TSLA)")
+
     parser.add_argument(
-        "--ticker",
-        type=str,
-        help="Stock ticker to analyze (e.g., AAPL, TSLA)"
+        "--daily", action="store_true", help="Run daily portfolio analysis with full report"
     )
-    
-    parser.add_argument(
-        "--daily",
-        action="store_true",
-        help="Run daily portfolio analysis with full report"
-    )
-    
+
     parser.add_argument(
         "--provider",
         type=str,
         choices=["openrouter", "deepseek"],
         default="openrouter",
-        help="LLM provider (default: openrouter)"
+        help="LLM provider (default: openrouter)",
     )
-    
+
     parser.add_argument(
-        "--dry-run",
-        action="store_true",
-        default=True,
-        help="Dry run mode (no actual trades)"
+        "--dry-run", action="store_true", default=True, help="Dry run mode (no actual trades)"
     )
-    
+
     parser.add_argument(
-        "--init-demo",
-        action="store_true",
-        help="Initialize portfolio with demo positions"
+        "--init-demo", action="store_true", help="Initialize portfolio with demo positions"
     )
-    
+
     parser.add_argument(
-        "--show-history",
-        action="store_true",
-        help="Show historical performance and statistics"
+        "--show-history", action="store_true", help="Show historical performance and statistics"
     )
-    
+
     args = parser.parse_args()
-    
+
     # Check for API keys
     use_openrouter = args.provider == "openrouter"
-    
+
     if use_openrouter and not os.getenv("OPENROUTER_API_KEY"):
         print("\n[ERROR] OPENROUTER_API_KEY not found in .env file")
         print("Get your API key from: https://openrouter.ai/keys")
         print("\nAlternatively, use --provider deepseek")
         sys.exit(1)
-    
+
     if not use_openrouter and not os.getenv("DEEPSEEK_API_KEY"):
         print("\n[ERROR] DEEPSEEK_API_KEY not found in .env file")
         print("Get your API key from: https://platform.deepseek.com/")
         sys.exit(1)
-    
+
     # Initialize demo portfolio if requested
     if args.init_demo:
         print("\n[INFO] Initializing demo portfolio...")
@@ -1074,46 +1107,46 @@ Models Used (OpenRouter):
         print(f"  Cash: ${PORTFOLIO.cash:.2f}")
         print(f"  Holdings: {len(PORTFOLIO.holdings)} positions")
         return
-    
+
     # Show history if requested
     if args.show_history:
-        print("\n" + "="*70)
+        print("\n" + "=" * 70)
         print("HISTORIAL DE RENDIMIENTO DEL PORTAFOLIO")
-        print("="*70 + "\n")
-        
+        print("=" * 70 + "\n")
+
         hist = PORTFOLIO.get_historical_performance()
         summary = PORTFOLIO.get_portfolio_summary()
-        
+
         print(f"[ESTADO ACTUAL]")
         print(f"  Equity Total: ${summary['total_equity']:.2f}")
         print(f"  ROI Actual: {summary['roi']:.2f}%")
         print(f"  Efectivo: ${summary['cash']:.2f}")
         print(f"  Posiciones: {summary['num_positions']}\n")
-        
+
         print(f"[ESTADÍSTICAS HISTÓRICAS]")
         print(f"  Días Operando: {hist['total_days']}")
         print(f"  Equity Máximo: ${hist['peak_equity']:.2f}")
         print(f"  Máximo Drawdown: {hist['max_drawdown']:.2f}%")
         print(f"  Total Operaciones: {hist['total_trades']}\n")
-        
-        if hist['best_day']:
+
+        if hist["best_day"]:
             print(f"[MEJOR DÍA]")
             print(f"  Fecha: {hist['best_day']['date']}")
             print(f"  ROI: {hist['best_day']['roi']:.2f}%\n")
-        
-        if hist['worst_day']:
+
+        if hist["worst_day"]:
             print(f"[PEOR DÍA]")
             print(f"  Fecha: {hist['worst_day']['date']}")
             print(f"  ROI: {hist['worst_day']['roi']:.2f}%\n")
-        
+
         # Mostrar últimas 10 operaciones
         if not PORTFOLIO.trades.empty:
             print(f"[ÚTIMAS 10 OPERACIONES]")
             print(PORTFOLIO.trades.tail(10).to_string(index=False))
-        
-        print("\n" + "="*70 + "\n")
+
+        print("\n" + "=" * 70 + "\n")
         return
-    
+
     # Run analysis
     if args.ticker:
         analyze_stock(args.ticker, use_openrouter, args.dry_run)

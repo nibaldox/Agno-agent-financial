@@ -207,7 +207,7 @@ El sistema guarda snapshots automáticamente:
 # En analyze_stock() y run_daily_analysis()
 def analyze_stock(ticker: str):
     # ... análisis del stock ...
-    
+
     # Auto-save snapshot después del análisis
     PORTFOLIO.save_daily_snapshot()  # ← Automático
 ```
@@ -220,7 +220,7 @@ El Portfolio Manager ahora recibe contexto histórico:
 def create_portfolio_manager():
     # Obtener métricas históricas
     historical_perf = PORTFOLIO.get_historical_performance()
-    
+
     instructions = f"""
     **CONTEXTO HISTÓRICO DE TU PORTAFOLIO:**
     - Total Días Operando: {historical_perf['total_days']}
@@ -228,7 +228,7 @@ def create_portfolio_manager():
     - Max Drawdown: {historical_perf['max_drawdown']:.2f}%
     - Total Operaciones: {historical_perf['total_trades']}
     - Win Rate: {historical_perf['win_rate']:.1f}%
-    
+
     **USA EL HISTORIAL para:**
     1. Identificar patrones de éxito/fracaso
     2. Ajustar sizing basado en drawdown máximo
@@ -347,7 +347,7 @@ python agente-agno/tests/test_complete_system.py
 Market Researcher → Risk Analyst → Strategist → Portfolio Manager → Reporter
       ↓                  ↓              ↓              ↓
   Financial Data   Financial Data  Financial Data   No History
-  
+
 Limitaciones:
   ❌ Solo datos financieros (sin contexto de mercado)
   ❌ No sentiment analysis
@@ -361,7 +361,7 @@ Market Researcher → Risk Analyst → Strategist → Portfolio Manager → Repo
       ↓                  ↓              ↓              ↓
   YFinance          YFinance        YFinance      Historical Data
   + Serper                                        (45 días, win rate, etc.)
-  
+
 Capacidades:
   ✅ Datos financieros + contexto de mercado
   ✅ Sentiment analysis en tiempo real
@@ -401,7 +401,7 @@ pip install --upgrade agno
 1. Verifica que `PORTFOLIO` se inicialice con `history_file`:
    ```python
    PORTFOLIO = PortfolioMemoryManager(
-       initial_cash=100.0, 
+       initial_cash=100.0,
        history_file=str(HISTORY_DIR / "portfolio_state.csv")
    )
    ```

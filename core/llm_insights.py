@@ -7,14 +7,15 @@ Analyzes portfolio metrics and generates human-readable explanations.
 Cost: ~$0.14 per 1M tokens (DeepSeek-V3) - very economical!
 """
 
-import os
 import json
-from typing import Dict, Optional, List
-from datetime import datetime
+import os
 import warnings
+from datetime import datetime
+from typing import Dict, List, Optional
 
 try:
     from openai import OpenAI
+
     HAS_OPENAI = True
 except ImportError:
     HAS_OPENAI = False
@@ -24,30 +25,30 @@ except ImportError:
 class LLMInsightsGenerator:
     """
     Generate natural language insights about portfolio performance using LLM.
-    
+
     Uses DeepSeek via OpenRouter for cost-effective analysis.
-    
+
     Features:
     - Executive summary of performance
     - Risk analysis and recommendations
     - Trade pattern insights
     - Market context explanations
-    
+
     Example:
         >>> generator = LLMInsightsGenerator(api_key="your-openrouter-key")
         >>> insights = generator.generate_insights(portfolio_summary, metrics)
         >>> print(insights['executive_summary'])
     """
-    
+
     def __init__(
         self,
         api_key: Optional[str] = None,
         model: str = "deepseek/deepseek-chat",
-        base_url: str = "https://openrouter.ai/api/v1"
+        base_url: str = "https://openrouter.ai/api/v1",
     ):
         """
         Initialize LLM insights generator.
-        
+
         Args:
             api_key: OpenRouter API key (or set OPENROUTER_API_KEY env var)
             model: Model to use (default: deepseek/deepseek-chat - very cheap!)
@@ -55,10 +56,10 @@ class LLMInsightsGenerator:
         """
         if not HAS_OPENAI:
             raise ImportError("openai package required. Install with: pip install openai")
-        
+
         # Get API key from parameter or environment
-        self.api_key = api_key or os.getenv('OPENROUTER_API_KEY')
-        
+        self.api_key = api_key or os.getenv("OPENROUTER_API_KEY")
+
         if not self.api_key:
             raise ValueError(
                 "OpenRouter API key required. Either:\n"
@@ -66,27 +67,21 @@ class LLMInsightsGenerator:
                 "2. Set OPENROUTER_API_KEY environment variable\n"
                 "Get your key at: https://openrouter.ai/keys"
             )
-        
+
         self.model = model
-        self.client = OpenAI(
-            api_key=self.api_key,
-            base_url=base_url
-        )
-    
+        self.client = OpenAI(api_key=self.api_key, base_url=base_url)
+
     def _create_analysis_prompt(
-        self,
-        portfolio_summary: Dict,
-        metrics: Dict,
-        trades_summary: Optional[Dict] = None
+        self, portfolio_summary: Dict, metrics: Dict, trades_summary: Optional[Dict] = None
     ) -> str:
         """
         Create comprehensive prompt for LLM analysis.
-        
+
         Args:
             portfolio_summary: Portfolio summary metrics
             metrics: Performance metrics (Sharpe, Sortino, etc.)
             trades_summary: Optional trade statistics
-        
+
         Returns:
             str: Formatted prompt
         """
@@ -109,7 +104,7 @@ class LLMInsightsGenerator:
 
 **ESTADÍSTICAS DE TRADING:**
 """
-        
+
         if trades_summary:
             prompt += f"""- Total Trades: {trades_summary.get('total_trades', 0)}
 - Win Rate: {trades_summary.get('win_rate', 0):.1f}%
@@ -119,7 +114,7 @@ class LLMInsightsGenerator:
 - Promedio Pérdida: ${trades_summary.get('avg_loss', 0):,.2f}
 - Profit Factor: {trades_summary.get('profit_factor', 0):.2f}
 """
-        
+
         prompt += """
 **GENERA UN ANÁLISIS ESTRUCTURADO EN JSON CON ESTAS SECCIONES:**
 
@@ -153,118 +148,109 @@ class LLMInsightsGenerator:
 5. Mantén un tono profesional pero accesible
 6. Responde SOLO con el JSON, sin texto adicional
 """
-        
+
         return prompt
-    
+
     def generate_insights(
         self,
         portfolio_summary: Dict,
         metrics: Dict,
         trades_summary: Optional[Dict] = None,
-        temperature: float = 0.3
+        temperature: float = 0.3,
     ) -> Dict:
         """
         Generate AI-powered insights about portfolio performance.
-        
+
         Args:
             portfolio_summary: Portfolio summary metrics
             metrics: Performance metrics
             trades_summary: Optional trade statistics
             temperature: LLM temperature (0.0-1.0, lower = more focused)
-        
+
         Returns:
             Dict: Structured insights with analysis and recommendations
         """
         try:
             # Create prompt
-            prompt = self._create_analysis_prompt(
-                portfolio_summary,
-                metrics,
-                trades_summary
-            )
-            
+            prompt = self._create_analysis_prompt(portfolio_summary, metrics, trades_summary)
+
             # Call DeepSeek via OpenRouter
             print("🤖 Generating AI insights with DeepSeek...")
-            
+
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[
                     {
                         "role": "system",
-                        "content": "Eres un analista financiero experto especializado en análisis de portafolios de trading. Proporcionas insights claros, específicos y accionables basados en datos cuantitativos."
+                        "content": "Eres un analista financiero experto especializado en análisis de portafolios de trading. Proporcionas insights claros, específicos y accionables basados en datos cuantitativos.",
                     },
-                    {
-                        "role": "user",
-                        "content": prompt
-                    }
+                    {"role": "user", "content": prompt},
                 ],
                 temperature=temperature,
-                max_tokens=2000
+                max_tokens=2000,
             )
-            
+
             # Extract and parse response
             content = response.choices[0].message.content
-            
+
             # Remove markdown code blocks if present
-            content = content.replace('```json', '').replace('```', '').strip()
-            
+            content = content.replace("```json", "").replace("```", "").strip()
+
             # Parse JSON
             insights = json.loads(content)
-            
+
             # Add metadata
-            insights['_metadata'] = {
-                'model': self.model,
-                'generated_at': datetime.now().isoformat(),
-                'tokens_used': response.usage.total_tokens if hasattr(response, 'usage') else None
+            insights["_metadata"] = {
+                "model": self.model,
+                "generated_at": datetime.now().isoformat(),
+                "tokens_used": response.usage.total_tokens if hasattr(response, "usage") else None,
             }
-            
-            print(f"  ✅ AI insights generated ({response.usage.total_tokens if hasattr(response, 'usage') else 'N/A'} tokens)")
-            
+
+            print(
+                f"  ✅ AI insights generated ({response.usage.total_tokens if hasattr(response, 'usage') else 'N/A'} tokens)"
+            )
+
             return insights
-            
+
         except json.JSONDecodeError as e:
             print(f"  ⚠️ Failed to parse LLM response as JSON: {e}")
             print(f"  Raw response: {content[:200]}...")
-            
+
             # Fallback: return basic structure with raw text
             return {
-                'executive_summary': content[:200] if content else "Error generating insights",
-                'performance_analysis': "",
-                'risk_assessment': "",
-                'trading_patterns': "",
-                'recommendations': [],
-                'key_strengths': [],
-                'areas_for_improvement': [],
-                '_error': str(e),
-                '_raw_response': content
+                "executive_summary": content[:200] if content else "Error generating insights",
+                "performance_analysis": "",
+                "risk_assessment": "",
+                "trading_patterns": "",
+                "recommendations": [],
+                "key_strengths": [],
+                "areas_for_improvement": [],
+                "_error": str(e),
+                "_raw_response": content,
             }
-            
+
         except Exception as e:
             print(f"  ❌ Error generating insights: {e}")
-            
+
             return {
-                'executive_summary': f"Error al generar insights: {str(e)}",
-                'performance_analysis': "",
-                'risk_assessment': "",
-                'trading_patterns': "",
-                'recommendations': ["Verificar configuración de API key"],
-                'key_strengths': [],
-                'areas_for_improvement': [],
-                '_error': str(e)
+                "executive_summary": f"Error al generar insights: {str(e)}",
+                "performance_analysis": "",
+                "risk_assessment": "",
+                "trading_patterns": "",
+                "recommendations": ["Verificar configuración de API key"],
+                "key_strengths": [],
+                "areas_for_improvement": [],
+                "_error": str(e),
             }
-    
-    def generate_quick_summary(
-        self,
-        portfolio_summary: Dict,
-        metrics: Dict
-    ) -> str:
+
+    def generate_quick_summary(self, portfolio_summary: Dict, metrics: Dict) -> str:
         """
         Generate a quick one-paragraph summary (faster, cheaper).
-        
+
         Args:
             portfolio_summary: Portfolio summary metrics
             metrics: Performance metrics
-        
+
         Returns:
             str: Single paragraph summary
         """
@@ -283,11 +269,11 @@ Sé específico y menciona los números clave."""
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
                 temperature=0.3,
-                max_tokens=200
+                max_tokens=200,
             )
-            
+
             return response.choices[0].message.content.strip()
-            
+
         except Exception as e:
             return f"Portafolio con ${portfolio_summary.get('total_equity', 0):,.2f} de equity y ROI de {portfolio_summary.get('roi_percent', 0):.2f}%"
 
@@ -295,10 +281,10 @@ Sé específico y menciona los números clave."""
 def create_insights_generator(api_key: Optional[str] = None) -> Optional[LLMInsightsGenerator]:
     """
     Factory function to create insights generator with error handling.
-    
+
     Args:
         api_key: Optional OpenRouter API key
-    
+
     Returns:
         LLMInsightsGenerator or None if creation fails
     """

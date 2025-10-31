@@ -148,20 +148,20 @@ validation = validator.validate_stock("ABEO", dry_run=True)
 if validation['can_continue']:
     # 3. Analizar con equipo multi-agente
     summary = portfolio.get_portfolio_summary()
-    
+
     analyzer.analyze(
         ticker="ABEO",
         portfolio_summary=summary,
         holdings_df=portfolio.holdings
     )
-    
+
     # 4. Generar reporte diario
     reporter.generate_report(
         portfolio_summary=summary,
         holdings_df=portfolio.holdings,
         trades_df=portfolio.trades
     )
-    
+
     # 5. Guardar snapshot
     portfolio.save_daily_snapshot()
 ```
@@ -390,6 +390,6 @@ analyzer.analyze(ticker, portfolio_summary, use_openrouter=True)
 
 ---
 
-**Versión:** 3.0.0  
-**Última actualización:** Octubre 2025  
+**Versión:** 3.0.0
+**Última actualización:** Octubre 2025
 **Autor:** Romamo

@@ -3,20 +3,22 @@
 Prueba del motor híbrido V3.0 con datos de 5 minutos
 """
 
-import os
 import json
-import pandas as pd
+import os
 from datetime import datetime
+
+import pandas as pd
 from dotenv import load_dotenv
 
 load_dotenv()
 
 # Importar componentes del motor V3.0
 from hourly_backtest_v3_hybrid_agno_compliant import (
-    TradingSimulatorV3,
     BacktestEngineV3,
-    fetch_intraday_data
+    TradingSimulatorV3,
+    fetch_intraday_data,
 )
+
 
 def test_hybrid_v3_with_5min():
     """Prueba del motor V3.0 con datos de 5 minutos"""
@@ -42,17 +44,17 @@ def test_hybrid_v3_with_5min():
         row = df.iloc[i]
 
         # Extraer datos
-        timestamp = row['Datetime'] if 'Datetime' in df.columns else row['Date']
+        timestamp = row["Datetime"] if "Datetime" in df.columns else row["Date"]
         if isinstance(timestamp, pd.Timestamp):
             timestamp = timestamp.to_pydatetime()
 
-        current_price = float(row['Close'])
+        current_price = float(row["Close"])
         current_prices = {"BTC-USD": current_price}
 
         # Extraer High, Low, Volume
-        high_price = float(row.get('High', current_price))
-        low_price = float(row.get('Low', current_price))
-        volume = float(row.get('Volume', 0))
+        high_price = float(row.get("High", current_price))
+        low_price = float(row.get("Low", current_price))
+        volume = float(row.get("Volume", 0))
 
         # Contexto de mercado
         market_context = f"""
@@ -66,13 +68,13 @@ def test_hybrid_v3_with_5min():
         print(f"\n🤖 DECISIÓN #{decision_count} - {timestamp.strftime('%Y-%m-%d %H:%M')}")
 
         # Obtener decisión del LLM (V3.0 Hybrid)
-        historical_slice = df.iloc[max(0, i-20):i+1]  # Últimas 20 velas de 5 min
+        historical_slice = df.iloc[max(0, i - 20) : i + 1]  # Últimas 20 velas de 5 min
         decision = engine.get_llm_decision(
             ticker="BTC-USD",
             current_prices=current_prices,
             timestamp=timestamp,
             historical_data=historical_slice,
-            market_context=market_context
+            market_context=market_context,
         )
 
         print(f"Precio: ${current_price:,.2f}")
@@ -83,10 +85,10 @@ def test_hybrid_v3_with_5min():
         print(f"Razón: {decision['reason']}")
 
         # Mostrar EMA48 si disponible
-        if decision['ema48_projections']['ema48'] > 0:
-            ema48 = decision['ema48_projections']['ema48']
-            proj1 = decision['ema48_projections']['proj_1']
-            proj2 = decision['ema48_projections']['proj_2']
+        if decision["ema48_projections"]["ema48"] > 0:
+            ema48 = decision["ema48_projections"]["ema48"]
+            proj1 = decision["ema48_projections"]["proj_1"]
+            proj2 = decision["ema48_projections"]["proj_2"]
             print(f"📊 EMA48: ${ema48:.2f} | Proy+1: ${proj1:.2f} | Proy+2: ${proj2:.2f}")
 
         # Ejecutar decisión
@@ -102,6 +104,7 @@ def test_hybrid_v3_with_5min():
     print(f"✅ Stop Loss/Take Profit automáticos!")
 
     return True
+
 
 if __name__ == "__main__":
     test_hybrid_v3_with_5min()

@@ -3,20 +3,18 @@
 Prueba corta del motor V2.1 Agno-compliant
 """
 
-import os
 import json
-import pandas as pd
+import os
 from datetime import datetime
+
+import pandas as pd
 from dotenv import load_dotenv
 
 load_dotenv()
 
 # Importar componentes del motor V2.1
-from hourly_backtest_v2_1_agno_compliant import (
-    TradingSimulator,
-    BacktestEngine,
-    fetch_hourly_data
-)
+from hourly_backtest_v2_1_agno_compliant import BacktestEngine, TradingSimulator, fetch_hourly_data
+
 
 def test_v2_1_engine():
     """Prueba corta del motor V2.1"""
@@ -25,7 +23,7 @@ def test_v2_1_engine():
     # Usar datos existentes en lugar de descargar
     try:
         # Intentar usar datos ya descargados
-        data = pd.read_csv('btc_hourly_simple.csv')
+        data = pd.read_csv("btc_hourly_simple.csv")
         print(f"✅ Usando datos existentes: {len(data)} filas")
     except:
         print("📥 Descargando datos de prueba...")
@@ -45,14 +43,14 @@ def test_v2_1_engine():
         row = data.iloc[i]
 
         # Extraer datos de forma segura
-        timestamp = row['Datetime'] if 'Datetime' in data.columns else row['Timestamp']
-        current_price = float(row['Close'])
+        timestamp = row["Datetime"] if "Datetime" in data.columns else row["Timestamp"]
+        current_price = float(row["Close"])
         current_prices = {"BTC-USD": current_price}
 
         # Extraer High/Low/Volume de forma segura
-        high_price = float(row.get('High', current_price))
-        low_price = float(row.get('Low', current_price))
-        volume = float(row.get('Volume', 0))
+        high_price = float(row.get("High", current_price))
+        low_price = float(row.get("Low", current_price))
+        volume = float(row.get("Volume", 0))
 
         # Contexto de mercado
         market_context = f"""
@@ -65,13 +63,13 @@ def test_v2_1_engine():
 """
 
         # Obtener decisión del LLM
-        historical_slice = data.iloc[max(0, i-20):i+1]  # Últimas 20 filas
+        historical_slice = data.iloc[max(0, i - 20) : i + 1]  # Últimas 20 filas
         decision = engine.get_llm_decision(
             ticker="BTC-USD",
             current_prices=current_prices,
             timestamp=datetime.now(),  # Usar timestamp actual para prueba
             historical_data=historical_slice,
-            market_context=market_context
+            market_context=market_context,
         )
 
         decision_count += 1
@@ -93,6 +91,7 @@ def test_v2_1_engine():
     print(f"✅ Stop Loss/Take Profit automáticos integrados!")
 
     return True
+
 
 if __name__ == "__main__":
     test_v2_1_engine()

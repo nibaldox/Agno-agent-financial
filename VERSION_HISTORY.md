@@ -177,7 +177,7 @@ python generate_dashboard.py backtest_results_v2_1_*.json
 
 ## 🏆 CRÉDITOS
 
-**Desarrollador:** xodla  
-**Framework:** Agno V2 (AgnoAgi)  
-**Modelo:** DeepSeek V3 (deepseek-chat)  
+**Desarrollador:** xodla
+**Framework:** Agno V2 (AgnoAgi)
+**Modelo:** DeepSeek V3 (deepseek-chat)
 **Última actualización:** 18-Oct-2025

@@ -39,7 +39,7 @@ python agente-agno/fase2_example_interactive.py --data-dir "Scripts and CSV File
 ```
 🤖 AI-Powered Insights
 ├─ 📋 Executive Summary
-├─ 📊 Performance Analysis  
+├─ 📊 Performance Analysis
 ├─ ⚠️ Risk Assessment
 ├─ 📈 Trading Patterns
 ├─ 💡 Recommendations
@@ -48,8 +48,8 @@ python agente-agno/fase2_example_interactive.py --data-dir "Scripts and CSV File
 ```
 
 **Ejemplo de insight**:
-> "El portafolio muestra una estrategia agresiva de micro-caps con alta volatilidad. 
-> La tasa de ganancia del 61.5% es sólida, pero el drawdown del 38.4% sugiere 
+> "El portafolio muestra una estrategia agresiva de micro-caps con alta volatilidad.
+> La tasa de ganancia del 61.5% es sólida, pero el drawdown del 38.4% sugiere
 > necesidad de mejor gestión de riesgo. Recomendamos implementar stops más ajustados..."
 
 ---
@@ -187,23 +187,23 @@ __all__ = [
 ## 🎯 Casos de Uso
 
 ### 1. Análisis Rápido
-**Situación**: Quieres entender rápidamente el estado del portafolio  
-**Solución**: Lee el "Executive Summary" de AI insights  
+**Situación**: Quieres entender rápidamente el estado del portafolio
+**Solución**: Lee el "Executive Summary" de AI insights
 **Tiempo**: 30 segundos
 
 ### 2. Decisiones de Trading
-**Situación**: Necesitas decidir próximas operaciones  
-**Solución**: Revisa "Recommendations" generadas por IA  
+**Situación**: Necesitas decidir próximas operaciones
+**Solución**: Revisa "Recommendations" generadas por IA
 **Tiempo**: 2 minutos
 
 ### 3. Gestión de Riesgo
-**Situación**: Evaluar exposición al riesgo  
-**Solución**: Lee "Risk Assessment" y "Areas for Improvement"  
+**Situación**: Evaluar exposición al riesgo
+**Solución**: Lee "Risk Assessment" y "Areas for Improvement"
 **Tiempo**: 3 minutos
 
 ### 4. Presentación a Inversores
-**Situación**: Compartir rendimiento del portafolio  
-**Solución**: Usa reporte HTML con insights en lenguaje natural  
+**Situación**: Compartir rendimiento del portafolio
+**Solución**: Usa reporte HTML con insights en lenguaje natural
 **Tiempo**: Instantáneo (ya generado)
 
 ---
@@ -433,13 +433,13 @@ Agradecimientos especiales:
 
 ### Problemas Comunes
 
-**"AI insights no generados"**  
+**"AI insights no generados"**
 → Ver: `OPENROUTER_SETUP.md` sección Troubleshooting
 
-**"Gráficos con fondo blanco en dark mode"**  
+**"Gráficos con fondo blanco en dark mode"**
 → Ver: `TRANSPARENT_CHARTS.md` sección Solución de Problemas
 
-**"Costos muy altos"**  
+**"Costos muy altos"**
 → Verificar modelo en uso (debería ser `deepseek/deepseek-chat`)
 
 ### Links Útiles
@@ -456,9 +456,9 @@ Misma licencia que el proyecto principal.
 
 ---
 
-**Versión**: 3.8.0  
-**Fecha de Release**: Octubre 12, 2025  
-**Estabilidad**: Stable ✅  
+**Versión**: 3.8.0
+**Fecha de Release**: Octubre 12, 2025
+**Estabilidad**: Stable ✅
 **Recomendado para producción**: Sí 🚀
 
 ---

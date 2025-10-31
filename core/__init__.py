@@ -15,18 +15,19 @@ This package contains reusable components:
 Version: 3.7.0 - Interactive Plotly charts with modern UI (FASE 2 Enhanced)
 """
 
-from .portfolio import PortfolioMemoryManager
-from .validation import ValidationHandler
 from .analysis import StockAnalyzer
-from .reporting import DailyReporter
 from .execution import TradeExecutor
-from .metrics import MetricsCalculator
-from .visualization import VisualizationGenerator
 from .html_reports import HTMLReportGenerator
+from .metrics import MetricsCalculator
+from .portfolio import PortfolioMemoryManager
+from .reporting import DailyReporter
+from .validation import ValidationHandler
+from .visualization import VisualizationGenerator
 
 # Try to import LLM insights generator (optional, requires OpenRouter API key)
 try:
     from .llm_insights import LLMInsightsGenerator, create_insights_generator
+
     _HAS_LLM_INSIGHTS = True
 except ImportError:
     _HAS_LLM_INSIGHTS = False
@@ -36,23 +37,24 @@ except ImportError:
 # Try to import interactive Plotly visualizations (preferred)
 try:
     from .visualization_plotly import InteractiveVisualizationGenerator
+
     _HAS_INTERACTIVE_VIZ = True
 except ImportError:
     _HAS_INTERACTIVE_VIZ = False
     InteractiveVisualizationGenerator = None
 
 __all__ = [
-    'PortfolioMemoryManager',
-    'ValidationHandler',
-    'StockAnalyzer',
-    'DailyReporter',
-    'TradeExecutor',
-    'MetricsCalculator',
-    'VisualizationGenerator',
-    'InteractiveVisualizationGenerator',
-    'HTMLReportGenerator',
-    'LLMInsightsGenerator',
-    'create_insights_generator'
+    "PortfolioMemoryManager",
+    "ValidationHandler",
+    "StockAnalyzer",
+    "DailyReporter",
+    "TradeExecutor",
+    "MetricsCalculator",
+    "VisualizationGenerator",
+    "InteractiveVisualizationGenerator",
+    "HTMLReportGenerator",
+    "LLMInsightsGenerator",
+    "create_insights_generator",
 ]
 
-__version__ = '3.7.0'
+__version__ = "3.7.0"

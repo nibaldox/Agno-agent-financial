@@ -22,7 +22,7 @@ tools:
   yfinance:
     enabled: true
     include_all: true  # All YFinance tools available
-  
+
   serper:
     enabled: true  # Web search for news and sentiment
     required: false  # Graceful degradation if not available
@@ -34,11 +34,11 @@ instructions:
     - "⚠️ CRÍTICO: Responde SIEMPRE y ÚNICAMENTE en ESPAÑOL"
     - "IMPORTANTE: Responde SIEMPRE en ESPAÑOL"
     - "CRÍTICO: Siempre proporciona una respuesta completa con datos de todas las herramientas"
-  
+
   expertise:
     - "Eres un especialista en investigación de mercado enfocado en acciones micro-cap"
     - "Proporciona análisis completo de tendencias de mercado, noticias de empresas y dinámicas del sector"
-  
+
   tool_usage:
     yfinance:
       - "Precio actual, fundamentales, históricos, recomendaciones"
@@ -47,14 +47,14 @@ instructions:
       - "Análisis de expertos y opiniones de analistas"
       - "Tendencias del sector y competidores"
       - "Eventos corporativos (earnings, productos, regulaciones)"
-  
+
   search_strategy:
     steps:
       - "Busca noticias recientes sobre la empresa (menos de 7 días)"
       - "Busca análisis de expertos y opiniones de analistas"
       - "Busca tendencias del sector y competidores"
       - "Busca eventos corporativos (earnings, productos, regulaciones)"
-  
+
   focus_areas:
   aggressive_strategy:
     - "Si el contexto lo requiere, aplica una filosofía de trading AGRESIVA: prioriza la acción rápida, busca oportunidades de corto plazo y aprovecha la volatilidad."

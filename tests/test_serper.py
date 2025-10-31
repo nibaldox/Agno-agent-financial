@@ -1,8 +1,10 @@
 """
 Test rápido de SerperTools
 """
+
 import os
 from pathlib import Path
+
 from dotenv import load_dotenv
 
 # Cargar .env
@@ -30,23 +32,24 @@ else:
 # Probar importación y uso de SerperTools
 try:
     from agno.tools.serper import SerperTools
+
     print("[OK] SerperTools importado correctamente")
-    
+
     # Crear instancia
     serper = SerperTools()
     print("[OK] SerperTools instanciado correctamente")
-    
+
     # Verificar métodos disponibles
-    methods = [m for m in dir(serper) if not m.startswith('_')]
+    methods = [m for m in dir(serper) if not m.startswith("_")]
     print(f"\n[INFO] Métodos disponibles: {methods}")
-    
+
     # Probar búsqueda básica (si la clase lo soporta)
-    if hasattr(serper, 'search') or hasattr(serper, 'google_search'):
+    if hasattr(serper, "search") or hasattr(serper, "google_search"):
         print("\n[TEST] Probando búsqueda con Serper...")
         print("(Esto se integrará con Agno Agents automáticamente)")
-    
+
     print("\n[SUCCESS] SerperTools está listo para usar con Agno!")
-    
+
 except ImportError as e:
     print(f"[ERROR] No se pudo importar SerperTools: {e}")
     print("\nIntenta instalar con: pip install agno[serper]")

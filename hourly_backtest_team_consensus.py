@@ -8,25 +8,27 @@ Este motor ejecuta simulaciones de trading horario usando el equipo avanzado def
 aplicando consenso en cada ciclo. Permite comparar resultados con el agente individual.
 """
 
-import os
 import json
+import os
+from datetime import datetime, timedelta
+from typing import Dict, List
+
 import pandas as pd
 import yfinance as yf
-from datetime import datetime, timedelta
 from dotenv import load_dotenv
-from typing import Dict, List
+from pydantic import BaseModel, Field
 
 from agents import (
     load_complete_team,
+    load_daily_reporter,
     load_market_researcher,
+    load_portfolio_manager,
     load_risk_analysts,
     load_trading_strategists,
-    load_portfolio_manager,
-    load_daily_reporter
 )
-from pydantic import BaseModel, Field
 
 load_dotenv()
+
 
 # Modelo estructurado para decisiones
 class TeamDecision(BaseModel):
@@ -36,6 +38,7 @@ class TeamDecision(BaseModel):
     strategy: str = ""
     confidence: float = 0.5
     agent: str = ""
+
 
 # Simulador simple (puedes adaptar desde el motor original)
 class TeamTradingSimulator:
@@ -49,12 +52,13 @@ class TeamTradingSimulator:
 
     def get_portfolio_value(self, current_price: float) -> float:
         holdings_value = sum(
-            self.portfolio[ticker]['shares'] * current_price
-            for ticker in self.portfolio
+            self.portfolio[ticker]["shares"] * current_price for ticker in self.portfolio
         )
         return self.cash + holdings_value
 
-    def execute_buy(self, ticker: str, shares: float, price: float, date: str, reason: str = "") -> Dict:
+    def execute_buy(
+        self, ticker: str, shares: float, price: float, date: str, reason: str = ""
+    ) -> Dict:
         """Ejecutar compra"""
         if shares <= 0:
             return {"success": False, "message": "Shares debe ser > 0"}
@@ -64,78 +68,81 @@ class TeamTradingSimulator:
         total_cost = cost + fee
 
         if total_cost > self.cash:
-            return {"success": False, "message": f"Efectivo insuficiente: ${self.cash:.2f} < ${total_cost:.2f}"}
+            return {
+                "success": False,
+                "message": f"Efectivo insuficiente: ${self.cash:.2f} < ${total_cost:.2f}",
+            }
 
         self.cash -= total_cost
 
         if ticker in self.portfolio:
-            old_shares = self.portfolio[ticker]['shares']
-            old_avg = self.portfolio[ticker]['avg_price']
+            old_shares = self.portfolio[ticker]["shares"]
+            old_avg = self.portfolio[ticker]["avg_price"]
             new_shares = old_shares + shares
             new_avg = ((old_shares * old_avg) + (shares * price)) / new_shares
-            self.portfolio[ticker]['shares'] = new_shares
-            self.portfolio[ticker]['avg_price'] = new_avg
+            self.portfolio[ticker]["shares"] = new_shares
+            self.portfolio[ticker]["avg_price"] = new_avg
         else:
-            self.portfolio[ticker] = {
-                'shares': shares,
-                'avg_price': price
-            }
+            self.portfolio[ticker] = {"shares": shares, "avg_price": price}
 
         trade = {
-            'date': date,
-            'action': 'BUY',
-            'ticker': ticker,
-            'shares': shares,
-            'price': price,
-            'cost': cost,
-            'fee': fee,
-            'total': total_cost,
-            'reason': reason
+            "date": date,
+            "action": "BUY",
+            "ticker": ticker,
+            "shares": shares,
+            "price": price,
+            "cost": cost,
+            "fee": fee,
+            "total": total_cost,
+            "reason": reason,
         }
         self.history.append(trade)
 
         return {"success": True, "message": "Compra exitosa", "trade": trade}
 
-    def execute_sell(self, ticker: str, shares: float, price: float, date: str, reason: str = "") -> Dict:
+    def execute_sell(
+        self, ticker: str, shares: float, price: float, date: str, reason: str = ""
+    ) -> Dict:
         """Ejecutar venta"""
         if ticker not in self.portfolio:
             return {"success": False, "message": f"No tienes posición en {ticker}"}
 
         position = self.portfolio[ticker]
-        if shares > position['shares']:
-            shares = position['shares']
+        if shares > position["shares"]:
+            shares = position["shares"]
 
         revenue = shares * price
         fee = revenue * 0.001
         net_revenue = revenue - fee
 
-        avg_price = position['avg_price']
+        avg_price = position["avg_price"]
         profit = (price - avg_price) * shares
         profit_pct = ((price - avg_price) / avg_price) * 100
 
         self.cash += net_revenue
-        position['shares'] -= shares
+        position["shares"] -= shares
 
-        if position['shares'] < 0.00000001:
+        if position["shares"] < 0.00000001:
             del self.portfolio[ticker]
 
         trade = {
-            'date': date,
-            'action': 'SELL',
-            'ticker': ticker,
-            'shares': shares,
-            'price': price,
-            'revenue': revenue,
-            'fee': fee,
-            'net_revenue': net_revenue,
-            'avg_price': avg_price,
-            'profit': profit,
-            'profit_pct': profit_pct,
-            'reason': reason
+            "date": date,
+            "action": "SELL",
+            "ticker": ticker,
+            "shares": shares,
+            "price": price,
+            "revenue": revenue,
+            "fee": fee,
+            "net_revenue": net_revenue,
+            "avg_price": avg_price,
+            "profit": profit,
+            "profit_pct": profit_pct,
+            "reason": reason,
         }
         self.history.append(trade)
 
         return {"success": True, "message": "Venta exitosa", "trade": trade}
+
 
 # Motor de consenso multi-agente
 class TeamConsensusBacktestEngine:
@@ -156,16 +163,23 @@ class TeamConsensusBacktestEngine:
         """Calcular indicadores técnicos avanzados"""
         if len(df) < 2:
             return {
-                'ema12': 0, 'ema26': 0, 'ema_cross': 'N/A',
-                'macd': 0, 'macd_signal': 0, 'macd_histogram': 0,
-                'bb_upper': 0, 'bb_middle': 0, 'bb_lower': 0,
-                'bb_position': 'N/A', 'atr': 0
+                "ema12": 0,
+                "ema26": 0,
+                "ema_cross": "N/A",
+                "macd": 0,
+                "macd_signal": 0,
+                "macd_histogram": 0,
+                "bb_upper": 0,
+                "bb_middle": 0,
+                "bb_lower": 0,
+                "bb_position": "N/A",
+                "atr": 0,
             }
 
         try:
-            close = df.apply(lambda row: self.safe_get_column(df, row, 'Close'), axis=1)
-            high = df.apply(lambda row: self.safe_get_column(df, row, 'High'), axis=1)
-            low = df.apply(lambda row: self.safe_get_column(df, row, 'Low'), axis=1)
+            close = df.apply(lambda row: self.safe_get_column(df, row, "Close"), axis=1)
+            high = df.apply(lambda row: self.safe_get_column(df, row, "High"), axis=1)
+            low = df.apply(lambda row: self.safe_get_column(df, row, "Low"), axis=1)
 
             # EMA 12 y 26
             ema12 = close.ewm(span=12, adjust=False).mean()
@@ -190,30 +204,50 @@ class TeamConsensusBacktestEngine:
             atr = true_range.rolling(window=14).mean()
 
             return {
-                'ema12': float(ema12.iloc[-1]),
-                'ema26': float(ema26.iloc[-1]),
-                'ema_cross': "⬆️ ALCISTA" if ema12.iloc[-1] > ema26.iloc[-1] else "⬇️ BAJISTA",
-                'macd': float(macd_line.iloc[-1]),
-                'macd_signal': float(signal_line.iloc[-1]),
-                'macd_histogram': float(macd_histogram.iloc[-1]),
-                'bb_upper': float(bb_upper.iloc[-1]),
-                'bb_middle': float(sma20.iloc[-1]),
-                'bb_lower': float(bb_lower.iloc[-1]),
-                'bb_position': "⬆️ SOBRE BANDA SUPERIOR" if close.iloc[-1] > bb_upper.iloc[-1] else ("⬇️ BAJO BANDA INFERIOR" if close.iloc[-1] < bb_lower.iloc[-1] else "↔️ DENTRO DE BANDAS"),
-                'atr': float(atr.iloc[-1])
+                "ema12": float(ema12.iloc[-1]),
+                "ema26": float(ema26.iloc[-1]),
+                "ema_cross": "⬆️ ALCISTA" if ema12.iloc[-1] > ema26.iloc[-1] else "⬇️ BAJISTA",
+                "macd": float(macd_line.iloc[-1]),
+                "macd_signal": float(signal_line.iloc[-1]),
+                "macd_histogram": float(macd_histogram.iloc[-1]),
+                "bb_upper": float(bb_upper.iloc[-1]),
+                "bb_middle": float(sma20.iloc[-1]),
+                "bb_lower": float(bb_lower.iloc[-1]),
+                "bb_position": (
+                    "⬆️ SOBRE BANDA SUPERIOR"
+                    if close.iloc[-1] > bb_upper.iloc[-1]
+                    else (
+                        "⬇️ BAJO BANDA INFERIOR"
+                        if close.iloc[-1] < bb_lower.iloc[-1]
+                        else "↔️ DENTRO DE BANDAS"
+                    )
+                ),
+                "atr": float(atr.iloc[-1]),
             }
         except Exception as e:
             print(f"⚠️ Error calculando indicadores: {e}")
             return {
-                'ema12': 0, 'ema26': 0, 'ema_cross': 'N/A',
-                'macd': 0, 'macd_signal': 0, 'macd_histogram': 0,
-                'bb_upper': 0, 'bb_middle': 0, 'bb_lower': 0,
-                'bb_position': 'N/A', 'atr': 0
+                "ema12": 0,
+                "ema26": 0,
+                "ema_cross": "N/A",
+                "macd": 0,
+                "macd_signal": 0,
+                "macd_histogram": 0,
+                "bb_upper": 0,
+                "bb_middle": 0,
+                "bb_lower": 0,
+                "bb_position": "N/A",
+                "atr": 0,
             }
 
-    def get_team_decisions(self, ticker: str, current_prices: Dict[str, float],
-                          timestamp: datetime, historical_data: pd.DataFrame,
-                          market_context: str) -> List[TeamDecision]:
+    def get_team_decisions(
+        self,
+        ticker: str,
+        current_prices: Dict[str, float],
+        timestamp: datetime,
+        historical_data: pd.DataFrame,
+        market_context: str,
+    ) -> List[TeamDecision]:
         """Obtener decisiones del equipo con contexto técnico completo"""
         decisions = []
 
@@ -223,7 +257,9 @@ class TeamConsensusBacktestEngine:
 
             # Calcular EMA48 y proyección
             if len(historical_data) >= 48:
-                close_hist = historical_data.apply(lambda row: self.safe_get_column(historical_data, row, 'Close'), axis=1)
+                close_hist = historical_data.apply(
+                    lambda row: self.safe_get_column(historical_data, row, "Close"), axis=1
+                )
                 ema48_series = close_hist.ewm(span=48, adjust=False).mean()
                 ema48 = float(ema48_series.iloc[-1])
 
@@ -248,7 +284,7 @@ class TeamConsensusBacktestEngine:
             position_info = ""
             if ticker in self.simulator.portfolio:
                 pos = self.simulator.portfolio[ticker]
-                unrealized_pnl = ((current_price - pos['avg_price']) / pos['avg_price']) * 100
+                unrealized_pnl = ((current_price - pos["avg_price"]) / pos["avg_price"]) * 100
                 position_info = f"""
 - Posición actual: {pos['shares']:.8f} BTC @ ${pos['avg_price']:.2f}
 - Valor posición: ${pos['shares'] * current_price:.2f}
@@ -258,12 +294,24 @@ class TeamConsensusBacktestEngine:
                 position_info = "- Sin posición abierta en BTC"
 
             # Calcular cambios de precio
-            close_hist = historical_data.apply(lambda row: self.safe_get_column(historical_data, row, 'Close'), axis=1)
-            price_change_1h = ((close_hist.iloc[-1] - close_hist.iloc[-2]) / close_hist.iloc[-2]) * 100 if len(close_hist) >= 2 else 0
-            price_change_4h = ((close_hist.iloc[-1] - close_hist.iloc[-5]) / close_hist.iloc[-5]) * 100 if len(close_hist) >= 5 else 0
+            close_hist = historical_data.apply(
+                lambda row: self.safe_get_column(historical_data, row, "Close"), axis=1
+            )
+            price_change_1h = (
+                ((close_hist.iloc[-1] - close_hist.iloc[-2]) / close_hist.iloc[-2]) * 100
+                if len(close_hist) >= 2
+                else 0
+            )
+            price_change_4h = (
+                ((close_hist.iloc[-1] - close_hist.iloc[-5]) / close_hist.iloc[-5]) * 100
+                if len(close_hist) >= 5
+                else 0
+            )
 
             # Volume ratio
-            volume_hist = historical_data.apply(lambda row: self.safe_get_column(historical_data, row, 'Volume'), axis=1)
+            volume_hist = historical_data.apply(
+                lambda row: self.safe_get_column(historical_data, row, "Volume"), axis=1
+            )
             volume_ratio = 1.0
             if len(volume_hist) >= 10:
                 avg_volume = volume_hist.rolling(10).mean().iloc[-1]
@@ -271,7 +319,7 @@ class TeamConsensusBacktestEngine:
                 volume_ratio = current_volume / avg_volume if avg_volume > 0 else 1.0
 
             # Position sizing dinámico
-            atr = indicators['atr']
+            atr = indicators["atr"]
             if atr > 5000:
                 max_risk = 0.20
             elif atr > 3000:
@@ -280,7 +328,9 @@ class TeamConsensusBacktestEngine:
                 max_risk = 0.40
             max_investment = self.simulator.cash * max_risk
 
-            macd_signal = "⬆️ ALCISTA" if indicators['macd'] > indicators['macd_signal'] else "⬇️ BAJISTA"
+            macd_signal = (
+                "⬆️ ALCISTA" if indicators["macd"] > indicators["macd_signal"] else "⬇️ BAJISTA"
+            )
 
             # Contexto de mercado enriquecido
             enriched_context = f"""
@@ -339,7 +389,7 @@ class TeamConsensusBacktestEngine:
                     response = agent.run(enriched_context)
                     content = response.content
 
-                    if hasattr(content, 'dict'):
+                    if hasattr(content, "dict"):
                         decision_data = content.dict()
                     elif isinstance(content, dict):
                         decision_data = content
@@ -347,24 +397,36 @@ class TeamConsensusBacktestEngine:
                         try:
                             decision_data = json.loads(content)
                         except Exception:
-                            decision_data = {"action": "HOLD", "amount": 0, "reason": str(content), "strategy": "", "confidence": 0.0}
+                            decision_data = {
+                                "action": "HOLD",
+                                "amount": 0,
+                                "reason": str(content),
+                                "strategy": "",
+                                "confidence": 0.0,
+                            }
                     else:
-                        decision_data = {"action": "HOLD", "amount": 0, "reason": "Respuesta no estructurada", "strategy": "", "confidence": 0.0}
+                        decision_data = {
+                            "action": "HOLD",
+                            "amount": 0,
+                            "reason": "Respuesta no estructurada",
+                            "strategy": "",
+                            "confidence": 0.0,
+                        }
 
-                    agent_name = getattr(agent, 'name', str(agent)) or "Unknown"
+                    agent_name = getattr(agent, "name", str(agent)) or "Unknown"
                     decision = TeamDecision(**decision_data, agent=agent_name)
                     decisions.append(decision)
 
                 except Exception as e:
                     print(f"Error con agente {agent}: {e}")
-                    agent_name = getattr(agent, 'name', 'Unknown')
+                    agent_name = getattr(agent, "name", "Unknown")
                     decision = TeamDecision(
                         action="HOLD",
                         amount=0,
                         reason=f"Error: {str(e)}",
                         strategy="",
                         confidence=0.0,
-                        agent=agent_name
+                        agent=agent_name,
                     )
                     decisions.append(decision)
 
@@ -377,7 +439,14 @@ class TeamConsensusBacktestEngine:
     def consensus_decision(self, decisions: List[TeamDecision]) -> TeamDecision:
         """Aplicar algoritmo de consenso a las decisiones individuales"""
         if not decisions:
-            return TeamDecision(action="HOLD", amount=0, reason="No decisions available", strategy="", confidence=0.0, agent="TEAM_CONSENSUS")
+            return TeamDecision(
+                action="HOLD",
+                amount=0,
+                reason="No decisions available",
+                strategy="",
+                confidence=0.0,
+                agent="TEAM_CONSENSUS",
+            )
 
         # Mayoría simple por acción
         actions = [d.action for d in decisions]
@@ -403,10 +472,12 @@ class TeamConsensusBacktestEngine:
             reason=reason,
             strategy=strategy,
             confidence=avg_conf,
-            agent="TEAM_CONSENSUS"
+            agent="TEAM_CONSENSUS",
         )
 
-    def execute_decision(self, decision: TeamDecision, ticker: str, current_price: float, timestamp: str) -> Dict:
+    def execute_decision(
+        self, decision: TeamDecision, ticker: str, current_price: float, timestamp: str
+    ) -> Dict:
         """Ejecutar decisión de consenso"""
         action = decision.action
 
@@ -423,7 +494,7 @@ class TeamConsensusBacktestEngine:
                 shares=shares,
                 price=current_price,
                 date=timestamp,
-                reason=decision.reason
+                reason=decision.reason,
             )
 
         elif action == "SELL":
@@ -432,17 +503,18 @@ class TeamConsensusBacktestEngine:
 
             position = self.simulator.portfolio[ticker]
             amount_pct = min(decision.amount, 100)  # Máximo 100%
-            shares_to_sell = position['shares'] * (amount_pct / 100)
+            shares_to_sell = position["shares"] * (amount_pct / 100)
 
             return self.simulator.execute_sell(
                 ticker=ticker,
                 shares=shares_to_sell,
                 price=current_price,
                 date=timestamp,
-                reason=decision.reason
+                reason=decision.reason,
             )
 
         return {"success": False, "message": "Acción no reconocida"}
+
 
 def fetch_hourly_data(ticker: str = "BTC-USD", days: int = 7) -> pd.DataFrame:
     """Descargar datos horarios de Yahoo Finance"""
@@ -460,7 +532,10 @@ def fetch_hourly_data(ticker: str = "BTC-USD", days: int = 7) -> pd.DataFrame:
 
         # Aplanar MultiIndex si existe
         if isinstance(df.columns, pd.MultiIndex):
-            df.columns = ['_'.join(col).strip('_') if isinstance(col, tuple) else col for col in df.columns.values]
+            df.columns = [
+                "_".join(col).strip("_") if isinstance(col, tuple) else col
+                for col in df.columns.values
+            ]
 
         print(f"✅ Descargados {len(df)} registros horarios para {ticker}")
         return df
@@ -469,9 +544,13 @@ def fetch_hourly_data(ticker: str = "BTC-USD", days: int = 7) -> pd.DataFrame:
         print(f"❌ Error descargando datos: {e}")
         return pd.DataFrame()
 
-def run_team_consensus_backtest(ticker: str = "BTC-USD", days: int = 7,
-                               initial_capital: float = 10000.0,
-                               decisions_interval_hours: int = 1) -> Dict:
+
+def run_team_consensus_backtest(
+    ticker: str = "BTC-USD",
+    days: int = 7,
+    initial_capital: float = 10000.0,
+    decisions_interval_hours: int = 1,
+) -> Dict:
     """
     Ejecutar backtesting completo con equipo de consenso
 
@@ -520,10 +599,10 @@ def run_team_consensus_backtest(ticker: str = "BTC-USD", days: int = 7,
         row = df.iloc[i]
 
         # Extraer timestamp
-        if 'Datetime' in df.columns:
-            timestamp = row['Datetime']
-        elif 'Date' in df.columns:
-            timestamp = row['Date']
+        if "Datetime" in df.columns:
+            timestamp = row["Datetime"]
+        elif "Date" in df.columns:
+            timestamp = row["Date"]
         else:
             timestamp = df.index[i]
 
@@ -531,7 +610,7 @@ def run_team_consensus_backtest(ticker: str = "BTC-USD", days: int = 7,
             timestamp = timestamp.to_pydatetime()
 
         # Extraer precio
-        current_price = float(row['Close']) if 'Close' in df.columns else float(row.get('Close', 0))
+        current_price = float(row["Close"]) if "Close" in df.columns else float(row.get("Close", 0))
         current_prices = {ticker: current_price}
 
         # Tomar decisión cada N horas
@@ -539,9 +618,9 @@ def run_team_consensus_backtest(ticker: str = "BTC-USD", days: int = 7,
             decision_count += 1
 
             # Extraer High, Low, Volume
-            high_price = float(row.get('High', current_price))
-            low_price = float(row.get('Low', current_price))
-            volume = float(row.get('Volume', 0))
+            high_price = float(row.get("High", current_price))
+            low_price = float(row.get("Low", current_price))
+            volume = float(row.get("Volume", 0))
 
             # Contexto base de mercado
             market_context = f"""
@@ -553,20 +632,22 @@ def run_team_consensus_backtest(ticker: str = "BTC-USD", days: int = 7,
 """
 
             # Obtener decisiones del equipo
-            historical_slice = df.iloc[max(0, i-50):i+1]
+            historical_slice = df.iloc[max(0, i - 50) : i + 1]
             team_decisions = engine.get_team_decisions(
                 ticker=ticker,
                 current_prices=current_prices,
                 timestamp=timestamp,
                 historical_data=historical_slice,
-                market_context=market_context
+                market_context=market_context,
             )
 
             # Aplicar consenso
             consensus = engine.consensus_decision(team_decisions)
 
             # Ejecutar decisión
-            result = engine.execute_decision(consensus, ticker, current_price, timestamp.strftime('%Y-%m-%d %H:%M'))
+            result = engine.execute_decision(
+                consensus, ticker, current_price, timestamp.strftime("%Y-%m-%d %H:%M")
+            )
 
             # Log
             print(f"\n{'='*70}")
@@ -583,63 +664,71 @@ def run_team_consensus_backtest(ticker: str = "BTC-USD", days: int = 7,
             print(f"\n📊 Estado del Portfolio:")
             print(f"   - Efectivo: ${simulator.cash:.2f}")
             print(f"   - Valor total: ${portfolio_value:.2f}")
-            print(f"   - Retorno: {((portfolio_value - initial_capital) / initial_capital * 100):+.2f}%")
+            print(
+                f"   - Retorno: {((portfolio_value - initial_capital) / initial_capital * 100):+.2f}%"
+            )
 
             # Registrar resultado
-            results.append({
-                'timestamp': timestamp.strftime('%Y-%m-%d %H:%M'),
-                'price': current_price,
-                'team_decisions': [d.dict() for d in team_decisions],
-                'consensus': consensus.dict(),
-                'execution': result,
-                'portfolio_value': portfolio_value,
-                'cash': simulator.cash
-            })
+            results.append(
+                {
+                    "timestamp": timestamp.strftime("%Y-%m-%d %H:%M"),
+                    "price": current_price,
+                    "team_decisions": [d.dict() for d in team_decisions],
+                    "consensus": consensus.dict(),
+                    "execution": result,
+                    "portfolio_value": portfolio_value,
+                    "cash": simulator.cash,
+                }
+            )
 
         # Registrar equity curve
         portfolio_value = simulator.get_portfolio_value(current_price)
-        simulator.equity_curve.append({
-            'timestamp': timestamp,
-            'portfolio_value': portfolio_value,
-            'cash': simulator.cash,
-            'price': current_price
-        })
+        simulator.equity_curve.append(
+            {
+                "timestamp": timestamp,
+                "portfolio_value": portfolio_value,
+                "cash": simulator.cash,
+                "price": current_price,
+            }
+        )
 
     # Calcular métricas finales
     final_value = simulator.get_portfolio_value(current_price)
     total_return = ((final_value - initial_capital) / initial_capital) * 100
 
     # Calcular win rate
-    profitable_trades = [t for t in simulator.history if t['action'] == 'SELL' and t.get('profit', 0) > 0]
-    total_trades = [t for t in simulator.history if t['action'] == 'SELL']
+    profitable_trades = [
+        t for t in simulator.history if t["action"] == "SELL" and t.get("profit", 0) > 0
+    ]
+    total_trades = [t for t in simulator.history if t["action"] == "SELL"]
     win_rate = (len(profitable_trades) / len(total_trades) * 100) if total_trades else 0
 
     # Calcular max drawdown
     max_value = initial_capital
     max_drawdown = 0
     for point in simulator.equity_curve:
-        if point['portfolio_value'] > max_value:
-            max_value = point['portfolio_value']
-        drawdown = ((point['portfolio_value'] - max_value) / max_value) * 100
+        if point["portfolio_value"] > max_value:
+            max_value = point["portfolio_value"]
+        drawdown = ((point["portfolio_value"] - max_value) / max_value) * 100
         if drawdown < max_drawdown:
             max_drawdown = drawdown
 
     backtest_results = {
-        'ticker': ticker,
-        'days': days,
-        'model': 'DeepSeek (team consensus)',
-        'initial_capital': initial_capital,
-        'final_value': final_value,
-        'total_return_pct': total_return,
-        'total_trades': len(simulator.history),
-        'buy_trades': len([t for t in simulator.history if t['action'] == 'BUY']),
-        'sell_trades': len([t for t in simulator.history if t['action'] == 'SELL']),
-        'win_rate': win_rate,
-        'max_drawdown_pct': max_drawdown,
-        'decisions_count': decision_count,
-        'equity_curve': simulator.equity_curve,
-        'history': simulator.history,
-        'decisions_log': results
+        "ticker": ticker,
+        "days": days,
+        "model": "DeepSeek (team consensus)",
+        "initial_capital": initial_capital,
+        "final_value": final_value,
+        "total_return_pct": total_return,
+        "total_trades": len(simulator.history),
+        "buy_trades": len([t for t in simulator.history if t["action"] == "BUY"]),
+        "sell_trades": len([t for t in simulator.history if t["action"] == "SELL"]),
+        "win_rate": win_rate,
+        "max_drawdown_pct": max_drawdown,
+        "decisions_count": decision_count,
+        "equity_curve": simulator.equity_curve,
+        "history": simulator.history,
+        "decisions_log": results,
     }
 
     # Resumen final
@@ -659,6 +748,7 @@ def run_team_consensus_backtest(ticker: str = "BTC-USD", days: int = 7,
 
     return backtest_results
 
+
 if __name__ == "__main__":
     import sys
 
@@ -671,14 +761,14 @@ if __name__ == "__main__":
         ticker="BTC-USD",
         days=days,
         initial_capital=10000.0,
-        decisions_interval_hours=interval_hours
+        decisions_interval_hours=interval_hours,
     )
 
     # Guardar resultados
-    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     filename = f"backtest_team_consensus_{days}d_{interval_hours}h_{timestamp}.json"
 
-    with open(filename, 'w') as f:
+    with open(filename, "w") as f:
         json.dump(results, f, indent=2, default=str)
 
     print(f"\n💾 Resultados guardados en: {filename}")

@@ -168,6 +168,6 @@ Posibles mejoras futuras:
 
 ---
 
-**Versión**: 3.8.0  
-**Fecha**: Octubre 2025  
+**Versión**: 3.8.0
+**Fecha**: Octubre 2025
 **Impacto**: Mejora visual significativa en modo oscuro 🎨

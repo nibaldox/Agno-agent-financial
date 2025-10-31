@@ -39,4 +39,3 @@ Todos los examples requieren:
 2. Datos de portfolio en formato CSV
 
 Ver `README.md` principal para instrucciones completas.
-

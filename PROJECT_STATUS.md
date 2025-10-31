@@ -239,7 +239,7 @@ agno-trading-system/              # Proyecto independiente
    ```python
    # Antes
    from core import MetricsCalculator
-   
+
    # Después
    from agno_trading.core import MetricsCalculator
    ```
@@ -377,7 +377,6 @@ python
 
 **Estado**: ✅ **LISTO PARA USAR COMO PROYECTO INDEPENDIENTE**
 
-**Versión**: 2.1.0  
-**Fecha**: Octubre 2025  
+**Versión**: 2.1.0
+**Fecha**: Octubre 2025
 **Próximo milestone**: Separación completa + PyPI
-

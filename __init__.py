@@ -22,49 +22,47 @@ Documentación completa:
     Ver docs/ o README.md
 """
 
-__version__ = '2.1.0'
-__author__ = 'Romamo'
-__license__ = 'MIT'
+__version__ = "2.1.0"
+__author__ = "Romamo"
+__license__ = "MIT"
+
+from .agents import (
+    load_advanced_reporter,
+    load_complete_team,
+    load_daily_reporter,
+    load_market_researcher,
+    load_portfolio_manager,
+    load_risk_analysts,
+    load_trading_strategists,
+)
 
 # Importaciones principales para facilitar el uso
 from .core import (
-    MetricsCalculator,
     HTMLReportGenerator,
     InteractiveVisualizationGenerator,
-    LLMInsightsGenerator
-)
-
-from .agents import (
-    load_complete_team,
-    load_market_researcher,
-    load_risk_analysts,
-    load_trading_strategists,
-    load_portfolio_manager,
-    load_daily_reporter,
-    load_advanced_reporter
+    LLMInsightsGenerator,
+    MetricsCalculator,
 )
 
 __all__ = [
     # Core analytics
-    'MetricsCalculator',
-    'HTMLReportGenerator',
-    'InteractiveVisualizationGenerator',
-    'LLMInsightsGenerator',
-    
+    "MetricsCalculator",
+    "HTMLReportGenerator",
+    "InteractiveVisualizationGenerator",
+    "LLMInsightsGenerator",
     # Agents
-    'load_complete_team',
-    'load_market_researcher',
-    'load_risk_analysts',
-    'load_trading_strategists',
-    'load_portfolio_manager',
-    'load_daily_reporter',
-    'load_advanced_reporter',
+    "load_complete_team",
+    "load_market_researcher",
+    "load_risk_analysts",
+    "load_trading_strategists",
+    "load_portfolio_manager",
+    "load_daily_reporter",
+    "load_advanced_reporter",
 ]
 
 # Metadata
 __all_exports__ = {
-    'version': __version__,
-    'author': __author__,
-    'license': __license__,
+    "version": __version__,
+    "author": __author__,
+    "license": __license__,
 }
-

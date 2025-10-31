@@ -15,67 +15,67 @@ flowchart TB
     classDef decisionStyle fill:#fef3c7,stroke:#854d0e,stroke-width:2px,color:#78350f
     classDef buyStyle fill:#d1fae5,stroke:#059669,stroke-width:3px,color:#065f46
     classDef rejectStyle fill:#fee2e2,stroke:#dc2626,stroke-width:3px,color:#991b1b
-    
+
     %% Flujo Principal
     INPUT["📥 INPUT<br/>Ticker: ABEO<br/>Cash: $100.00"]:::inputStyle
-    
+
     INPUT --> RESEARCHER
-    
+
     RESEARCHER["🔍 MARKET RESEARCHER<br/>DeepSeek (confiable)<br/>✓ YFinance data<br/>✓ Serper web search"]:::researchStyle
-    
+
     RESEARCHER --> RISK_HEADER
-    
+
     RISK_HEADER["⚠️ RISK ANALYSTS - 3 Perspectivas"]:::riskStyle
-    
+
     RISK_HEADER --> RISK1
     RISK_HEADER --> RISK2
     RISK_HEADER --> RISK3
-    
+
     RISK1["🛡️ CONSERVADOR<br/>Ponderación: 40%<br/>✓ Protección capital<br/>✓ Deuda < 30%<br/>✓ Beta < 1.2"]:::riskStyle
-    
+
     RISK2["⚖️ MODERADO<br/>Ponderación: 30%<br/>✓ Balance risk/return<br/>✓ Deuda < 80%<br/>✓ Crecimiento > 10%"]:::riskStyle
-    
+
     RISK3["🚀 AGRESIVO<br/>Ponderación: 30%<br/>✓ Alto crecimiento<br/>✓ Deuda < 150%<br/>✓ Beta > 1.5 OK"]:::riskStyle
-    
+
     RISK1 --> STRATEGY_HEADER
     RISK2 --> STRATEGY_HEADER
     RISK3 --> STRATEGY_HEADER
-    
+
     STRATEGY_HEADER["📊 TRADING STRATEGISTS - 3 Enfoques"]:::strategyStyle
-    
+
     STRATEGY_HEADER --> STRAT1
     STRATEGY_HEADER --> STRAT2
     STRATEGY_HEADER --> STRAT3
-    
+
     STRAT1["📈 TÉCNICO<br/>✓ Price action<br/>✓ RSI, MACD<br/>✓ Soporte/Resistencia<br/>✓ Patrones de velas"]:::strategyStyle
-    
+
     STRAT2["💰 FUNDAMENTAL<br/>✓ P/E, P/B ratios<br/>✓ Value investing<br/>✓ Warren Buffett style<br/>✓ Análisis financiero"]:::strategyStyle
-    
+
     STRAT3["⚡ MOMENTUM<br/>✓ Trend following<br/>✓ Catalizadores<br/>✓ Fuerza relativa<br/>✓ Sentiment analysis"]:::strategyStyle
-    
+
     STRAT1 --> PM
     STRAT2 --> PM
     STRAT3 --> PM
-    
+
     PM["👔 PORTFOLIO MANAGER<br/>Qwen3 235B (advanced)<br/>✓ Sintetiza 6 opiniones<br/>✓ Ponderación consenso<br/>✓ Decisión final: BUY/SELL/HOLD<br/>✓ Gestión de riesgo"]:::managerStyle
-    
+
     PM --> REPORTER
-    
+
     REPORTER["📋 DAILY REPORTER<br/>GLM 4.5 Air<br/>✓ Reporte profesional español<br/>✓ Resumen ejecutivo<br/>✓ Métricas clave"]:::reporterStyle
-    
+
     REPORTER --> VALIDATORS
-    
+
     VALIDATORS["🛡️ CRITICAL VALIDATORS<br/>✓ Micro-cap: Market cap < $300M<br/>✓ Position sizing: Max 20%<br/>✓ Cash reserve: Min 20%<br/>✓ Stop-loss: Auto-sell<br/>⚠️ Si falla → REJECT"]:::validatorStyle
-    
+
     VALIDATORS --> DECISION
-    
+
     DECISION{"✅ VALIDADO?<br/>BUY/HOLD?"}:::decisionStyle
-    
+
     DECISION -->|"SÍ ✅"| BUY
     DECISION -->|"NO ❌"| REJECT
-    
+
     BUY["🟢 COMPRAR<br/>X shares @ $Y.YY<br/>Stop Loss: $Z.ZZ<br/>Portfolio: Updated"]:::buyStyle
-    
+
     REJECT["🔴 RECHAZAR<br/>Razón: Validación<br/>Alternativa: Sugerida<br/>Portfolio: Sin cambios"]:::rejectStyle
 ```
 
@@ -353,7 +353,7 @@ Alternativa: Buscar micro-caps en sector semiconductores
 
 ---
 
-**Fecha:** Octubre 2025  
-**Versión:** 2.0 - Sistema Multi-Agente  
-**Framework:** Agno (Python)  
+**Fecha:** Octubre 2025
+**Versión:** 2.0 - Sistema Multi-Agente
+**Framework:** Agno (Python)
 **Estado:** ✅ COMPLETADO Y PROBADO

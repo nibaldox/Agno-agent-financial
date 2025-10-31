@@ -427,6 +427,6 @@ Una vez que FASE 2 funcione correctamente:
 
 ---
 
-**Versión:** v3.4.0  
-**Última actualización:** 2025-06-XX  
+**Versión:** v3.4.0
+**Última actualización:** 2025-06-XX
 **Estado:** ✅ PRODUCTION READY

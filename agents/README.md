@@ -139,7 +139,7 @@ instructions:
       - "Precio actual, fundamentales"
     serper:
       - "Noticias recientes"
-  
+
 output:
   markdown: true
   format: "detailed_report"
@@ -165,12 +165,12 @@ agents:
       criteria:
         debt_to_equity: "< 30%"
         beta: "< 1.2"
-  
+
   moderate:
     name: "Risk Analyst Moderado"
     weight: 0.30
     # ... config ...
-  
+
   aggressive:
     name: "Risk Analyst Agresivo"
     weight: 0.30
@@ -275,19 +275,19 @@ graph TD
     B --> C3[trading_strategists.yaml]
     B --> C4[portfolio_manager.yaml]
     B --> C5[daily_reporter.yaml]
-    
+
     C1 --> D1[Market Researcher Agent]
     C2 --> D2[3 Risk Analyst Agents]
     C3 --> D3[3 Trading Strategist Agents]
     C4 --> D4[Portfolio Manager Agent]
     C5 --> D5[Daily Reporter Agent]
-    
+
     D1 --> E[Team Instance]
     D2 --> E
     D3 --> E
     D4 --> E
     D5 --> E
-    
+
     E --> F[Trading Analysis]
 ```
 
@@ -465,7 +465,7 @@ Para agregar un nuevo agente:
 
 ---
 
-**Versión:** 2.0  
-**Última Actualización:** Octubre 2025  
-**Autor:** Trading Team Architecture  
+**Versión:** 2.0
+**Última Actualización:** Octubre 2025
+**Autor:** Trading Team Architecture
 **Licencia:** MIT

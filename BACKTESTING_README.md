@@ -31,7 +31,7 @@ python3 quick_backtest.py
 
 Opciones disponibles:
 - Test AAPL (3 meses)
-- Test Portfolio FAANG (6 meses)  
+- Test Portfolio FAANG (6 meses)
 - Comparar modelos LLM
 
 ### 2. Simulación Personalizada
@@ -93,32 +93,32 @@ python3 visualize_backtest.py compare backtest_*.json
 1. DESCARGA DE DATOS
    ↓
    Obtiene datos históricos completos de Yahoo Finance
-   
+
 2. ITERACIÓN TEMPORAL
    ↓
    Por cada fecha de decisión (ej: cada 7 días):
-   
+
    a) FILTRAR DATOS
       Solo muestra datos hasta fecha actual (sin futuro)
-   
+
    b) CONTEXTO DE MERCADO
       - Precio actual
       - Indicadores técnicos (SMA 5, 20)
       - Volumen, tendencia
       - Estado del portfolio
-   
+
    c) CONSULTA AL LLM
       Pregunta: "¿Qué debo hacer con este stock?"
       LLM responde: BUY / SELL / HOLD + razón
-   
+
    d) EJECUCIÓN
       - Si BUY: calcula shares, ejecuta compra
       - Si SELL: calcula % a vender, ejecuta venta
       - Si HOLD: no hace nada
-   
+
    e) REGISTRO
       Guarda operación, actualiza portfolio
-   
+
 3. ANÁLISIS FINAL
    ↓
    Calcula métricas de desempeño

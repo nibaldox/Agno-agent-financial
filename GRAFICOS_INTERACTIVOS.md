@@ -276,6 +276,6 @@ fig.write_html(
 
 ---
 
-**Versión:** v3.7.0  
-**Última actualización:** 2025-10-12  
+**Versión:** v3.7.0
+**Última actualización:** 2025-10-12
 **Estado:** ✅ PRODUCTION READY con Gráficos Interactivos

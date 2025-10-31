@@ -50,25 +50,25 @@ def calculate_advanced_indicators(self, data):
     # EMA
     ema12 = data['Close'].ewm(span=12).mean()
     ema26 = data['Close'].ewm(span=26).mean()
-    
+
     # MACD
     macd = ema12 - ema26
     signal = macd.ewm(span=9).mean()
     histogram = macd - signal
-    
+
     # Bollinger Bands
     sma20 = data['Close'].rolling(20).mean()
     std20 = data['Close'].rolling(20).std()
     upper_band = sma20 + (2 * std20)
     lower_band = sma20 - (2 * std20)
-    
+
     # ATR (volatilidad)
     high_low = data['High'] - data['Low']
     high_close = abs(data['High'] - data['Close'].shift())
     low_close = abs(data['Low'] - data['Close'].shift())
     tr = pd.concat([high_low, high_close, low_close], axis=1).max(axis=1)
     atr = tr.rolling(14).mean()
-    
+
     return {
         'ema12': ema12.iloc[-1],
         'ema26': ema26.iloc[-1],
@@ -97,7 +97,7 @@ def calculate_position_size(self, volatility, win_rate, cash):
     q = probabilidad de perder (1 - win_rate)
     b = ratio ganancia/pérdida promedio
     """
-    
+
     # Ajustar por volatilidad (ATR)
     if volatility > 5000:  # BTC muy volátil
         max_risk = 0.15  # 15% del capital
@@ -105,13 +105,13 @@ def calculate_position_size(self, volatility, win_rate, cash):
         max_risk = 0.20
     else:
         max_risk = 0.25
-    
+
     # Ajustar por win rate
     if win_rate < 0.4:
         max_risk *= 0.7  # Reducir si está perdiendo
     elif win_rate > 0.6:
         max_risk *= 1.2  # Aumentar si está ganando
-    
+
     return cash * max_risk
 ```
 

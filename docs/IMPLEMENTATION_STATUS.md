@@ -268,7 +268,7 @@ python agno_trading_system.py --provider deepseek
 # En agno_trading_system.py ya hay ejemplos:
 class PortfolioAnalyzerTool:
     # Lee CSV del portfolio
-    
+
 class RiskAnalyzerTool:
     # Calcula riesgos
 ```

@@ -182,7 +182,7 @@ CONSENSO RIESGO:
 DECISIÓN FINAL (Portfolio Manager):
 → Posición: 15% ($15) ← Balance entre 3 opiniones
 → Stop: $165 ← Consenso conservador-agresivo
-→ Justificación: "60% de analistas apoyan >10%, 
+→ Justificación: "60% de analistas apoyan >10%,
                   pero conservador pesa 40% → 15% es prudente"
 ```
 
@@ -214,8 +214,8 @@ RESPUESTA DE CHATGPT-4:
 "Analysis: NVIDIA shows exceptional growth metrics...
  Recommendation: BUY
  Position: 0.5 shares @ $183.16 (cost $91.58)
- Stop Loss: $165 
- Rationale: AI leadership + strong fundamentals justify 
+ Stop Loss: $165
+ Rationale: AI leadership + strong fundamentals justify
             high valuation despite beta risk."
 ```
 
@@ -292,29 +292,29 @@ PASO 1 - Consenso Riesgo:
   → 1 ALTO, 1 MEDIO, 1 BAJO = DIVIDIDO
   → Ponderación: (0.4×ALTO) + (0.3×MEDIO) + (0.3×BAJO)
   → Resultado: No hay 2+ diciendo ALTO → Sin límite 10%
-  
+
 PASO 2 - Consenso Estrategia:
   → 2 HOLD + 1 BUY = MAYORÍA HOLD
   → PERO: Fundamentales unánimemente positivos
   → Momentum catalysts fuertes (OpenAI deal)
-  
+
 PASO 3 - Decisión Final:
   🟢 ACCIÓN: BUY (justificado por fundamentales)
   📊 POSICIÓN: 15% ($15) ← Balance 3 analistas riesgo
   🛡️ STOP LOSS: $165 (-10%) ← Consenso conservador
   🎯 TAKE PROFIT: $210-220 (+15-20%)
-  
+
 JUSTIFICACIÓN:
-"A pesar de 2/3 estrategistas diciendo HOLD, 
- la unanimidad en fundamentales positivos (crecimiento 55.6%, 
- ROE 109%, liderazgo AI) + catalizador OpenAI + consenso 
+"A pesar de 2/3 estrategistas diciendo HOLD,
+ la unanimidad en fundamentales positivos (crecimiento 55.6%,
+ ROE 109%, liderazgo AI) + catalizador OpenAI + consenso
  analistas (94% BUY) justifica entrada moderada.
- 
+
  15% portfolio = balance entre:
  - Conservador (40% peso): quiere <5%
  - Moderado (30% peso): quiere 5-8%
  - Agresivo (30% peso): quiere 15-20%
- 
+
  Stop loss conservador (-10%) protege capital mientras
  captura upside potencial (+15-20%)."
 ```
@@ -341,15 +341,15 @@ def process_portfolio(portfolio_df, cash, interactive=True):
         if low_price <= stop_loss:
             SELL @ open_price
             cash += proceeds
-    
+
     # 2. Usuario ejecuta compras/ventas manualmente
     if interactive:
         action = input("BUY/SELL/SKIP? ")
         # Ejecuta orden
-    
+
     # 3. Guarda en CSV
     portfolio.to_csv("chatgpt_portfolio_update.csv")
-    
+
     return portfolio_df, cash
 ```
 
@@ -380,12 +380,12 @@ def save_historical_snapshot(decision, portfolio_state):
         "consensus_type": decision["consensus_type"],
         "risk_level": decision["risk_level"],
     }
-    
+
     # 2. Actualiza 3 CSV históricos
     portfolio_state.to_csv("data/portfolio_state.csv")
     trades_history.to_csv("data/trades_history.csv")
     daily_summary.to_csv("data/daily_summary.csv")
-    
+
     # 3. Calcula métricas agregadas
     metrics = {
         "total_days": len(daily_summary),
@@ -398,14 +398,14 @@ def save_historical_snapshot(decision, portfolio_state):
         "peak_equity": max(equity_history),
         "max_drawdown": calculate_max_drawdown(),
     }
-    
+
     # 4. Tracking de consenso
     consensus_tracker = {
         "3_of_3_aligned": {"count": X, "win_rate": Y%},
         "2_of_3_aligned": {"count": X, "win_rate": Y%},
         "divided": {"count": X, "win_rate": Y%},
     }
-    
+
     return snapshot, metrics
 ```
 
@@ -457,19 +457,19 @@ COSTO POR ANÁLISIS COMPLETO (9 agentes):
 Agent 1 - Market Researcher (DeepSeek):
   Input:  ~2,000 tokens  @ $0.14/1M  = $0.00028
   Output: ~1,500 tokens  @ $0.28/1M  = $0.00042
-  
+
 Agent 2-4 - Risk Analysts (3×) (OpenRouter FREE):
   Input:  ~1,000 tokens  @ $0.00/1M  = $0.00000
   Output: ~1,200 tokens  @ $0.00/1M  = $0.00000
-  
+
 Agent 5-7 - Strategists (3×) (OpenRouter FREE):
   Input:  ~1,000 tokens  @ $0.00/1M  = $0.00000
   Output: ~1,200 tokens  @ $0.00/1M  = $0.00000
-  
+
 Agent 8 - Portfolio Manager (Qwen3 235B FREE):
   Input:  ~3,000 tokens  @ $0.00/1M  = $0.00000
   Output: ~800 tokens    @ $0.00/1M  = $0.00000
-  
+
 Agent 9 - Daily Reporter (GLM 4.5 FREE):
   Input:  ~2,000 tokens  @ $0.00/1M  = $0.00000
   Output: ~1,000 tokens  @ $0.00/1M  = $0.00000
@@ -523,7 +523,7 @@ def check_stop_losses(portfolio_state):
     """
     for position in portfolio_state:
         current_price = get_current_price(position.ticker)
-        
+
         if current_price <= position.stop_loss:
             # Auto-sell al stop loss
             execute_sell(
@@ -532,7 +532,7 @@ def check_stop_losses(portfolio_state):
                 price=position.stop_loss,
                 reason="STOP LOSS TRIGGERED - Auto-sell"
             )
-            
+
             log_to_csv(
                 action="SELL",
                 ticker=position.ticker,
@@ -550,7 +550,7 @@ def check_stop_losses(portfolio_state):
  Maximum position size: $30 (30% of initial capital)"
 ```
 
-**❌ Multi-Agente ACTUAL:** 
+**❌ Multi-Agente ACTUAL:**
 - Permite hasta 20% por posición
 - NO valida concentración por sector
 
@@ -566,22 +566,22 @@ def validate_position_size(decision, portfolio_state):
     if decision.position_size > (total_equity * 0.20):
         decision.position_size = total_equity * 0.20
         decision.warning = "CAPPED AT 20% MAX POSITION"
-    
+
     # Regla 2: Max 40% en single sector
     sector_exposure = calculate_sector_exposure(
-        portfolio_state, 
+        portfolio_state,
         decision.ticker
     )
-    
+
     if sector_exposure > 0.40:
         decision.position_size *= 0.5
         decision.warning = "SECTOR CONCENTRATION LIMIT"
-    
+
     # Regla 3: Mínimo 20% cash reserve
     if (cash - decision.cost) < (total_equity * 0.20):
         decision.reject = True
         decision.reason = "VIOLATES 20% CASH RESERVE RULE"
-    
+
     return decision
 ```
 
@@ -594,7 +594,7 @@ def validate_position_size(decision, portfolio_state):
 "U.S. micro-cap stocks (market cap under $300M)"
 ```
 
-**❌ Multi-Agente ACTUAL:** 
+**❌ Multi-Agente ACTUAL:**
 - Aceptó NVDA ($4.46 TRILLONES)
 - No valida market cap
 
@@ -606,7 +606,7 @@ def validate_micro_cap_rule(ticker):
     Regla ESTRICTA del sistema original
     """
     market_cap = get_market_cap(ticker)
-    
+
     if market_cap > 300_000_000:
         return {
             "valid": False,
@@ -614,7 +614,7 @@ def validate_micro_cap_rule(ticker):
                       f"$300M micro-cap limit",
             "alternative": "Search for micro-cap alternatives in same sector"
         }
-    
+
     return {"valid": True}
 
 # Integrar en Market Researcher
@@ -654,7 +654,7 @@ def determine_analysis_mode(date):
     vs análisis rápido (resto de semana)
     """
     weekday = date.weekday()  # 0=Monday, 6=Sunday
-    
+
     if weekday in [4, 5]:  # Friday or Saturday
         return {
             "mode": "DEEP_RESEARCH",
@@ -673,7 +673,7 @@ def determine_analysis_mode(date):
 # Modificar run_analysis()
 def run_analysis(ticker, provider="openrouter"):
     mode = determine_analysis_mode(datetime.now())
-    
+
     if mode["mode"] == "DEEP_RESEARCH":
         # Full 9-agent analysis
         team = create_trading_team(use_openrouter=True)
@@ -718,9 +718,9 @@ def save_portfolio_to_csv(portfolio_state, filepath):
         "Cash Balance": [cash_balance] * len(portfolio_state),
         "Total Equity": [total_equity] * len(portfolio_state),
     })
-    
+
     df.to_csv(filepath, index=False)
-    
+
     # Bonus: También guardar formato extendido con campos multi-agente
     extended_df = df.copy()
     extended_df["Consensus_Type"] = [p.consensus_type for p in portfolio_state]
@@ -757,7 +757,7 @@ def run_analysis(ticker, provider="openrouter", interactive=False):
     """
     # 1. Ejecuta análisis de 9 agentes
     decision = team.print_response(query)
-    
+
     if interactive:
         # Mostrar decisión propuesta
         print("\n" + "="*70)
@@ -767,14 +767,14 @@ def run_analysis(ticker, provider="openrouter", interactive=False):
         print(f"Stop Loss: {decision['stop_loss']}")
         print(f"Consenso: {decision['consensus_type']}")
         print("="*70)
-        
+
         # Solicitar confirmación
         confirm = input("\n¿Ejecutar esta operación? (y/n): ")
-        
+
         if confirm.lower() != "y":
             print("❌ Operación cancelada por usuario")
             return None
-    
+
     # 2. Ejecutar trade (si confirmado o modo auto)
     execute_trade(decision)
 ```
@@ -811,24 +811,24 @@ def calculate_performance_metrics(portfolio_history):
         "SPY": "S&P 500 ETF",
         "IWM": "Russell 2000"
     }
-    
+
     # 2. Calcula returns vs benchmarks
     for ticker, name in benchmarks.items():
         benchmark_returns = get_historical_returns(ticker)
         portfolio_returns = portfolio_history["returns"]
-        
+
         # Beta y Alpha (CAPM)
         beta = calculate_beta(portfolio_returns, benchmark_returns)
         alpha = calculate_alpha(portfolio_returns, benchmark_returns, beta)
         r_squared = calculate_r_squared(portfolio_returns, benchmark_returns)
-        
+
         # Sharpe y Sortino
         sharpe = calculate_sharpe_ratio(portfolio_returns)
         sortino = calculate_sortino_ratio(portfolio_returns)
-        
+
         # Max Drawdown
         max_dd = calculate_max_drawdown(portfolio_history["equity"])
-        
+
         metrics[name] = {
             "beta": beta,
             "alpha": alpha,
@@ -837,7 +837,7 @@ def calculate_performance_metrics(portfolio_history):
             "sortino": sortino,
             "max_drawdown": max_dd
         }
-    
+
     return metrics
 ```
 
@@ -853,11 +853,11 @@ def calculate_performance_metrics(portfolio_history):
 ✅ 1. Stop-Loss Automático
     └─ Implementar check_stop_losses() diario
     └─ Test con datos históricos del sistema original
-    
+
 ✅ 2. Micro-Cap Validation
     └─ Agregar filtro de $300M market cap
     └─ Rechazar NVDA-type large caps
-    
+
 ✅ 3. CSV Format Compatibility
     └─ Usar mismo formato que chatgpt_portfolio_update.csv
     └─ Permitir uso de run_report.py sin cambios
@@ -872,11 +872,11 @@ def calculate_performance_metrics(portfolio_history):
     └─ Max 20% single stock
     └─ Max 40% single sector
     └─ Min 20% cash reserve
-    
+
 🔶 5. Deep Research Cadence
     └─ Modo DEEP_RESEARCH (viernes/sábado)
     └─ Modo DAILY_UPDATE (resto semana)
-    
+
 🔶 6. Performance Benchmarks
     └─ Calcular Beta, Alpha, Sharpe, Sortino
     └─ Comparar vs ^GSPC, IWO, XBI
@@ -890,11 +890,11 @@ def calculate_performance_metrics(portfolio_history):
 🔷 7. Interactive Mode
     └─ Confirmación manual pre-ejecución
     └─ Override de decisiones de agentes
-    
+
 🔷 8. Historical Backtesting
     └─ Ejecutar sistema multi-agente en datos históricos
     └─ Comparar decisiones vs sistema original
-    
+
 🔷 9. Visualization Dashboard
     └─ Integrar con run_report.py
     └─ Mostrar consenso de agentes visualmente
@@ -1137,6 +1137,6 @@ python scripts/compare_systems.py \
 
 ---
 
-**Última Actualización:** 12 Octubre 2025  
-**Versión:** 1.0  
+**Última Actualización:** 12 Octubre 2025
+**Versión:** 1.0
 **Autor:** Análisis Técnico de Sistemas de Trading AI

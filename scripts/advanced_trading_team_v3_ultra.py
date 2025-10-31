@@ -22,10 +22,11 @@ Version: 3.0.0 (Ultra Modular)
 Date: October 2025
 """
 
+import argparse
 import os
 import sys
-import argparse
 from pathlib import Path
+
 from dotenv import load_dotenv
 
 # Add modules to path
@@ -34,12 +35,8 @@ sys.path.insert(0, str(PROJECT_ROOT / "agente-agno"))
 
 # Import core modular components
 try:
-    from core import (
-        PortfolioMemoryManager,
-        ValidationHandler,
-        StockAnalyzer,
-        DailyReporter
-    )
+    from core import DailyReporter, PortfolioMemoryManager, StockAnalyzer, ValidationHandler
+
     CORE_MODULES_AVAILABLE = True
     print("✅ Core modules loaded (ultra modular architecture)")
 except ImportError as e:
@@ -51,6 +48,7 @@ except ImportError as e:
 # Import modular agent system (used by core.analysis and core.reporting)
 try:
     from agents import load_complete_team
+
     MODULAR_AGENTS_AVAILABLE = True
     print("✅ Modular agent system loaded (YAML-based)")
 except ImportError as e:
@@ -75,40 +73,40 @@ REPORTER = DailyReporter()
 def analyze_stock(ticker: str, use_openrouter: bool = True, dry_run: bool = True):
     """
     Analyze stock using modular components.
-    
+
     Architecture:
     1. ValidationHandler validates ticker
     2. StockAnalyzer runs 9-agent team analysis
     3. Results printed with streaming
-    
+
     Args:
         ticker: Stock symbol
         use_openrouter: Provider selection
         dry_run: Simulation mode (warnings) vs live mode (blocks)
     """
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print(f"ANÁLISIS MULTI-AGENTE: {ticker}")
-    print("="*70)
+    print("=" * 70)
     print(f"Proveedor: {'OpenRouter' if use_openrouter else 'DeepSeek'}")
     print(f"Modo: {'🧪 DRY RUN (Simulación)' if dry_run else '💰 TRADING REAL'}")
-    print("="*70 + "\n")
-    
+    print("=" * 70 + "\n")
+
     # 1. VALIDATION (using core.validation)
     validation_result = VALIDATOR.validate_stock(ticker, dry_run=dry_run, verbose=True)
-    
-    if not validation_result['can_continue']:
+
+    if not validation_result["can_continue"]:
         print(f"\n🛑 Análisis bloqueado por validación")
         return
-    
+
     # 2. PORTFOLIO CONTEXT (using core.portfolio)
     portfolio_summary = PORTFOLIO.get_portfolio_summary()
-    
+
     print(f"[PORTFOLIO ACTUAL]")
     print(f"  Efectivo: ${portfolio_summary['cash']:.2f}")
     print(f"  Equity Total: ${portfolio_summary['total_equity']:.2f}")
     print(f"  ROI: {portfolio_summary['roi']:.2f}%")
     print(f"  Posiciones: {portfolio_summary['num_positions']}\n")
-    
+
     # 3. ANALYSIS (using core.analysis)
     ANALYZER.analyze(
         ticker=ticker,
@@ -116,13 +114,13 @@ def analyze_stock(ticker: str, use_openrouter: bool = True, dry_run: bool = True
         holdings_df=PORTFOLIO.holdings,
         use_openrouter=use_openrouter,
         stream=True,
-        verbose=True
+        verbose=True,
     )
-    
-    print("\n" + "="*70)
+
+    print("\n" + "=" * 70)
     print("ANÁLISIS COMPLETADO")
-    print("="*70)
-    
+    print("=" * 70)
+
     # Note: Trade execution would go here in production
     if not dry_run:
         print("\n⚠️ Trading real no implementado en v3 - use v2 para producción")
@@ -131,32 +129,32 @@ def analyze_stock(ticker: str, use_openrouter: bool = True, dry_run: bool = True
 def run_daily_analysis(use_openrouter: bool = True, dry_run: bool = True):
     """
     Run daily portfolio analysis using modular components.
-    
+
     Architecture:
     1. PortfolioMemoryManager provides current state
     2. DailyReporter generates comprehensive report
     3. Snapshot saved to history
-    
+
     Args:
         use_openrouter: Provider selection
         dry_run: Simulation mode
     """
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("ANÁLISIS DIARIO DEL PORTFOLIO")
-    print("="*70 + "\n")
-    
+    print("=" * 70 + "\n")
+
     # 1. GET PORTFOLIO STATE (using core.portfolio)
     portfolio_summary = PORTFOLIO.get_portfolio_summary()
-    
+
     print(REPORTER.format_portfolio_summary(portfolio_summary))
-    
+
     if PORTFOLIO.holdings.empty:
         print("[INFO] No hay posiciones abiertas para analizar")
         return
-    
+
     print(REPORTER.format_holdings(PORTFOLIO.holdings))
     print()
-    
+
     # 2. GENERATE REPORT (using core.reporting)
     REPORTER.generate_report(
         portfolio_summary=portfolio_summary,
@@ -164,65 +162,65 @@ def run_daily_analysis(use_openrouter: bool = True, dry_run: bool = True):
         trades_df=PORTFOLIO.trades,
         use_openrouter=use_openrouter,
         stream=True,
-        verbose=True
+        verbose=True,
     )
-    
-    print("\n" + "="*70)
+
+    print("\n" + "=" * 70)
     print("REPORTE COMPLETADO")
-    print("="*70)
-    
+    print("=" * 70)
+
     # 3. SAVE SNAPSHOT (using core.portfolio)
     PORTFOLIO.save_daily_snapshot()
 
 
 def show_history():
     """Display historical performance using portfolio module."""
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("HISTORIAL DE RENDIMIENTO DEL PORTAFOLIO")
-    print("="*70 + "\n")
-    
+    print("=" * 70 + "\n")
+
     hist = PORTFOLIO.get_historical_performance()
     summary = PORTFOLIO.get_portfolio_summary()
-    
+
     print(f"[ESTADO ACTUAL]")
     print(f"  Equity Total: ${summary['total_equity']:.2f}")
     print(f"  ROI Actual: {summary['roi']:.2f}%")
     print(f"  Efectivo: ${summary['cash']:.2f}")
     print(f"  Posiciones: {summary['num_positions']}\n")
-    
+
     print(f"[ESTADÍSTICAS HISTÓRICAS]")
     print(f"  Días Operando: {hist['total_days']}")
     print(f"  Equity Máximo: ${hist['peak_equity']:.2f}")
     print(f"  Máximo Drawdown: {hist['max_drawdown']:.2f}%")
     print(f"  Total Operaciones: {hist['total_trades']}\n")
-    
-    if hist['best_day']:
+
+    if hist["best_day"]:
         print(f"[MEJOR DÍA]")
         print(f"  Fecha: {hist['best_day']['date']}")
         print(f"  ROI: {hist['best_day']['roi']:.2f}%\n")
-    
-    if hist['worst_day']:
+
+    if hist["worst_day"]:
         print(f"[PEOR DÍA]")
         print(f"  Fecha: {hist['worst_day']['date']}")
         print(f"  ROI: {hist['worst_day']['roi']:.2f}%\n")
-    
+
     # Show recent trades
     if not PORTFOLIO.trades.empty:
         print(f"[ÚLTIMAS 10 OPERACIONES]")
         print(PORTFOLIO.trades.tail(10).to_string(index=False))
-    
-    print("\n" + "="*70 + "\n")
+
+    print("\n" + "=" * 70 + "\n")
 
 
 def init_demo_portfolio():
     """Initialize demo portfolio with sample positions."""
     print("\n[INFO] Inicializando portfolio de demostración...")
-    
+
     try:
         PORTFOLIO.add_position("AAPL", 0.2, 175.0, "Posición demo inicial")
         PORTFOLIO.add_position("TSLA", 0.3, 250.0, "Posición demo inicial")
         PORTFOLIO.save_daily_snapshot()
-        
+
         print("[SUCCESS] Portfolio demo inicializado")
         print(f"  Cash: ${PORTFOLIO.cash:.2f}")
         print(f"  Holdings: {len(PORTFOLIO.holdings)} posiciones")
@@ -255,7 +253,7 @@ Ultra Modular Architecture:
      - validation.py: Trade validation
      - analysis.py: Stock analysis
      - reporting.py: Report generation
-  
+
   ✅ YAML Agents:
      - market_researcher.yaml
      - risk_analysts.yaml (3 agents)
@@ -267,67 +265,57 @@ Code Reduction:
   - v2: 1,129 lines (monolithic)
   - v3: ~300 lines (ultra modular)
   - Reduction: 73% less code
-        """
+        """,
     )
-    
+
+    parser.add_argument("--ticker", type=str, help="Stock ticker to analyze (e.g., ABEO, TSLA)")
+
     parser.add_argument(
-        "--ticker",
-        type=str,
-        help="Stock ticker to analyze (e.g., ABEO, TSLA)"
+        "--daily", action="store_true", help="Run daily portfolio analysis with full report"
     )
-    
-    parser.add_argument(
-        "--daily",
-        action="store_true",
-        help="Run daily portfolio analysis with full report"
-    )
-    
+
     parser.add_argument(
         "--provider",
         type=str,
         choices=["openrouter", "deepseek"],
         default="openrouter",
-        help="LLM provider (default: openrouter)"
+        help="LLM provider (default: openrouter)",
     )
-    
+
     parser.add_argument(
         "--live",
         action="store_true",
         default=False,
-        help="LIVE trading mode (real money - validators enforced)"
+        help="LIVE trading mode (real money - validators enforced)",
     )
-    
+
     parser.add_argument(
-        "--init-demo",
-        action="store_true",
-        help="Initialize portfolio with demo positions"
+        "--init-demo", action="store_true", help="Initialize portfolio with demo positions"
     )
-    
+
     parser.add_argument(
-        "--show-history",
-        action="store_true",
-        help="Show historical performance and statistics"
+        "--show-history", action="store_true", help="Show historical performance and statistics"
     )
-    
+
     args = parser.parse_args()
-    
+
     # Check for API keys
     use_openrouter = args.provider == "openrouter"
-    
+
     if use_openrouter and not os.getenv("OPENROUTER_API_KEY"):
         print("\n[ERROR] OPENROUTER_API_KEY not found in .env file")
         print("Get your API key from: https://openrouter.ai/keys")
         print("\nAlternatively, use --provider deepseek")
         sys.exit(1)
-    
+
     if not use_openrouter and not os.getenv("DEEPSEEK_API_KEY"):
         print("\n[ERROR] DEEPSEEK_API_KEY not found in .env file")
         print("Get your API key from: https://platform.deepseek.com/")
         sys.exit(1)
-    
+
     # Determine dry_run mode
     dry_run = not args.live
-    
+
     # Execute requested action
     if args.init_demo:
         init_demo_portfolio()

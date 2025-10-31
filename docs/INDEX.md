@@ -174,7 +174,7 @@ Guía completa del sistema multi-agente de trading con Agno Framework.
 
 ---
 
-**Última actualización**: 2025-10-12  
-**Total de documentos**: 9  
-**Páginas totales**: ~100  
+**Última actualización**: 2025-10-12
+**Total de documentos**: 9
+**Páginas totales**: ~100
 **Idiomas**: Inglés (🇬🇧) y Español (🇪🇸)

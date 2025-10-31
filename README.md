@@ -240,6 +240,6 @@ python tests/test_selected_models.py --model deep_research
 
 ---
 
-**Última actualización**: 2025-10-12  
-**Versión**: 1.0  
+**Última actualización**: 2025-10-12
+**Versión**: 1.0
 **Estado**: ✅ OPERACIONAL

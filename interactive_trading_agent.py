@@ -6,17 +6,19 @@ Usa múltiples modelos especializados de OpenRouter para análisis completo
 
 import os
 import sys
-import yfinance as yf
 from datetime import datetime
+
+import yfinance as yf
 from dotenv import load_dotenv
 
 # Cargar variables de entorno
 load_dotenv()
 
+from agno.agent import Agent
+from agno.models.deepseek import DeepSeek
+
 # Importar modelos Agno
 from agno.models.openrouter import OpenRouter
-from agno.models.deepseek import DeepSeek
-from agno.agent import Agent
 
 # Configuración de modelos
 MODELS = {
@@ -25,18 +27,21 @@ MODELS = {
     "fast_calc": "nvidia/nemotron-nano-9b-v2:free",
     "general": "z-ai/glm-4.5-air:free",
     "advanced": "qwen/qwen3-235b-a22b:free",
-    "deepseek": "deepseek-chat"
+    "deepseek": "deepseek-chat",
 }
+
 
 def clear_screen():
     """Limpiar pantalla"""
-    os.system('clear' if os.name != 'nt' else 'cls')
+    os.system("clear" if os.name != "nt" else "cls")
+
 
 def print_header():
     """Imprimir encabezado"""
     print("\n" + "=" * 70)
     print("  🤖 SISTEMA INTERACTIVO DE ANÁLISIS DE TRADING CON IA")
     print("=" * 70)
+
 
 def print_menu():
     """Mostrar menú principal"""
@@ -54,21 +59,22 @@ def print_menu():
     print("  0. 🚪 Salir")
     print("─" * 70)
 
+
 def get_stock_data(ticker):
     """Obtener datos del stock"""
     try:
         stock = yf.Ticker(ticker)
         info = stock.info
         hist = stock.history(period="1mo")
-        
+
         if hist.empty:
             return {"error": f"No se encontraron datos para {ticker}"}
-        
-        current_price = hist['Close'].iloc[-1]
-        volume = hist['Volume'].iloc[-1]
-        prev_close = hist['Close'].iloc[0]
+
+        current_price = hist["Close"].iloc[-1]
+        volume = hist["Volume"].iloc[-1]
+        prev_close = hist["Close"].iloc[0]
         change_pct = ((current_price - prev_close) / prev_close) * 100
-        
+
         return {
             "ticker": ticker,
             "name": info.get("longName", ticker),
@@ -83,10 +89,15 @@ def get_stock_data(ticker):
             "dividend_yield": info.get("dividendYield", "N/A"),
             "52w_high": info.get("fiftyTwoWeekHigh", "N/A"),
             "52w_low": info.get("fiftyTwoWeekLow", "N/A"),
-            "description": info.get("longBusinessSummary", "N/A")[:300] + "..." if info.get("longBusinessSummary") else "N/A"
+            "description": (
+                info.get("longBusinessSummary", "N/A")[:300] + "..."
+                if info.get("longBusinessSummary")
+                else "N/A"
+            ),
         }
     except Exception as e:
         return {"error": f"Error obteniendo datos: {str(e)}"}
+
 
 def format_stock_data(data):
     """Formatear datos del stock para mostrar"""
@@ -108,23 +119,25 @@ Descripción: {data['description']}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 """
 
+
 def analyze_with_agent(model_id, model_name, prompt, stock_data):
     """Realizar análisis con un agente específico"""
     try:
         print(f"\n⏳ Analizando con {model_name}...")
-        
+
         model = OpenRouter(id=model_id)
         agent = Agent(
             name=f"{model_name} Analyst",
             model=model,
             markdown=True,
         )
-        
+
         full_prompt = format_stock_data(stock_data) + f"\n{prompt}"
         agent.print_response(full_prompt)
-        
+
     except Exception as e:
         print(f"❌ Error en análisis: {str(e)}")
+
 
 def option_1_complete_analysis():
     """Análisis completo con 3 modelos"""
@@ -132,20 +145,20 @@ def option_1_complete_analysis():
     if not ticker:
         print("❌ Ticker inválido")
         return
-    
+
     print(f"\n🔍 Obteniendo datos de {ticker}...")
     stock_data = get_stock_data(ticker)
-    
+
     if "error" in stock_data:
         print(f"❌ {stock_data['error']}")
         return
-    
+
     print(f"✅ Datos obtenidos para {stock_data['name']}")
-    
+
     # Análisis 1: Investigación
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("🔬 PARTE 1: INVESTIGACIÓN DE MERCADO")
-    print("="*70)
+    print("=" * 70)
     prompt1 = """
 Actúa como analista de mercado. Analiza:
 1. Posición competitiva en el sector
@@ -156,13 +169,13 @@ Actúa como analista de mercado. Analiza:
 Responde en español, máximo 300 palabras.
 """
     analyze_with_agent(MODELS["deep_research"], "Tongyi DeepResearch", prompt1, stock_data)
-    
+
     input("\n⏸️  Presiona ENTER para continuar...")
-    
+
     # Análisis 2: Decisión de Trading
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("🧠 PARTE 2: DECISIÓN DE TRADING")
-    print("="*70)
+    print("=" * 70)
     prompt2 = """
 Actúa como trader profesional. Proporciona:
 1. Recomendación: BUY / HOLD / SELL
@@ -174,17 +187,17 @@ Actúa como trader profesional. Proporciona:
 Responde en español, máximo 250 palabras.
 """
     analyze_with_agent(MODELS["reasoning"], "DeepSeek Chimera", prompt2, stock_data)
-    
+
     input("\n⏸️  Presiona ENTER para continuar...")
-    
+
     # Análisis 3: Gestión de Riesgo
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("⚡ PARTE 3: GESTIÓN DE RIESGO")
-    print("="*70)
-    
+    print("=" * 70)
+
     portfolio = input("💰 Tamaño de tu portfolio (default: $10,000): ").strip()
     portfolio = portfolio if portfolio else "10,000"
-    
+
     prompt3 = f"""
 Actúa como analista de riesgo. Para un portfolio de ${portfolio}, calcula:
 1. Tamaño de posición recomendado (% y monto)
@@ -196,22 +209,23 @@ Actúa como analista de riesgo. Para un portfolio de ${portfolio}, calcula:
 Responde en formato conciso y claro, en español.
 """
     analyze_with_agent(MODELS["fast_calc"], "Nemotron Nano", prompt3, stock_data)
-    
+
     print("\n✅ ANÁLISIS COMPLETO FINALIZADO")
+
 
 def option_2_market_research():
     """Investigación de mercado profunda"""
     ticker = input("\n📊 Ingresa el ticker: ").upper().strip()
     if not ticker:
         return
-    
+
     print(f"\n🔍 Obteniendo datos de {ticker}...")
     stock_data = get_stock_data(ticker)
-    
+
     if "error" in stock_data:
         print(f"❌ {stock_data['error']}")
         return
-    
+
     prompt = """
 Actúa como analista de investigación de mercado senior. Realiza un análisis exhaustivo:
 
@@ -239,22 +253,23 @@ Responde en español, formato estructurado.
 """
     analyze_with_agent(MODELS["deep_research"], "Tongyi DeepResearch", prompt, stock_data)
 
+
 def option_3_trading_decision():
     """Decisión de trading con razonamiento"""
     ticker = input("\n📊 Ingresa el ticker: ").upper().strip()
     if not ticker:
         return
-    
+
     print(f"\n🔍 Obteniendo datos de {ticker}...")
     stock_data = get_stock_data(ticker)
-    
+
     if "error" in stock_data:
         print(f"❌ {stock_data['error']}")
         return
-    
+
     timeframe = input("⏰ Horizonte temporal (corto/medio/largo, default: medio): ").lower().strip()
     timeframe = timeframe if timeframe in ["corto", "medio", "largo"] else "medio"
-    
+
     prompt = f"""
 Actúa como trader profesional con 20 años de experiencia. Analiza este stock para horizonte {timeframe} plazo.
 
@@ -290,23 +305,26 @@ Responde en español, formato profesional.
 """
     analyze_with_agent(MODELS["reasoning"], "DeepSeek Chimera", prompt, stock_data)
 
+
 def option_4_risk_management():
     """Análisis de gestión de riesgo"""
     ticker = input("\n📊 Ingresa el ticker: ").upper().strip()
     if not ticker:
         return
-    
+
     print(f"\n🔍 Obteniendo datos de {ticker}...")
     stock_data = get_stock_data(ticker)
-    
+
     if "error" in stock_data:
         print(f"❌ {stock_data['error']}")
         return
-    
+
     portfolio = input("💰 Tamaño de tu portfolio ($): ").strip()
-    risk_tolerance = input("🎯 Tolerancia al riesgo (bajo/medio/alto, default: medio): ").lower().strip()
+    risk_tolerance = (
+        input("🎯 Tolerancia al riesgo (bajo/medio/alto, default: medio): ").lower().strip()
+    )
     risk_tolerance = risk_tolerance if risk_tolerance in ["bajo", "medio", "alto"] else "medio"
-    
+
     prompt = f"""
 Actúa como analista de riesgo certificado. Para un portfolio de ${portfolio} con tolerancia al riesgo {risk_tolerance}:
 
@@ -342,19 +360,20 @@ Responde en español con números precisos y concretos.
 """
     analyze_with_agent(MODELS["fast_calc"], "Nemotron Nano", prompt, stock_data)
 
+
 def option_5_technical_analysis():
     """Análisis técnico"""
     ticker = input("\n📊 Ingresa el ticker: ").upper().strip()
     if not ticker:
         return
-    
+
     print(f"\n🔍 Obteniendo datos de {ticker}...")
     stock_data = get_stock_data(ticker)
-    
+
     if "error" in stock_data:
         print(f"❌ {stock_data['error']}")
         return
-    
+
     prompt = """
 Actúa como analista técnico experto. Analiza este stock desde perspectiva técnica:
 
@@ -387,19 +406,20 @@ Responde en español, formato técnico pero comprensible.
 """
     analyze_with_agent(MODELS["general"], "GLM 4.5 Air", prompt, stock_data)
 
+
 def option_6_advanced_strategy():
     """Estrategia avanzada con Qwen 235B"""
     ticker = input("\n📊 Ingresa el ticker: ").upper().strip()
     if not ticker:
         return
-    
+
     print(f"\n🔍 Obteniendo datos de {ticker}...")
     stock_data = get_stock_data(ticker)
-    
+
     if "error" in stock_data:
         print(f"❌ {stock_data['error']}")
         return
-    
+
     prompt = """
 Actúa como estratega de inversión senior. Desarrolla una estrategia completa:
 
@@ -437,10 +457,13 @@ Responde en español, formato ejecutivo profesional.
 """
     analyze_with_agent(MODELS["advanced"], "Qwen3 235B", prompt, stock_data)
 
+
 def option_7_custom_question():
     """Pregunta personalizada"""
-    ticker = input("\n📊 Ingresa el ticker (o presiona ENTER para pregunta general): ").upper().strip()
-    
+    ticker = (
+        input("\n📊 Ingresa el ticker (o presiona ENTER para pregunta general): ").upper().strip()
+    )
+
     stock_data = None
     if ticker:
         print(f"\n🔍 Obteniendo datos de {ticker}...")
@@ -448,37 +471,37 @@ def option_7_custom_question():
         if "error" in stock_data:
             print(f"❌ {stock_data['error']}")
             return
-    
+
     print("\n💬 Ingresa tu pregunta personalizada:")
     question = input("❓ ").strip()
-    
+
     if not question:
         print("❌ Pregunta vacía")
         return
-    
+
     print("\n🤖 Selecciona el modelo:")
     print("  1. Tongyi DeepResearch (investigación profunda)")
     print("  2. DeepSeek Chimera (razonamiento complejo)")
     print("  3. Nemotron Nano (cálculos rápidos)")
     print("  4. GLM 4.5 Air (análisis general)")
     print("  5. Qwen3 235B (estrategia avanzada)")
-    
+
     choice = input("👉 ").strip()
-    
+
     model_map = {
         "1": ("deep_research", "Tongyi DeepResearch"),
         "2": ("reasoning", "DeepSeek Chimera"),
         "3": ("fast_calc", "Nemotron Nano"),
         "4": ("general", "GLM 4.5 Air"),
-        "5": ("advanced", "Qwen3 235B")
+        "5": ("advanced", "Qwen3 235B"),
     }
-    
+
     if choice not in model_map:
         print("❌ Opción inválida")
         return
-    
+
     model_key, model_name = model_map[choice]
-    
+
     if stock_data:
         analyze_with_agent(MODELS[model_key], model_name, question, stock_data)
     else:
@@ -491,18 +514,23 @@ def option_7_custom_question():
         except Exception as e:
             print(f"❌ Error: {str(e)}")
 
+
 def option_8_compare_stocks():
     """Comparar múltiples stocks"""
-    tickers_input = input("\n📊 Ingresa los tickers separados por comas (ej: AAPL,MSFT,GOOGL): ").upper().strip()
+    tickers_input = (
+        input("\n📊 Ingresa los tickers separados por comas (ej: AAPL,MSFT,GOOGL): ")
+        .upper()
+        .strip()
+    )
     tickers = [t.strip() for t in tickers_input.split(",") if t.strip()]
-    
+
     if len(tickers) < 2:
         print("❌ Necesitas al menos 2 tickers para comparar")
         return
-    
+
     print(f"\n🔍 Obteniendo datos de {len(tickers)} stocks...")
     stocks_data = []
-    
+
     for ticker in tickers:
         data = get_stock_data(ticker)
         if "error" not in data:
@@ -510,13 +538,13 @@ def option_8_compare_stocks():
             print(f"  ✅ {ticker}: {data['name']}")
         else:
             print(f"  ❌ {ticker}: Error")
-    
+
     if len(stocks_data) < 2:
         print("❌ No se pudieron obtener suficientes datos")
         return
-    
+
     # Crear resumen comparativo
-    comparison = "\n\nCOMPARACIÓN DE STOCKS:\n" + "="*70 + "\n"
+    comparison = "\n\nCOMPARACIÓN DE STOCKS:\n" + "=" * 70 + "\n"
     for data in stocks_data:
         comparison += f"\n{data['ticker']} - {data['name']}\n"
         comparison += f"  Precio: {data['current_price']} ({data['change_pct']})\n"
@@ -524,7 +552,7 @@ def option_8_compare_stocks():
         comparison += f"  Market Cap: {data['market_cap']}\n"
         comparison += f"  P/E: {data['pe_ratio']}\n"
         comparison += "─" * 70 + "\n"
-    
+
     prompt = f"""
 Actúa como analista comparativo de inversiones. Analiza y compara estos stocks:
 
@@ -559,11 +587,11 @@ Proporciona:
 
 Responde en español, formato comparativo claro.
 """
-    
-    print("\n" + "="*70)
+
+    print("\n" + "=" * 70)
     print("🔬 ANÁLISIS COMPARATIVO")
-    print("="*70)
-    
+    print("=" * 70)
+
     # Usar modelo avanzado para comparación
     try:
         model = OpenRouter(id=MODELS["advanced"])
@@ -572,12 +600,13 @@ Responde en español, formato comparativo claro.
     except Exception as e:
         print(f"❌ Error en análisis: {str(e)}")
 
+
 def option_9_model_info():
     """Mostrar información de modelos"""
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("📚 INFORMACIÓN DE MODELOS DISPONIBLES")
-    print("="*70)
-    
+    print("=" * 70)
+
     models_info = [
         {
             "name": "Tongyi DeepResearch 30B",
@@ -586,7 +615,7 @@ def option_9_model_info():
             "specialty": "Investigación profunda de mercado",
             "best_for": "Análisis sectorial, competencia, tendencias",
             "speed": "⚡⚡⚡ Rápido (7-10s)",
-            "cost": "💰 GRATIS"
+            "cost": "💰 GRATIS",
         },
         {
             "name": "DeepSeek R1T2 Chimera",
@@ -595,7 +624,7 @@ def option_9_model_info():
             "specialty": "Razonamiento complejo y decisiones",
             "best_for": "Decisiones BUY/SELL/HOLD, análisis paso a paso",
             "speed": "⚡⚡ Moderado (15-25s)",
-            "cost": "💰 GRATIS"
+            "cost": "💰 GRATIS",
         },
         {
             "name": "Nemotron Nano 9B",
@@ -604,7 +633,7 @@ def option_9_model_info():
             "specialty": "Cálculos rápidos y métricas",
             "best_for": "Gestión de riesgo, position sizing, stop-loss",
             "speed": "⚡⚡⚡ Muy rápido (5-15s)",
-            "cost": "💰 GRATIS"
+            "cost": "💰 GRATIS",
         },
         {
             "name": "GLM 4.5 Air",
@@ -613,7 +642,7 @@ def option_9_model_info():
             "specialty": "Análisis general balanceado",
             "best_for": "Análisis técnico, perspectiva general",
             "speed": "⚡⚡⚡ Rápido (8-12s)",
-            "cost": "💰 GRATIS"
+            "cost": "💰 GRATIS",
         },
         {
             "name": "Qwen3 235B",
@@ -622,10 +651,10 @@ def option_9_model_info():
             "specialty": "Estrategia avanzada (235B parámetros!)",
             "best_for": "Estrategia de portfolio, análisis integral",
             "speed": "⚡ Más lento (20-40s)",
-            "cost": "💰 GRATIS"
-        }
+            "cost": "💰 GRATIS",
+        },
     ]
-    
+
     for i, model in enumerate(models_info, 1):
         print(f"\n{model['icon']} {i}. {model['name']}")
         print(f"   ID: {model['id']}")
@@ -633,30 +662,31 @@ def option_9_model_info():
         print(f"   Mejor para: {model['best_for']}")
         print(f"   Velocidad: {model['speed']}")
         print(f"   Costo: {model['cost']}")
-        print("   " + "─"*66)
-    
+        print("   " + "─" * 66)
+
     print("\n💡 TIPS:")
     print("  • Todos los modelos son GRATUITOS con OpenRouter")
     print("  • Tienen rate limits razonables")
     print("  • Usa el modelo adecuado para cada tarea")
     print("  • Combina múltiples modelos para mejor análisis")
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
+
 
 def main():
     """Función principal"""
-    
+
     # Verificar API keys
     if not os.getenv("OPENROUTER_API_KEY"):
         print("❌ ERROR: OPENROUTER_API_KEY no encontrada en .env")
         print("👉 Configura tu API key en el archivo .env")
         return
-    
+
     while True:
         print_header()
         print_menu()
-        
+
         choice = input("\n👉 Selecciona una opción: ").strip()
-        
+
         if choice == "0":
             print("\n👋 ¡Hasta luego!")
             break
@@ -680,8 +710,9 @@ def main():
             option_9_model_info()
         else:
             print("❌ Opción inválida")
-        
+
         input("\n⏸️  Presiona ENTER para volver al menú...")
+
 
 if __name__ == "__main__":
     try:

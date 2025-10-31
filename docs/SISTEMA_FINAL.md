@@ -276,5 +276,5 @@ El sistema multi-agente está **operacional** y listo para:
 
 ---
 
-**Última actualización**: 2025-10-12  
+**Última actualización**: 2025-10-12
 **Estado**: ✅ Sistema operacional con 5 modelos especializados GRATIS + DeepSeek fallback

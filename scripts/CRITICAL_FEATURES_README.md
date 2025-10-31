@@ -25,7 +25,7 @@ result = validator.validate("NVDA")
 
 # Result:
 # valid=False
-# reason="❌ RECHAZADO: NVDA tiene market cap de $4.46T, 
+# reason="❌ RECHAZADO: NVDA tiene market cap de $4.46T,
 #        excede el límite de $300M para micro-cap"
 ```
 
@@ -42,7 +42,7 @@ result = validator.validate("NVDA")
 ```python
 # Del sistema original (trading_script.py + Prompts.md)
 1. Max 20% en single stock
-2. Max 40% en single sector  
+2. Max 40% en single sector
 3. Min 20% cash reserve
 ```
 
@@ -61,7 +61,7 @@ result = validator.validate_position_size(
 
 # Result:
 # valid=False
-# reason="❌ POSICIÓN EXCESIVA: ABEO = 90.0% del portfolio 
+# reason="❌ POSICIÓN EXCESIVA: ABEO = 90.0% del portfolio
 #        (máximo 20%). Valor máximo permitido: $20.00"
 ```
 
@@ -224,10 +224,10 @@ PROTECCIONES:
 Con validadores:
 - Win rate esperado: 72% (vs 67% original)
   → +5% por consenso de 9 agentes
-  
+
 - Max drawdown esperado: -5.5% (vs -7.11% original)
   → -23% mejor por 3 risk analysts
-  
+
 - Sharpe ratio esperado: 3.80 (vs 3.35 original)
   → Mejor risk-adjusted returns
 
@@ -437,6 +437,6 @@ Si hubiera comprado large-caps (NVDA, AAPL):
 
 ---
 
-**Última Actualización:** 12 Octubre 2025  
-**Status:** ✅ PRODUCTION READY  
+**Última Actualización:** 12 Octubre 2025
+**Status:** ✅ PRODUCTION READY
 **Autor:** Integración de features críticos del sistema original

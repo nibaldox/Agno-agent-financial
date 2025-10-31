@@ -22,12 +22,12 @@
 ```python
 def create_market_researcher(use_openrouter=True):
     """Market Researcher - Deep analysis con búsqueda web"""
-    
+
     if use_openrouter:
         model = OpenRouter(id=MODELS["deep_research"])
     else:
         model = DeepSeek(id="deepseek-chat")
-    
+
     # Tools
     tools = [
         YFinanceTools(
@@ -36,17 +36,17 @@ def create_market_researcher(use_openrouter=True):
             # ... 10+ more parameters
         )
     ]
-    
+
     if SERPER_AVAILABLE:
         tools.append(SerperTools())
-    
+
     # Instructions (50+ lines)
     instructions = [
         "⚠️ CRÍTICO: Responde SIEMPRE en ESPAÑOL. NUNCA en inglés...",
         "Eres un investigador de mercado especializado...",
         # ... 50 more lines of instructions
     ]
-    
+
     return Agent(
         name="Market Researcher",
         model=model,
@@ -92,10 +92,10 @@ team = load_complete_team(use_openrouter=True)
 instructions:
   critical_rules:
     - "⚠️ CRÍTICO: Responde SIEMPRE en ESPAÑOL"
-  
+
   role:
     - "Eres un investigador de mercado especializado en micro-caps"
-  
+
   tasks:
     - "Analiza precio actual, volumen, tendencias"
     - "Revisa fundamentales: P/E, market cap, deuda"
@@ -404,13 +404,13 @@ loader = AgentLoader()
 
 # Strategy A: Conservative
 conservative = loader.load_agent(
-    "risk_analysts.yaml", 
+    "risk_analysts.yaml",
     config_key="agents.conservative"
 )
 
 # Strategy B: Aggressive
 aggressive = loader.load_agent(
-    "risk_analysts.yaml", 
+    "risk_analysts.yaml",
     config_key="agents.aggressive"
 )
 

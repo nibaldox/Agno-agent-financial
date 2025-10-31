@@ -5,14 +5,15 @@ Sistema especializado para análisis de crypto con IA
 """
 
 import os
-import yfinance as yf
 from datetime import datetime, timedelta
+
+import yfinance as yf
 from dotenv import load_dotenv
 
 load_dotenv()
 
-from agno.models.openrouter import OpenRouter
 from agno.agent import Agent
+from agno.models.openrouter import OpenRouter
 
 # Modelos
 MODELS = {
@@ -23,36 +24,47 @@ MODELS = {
 
 # Criptos populares
 CRYPTO_MAP = {
-    "BTC": "BTC-USD", "ETH": "ETH-USD", "BNB": "BNB-USD",
-    "XRP": "XRP-USD", "ADA": "ADA-USD", "DOGE": "DOGE-USD",
-    "SOL": "SOL-USD", "MATIC": "MATIC-USD", "DOT": "DOT-USD",
-    "AVAX": "AVAX-USD", "LINK": "LINK-USD", "UNI": "UNI-USD",
+    "BTC": "BTC-USD",
+    "ETH": "ETH-USD",
+    "BNB": "BNB-USD",
+    "XRP": "XRP-USD",
+    "ADA": "ADA-USD",
+    "DOGE": "DOGE-USD",
+    "SOL": "SOL-USD",
+    "MATIC": "MATIC-USD",
+    "DOT": "DOT-USD",
+    "AVAX": "AVAX-USD",
+    "LINK": "LINK-USD",
+    "UNI": "UNI-USD",
 }
+
 
 def get_crypto_data(symbol: str) -> dict:
     """Obtener datos de criptomoneda"""
     ticker = CRYPTO_MAP.get(symbol.upper(), f"{symbol.upper()}-USD")
-    
+
     try:
         crypto = yf.Ticker(ticker)
         hist = crypto.history(period="1mo")
-        
+
         if hist.empty:
             return {"error": f"No se encontraron datos para {symbol}"}
-        
-        current_price = hist['Close'].iloc[-1]
-        prev_close = hist['Close'].iloc[0]
-        change_1d = ((hist['Close'].iloc[-1] - hist['Close'].iloc[-2]) / hist['Close'].iloc[-2]) * 100
+
+        current_price = hist["Close"].iloc[-1]
+        prev_close = hist["Close"].iloc[0]
+        change_1d = (
+            (hist["Close"].iloc[-1] - hist["Close"].iloc[-2]) / hist["Close"].iloc[-2]
+        ) * 100
         change_1mo = ((current_price - prev_close) / prev_close) * 100
-        
+
         # Volatilidad
-        returns = hist['Close'].pct_change().dropna()
+        returns = hist["Close"].pct_change().dropna()
         volatility = returns.std() * 100
-        
+
         # Máximo y mínimo 30 días
-        high_30d = hist['High'].max()
-        low_30d = hist['Low'].min()
-        
+        high_30d = hist["High"].max()
+        low_30d = hist["Low"].min()
+
         return {
             "symbol": symbol.upper(),
             "ticker": ticker,
@@ -65,10 +77,11 @@ def get_crypto_data(symbol: str) -> dict:
             "low_30d": f"${low_30d:,.2f}",
             "volatility": f"{volatility:.2f}%",
             "volume": f"{hist['Volume'].iloc[-1]:,.0f}",
-            "avg_volume": f"{hist['Volume'].mean():,.0f}"
+            "avg_volume": f"{hist['Volume'].mean():,.0f}",
         }
     except Exception as e:
         return {"error": f"Error obteniendo datos: {str(e)}"}
+
 
 def format_crypto_context(data: dict) -> str:
     """Formatear contexto de cripto"""
@@ -92,18 +105,19 @@ DATOS DE CRIPTOMONEDA: {data['name']}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 """
 
+
 def analyze_crypto(symbol: str, analysis_type: str):
     """Analizar criptomoneda"""
     print(f"\n🔍 Obteniendo datos de {symbol}...")
     data = get_crypto_data(symbol)
-    
+
     if "error" in data:
         print(f"❌ {data['error']}")
         return
-    
+
     print(f"✅ Datos obtenidos para {data['name']}")
     print(format_crypto_context(data))
-    
+
     # Seleccionar prompt según tipo de análisis
     prompts = {
         "trading": f"""
@@ -209,14 +223,14 @@ Para {data['name']} con una cartera de $10,000:
    - Rebalanceo del portfolio
 
 Responde en español con números concretos y realistas. Prioriza la preservación de capital.
-"""
+""",
     }
-    
+
     prompt = prompts.get(analysis_type, prompts["trading"])
-    
+
     # Ejecutar análisis
     print(f"\n⏳ Analizando con IA...")
-    
+
     try:
         model = OpenRouter(id=MODELS["reasoning"])
         agent = Agent(name="Crypto Analyst", model=model, markdown=True)
@@ -224,21 +238,22 @@ Responde en español con números concretos y realistas. Prioriza la preservaci�
     except Exception as e:
         print(f"❌ Error en análisis: {str(e)}")
 
+
 def compare_cryptos():
     """Comparar múltiples criptomonedas"""
     print("\n📊 COMPARACIÓN DE CRIPTOMONEDAS")
-    print("="*70)
-    
+    print("=" * 70)
+
     cryptos_input = input("Ingresa símbolos separados por coma (ej: BTC,ETH,SOL): ").upper().strip()
     cryptos = [c.strip() for c in cryptos_input.split(",") if c.strip()]
-    
+
     if len(cryptos) < 2:
         print("❌ Necesitas al menos 2 criptos para comparar")
         return
-    
+
     print(f"\n🔍 Obteniendo datos...")
     cryptos_data = []
-    
+
     for symbol in cryptos:
         data = get_crypto_data(symbol)
         if "error" not in data:
@@ -246,13 +261,13 @@ def compare_cryptos():
             print(f"  ✅ {symbol}: {data['current_price']}")
         else:
             print(f"  ❌ {symbol}: Error")
-    
+
     if len(cryptos_data) < 2:
         print("❌ No se pudieron obtener suficientes datos")
         return
-    
+
     # Crear contexto comparativo
-    comparison = "\n\nCOMPARACIÓN DE CRIPTOMONEDAS:\n" + "="*70 + "\n"
+    comparison = "\n\nCOMPARACIÓN DE CRIPTOMONEDAS:\n" + "=" * 70 + "\n"
     for data in cryptos_data:
         comparison += f"\n{data['name']}:\n"
         comparison += f"  Precio: {data['current_price']}\n"
@@ -261,7 +276,7 @@ def compare_cryptos():
         comparison += f"  Volatilidad: {data['volatility']}\n"
         comparison += f"  Rango 30d: {data['low_30d']} - {data['high_30d']}\n"
         comparison += "─" * 70 + "\n"
-    
+
     prompt = f"""
 Actúa como analista comparativo de criptomonedas. Analiza y compara:
 
@@ -298,11 +313,11 @@ Proporciona:
 
 Responde en español, formato comparativo claro y estructurado.
 """
-    
-    print("\n" + "="*70)
+
+    print("\n" + "=" * 70)
     print("🔬 ANÁLISIS COMPARATIVO")
-    print("="*70)
-    
+    print("=" * 70)
+
     try:
         model = OpenRouter(id=MODELS["reasoning"])
         agent = Agent(name="Comparative Analyst", model=model, markdown=True)
@@ -310,60 +325,69 @@ Responde en español, formato comparativo claro y estructurado.
     except Exception as e:
         print(f"❌ Error: {str(e)}")
 
+
 def main():
     """Menú principal"""
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("💰 ANÁLISIS INTERACTIVO DE CRIPTOMONEDAS CON IA")
-    print("="*70)
-    
+    print("=" * 70)
+
     while True:
         print("\n📋 MENÚ:")
-        print("─"*70)
+        print("─" * 70)
         print("  1. 📊 Análisis de Trading (BUY/SELL/HOLD)")
         print("  2. 🔬 Análisis Fundamental (proyecto, tokenomics)")
         print("  3. ⚡ Gestión de Riesgo (position sizing, stop-loss)")
         print("  4. 📈 Comparar Múltiples Criptos")
         print("  5. 💡 Ver Criptos Disponibles")
         print("  0. 🚪 Salir")
-        print("─"*70)
-        
+        print("─" * 70)
+
         choice = input("\n👉 Selecciona opción: ").strip()
-        
+
         if choice == "0":
             print("\n👋 ¡Hasta luego!")
             break
-        
+
         elif choice in ["1", "2", "3"]:
             print("\n💰 Criptos populares: BTC, ETH, BNB, XRP, ADA, SOL, DOGE, MATIC")
             symbol = input("Ingresa símbolo (ej: BTC): ").strip()
-            
+
             if not symbol:
                 print("❌ Símbolo vacío")
                 continue
-            
-            analysis_map = {
-                "1": "trading",
-                "2": "fundamentals",
-                "3": "risk"
-            }
+
+            analysis_map = {"1": "trading", "2": "fundamentals", "3": "risk"}
             analyze_crypto(symbol, analysis_map[choice])
-        
+
         elif choice == "4":
             compare_cryptos()
-        
+
         elif choice == "5":
-            print("\n" + "="*70)
+            print("\n" + "=" * 70)
             print("💰 CRIPTOMONEDAS DISPONIBLES")
-            print("="*70)
+            print("=" * 70)
             print("\n🔝 Top 10:")
-            for symbol in ["BTC", "ETH", "BNB", "XRP", "ADA", "SOL", "DOGE", "MATIC", "DOT", "AVAX"]:
+            for symbol in [
+                "BTC",
+                "ETH",
+                "BNB",
+                "XRP",
+                "ADA",
+                "SOL",
+                "DOGE",
+                "MATIC",
+                "DOT",
+                "AVAX",
+            ]:
                 print(f"  {symbol}")
             print("\n💡 También puedes usar cualquier símbolo (se agregará -USD automáticamente)")
-        
+
         else:
             print("❌ Opción inválida")
-        
+
         input("\n⏸️  Presiona ENTER para continuar...")
+
 
 if __name__ == "__main__":
     try:
@@ -373,4 +397,5 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"\n❌ Error: {str(e)}")
         import traceback
+
         traceback.print_exc()

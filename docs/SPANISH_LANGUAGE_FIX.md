@@ -175,6 +175,6 @@ agente-agno/scripts/advanced_trading_team_v2.py
 
 ---
 
-**Última Actualización:** 12 Octubre 2025  
-**Status:** ✅ COMPLETADO Y PROBADO  
+**Última Actualización:** 12 Octubre 2025
+**Status:** ✅ COMPLETADO Y PROBADO
 **Funcionalidad:** 100% español en todos los agentes

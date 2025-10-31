@@ -22,11 +22,11 @@ El sistema ha sido expandido de 5 a **9 agentes especializados** para obtener m�
   2. Risk Analyst Conservador (DeepSeek)
      └─ Enfoque: Protección de capital
      └─ YFinance (3 tools)
-  
+
   3. Risk Analyst Moderado (DeepSeek)
      └─ Enfoque: Balance riesgo/retorno
      └─ YFinance (3 tools)
-  
+
   4. Risk Analyst Agresivo (DeepSeek)
      └─ Enfoque: Oportunidades alto crecimiento
      └─ YFinance (3 tools)
@@ -35,11 +35,11 @@ El sistema ha sido expandido de 5 a **9 agentes especializados** para obtener m�
   5. Trading Strategist Técnico (DeepSeek)
      └─ Enfoque: Price action puro
      └─ YFinance (3 tools)
-  
+
   6. Trading Strategist Fundamental (DeepSeek)
      └─ Enfoque: Value investing
      └─ YFinance (4 tools)
-  
+
   7. Trading Strategist Momentum (DeepSeek)
      └─ Enfoque: Trend following
      └─ YFinance (3 tools)
@@ -49,7 +49,7 @@ El sistema ha sido expandido de 5 a **9 agentes especializados** para obtener m�
      └─ Sintetiza 6 opiniones expertas
      └─ Decisión final con gestión de riesgo
      └─ Contexto histórico del portfolio
-  
+
   9. Daily Reporter (OpenRouter GLM 4.5)
      └─ Reporte profesional en español
 ```
@@ -58,7 +58,7 @@ El sistema ha sido expandido de 5 a **9 agentes especializados** para obtener m�
 
 ## 1. Market Researcher (Recopilación de Datos)
 
-**Modelo:** DeepSeek (requiere tool calling)  
+**Modelo:** DeepSeek (requiere tool calling)
 **Tools:** 10 (YFinance 6 + Serper 4)
 
 **Responsabilidad:**
@@ -85,7 +85,7 @@ El sistema ha sido expandido de 5 a **9 agentes especializados** para obtener m�
 
 ### 2. Risk Analyst Conservador
 
-**Modelo:** DeepSeek  
+**Modelo:** DeepSeek
 **Perfil:** Protección de capital > Todo
 
 **Criterios:**
@@ -100,7 +100,7 @@ El sistema ha sido expandido de 5 a **9 agentes especializados** para obtener m�
 
 ### 3. Risk Analyst Moderado
 
-**Modelo:** DeepSeek  
+**Modelo:** DeepSeek
 **Perfil:** Balance 50/50 protección vs crecimiento
 
 **Criterios:**
@@ -115,7 +115,7 @@ El sistema ha sido expandido de 5 a **9 agentes especializados** para obtener m�
 
 ### 4. Risk Analyst Agresivo
 
-**Modelo:** DeepSeek  
+**Modelo:** DeepSeek
 **Perfil:** Maximizar retorno > Minimizar riesgo
 
 **Criterios:**
@@ -140,7 +140,7 @@ El sistema ha sido expandido de 5 a **9 agentes especializados** para obtener m�
 
 ### 5. Trading Strategist Técnico
 
-**Modelo:** DeepSeek  
+**Modelo:** DeepSeek
 **Enfoque:** Price action PURO
 
 **Análisis:**
@@ -162,7 +162,7 @@ El sistema ha sido expandido de 5 a **9 agentes especializados** para obtener m�
 
 ### 6. Trading Strategist Fundamental
 
-**Modelo:** DeepSeek  
+**Modelo:** DeepSeek
 **Enfoque:** Value investing (Buffett/Graham)
 
 **Análisis:**
@@ -184,7 +184,7 @@ El sistema ha sido expandido de 5 a **9 agentes especializados** para obtener m�
 
 ### 7. Trading Strategist Momentum
 
-**Modelo:** DeepSeek  
+**Modelo:** DeepSeek
 **Enfoque:** Trend following
 
 **Análisis:**
@@ -208,7 +208,7 @@ El sistema ha sido expandido de 5 a **9 agentes especializados** para obtener m�
 
 ## 8. Portfolio Manager (Síntesis de Opiniones)
 
-**Modelo:** OpenRouter Qwen3 235B (235 billion params)  
+**Modelo:** OpenRouter Qwen3 235B (235 billion params)
 **Responsabilidad:** Tomar decisión final integrando 6 opiniones expertas
 
 ### Proceso de Síntesis
@@ -292,7 +292,7 @@ CONTEXTO HISTÓRICO:
 
 ## 9. Daily Reporter (Reporte Final)
 
-**Modelo:** OpenRouter GLM 4.5  
+**Modelo:** OpenRouter GLM 4.5
 **Responsabilidad:** Compilar todo en reporte profesional español
 
 **Estructura del reporte:**
@@ -582,11 +582,11 @@ El sistema trackea automáticamente:
 
 El sistema de 9 agentes proporciona:
 
-✅ **Múltiples perspectivas** - Reduce sesgos  
-✅ **Consenso documentado** - Transparencia en decisiones  
-✅ **Mayor robustez** - Divergencias = señal de precaución  
-✅ **Versatilidad** - Captura diferentes regímenes de mercado  
-✅ **Aprendizaje continuo** - Trackea qué consensos funcionan mejor  
+✅ **Múltiples perspectivas** - Reduce sesgos
+✅ **Consenso documentado** - Transparencia en decisiones
+✅ **Mayor robustez** - Divergencias = señal de precaución
+✅ **Versatilidad** - Captura diferentes regímenes de mercado
+✅ **Aprendizaje continuo** - Trackea qué consensos funcionan mejor
 
 **Filosofía:** La sabiduría de la multitud (crowd wisdom) aplicada al trading algorítmico. No es democracia ciega - el Portfolio Manager tiene criterio final - pero múltiples opiniones expertas producen mejores decisiones que un solo analista.
 
